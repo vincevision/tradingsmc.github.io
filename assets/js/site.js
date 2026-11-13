@@ -51,6 +51,17 @@ const CASES = [
       "The higher timeframe sweeps its low and recovers. The 15m then breaks structure up, and the long is taken from the order block, after the lows above it are cleared, to the buy-side liquidity overhead."
   },
   {
+    pair: "GBP/JPY",
+    title: "Three Timeframes: 1H, 15m, 5m",
+    href: "cases/gbpjpy-1h-15m-5m.html",
+    thumb: "assets/img/gbpjpy-1h-15m-5m/00-cover.png",
+    direction: "Long",
+    model: "1H OB → 15m OB → 5m OB",
+    result: "TP hit · ≈ 1:2.5",
+    summary:
+      "The 1H uptrend pulls back into its order block with a sweep. The 15m shifts up and leaves an order block. Price returns, the 5m sweeps and shifts inside it, and the long is taken at the 5m order block toward the high above."
+  },
+  {
     pair: "BTC/USD",
     title: "What Happens After the Sweep",
     href: "cases/btcusd-after-the-sweep.html",
