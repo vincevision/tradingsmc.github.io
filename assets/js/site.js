@@ -1,0 +1,123 @@
+/* SMC Case Studies — shared header, case-study menu and lightbox.
+ *
+ * TO ADD A NEW CASE STUDY:
+ *   1. Put the screenshots in assets/img/<slug>/
+ *   2. Copy cases/usdjpy-confirmation-entry.html to cases/<slug>.html and edit it
+ *   3. Add one entry to CASES below — the menu and the home page update themselves.
+ */
+const CASES = [
+  {
+    pair: "USD/JPY",
+    title: "Confirmation Entry",
+    href: "cases/usdjpy-confirmation-entry.html",
+    thumb: "assets/img/usdjpy-confirmation-entry/00-cover.png",
+    direction: "Long",
+    model: "4H demand → 30m MSS → 15m OB",
+    result: "TP hit · ≈ 1:3",
+    summary:
+      "Price returns to a 4H demand zone, sweeps the last low, shifts structure on the 30m, and offers a 15m order-block entry targeting the opposing 30m supply."
+  }
+];
+
+(function () {
+  const root = document.documentElement.dataset.root || "";
+  const here = location.pathname.split("/").pop() || "index.html";
+  const isCurrent = (href) => href.split("/").pop() === here;
+
+  // Group cases by pair, keeping first-seen order.
+  const byPair = [];
+  CASES.forEach((c) => {
+    let g = byPair.find((x) => x.pair === c.pair);
+    if (!g) byPair.push((g = { pair: c.pair, items: [] }));
+    g.items.push(c);
+  });
+
+  const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+  const cur = (href) => (isCurrent(href) ? ' aria-current="page"' : "");
+
+  // ----- Header -----
+  const header = document.getElementById("site-header");
+  if (header) {
+    const menu = byPair
+      .map(
+        (g) =>
+          `<div class="pair">${esc(g.pair)}</div>` +
+          g.items
+            .map((c) => `<a href="${root}${c.href}"${cur(c.href)}>${esc(c.title)}<small>${esc(c.model)}</small></a>`)
+            .join("")
+      )
+      .join("");
+    header.className = "site-header";
+    header.innerHTML = `
+      <div class="wrap">
+        <a class="brand" href="${root}index.html">SMC <span>Case Studies</span></a>
+        <nav class="nav" aria-label="Main">
+          <a class="hide-sm" href="${root}index.html"${cur("index.html")}>Home</a>
+          <a href="${root}playbook.html"${cur("playbook.html")}>Playbook</a>
+          <details>
+            <summary>Case studies</summary>
+            <div class="menu">${menu}</div>
+          </details>
+        </nav>
+      </div>`;
+    const details = header.querySelector("details");
+    document.addEventListener("click", (e) => {
+      if (!details.contains(e.target)) details.removeAttribute("open");
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") details.removeAttribute("open");
+    });
+  }
+
+  // ----- Home page case list -----
+  const list = document.getElementById("case-list");
+  if (list) {
+    list.innerHTML = byPair
+      .map(
+        (g) => `
+        <div class="pair-heading"><h3>${esc(g.pair)}</h3><span>${g.items.length} case ${g.items.length === 1 ? "study" : "studies"}</span></div>
+        <div class="grid c2">
+          ${g.items
+            .map(
+              (c) => `
+            <a class="card case-card" href="${root}${c.href}">
+              <div class="thumb"><img src="${root}${c.thumb}" alt="" loading="lazy"></div>
+              <div>
+                <h3>${esc(c.pair)} — ${esc(c.title)}</h3>
+                <p>${esc(c.summary)}</p>
+                <ul class="chips">
+                  <li class="chip demand">${esc(c.direction)}</li>
+                  <li class="chip">${esc(c.model)}</li>
+                  <li class="chip target">${esc(c.result)}</li>
+                </ul>
+              </div>
+            </a>`
+            )
+            .join("")}
+        </div>`
+      )
+      .join("");
+  }
+
+  // ----- Lightbox for screenshots -----
+  const shots = document.querySelectorAll(".shot");
+  if (shots.length) {
+    const box = document.createElement("div");
+    box.className = "lightbox";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", "Enlarged chart");
+    box.innerHTML = "<img alt=''>";
+    document.body.appendChild(box);
+    const close = () => box.classList.remove("open");
+    shots.forEach((s) =>
+      s.addEventListener("click", () => {
+        const img = s.querySelector("img");
+        box.firstChild.src = img.src;
+        box.firstChild.alt = img.alt;
+        box.classList.add("open");
+      })
+    );
+    box.addEventListener("click", close);
+    document.addEventListener("keydown", (e) => e.key === "Escape" && close());
+  }
+})();
