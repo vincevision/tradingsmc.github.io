@@ -18,6 +18,17 @@ const CASES = [
       "Price returns to a 4H demand zone, sweeps the last low, shifts structure on the 30m, and offers a 15m order-block entry targeting the opposing 30m supply."
   },
   {
+    pair: "USD/JPY",
+    title: "Case Study Breakdown",
+    href: "cases/usdjpy-case-study-breakdown.html",
+    thumb: "assets/img/usdjpy-case-study-breakdown/00-cover.png",
+    direction: "Long",
+    model: "1H MSS → 30m demand → 15m demand",
+    result: "TP hit · ≈ 1:3.3",
+    summary:
+      "The 1H sweeps a low and shifts bullish. Price returns to the 30m demand through the inducement low. The 15m sweeps and shifts at the zone, and the long is taken at the 15m demand toward the high above."
+  },
+  {
     pair: "XAU/USD",
     title: "Textbook Institutional Flow",
     href: "cases/xauusd-institutional-flow.html",
