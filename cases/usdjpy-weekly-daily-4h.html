@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>USD/JPY Weekly, Daily and 4H Swing Long — VinceVision SMC</title>
+  <meta name="description" content="USD/JPY swing long from a replay backtest: weekly break of structure, daily demand and shift, 4H sweep and shift, entry at the 4H demand zone with stop loss and take profit explained.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=25">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <!-- ===== Intro ===== -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Case study · USD/JPY · Your own backtest</p>
+      <h1>Weekly, Daily and 4H Swing Long</h1>
+      <p class="lead">A swing long on USD/JPY from your own charts in replay mode. The weekly breaks a two-year high. The daily pulls back to the demand zone that started the rally and shifts up, leaving a supply zone above as the target. On the 4H, price ranges for a month, sweeps the range low into demand and shifts. The entry is the small 4H zone that shift leaves.</p>
+      <ul class="chips">
+        <li class="chip demand">Long</li>
+        <li class="chip">Weekly → Daily → 4H</li>
+        <li class="chip target">Target: daily supply</li>
+        <li class="chip target">TP hit · ≈ 1:2.25</li>
+      </ul>
+
+      <dl class="facts">
+        <div><dt>HTF bias</dt><dd>Weekly BoS above the July 2024 high</dd></div>
+        <div><dt>HTF location</dt><dd>Daily demand 152.7–153.9, then daily MSS</dd></div>
+        <div><dt>Zone traded from</dt><dd>Demand 155.3–156.3 left by the daily MSS</dd></div>
+        <div><dt>Confirmation</dt><dd>4H sweep of the range low, then 4H MSS</dd></div>
+        <div><dt>Entry</dt><dd>157.144, top edge of the small 4H demand</dd></div>
+        <div><dt>Stop loss</dt><dd>156.057, under the sweep wick (≈ 109 pips)</dd></div>
+        <div><dt>Take profit</dt><dd>159.587, bottom edge of daily supply (≈ 244 pips)</dd></div>
+        <div><dt>Outcome</dt><dd>Target reached, ≈ 2.25R, about two weeks after the fill</dd></div>
+      </dl>
+
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#s1">1 · Weekly</a></li>
+        <li><a href="#s2">2 · Daily demand</a></li>
+        <li><a href="#s3">3 · Daily shift</a></li>
+        <li><a href="#s4">4 · New zone</a></li>
+        <li><a href="#s5">5 · 4H shift</a></li>
+        <li><a href="#s6">6 · The wait</a></li>
+        <li><a href="#s7">7 · Sweep &amp; shift</a></li>
+        <li><a href="#s8">8 · The order</a></li>
+        <li><a href="#s9">9 · Result</a></li>
+        <li><a href="#whole">Everything as one</a></li>
+        <li><a href="#orders">Entry, SL &amp; TP</a></li>
+        <li><a href="#review">Review</a></li>
+        <li><a href="#repeat">Repeatable steps</a></li>
+        <li><a href="#skip">When to skip</a></li>
+      </ul>
+
+      <div class="callout info" style="margin-top:28px">
+        <h4>How to read this page</h4>
+        <p>These are your screenshots, with your own lines: <strong>bos</strong>, <strong>MSS</strong>, <strong>X</strong> for a sweep, and grey boxes for zones. You sent no notes, so the reasoning is my reading of what you drew. Prices are read from the price axis and are approximate, except the three order prices, which are printed on the chart. The charts are in TradingView replay mode on the FXCM feed, so this is a backtest. Reward-to-risk is calculated from the order prices on the last screenshot.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="s1">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: Weekly: the 2024 high is broken">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/01-weekly-bos.png" alt="Weekly USD/JPY chart from 2024 to 2026. A line marked bos runs from the July 2024 high near 162 to mid-2026, where price closes above it and reaches about 164. Price then falls to about 153 and bounces to 156.85." loading="lazy">
+        </button>
+        <figcaption>Screenshot 1 — Weekly. The July 2024 high is broken in 2026.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 1 · Weekly bias</span>
+        <h2>Weekly: the 2024 high is broken</h2>
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>The old high.</strong> July 2024, just under 162. Price fell from it to about 140 and spent almost two years below it.</li>
+          <li><strong>BoS.</strong> In mid-2026 weekly candles close above that high and reach about 164.</li>
+          <li><strong>The pullback.</strong> Price drops back fast to about 153, then starts to bounce. It is at 156.85 on this screenshot.</li>
+        </ol>
+
+        <h4>Why it matters</h4>
+        <p>A weekly break of a two-year high sets the direction: longs. The fall afterwards is large in pips, but on the weekly it is a pullback after a break. The weekly does not say where the pullback ends, so the next chart has to.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>Take the direction from the highest timeframe that has just broken structure. Then look for a zone on the next timeframe down. Do not buy only because the weekly is bullish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s2">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: Daily: back to the demand that started the rally">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/02-daily-demand.png" alt="Daily USD/JPY chart from October 2025. A red line marked X sits under a December low near 154.3, which is swept in late January. A line marked MSS at about 159.45 is broken in March. A grey demand zone from about 152.7 to 153.9 starts in mid-February. Price rallies to 164, falls sharply, and returns into the zone in September." loading="lazy">
+        </button>
+        <figcaption>Screenshot 2 — Daily. The demand zone that started the rally, revisited seven months later.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 2 · Daily zone</span>
+        <h2>Daily: back to the demand that started the rally</h2>
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>The sweep (X).</strong> A December 2025 low near 154.3 is taken in late January. Price drops to about 152.1.</li>
+          <li><strong>MSS.</strong> Price then closes above the January high near 159.45. That is the daily shift up.</li>
+          <li><strong>The demand zone.</strong> Drawn at the February low the shift came from, about 152.7 to 153.9.</li>
+          <li><strong>The return.</strong> After the top near 164, price falls about 1,100 pips and reaches the zone in September. The low is about 152.9, inside it.</li>
+        </ol>
+
+        <h4>Why it matters</h4>
+        <p>This is the location. The zone came after a sweep, it produced a break of structure, and price had not returned to it since February. That is a fresh zone by the rules on the <a href="../supply-demand.html#valid">supply and demand page</a>.</p>
+        <p>One detail: the January sweep low near 152.1 sits below the zone. If the zone had failed, that low was the next level down.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>A daily zone is a place to start watching. Nothing is bought here yet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s3">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: Daily: a break down, a supply zone, then a shift up">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/03-daily-supply-mss.png" alt="Daily chart, 2026. After the high near 164, a line marked bos at about 155.2 under the early August low is broken in September. A grey supply zone from about 159.6 to 160.4 is drawn at the high before that break. Price bounces from the demand zone and a small line marked MSS at about 156.75 is broken." loading="lazy">
+        </button>
+        <figcaption>Screenshot 3 — Daily. A break down, the supply it leaves, and the shift back up.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 3 · Daily shift</span>
+        <h2>Daily: a break down, a supply zone, then a shift up</h2>
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>BoS down.</strong> The early August low near 155.2 is broken in September. For a while the daily is bearish.</li>
+          <li><strong>Supply.</strong> The high the break came from, about 159.6 to 160.4, is marked as a supply zone.</li>
+          <li><strong>Reaction at demand.</strong> Price spends several days inside the February demand zone without closing below it.</li>
+          <li><strong>MSS up.</strong> Price closes above the last lower high near 156.75, with a wick to about 158.</li>
+        </ol>
+
+        <h4>Why it matters</h4>
+        <p>Two things are settled here. The daily demand held and the daily has turned back up, so the weekly direction and the daily now agree. And the trade has a ceiling: a fresh daily supply zone at 159.6. A long from below should be closed there.</p>
+
+        <div class="callout info">
+          <h4>Mark the opposing zone before the entry</h4>
+          <p>The supply zone was drawn weeks before the trade. The target was known first, and the entry had to pay enough to reach it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s4">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: Daily: the shift leaves a new demand zone">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/04-daily-new-demand.png" alt="Daily chart from July to September 2026. Price falls from 164 through the bos line into the lower demand zone, rallies, and breaks the MSS line at about 156.75. A new grey demand zone is drawn from about 155.3 to 156.3 at the base of the last push." loading="lazy">
+        </button>
+        <figcaption>Screenshot 4 — Daily, closer. The new demand zone left by the shift.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 4 · The zone to trade from</span>
+        <h2>Daily: the shift leaves a new demand zone</h2>
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>The rally from demand.</strong> A run of up candles from about 153 to 158.</li>
+          <li><strong>The new zone.</strong> About 155.3 to 156.3, at the base of the push that broke the MSS line.</li>
+          <li><strong>Price now.</strong> Above the zone at 156.85, with a long upper wick.</li>
+        </ol>
+
+        <h4>Why it matters</h4>
+        <p>Price is too far from the February zone to buy there with a sensible stop. The new zone is the place to wait for a pullback. It is closer to the target, so the stop has to be small, and that needs the 4H.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s5">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: 4H: the shift, seen up close">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/05-4h-shift.png" alt="4-hour chart, August to September 2026. Price falls from the supply zone near 160 through the bos line. A small low marked X near 155.3 and a high near 156.75 form on the way down. Price bottoms in the demand zone near 153, rallies, and breaks the MSS line at 156.75, reaching 158. The new demand zone from 155.3 to 156.3 is marked." loading="lazy">
+        </button>
+        <figcaption>Screenshot 5 — 4H. The same shift, seen on the entry timeframe.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 5 · 4H structure</span>
+        <h2>4H: the shift, seen up close</h2>
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>The drop.</strong> From the supply zone near 160 to the daily demand near 153 in about a week.</li>
+          <li><strong>A pause on the way.</strong> A low near 155.3 (marked X) and a bounce to 156.75. That bounce high is the level the MSS line is drawn from.</li>
+          <li><strong>The base.</strong> Several days of lows around 153 inside the daily demand zone.</li>
+          <li><strong>MSS.</strong> Price climbs back and closes above 156.75, reaching about 158.</li>
+        </ol>
+
+        <h4>Why it matters</h4>
+        <p>The 4H agrees with the daily. The demand zone at 155.3 to 156.3 is now the area to watch, and the plan is to wait for price to come back to it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s6">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: 4H: a month of range, then price reaches the zone">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/06-4h-return.png" alt="4-hour chart, September to October 2026. After the MSS, price ranges between about 156.4 and 159 for a month. In late October it drops, wicks to about 156.1 into the top of the demand zone, and bounces to 157.27. A small MSS line is marked at about 157.35." loading="lazy">
+        </button>
+        <figcaption>Screenshot 6 — 4H. A month of range, then the drop into the zone.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 6 · The wait</span>
+        <h2>4H: a month of range, then price reaches the zone</h2>
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>The range.</strong> From about 20 September to 21 October price moves between roughly 156.4 and 159. It does not reach the demand zone and does not reach the supply zone.</li>
+          <li><strong>The drop.</strong> Around 21–22 October price falls out of the range and wicks to about 156.1, into the top of the zone.</li>
+          <li><strong>The level to beat.</strong> A small MSS line at about 157.35, the last lower high of the drop.</li>
+        </ol>
+
+        <h4>Why it matters</h4>
+        <p>About a month passed between the shift and this return. There was no trade in that time, because price was in the middle with the zone below and the supply above. The lows of the range, just above the zone, were building up stops the whole time.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>No trade in the middle of a range. Wait for price to reach the zone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s7">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: 4H: the range low is swept, then the shift">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/07-4h-sweep-mss.png" alt="4-hour chart, zoomed in. A red line marked X runs under the range low of late September at about 156.38. A wick on about 22 October dips below it to about 156.07, into the top of the demand zone. Price then rises and closes above the MSS line at about 157.35. A small demand zone from about 156.65 to 157.15 is drawn at the base of that move." loading="lazy">
+        </button>
+        <figcaption>Screenshot 7 — 4H. The range low is swept into the zone, then the 4H shifts up.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 7 · Sweep and shift</span>
+        <h2>4H: the range low is swept, then the shift</h2>
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>The liquidity.</strong> The range low of about 29–30 September, near 156.38. Three weeks of trading sat above it.</li>
+          <li><strong>The sweep (X).</strong> A wick to about 156.07 takes that low and reaches the top of the demand zone. The candles close back above the line.</li>
+          <li><strong>MSS.</strong> Price closes above 157.35.</li>
+          <li><strong>The entry zone.</strong> A small 4H demand zone at about 156.65 to 157.15, the base of the move that made the shift.</li>
+        </ol>
+
+        <h4>Why it matters</h4>
+        <p>This is the confirmation. The sweep happened at the zone, not above it, and the shift followed straight after. The small zone gives an entry with a stop of about 110 pips. An entry at the larger zone would have needed a stop of about 200.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>At the zone, wait for a low to be swept and for a close above the last lower high. Then use the small zone that move leaves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s8">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: 4H: entry, stop and target">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/08-4h-plan.png" alt="4-hour chart with a long position drawn. Entry at 157.156 at the top of the small demand zone, stop at 156.069 just under the sweep wick, target at 159.599 at the bottom edge of the daily supply zone." loading="lazy">
+        </button>
+        <figcaption>Screenshot 8 — 4H. The order: entry 157.156, stop 156.069, target 159.599.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 8 · The order</span>
+        <h2>4H: entry, stop and target</h2>
+        <h4>What the chart shows</h4>
+        <ul class="ticks">
+          <li><strong>Entry:</strong> buy limit at 157.156, the top edge of the small 4H demand zone.</li>
+          <li><strong>Stop loss:</strong> 156.069, under the sweep wick. That is about 109 pips.</li>
+          <li><strong>Take profit:</strong> 159.599, the bottom edge of the daily supply zone. That is about 244 pips.</li>
+          <li><strong>Reward to risk:</strong> about 1:2.25.</li>
+        </ul>
+
+        <h4>Why each level is where it is</h4>
+        <p>The entry is the near edge of the zone, where the other trades on this site were filled. The stop is beyond the sweep low: if price goes back under 156.07, the sweep was a real break and the idea is wrong. The target is the first opposing zone, marked on the daily before the trade existed.</p>
+
+        <div class="callout warn">
+          <h4>The buffer is thin</h4>
+          <p>The sweep wick is at about 156.07 and the stop at 156.069. That leaves about a pip. Spread alone can be more than that. A buffer of 5 to 10 pips puts the stop near 156.00 and the ratio at about 1:2.1.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s9">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: 4H: filled at the edge, target reached">
+          <img src="../assets/img/usdjpy-weekly-daily-4h/09-result.png" alt="4-hour chart showing the result. Price pulls back to the entry at 157.144 with a wick slightly below it, ranges between about 157.3 and 158.8, then rallies to the target at 159.587 and on into the supply zone to about 160.05." loading="lazy">
+        </button>
+        <figcaption>Screenshot 9 — 4H. Filled at the edge, target reached. The box now reads 157.144, 156.057 and 159.587.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 9 · Result</span>
+        <h2>4H: filled at the edge, target reached</h2>
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>The fill.</strong> Price comes back to the zone a few days after the shift. The wick goes about 10 pips past the entry and turns.</li>
+          <li><strong>The hold.</strong> Roughly a week of sideways trading between 157.3 and 158.8. Price never came near the stop.</li>
+          <li><strong>The target.</strong> A strong push reaches 159.587 and continues into the supply zone, to about 160.05.</li>
+        </ol>
+
+        <h4>What to take from it</h4>
+        <ul class="ticks">
+          <li>The fill only just reached the zone. A limit in the middle of it would have been missed.</li>
+          <li>The trade took about two weeks from fill to target. This is a swing trade and it has to be sized and left alone like one.</li>
+          <li>Price went straight into the supply zone after the target. Closing at the bottom edge was the plan, and what the zone does next is a separate trade.</li>
+        </ul>
+        <p>The dates after 27 October are hidden by the toolbar. I estimate the shift at about 26 October, the fill at about 30 October and the target at about 10–11 November, from the spacing of the candles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="whole">
+    <div class="wrap">
+      <p class="eyebrow">Everything as one</p>
+      <h2>The whole trade on one page</h2>
+      <p class="lead">Three timeframes, each with one job. The same sweep, shift and zone appear on the daily and again on the 4H.</p>
+
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th></th><th>Weekly</th><th>Daily</th><th>4H</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Job</strong></td><td>Direction</td><td>Location and target</td><td>Entry</td></tr>
+            <tr><td><strong>Sweep</strong></td><td>None marked</td><td>December low taken in January, before the zone formed</td><td>Range low of late September taken on about 22 October</td></tr>
+            <tr><td><strong>Shift</strong></td><td>BoS above the July 2024 high</td><td>MSS above 156.75 after the reaction at demand</td><td>MSS above 157.35</td></tr>
+            <tr><td><strong>Zone</strong></td><td>None</td><td>Demand 152.7–153.9, then demand 155.3–156.3; supply 159.6–160.4 above</td><td>Demand 156.65–157.15</td></tr>
+            <tr><td><strong>Used for</strong></td><td>Longs only</td><td>Where to wait, and where to get out</td><td>The limit order and the stop</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><span class="num">1</span><h3>Direction and location</h3><p>Weekly BoS up. The pullback reaches the daily demand that launched the rally, holds, and the daily shifts back up.</p></div>
+        <div class="card"><span class="num">2</span><h3>Wait and confirm</h3><p>A month of range above the new demand zone. The range low is swept into the zone and the 4H shifts up.</p></div>
+        <div class="card"><span class="num">3</span><h3>Order</h3><p>Buy limit at the small 4H zone, stop under the sweep wick, target at the bottom of the daily supply. About 2.25R.</p></div>
+      </div>
+
+      <h4 style="margin-top:28px">Timeline</h4>
+      <div class="table-wrap" style="margin-top:10px">
+        <table>
+          <thead><tr><th>When (2026)</th><th>What happened</th></tr></thead>
+          <tbody>
+            <tr><td>Late January</td><td>December low swept, price to about 152.1</td></tr>
+            <tr><td>February–March</td><td>Demand zone forms at 152.7–153.9; daily MSS above 159.45</td></tr>
+            <tr><td>Mid-year</td><td>Weekly BoS above the 2024 high; top near 164 in July</td></tr>
+            <tr><td>Late July to early September</td><td>Fall to the daily demand zone; supply zone left at 159.6–160.4</td></tr>
+            <tr><td>Mid-September</td><td>Daily and 4H MSS above 156.75; new demand at 155.3–156.3</td></tr>
+            <tr><td>20 September to 21 October</td><td>Range between about 156.4 and 159</td></tr>
+            <tr><td>About 22 October</td><td>Range low swept to about 156.07, into the zone</td></tr>
+            <tr><td>About 26 October</td><td>4H MSS above 157.35; order placed</td></tr>
+            <tr><td>About 30 October</td><td>Filled at 157.144</td></tr>
+            <tr><td>About 10–11 November</td><td>Target reached at 159.587</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="orders">
+    <div class="wrap">
+      <p class="eyebrow">Order placement</p>
+      <h2>Entry, stop loss and take profit</h2>
+      <div class="ticket" style="margin-top:22px">
+        <div class="card entry">
+          <h4>Entry</h4>
+          <p class="where">Buy limit at 157.144, the top edge of the small 4H demand zone.</p>
+          <ul>
+            <li>The zone is the base of the move that closed above 157.35.</li>
+            <li>Place the order when that 4H candle has closed.</li>
+            <li>The fill went about 10 pips past the edge. A deeper order would have missed.</li>
+          </ul>
+        </div>
+        <div class="card sl">
+          <h4>Stop loss</h4>
+          <p class="where">156.057, under the sweep wick. About 109 pips.</p>
+          <ul>
+            <li>Under 156.07 the sweep has become a break, and the reason for the trade is gone.</li>
+            <li>The buffer here is about a pip. Use 5 to 10 pips plus the spread.</li>
+            <li>The wider choice is under the 155.3–156.3 zone. That is about 190 pips and brings the ratio to about 1:1.3, which is too low.</li>
+          </ul>
+        </div>
+        <div class="card tp">
+          <h4>Take profit</h4>
+          <p class="where">159.587, the bottom edge of the daily supply zone. About 244 pips.</p>
+          <ul>
+            <li>The first opposing zone above the entry, and a fresh one.</li>
+            <li>The range highs near 159 sit just under it. They are taken on the way.</li>
+            <li>The order is a pip or two under the zone edge, so the zone does not have to be entered.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout info" style="margin-top:22px">
+        <h4>Position size with a 109-pip stop</h4>
+        <p>On USD/JPY one standard lot moves ¥1,000 per pip, about $6.36 at 157.14. A 109-pip stop therefore costs about $693 per lot. To risk 1% of a $1,000 account ($10) the size is 10 ÷ 693 ≈ 0.014, so 0.01 lots, which risks about $6.90. On a $10,000 account, 1% is about 0.14 lots. A swing stop means a small position. Do not shrink the stop to fit a bigger one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="review">
+    <div class="wrap">
+      <p class="eyebrow">Review</p>
+      <h2>What was done well, and what to tighten</h2>
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card">
+          <h3>Done well</h3>
+          <ul class="ticks">
+            <li>Direction came from the weekly, and the daily had to agree before anything was planned.</li>
+            <li>The target zone was marked on the daily weeks before the entry.</li>
+            <li>A month of range was sat out. No order was placed in the middle.</li>
+            <li>The entry waited for a sweep at the zone and a shift after it.</li>
+            <li>The stop is behind the sweep, where the idea is wrong, and the target is the first opposing zone.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>To tighten</h3>
+          <ul class="ticks no">
+            <li><strong>Stop buffer.</strong> About a pip under the wick. Add 5 to 10 pips plus spread.</li>
+            <li><strong>Ratio.</strong> About 1:2.25 is the lowest on this site, and about 1:2.1 with a proper buffer. It passes the 1:2 rule with little to spare. At 1:2.25 you need to win about 31% of the time to break even, before costs.</li>
+            <li><strong>The daily had broken down.</strong> Between early and mid-September the daily was bearish under the 155.2 break. The trade was only valid after the daily MSS. Keep that as a written condition.</li>
+            <li><strong>Swap.</strong> A two-week hold pays or earns overnight interest. Check the rate on your broker and include it in the journal.</li>
+            <li><strong>Replay.</strong> Draw the zones before stepping the chart forward, and record the trades that lose as well. One win says the method can work once.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="repeat">
+    <div class="wrap narrow">
+      <p class="eyebrow">Repeatable strategy</p>
+      <h2>Step-by-step for the next trade</h2>
+      <p class="lead">Written for longs. For shorts, mirror it. A “no” at any step ends the process.</p>
+
+      <ol class="checklist" style="margin-top:24px">
+        <li><span class="q">Weekly: has price just closed beyond a major high?</span><span class="a">Write “long”. If the weekly is inside a range, use the daily for direction and halve the size.</span></li>
+        <li><span class="q">Daily: is price pulling back into a fresh demand zone that produced a break?</span><span class="a">Mark it. Mark the nearest supply zone above as the target.</span></li>
+        <li><span class="q">Daily: has price reacted and closed above its last lower high?</span><span class="a">Draw the new demand zone at the base of that move.</span></li>
+        <li><span class="q">Is price back at that zone?</span><span class="a">If it is ranging above it, wait. Set an alert at the top edge.</span></li>
+        <li><span class="q">4H: has a low been swept into the zone, with a close back above?</span><span class="a">Mark the sweep low.</span></li>
+        <li><span class="q">4H: has a candle closed above the last lower high?</span><span class="a">Draw the small zone at the base of that move.</span></li>
+        <li><span class="q">Buy limit at the top of the small zone, stop under the sweep low plus 5–10 pips.</span><span class="a">Target the bottom edge of the daily supply.</span></li>
+        <li><span class="q">Does it pay at least 1:2 with the buffer included?</span><span class="a">If not, skip it.</span></li>
+        <li><span class="q">Size for the wide stop, place, hold, record.</span><span class="a">Risk 0.5–1%. Expect to hold for days or weeks. Screenshot the weekly, daily and 4H.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skip">
+    <div class="wrap">
+      <p class="eyebrow">Filters</p>
+      <h2>When this setup should be skipped</h2>
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card">
+          <h3>Do not take it if</h3>
+          <ul class="ticks no">
+            <li>A daily candle closes below the daily demand zone.</li>
+            <li>The daily has not closed back above its last lower high.</li>
+            <li>Price is in the middle of the range, between the demand and the supply.</li>
+            <li>The 4H breaks up without first sweeping a low at the zone.</li>
+            <li>The daily supply is closer than 1:2 from the entry.</li>
+            <li>A Bank of Japan or Federal Reserve decision, or US jobs or inflation data, is due before the order is likely to fill.</li>
+            <li>The position needed for the stop is below your broker’s minimum size at the risk you allow.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>This trade had all of these</h3>
+          <ul class="ticks">
+            <li>A weekly break of structure upward.</li>
+            <li>A fresh daily demand zone that held.</li>
+            <li>A daily shift up and a marked supply zone above.</li>
+            <li>A swept range low at the zone.</li>
+            <li>A 4H shift and a small zone to enter from.</li>
+            <li>A target about 2.25R away.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout warn" style="margin-top:26px">
+        <h4>Keep this in proportion</h4>
+        <p>USD/JPY at these levels has a history of sudden moves of several hundred pips in a day, and the fall from 164 on these charts is one of them. A stop order can be filled well beyond its price in a move like that. Keep the risk per trade small enough that a slipped stop is survivable.</p>
+      </div>
+
+      <p style="margin-top:26px"><a class="btn" href="../playbook.html">Open the playbook</a><a class="btn ghost" href="../index.html#cases">All case studies</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. The screenshots are the site owner's own TradingView charts, taken in replay mode. One winning backtest does not prove a strategy.</p>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js?v=25"></script>
+</body>
+</html>

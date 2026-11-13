@@ -29,6 +29,17 @@ const CASES = [
       "The 1H sweeps a low and shifts bullish. Price returns to the 30m demand through the inducement low. The 15m sweeps and shifts at the zone, and the long is taken at the 15m demand toward the high above."
   },
   {
+    pair: "USD/JPY",
+    title: "Weekly, Daily and 4H Swing Long",
+    href: "cases/usdjpy-weekly-daily-4h.html",
+    thumb: "assets/img/usdjpy-weekly-daily-4h/09-result.png",
+    direction: "Long",
+    model: "Weekly BoS → Daily demand → 4H demand",
+    result: "TP hit · ≈ 1:2.25",
+    summary:
+      "The weekly breaks a two-year high. The daily returns to demand and shifts up. On the 4H a range low is swept into the zone, structure shifts, and the long is taken at the 4H demand toward the daily supply above."
+  },
+  {
     pair: "XAU/USD",
     title: "Textbook Institutional Flow",
     href: "cases/xauusd-institutional-flow.html",
@@ -130,7 +141,7 @@ const CASES = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "24" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "25" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";

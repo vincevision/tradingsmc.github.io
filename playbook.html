@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=24">
+  <link rel="stylesheet" href="assets/css/style.css?v=25">
 </head>
 <body>
 <header id="site-header"></header>
@@ -18,7 +18,7 @@
     <div class="wrap">
       <p class="eyebrow">Playbook</p>
       <h1>One model, run the same way every day.</h1>
-      <p class="lead">This page collects the rules that the case studies have in common. It grows as more examples are added. Right now it is built from eleven trades: two USD/JPY longs (<a href="cases/usdjpy-confirmation-entry.html">4H</a> and <a href="cases/usdjpy-case-study-breakdown.html">1H</a>), the <a href="cases/xauusd-institutional-flow.html">XAU/USD short</a>, two GBP/JPY longs (<a href="cases/gbpjpy-sweep-before-structure.html">15m</a> and <a href="cases/gbpjpy-1h-15m-5m.html">5m</a>), two BTC/USD longs (<a href="cases/btcusd-after-the-sweep.html">15m</a> and <a href="cases/btcusd-sweep-shift-zone.html">1H</a>), the <a href="cases/audusd-real-zone.html">AUD/USD long</a>, the <a href="cases/audusd-1h-ob-short.html">AUD/USD short</a>, the <a href="cases/gbpaud-trade-breakdown.html">GBP/AUD long</a> and the <a href="cases/gbpusd-simple-confirmation-entry.html">GBP/USD short</a>. Treat it as a draft to be tested, not a finished system.</p>
+      <p class="lead">This page collects the rules that the case studies have in common. It grows as more examples are added. Right now it is built from twelve trades: three USD/JPY longs (<a href="cases/usdjpy-confirmation-entry.html">4H</a>, <a href="cases/usdjpy-case-study-breakdown.html">1H</a> and a <a href="cases/usdjpy-weekly-daily-4h.html">weekly-to-4H swing</a>), the <a href="cases/xauusd-institutional-flow.html">XAU/USD short</a>, two GBP/JPY longs (<a href="cases/gbpjpy-sweep-before-structure.html">15m</a> and <a href="cases/gbpjpy-1h-15m-5m.html">5m</a>), two BTC/USD longs (<a href="cases/btcusd-after-the-sweep.html">15m</a> and <a href="cases/btcusd-sweep-shift-zone.html">1H</a>), the <a href="cases/audusd-real-zone.html">AUD/USD long</a>, the <a href="cases/audusd-1h-ob-short.html">AUD/USD short</a>, the <a href="cases/gbpaud-trade-breakdown.html">GBP/AUD long</a> and the <a href="cases/gbpusd-simple-confirmation-entry.html">GBP/USD short</a>. Treat it as a draft to be tested, not a finished system.</p>
       <ul class="toc" aria-label="On this page">
         <li><a href="#model">The model</a></li>
         <li><a href="#patterns">Patterns so far</a></li>
@@ -63,30 +63,30 @@
   <section id="patterns">
     <div class="wrap">
       <p class="eyebrow">Patterns so far</p>
-      <h2>What the eleven cases have in common</h2>
+      <h2>What the twelve cases have in common</h2>
       <div class="table-wrap" style="margin-top:20px">
         <table>
-          <thead><tr><th></th><th>USD/JPY long (4H)</th><th>XAU/USD short</th><th>GBP/JPY long (15m)</th><th>BTC/USD long (15m)</th><th>AUD/USD long</th><th>BTC/USD long (1H)</th><th>GBP/AUD long</th><th>USD/JPY long (1H)</th><th>GBP/USD short</th><th>AUD/USD short</th><th>GBP/JPY long (5m)</th></tr></thead>
+          <thead><tr><th></th><th>USD/JPY long (4H)</th><th>XAU/USD short</th><th>GBP/JPY long (15m)</th><th>BTC/USD long (15m)</th><th>AUD/USD long</th><th>BTC/USD long (1H)</th><th>GBP/AUD long</th><th>USD/JPY long (1H)</th><th>GBP/USD short</th><th>AUD/USD short</th><th>GBP/JPY long (5m)</th><th>USD/JPY long (W/D/4H)</th></tr></thead>
           <tbody>
-            <tr><td><strong>HTF had shifted in the trade's direction</strong></td><td>Yes (4H MSS)</td><td>Yes (4H MSS)</td><td>No. Sweep only</td><td>Not shown in the post</td><td>Yes (H4 bullish)</td><td>Yes (4H MSS)</td><td>Yes (1H BoS)</td><td>Yes (1H MSS)</td><td>Yes (1H BoS down)</td><td>Yes (1H MSS down)</td><td>Yes (1H uptrend)</td></tr>
-            <tr><td><strong>Sweep before the LTF shift</strong></td><td>Yes</td><td>Yes, three</td><td>Yes, double low</td><td>Yes</td><td>Yes, two</td><td>Yes, equal lows</td><td>Yes, range low</td><td>Yes, at the 30m demand</td><td>Yes, two highs in supply</td><td>Yes, a high in the 1H OB</td><td>Yes, a low in the 15m OB</td></tr>
-            <tr><td><strong>Entry</strong></td><td>Near edge of 15m OB</td><td>Near edge of 15m OB</td><td>Near edge of 15m OB</td><td>Near edge of 15m OB</td><td>Near edge of 15m demand</td><td>Near edge of 1H demand</td><td>Near edge of 15m demand</td><td>Near edge of 15m demand</td><td>Near edge of 15m supply</td><td>Near edge of 15m OB</td><td>Near edge of 5m OB</td></tr>
-            <tr><td><strong>Imbalance beside the OB</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Not labelled</td><td>Yes</td><td>Yes</td></tr>
-            <tr><td><strong>How deep the fill went</strong></td><td>Wick into the edge</td><td>Touch of the edge</td><td>Wick to the edge</td><td>Deep: more than halfway through the OB</td><td>Deep: more than halfway through the zone</td><td>Wick to the edge</td><td>Touch of the edge</td><td>Deep: most of the zone</td><td>Wick a third into the zone</td><td>Wick into the edge</td><td>Edge fill, then a second dip halfway in</td></tr>
-            <tr><td><strong>Stop on the chart</strong></td><td>Beyond the sweep low that launched the MSS</td><td>Just beyond the OB</td><td>Beyond the swing low under the OB</td><td>Beyond the protected low (sweep low and OB bottom)</td><td>Beyond the 15m zone (the sweep low that launched the MSS)</td><td>Beyond the sweep low under the zone</td><td>Beyond the sweep low under the zone</td><td>Beyond the 15m sweep low under the zone</td><td>Just beyond the supply zone</td><td>Beyond the swing high over the OB</td><td>Beyond the sweep low at the bottom of the OB</td></tr>
-            <tr><td><strong>Target</strong></td><td>Opposing 30m supply</td><td>Opposing 15m demand</td><td>Buy-side liquidity (old high)</td><td>Buy-side liquidity (high made after the shift)</td><td>H4 swing high</td><td>Buy-side liquidity (high made after the shift)</td><td>Buy-side liquidity (high before the drop)</td><td>Buy-side liquidity (high before the drop)</td><td>Sell-side liquidity (low before the rally)</td><td>Sell-side liquidity (low before the rally)</td><td>Buy-side liquidity (high before the drop)</td></tr>
-            <tr><td><strong>Reward : risk</strong></td><td>≈ 1:3</td><td>≈ 1:3.8</td><td>≈ 1:3.8</td><td>≈ 1:3.5</td><td>≈ 1:3.2</td><td>≈ 1:3.4</td><td>≈ 1:2.9</td><td>≈ 1:3.3</td><td>≈ 1:3.8</td><td>≈ 1:2.5</td><td>≈ 1:2.5</td></tr>
-            <tr><td><strong>Wait from shift to fill</strong></td><td>2–3 hours</td><td>About 2 hours</td><td>About 12 hours</td><td>About 9 hours</td><td>About 13 hours</td><td>About a day (1H chart)</td><td>About 3 hours</td><td>Not shown (no time axis)</td><td>Under an hour</td><td>Not shown</td><td>About 1¾ hours</td></tr>
+            <tr><td><strong>HTF had shifted in the trade's direction</strong></td><td>Yes (4H MSS)</td><td>Yes (4H MSS)</td><td>No. Sweep only</td><td>Not shown in the post</td><td>Yes (H4 bullish)</td><td>Yes (4H MSS)</td><td>Yes (1H BoS)</td><td>Yes (1H MSS)</td><td>Yes (1H BoS down)</td><td>Yes (1H MSS down)</td><td>Yes (1H uptrend)</td><td>Yes (weekly BoS, daily MSS)</td></tr>
+            <tr><td><strong>Sweep before the LTF shift</strong></td><td>Yes</td><td>Yes, three</td><td>Yes, double low</td><td>Yes</td><td>Yes, two</td><td>Yes, equal lows</td><td>Yes, range low</td><td>Yes, at the 30m demand</td><td>Yes, two highs in supply</td><td>Yes, a high in the 1H OB</td><td>Yes, a low in the 15m OB</td><td>Yes, a range low at the demand zone</td></tr>
+            <tr><td><strong>Entry</strong></td><td>Near edge of 15m OB</td><td>Near edge of 15m OB</td><td>Near edge of 15m OB</td><td>Near edge of 15m OB</td><td>Near edge of 15m demand</td><td>Near edge of 1H demand</td><td>Near edge of 15m demand</td><td>Near edge of 15m demand</td><td>Near edge of 15m supply</td><td>Near edge of 15m OB</td><td>Near edge of 5m OB</td><td>Near edge of 4H demand</td></tr>
+            <tr><td><strong>Imbalance beside the OB</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Not labelled</td><td>Yes</td><td>Yes</td><td>Not labelled</td></tr>
+            <tr><td><strong>How deep the fill went</strong></td><td>Wick into the edge</td><td>Touch of the edge</td><td>Wick to the edge</td><td>Deep: more than halfway through the OB</td><td>Deep: more than halfway through the zone</td><td>Wick to the edge</td><td>Touch of the edge</td><td>Deep: most of the zone</td><td>Wick a third into the zone</td><td>Wick into the edge</td><td>Edge fill, then a second dip halfway in</td><td>Wick just past the edge</td></tr>
+            <tr><td><strong>Stop on the chart</strong></td><td>Beyond the sweep low that launched the MSS</td><td>Just beyond the OB</td><td>Beyond the swing low under the OB</td><td>Beyond the protected low (sweep low and OB bottom)</td><td>Beyond the 15m zone (the sweep low that launched the MSS)</td><td>Beyond the sweep low under the zone</td><td>Beyond the sweep low under the zone</td><td>Beyond the 15m sweep low under the zone</td><td>Just beyond the supply zone</td><td>Beyond the swing high over the OB</td><td>Beyond the sweep low at the bottom of the OB</td><td>Beyond the 4H sweep low, with almost no buffer</td></tr>
+            <tr><td><strong>Target</strong></td><td>Opposing 30m supply</td><td>Opposing 15m demand</td><td>Buy-side liquidity (old high)</td><td>Buy-side liquidity (high made after the shift)</td><td>H4 swing high</td><td>Buy-side liquidity (high made after the shift)</td><td>Buy-side liquidity (high before the drop)</td><td>Buy-side liquidity (high before the drop)</td><td>Sell-side liquidity (low before the rally)</td><td>Sell-side liquidity (low before the rally)</td><td>Buy-side liquidity (high before the drop)</td><td>Opposing daily supply</td></tr>
+            <tr><td><strong>Reward : risk</strong></td><td>≈ 1:3</td><td>≈ 1:3.8</td><td>≈ 1:3.8</td><td>≈ 1:3.5</td><td>≈ 1:3.2</td><td>≈ 1:3.4</td><td>≈ 1:2.9</td><td>≈ 1:3.3</td><td>≈ 1:3.8</td><td>≈ 1:2.5</td><td>≈ 1:2.5</td><td>≈ 1:2.25</td></tr>
+            <tr><td><strong>Wait from shift to fill</strong></td><td>2–3 hours</td><td>About 2 hours</td><td>About 12 hours</td><td>About 9 hours</td><td>About 13 hours</td><td>About a day (1H chart)</td><td>About 3 hours</td><td>Not shown (no time axis)</td><td>Under an hour</td><td>Not shown</td><td>About 1¾ hours</td><td>About 4 days (4H chart)</td></tr>
           </tbody>
         </table>
       </div>
       <div class="grid c3" style="margin-top:22px">
-        <div class="card"><h3>Constant in all eleven</h3><p>A liquidity sweep comes first, then a lower-timeframe shift, then a limit order at the near edge of the order block usually with an imbalance beside it. Six fills only just reached that edge. The first Bitcoin, AUD/USD and second USD/JPY fills went deep, and the second GBP/JPY trade dipped halfway into the block after filling, so the stop has to sit beyond the structure, not inside the block.</p></div>
+        <div class="card"><h3>Constant in all twelve</h3><p>A liquidity sweep comes first, then a lower-timeframe shift, then a limit order at the near edge of the order block usually with an imbalance beside it. Seven fills only just reached that edge. The first Bitcoin, AUD/USD and second USD/JPY fills went deep, and the second GBP/JPY trade dipped halfway into the block after filling, so the stop has to sit beyond the structure, not inside the block.</p></div>
         <div class="card"><h3>The target varies</h3><p>It is whatever stands first in the way: an opposing zone, or a pool of untouched liquidity. With a liquidity target, exit a few pips before the level.</p></div>
         <div class="card"><h3>Liquidity in front of the entry</h3><p>In both GBP/JPY trades, AUD/USD, GBP/AUD, the second USD/JPY and both BTC/USD trades, lows sitting above the zone were swept before the fill, after waits of under two hours to a day. A bounce above an untouched zone is not the entry. See <a href="inducement.html">Inducement</a>. If stops rest between price and your OB, expect them to be taken first.</p></div>
       </div>
-      <p style="margin-top:14px">All eleven are confirmation entries. The order is always sweep, shift, zone; the <a href="cases/btcusd-sweep-shift-zone.html">second Bitcoin case</a> spells that out. See <a href="entry-models.html">Entry models</a> for how that differs from an aggressive entry at the zone.</p>
-      <p class="small muted">Eleven winning examples from one author are a description of a style, not evidence that it is profitable. The table is here so you know what to look for when you backtest.</p>
+      <p style="margin-top:14px">All twelve are confirmation entries. The order is always sweep, shift, zone; the <a href="cases/btcusd-sweep-shift-zone.html">second Bitcoin case</a> spells that out. See <a href="entry-models.html">Entry models</a> for how that differs from an aggressive entry at the zone.</p>
+      <p class="small muted">Twelve winning examples, eleven from one author and one from your own replay backtest, are a description of a style, not evidence that it is profitable. The table is here so you know what to look for when you backtest.</p>
     </div>
   </section>
 
@@ -257,6 +257,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=24"></script>
+<script src="assets/js/site.js?v=25"></script>
 </body>
 </html>
