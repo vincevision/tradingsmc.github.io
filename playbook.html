@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playbook — the daily SMC routine</title>
+  <meta name="description" content="A repeatable daily routine for the HTF zone, LTF shift, order block entry model: checklist, stop loss and take profit rules, risk management and glossary.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Playbook</p>
+      <h1>One model, run the same way every day.</h1>
+      <p class="lead">This page collects the rules that the case studies have in common. It grows as more examples are added. Right now it is built from one trade, <a href="cases/usdjpy-confirmation-entry.html">USD/JPY Confirmation Entry</a>, so treat it as a first draft to be tested, not a finished system.</p>
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#model">The model</a></li>
+        <li><a href="#routine">Daily routine</a></li>
+        <li><a href="#orders">SL &amp; TP rules</a></li>
+        <li><a href="#risk">Risk rules</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="model">
+    <div class="wrap">
+      <p class="eyebrow">The model</p>
+      <h2>HTF zone → LTF shift → order block</h2>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Stage</th><th>Timeframe</th><th>What you need to see (long)</th><th>For shorts</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. Location</strong></td><td>4H (or 1H)</td><td>Price inside a fresh demand zone that caused a break of structure, in the discount half of the leg.</td><td>Fresh supply in premium.</td></tr>
+            <tr><td><strong>2. Liquidity</strong></td><td>30m</td><td>The last low of the pullback is taken while price is in the zone.</td><td>The last high is taken.</td></tr>
+            <tr><td><strong>3. Confirmation</strong></td><td>30m</td><td>A displacement candle closes above the last lower high (MSS).</td><td>Close below the last higher low.</td></tr>
+            <tr><td><strong>4. Entry</strong></td><td>15m</td><td>Unmitigated order block at the origin of the displacement, with an imbalance beside it. Buy limit at its top edge.</td><td>Sell limit at the OB's bottom edge.</td></tr>
+            <tr><td><strong>5. Stop</strong></td><td>15m</td><td>Below the protected low that launched the MSS, plus a buffer.</td><td>Above the protected high, plus buffer and spread.</td></tr>
+            <tr><td><strong>6. Target</strong></td><td>30m</td><td>Near edge of the first opposing supply zone or liquidity pool. Minimum 1:2.</td><td>Near edge of the first opposing demand.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:12px">The 4H / 30m / 15m ladder is the one used in the USD/JPY example. The same logic can be stepped down (1H / 15m / 5m) as long as the three roles stay separate: one chart for location, one for confirmation, one for entry.</p>
+    </div>
+  </section>
+
+  <section id="routine">
+    <div class="wrap narrow">
+      <p class="eyebrow">Daily routine</p>
+      <h2>What to do, in order</h2>
+
+      <h3 style="margin-top:24px">Before the session</h3>
+      <ol class="checklist">
+        <li><span class="q">Mark 4H structure on each pair you trade.</span><span class="a">Last break of structure, the current swing high and low, and the 50% level of that leg.</span></li>
+        <li><span class="q">Mark the fresh zones.</span><span class="a">Demand in discount, supply in premium. Delete any zone that has already been tapped.</span></li>
+        <li><span class="q">Set alerts at the near edge of each zone.</span><span class="a">Then close the chart. Pairs sitting in the middle of their range are not candidates today.</span></li>
+        <li><span class="q">Check the news calendar.</span><span class="a">Note high-impact releases for the currencies involved. Do not leave a limit order resting through one.</span></li>
+      </ol>
+
+      <h3 style="margin-top:30px">When an alert fires</h3>
+      <ol class="checklist">
+        <li><span class="q">Map the 30m delivery into the zone.</span><span class="a">Lower highs, lower lows, the last low, and the opposing zone at the origin of the move.</span></li>
+        <li><span class="q">Wait for the sweep and the MSS.</span><span class="a">A low is taken, price fails to continue, and a candle closes above the last lower high with displacement.</span></li>
+        <li><span class="q">Refine on the 15m.</span><span class="a">Find the order block and imbalance left by the displacement. Mark the protected low, which is often a final sweep just before the shift.</span></li>
+        <li><span class="q">Measure before you place.</span><span class="a">Entry, stop, target. If it does not pay 1:2 to the first opposing zone, skip it.</span></li>
+        <li><span class="q">Place entry, stop and target as one order.</span><span class="a">Size for fixed risk. Write down the reason in one sentence.</span></li>
+      </ol>
+
+      <h3 style="margin-top:30px">After the trade</h3>
+      <ol class="checklist">
+        <li><span class="q">Screenshot all three timeframes.</span><span class="a">Before and after. Do it for losers and for setups you skipped as well.</span></li>
+        <li><span class="q">Log it.</span><span class="a">See the journal fields below. Review the log weekly, not trade by trade.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="orders">
+    <div class="wrap">
+      <p class="eyebrow">Order rules</p>
+      <h2>Where the stop and the target go</h2>
+      <div class="ticket" style="margin-top:22px">
+        <div class="card entry">
+          <h4>Entry</h4>
+          <p class="where">Limit order at the near edge of the order block.</p>
+          <ul>
+            <li>Placed when the MSS candle closes.</li>
+            <li>Near edge fills more often than the midpoint. Use the midpoint only if the OB is unusually tall.</li>
+            <li>Buys fill on the ask: add the spread to a buy limit.</li>
+            <li>Cancel if price covers about half the distance to target without a fill.</li>
+          </ul>
+        </div>
+        <div class="card sl">
+          <h4>Stop loss</h4>
+          <p class="where">Beyond the swing that launched the MSS.</p>
+          <ul>
+            <li>Long: below the protected low. Short: above the protected high.</li>
+            <li>Not just beyond the order block. The swing is the real invalidation.</li>
+            <li>Add a buffer of a few pips. On shorts add the spread too, because buy stops trigger on the ask.</li>
+            <li>Never widen a stop after entry. Never size the stop to fit a lot size; size the lot to fit the stop.</li>
+          </ul>
+        </div>
+        <div class="card tp">
+          <h4>Take profit</h4>
+          <p class="where">Near edge of the first opposing zone.</p>
+          <ul>
+            <li>Usually the supply or demand at the origin of the move that delivered price into your HTF zone.</li>
+            <li>Liquidity along the way (trendline highs, equal highs) supports the target. It does not replace it.</li>
+            <li>Set it a few pips short of the zone edge.</li>
+            <li>Under 1:2, there is no trade.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="wrap">
+      <p class="eyebrow">Risk</p>
+      <h2>The rules that keep you in the game</h2>
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card">
+          <h3>Per trade and per day</h3>
+          <ul>
+            <li>Risk a fixed 0.5–1% of the account on every trade. Same risk on the setup you love and the one you doubt.</li>
+            <li>Stop for the day after two losses.</li>
+            <li>Do not hold two trades that are the same bet, such as longs on USD/JPY and EUR/JPY together, at full risk each.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What the win rate has to be</h3>
+          <p>Break-even win rate = 1 ÷ (1 + reward-to-risk), before costs.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Reward : risk</th><th>Break-even win rate</th></tr></thead>
+              <tbody>
+                <tr><td>1:2</td><td>33.3%</td></tr>
+                <tr><td>1:3</td><td>25%</td></tr>
+                <tr><td>1:4</td><td>20%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted" style="margin-top:12px">At 1:3 you can lose most of your trades and still make money, but only if every loss is exactly 1R. Losing streaks of five or more are normal at these win rates.</p>
+        </div>
+      </div>
+      <div class="callout warn" style="margin-top:22px">
+        <h4>On profitability</h4>
+        <p>No pattern guarantees profit. An edge shows up only across many trades taken the same way. Backtest this model on at least 50 occurrences, record the real win rate and average R, then trade it small on live data before sizing up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="journal">
+    <div class="wrap">
+      <p class="eyebrow">Journal</p>
+      <h2>What to record for every setup</h2>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Field</th><th>Example (USD/JPY case)</th></tr></thead>
+          <tbody>
+            <tr><td>Pair / direction</td><td>USD/JPY long</td></tr>
+            <tr><td>HTF zone and quality</td><td>4H demand, fresh, caused MSS, discount</td></tr>
+            <tr><td>Liquidity taken</td><td>Last 30m low, inside the zone</td></tr>
+            <tr><td>Confirmation</td><td>30m MSS, single displacement candle</td></tr>
+            <tr><td>Entry zone</td><td>15m OB with imbalance above</td></tr>
+            <tr><td>Stop</td><td>Below the X sweep low that launched the MSS</td></tr>
+            <tr><td>Target</td><td>Lower edge of 30m supply</td></tr>
+            <tr><td>Planned R / result</td><td>≈ 3R / target hit</td></tr>
+            <tr><td>Followed the plan?</td><td>Yes or no, and what you changed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="glossary">
+    <div class="wrap">
+      <p class="eyebrow">Glossary</p>
+      <h2>Labels used on the charts</h2>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Label</th><th>Meaning as used here</th></tr></thead>
+          <tbody>
+            <tr><td><strong>HTF / LTF</strong></td><td>Higher timeframe (direction and location) and lower timeframe (confirmation and entry).</td></tr>
+            <tr><td><strong>BoS</strong></td><td>Break of structure. Price breaks a swing in the direction of the current trend. On the 30m chart it marks the final low broken on the way into demand.</td></tr>
+            <tr><td><strong>MSS</strong></td><td>Market structure shift. Price closes through the last swing against the current trend, for example above the last lower high in a downtrend. The first sign of reversal.</td></tr>
+            <tr><td><strong>Displacement</strong></td><td>A fast, large-bodied move that leaves an imbalance. Shows intent behind a break.</td></tr>
+            <tr><td><strong>IMB</strong></td><td>Imbalance, also called a fair value gap. A range price moved through too quickly for both sides to trade. Price often returns to it.</td></tr>
+            <tr><td><strong>OB</strong></td><td>Order block. The last opposing candle before a displacement move. Used as the refined entry zone.</td></tr>
+            <tr><td><strong>Supply / demand</strong></td><td>Zones where a strong move down or up began. Fresh means price has not returned since.</td></tr>
+            <tr><td><strong>$$$</strong></td><td>Liquidity. Stops and breakout orders resting above highs (buy-side) or below lows (sell-side), often along a trendline.</td></tr>
+            <tr><td><strong>X</strong></td><td>Marks a liquidity sweep: the spot where a wick ran a high or low and price reversed.</td></tr>
+            <tr><td><strong>Sweep</strong></td><td>Price trades through a high or low to trigger the orders there, then reverses.</td></tr>
+            <tr><td><strong>Premium / discount</strong></td><td>Upper and lower half of a price leg. Sell in premium, buy in discount.</td></tr>
+            <tr><td><strong>Protected low / high</strong></td><td>The swing that launched a break of structure. If it is taken, the break has failed.</td></tr>
+            <tr><td><strong>R</strong></td><td>One unit of risk: the distance from entry to stop. A 1:3 trade pays 3R.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. Trading leveraged products carries a high risk of loss.</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
