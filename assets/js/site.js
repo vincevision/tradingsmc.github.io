@@ -38,6 +38,17 @@ const CASES = [
     result: "TP hit · ≈ 1:3.8",
     summary:
       "The higher timeframe sweeps its low and recovers. The 15m then breaks structure up, and the long is taken from the order block, after the lows above it are cleared, to the buy-side liquidity overhead."
+  },
+  {
+    pair: "BTC/USD",
+    title: "What Happens After the Sweep",
+    href: "cases/btcusd-after-the-sweep.html",
+    thumb: "assets/img/btcusd-after-the-sweep/00-cover.png",
+    direction: "Long",
+    model: "Sweep → 15m MSS → wait for OB",
+    result: "TP hit · ≈ 1:3.5",
+    summary:
+      "Price sweeps a low and shifts up on the 15m, then rallies without filling the order. About nine hours later it returns deep into the order block, fills the long and runs to the highs."
   }
 ];
 
