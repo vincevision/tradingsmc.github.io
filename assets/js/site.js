@@ -141,7 +141,7 @@ const CASES = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "27" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "28" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -184,6 +184,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "27" };
               <a href="${root}sweep-model.html"${cur("sweep-model.html")}>Sweep model<small>Step by step: a swept low or high, then a shift</small></a>
             </div>
           </details>
+          <a href="${root}checklist.html"${cur("checklist.html")}>Checklist</a>
           <a href="${root}playbook.html"${cur("playbook.html")}>Playbook</a>
           <details>
             <summary>Concepts</summary>

@@ -98,6 +98,9 @@
     } catch (e) { return ""; }
   }
 
+  // Shared with the live checklist, which sends screenshots to the same API.
+  window.SMC_AI = { endpoint: ENDPOINT, token: async function () { await loadKb(); return token(); } };
+
   // ---------- model call ----------
   const SYSTEM = [
     "You are the assistant on VinceVision SMC, a website of Smart Money Concepts (SMC) trading case studies and concept pages.",

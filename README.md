@@ -7,6 +7,7 @@ SMC trade case studies: why each trade was taken, where the stop and target go, 
 - `index.html` — home page and case-study menu
 - `strategy.html` — the strategy step by step, from direction to journal, with inline SVG diagrams (top-level menu item)
 - `sweep-model.html` — the sweep model step by step (second item in the Strategy menu)
+- `checklist.html` + `assets/js/checklist.js` — live interactive checklist with an optional AI screenshot check per step (top-level menu item; progress is kept in the browser)
 - `playbook.html` — the combined daily routine, order rules, risk rules and glossary
 - `entry-models.html` — aggressive vs confirmation entry models
 - `inducement.html` — inducement (liquidity trap) concept page

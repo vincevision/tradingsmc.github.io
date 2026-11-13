@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Checklist — VinceVision SMC</title>
+  <meta name="description" content="An interactive checklist for analysing a trade step by step, with an optional AI check of your chart screenshot at each step, an order calculator and a journal summary.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=28">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Live checklist</p>
+      <h1>Check the trade, one step at a time</h1>
+      <p class="lead">Use this while you analyse. Choose the model and direction, then work down the nine steps. Each step unlocks when the one before it is complete, so nothing gets skipped. On the chart steps you can add a screenshot and have the AI check it against the step.</p>
+      <ul class="chips">
+        <li class="chip">9 steps</li>
+        <li class="chip demand">Zone model or sweep model</li>
+        <li class="chip target">Optional AI screenshot check</li>
+      </ul>
+
+      <div class="callout info" style="margin-top:24px">
+        <h4>How it works</h4>
+        <p>Tick each box only when it is true on your chart. To use the AI check, add a screenshot that shows the timeframe, your lines and the price axis, then press “Check with AI”. It answers “looks right”, “cannot tell” or “something does not match”, with what it saw. Your progress is saved in this browser. Screenshots are sent to Groq for the check and are not stored on this site.</p>
+      </div>
+      <div class="callout warn" style="margin-top:14px">
+        <h4>What the AI check is and is not</h4>
+        <p>It is a second pair of eyes that reads a picture. It can misread a chart, miss a wick or agree with a mistake. Treat “looks right” as “nothing obviously wrong”, not as approval to trade. If it disagrees with you, look again; you can still continue on your own judgement.</p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <div id="checklist-app">
+        <noscript><p>The live checklist needs JavaScript. The same steps are written out on the <a href="strategy.html">zone model</a> and <a href="sweep-model.html">sweep model</a> pages.</p></noscript>
+      </div>
+      <p class="small muted" style="margin-top:26px">The steps are explained in full on the <a href="strategy.html">zone model</a> and <a href="sweep-model.html">sweep model</a> pages. The rules behind them are in the <a href="playbook.html">playbook</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. The AI check is a second opinion on a screenshot and can be wrong. It does not see live prices and does not tell you to buy or sell. The decision and the risk are yours.</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=28"></script>
+<script src="assets/js/checklist.js?v=28" defer></script>
+</body>
+</html>
