@@ -5,6 +5,7 @@ SMC trade case studies: why each trade was taken, where the stop and target go, 
 - `index.html` — home page and case-study menu
 - `playbook.html` — the combined daily routine, order rules, risk rules and glossary
 - `entry-models.html` — aggressive vs confirmation entry models
+- `inducement.html` — inducement (liquidity trap) concept page
 - `cases/` — one page per case study
 - `assets/img/<slug>/` — screenshots for each case
 - `assets/js/site.js` — header, menu and home-page list (driven by the `CASES` array)
