@@ -29,3 +29,9 @@ SMC trade case studies: why each trade was taken, where the stop and target go, 
 Plain static HTML, no build step. Preview locally with `python3 -m http.server`.
 
 The root-level `<slug>.html` files are redirects to `cases/<slug>.html`, so the short address works too. Add one for each new case.
+
+## Site assistant (chatbot)
+
+- `assets/js/chat.js` — the chat button and panel, loaded by `site.js` on every page.
+- `assets/chat/knowledge.json` — the page text the assistant answers from. After adding or editing a page, run `python3 tools/build_knowledge.py` and bump the `v` value of `SMC_CHAT` in `site.js`.
+- The assistant calls the Groq API from the browser. The key is split across files, which only keeps it out of plain sight; anyone can read it from the browser's network requests. To hide it properly, put a small proxy in front of the API and set `window.SMC_CHAT = { endpoint: "<proxy URL>" }` before `site.js` loads.
