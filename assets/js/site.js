@@ -129,6 +129,9 @@ const CASES = [
   }
 ];
 
+window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "23" };
+
 (function () {
   const root = document.documentElement.dataset.root || "";
   const here = location.pathname.split("/").pop() || "index.html";
@@ -255,4 +258,10 @@ const CASES = [
     box.addEventListener("click", close);
     document.addEventListener("keydown", (e) => e.key === "Escape" && close());
   }
+
+  // ----- Site assistant (loaded after the page so it never blocks reading) -----
+  const chat = document.createElement("script");
+  chat.src = root + "assets/js/chat.js?v=" + window.SMC_CHAT.v;
+  chat.defer = true;
+  document.body.appendChild(chat);
 })();
