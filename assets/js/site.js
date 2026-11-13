@@ -84,6 +84,17 @@ const CASES = [
       "H4 is bullish and price reaches demand. The M15 shifts up, then offers two entries that are early. The long is taken at the M15 demand at the origin of the shift, after the inducement and the lows above the zone are cleared."
   },
   {
+    pair: "AUD/USD",
+    title: "Short From the 1H Order Block",
+    href: "cases/audusd-1h-ob-short.html",
+    thumb: "assets/img/audusd-1h-ob-short/00-cover.png",
+    direction: "Short",
+    model: "1H MSS → 1H OB → 15m OB",
+    result: "TP hit · ≈ 1:2.5",
+    summary:
+      "The 1H takes an old high and shifts down. Price returns to the 1H order block, the 15m sweeps and shifts there, and the short is taken at the 15m order block after the inducement high is cleared, targeting the low."
+  },
+  {
     pair: "GBP/AUD",
     title: "Trade Breakdown",
     href: "cases/gbpaud-trade-breakdown.html",
