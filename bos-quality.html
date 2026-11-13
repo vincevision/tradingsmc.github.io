@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Good vs Bad Break of Structure</title>
+  <meta name="description" content="Why a break of structure that follows a liquidity sweep leaves a protected low, why one without a sweep leaves a low that is likely to be taken, and how that changes entry, stop loss and take profit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=16">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <!-- ===== Intro ===== -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Concept</p>
+      <h1>Good vs bad break of structure</h1>
+      <p class="lead">Two uptrends can print the same break of structure and leave very different lows behind. If the pullback swept the previous low before price broke higher, the new low is protected. If it did not, the lows underneath are still untouched, and price is likely to come back for them. The second kind is where zone entries get stopped out.</p>
+      <ul class="chips">
+        <li class="chip demand">Drawn as longs</li>
+        <li class="chip">Concept, no pair named</li>
+        <li class="chip supply">Includes a losing trade</li>
+      </ul>
+
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#s1">1 · Good BoS</a></li>
+        <li><a href="#s2">2 · Bad BoS</a></li>
+        <li><a href="#s3">3 · Example: good</a></li>
+        <li><a href="#s4">4 · Example: bad</a></li>
+        <li><a href="#tell">Telling them apart</a></li>
+        <li><a href="#orders">Entry, SL &amp; TP</a></li>
+        <li><a href="#repeat">Repeatable steps</a></li>
+        <li><a href="#cases">In the case studies</a></li>
+      </ul>
+
+      <div class="callout info" style="margin-top:28px">
+        <h4>How to read this page</h4>
+        <p><strong>X</strong> marks a liquidity sweep. <strong>BoS</strong> is a break of structure. <strong>BSL</strong> is buy-side liquidity. The slide captions are quoted. The two candle examples show no pair, timeframe or price scale, so the detail in them is my reading. Reward-to-risk is measured from the position boxes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Slide 1 ===== -->
+  <section id="s1">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge: Good BoS: the pullback sweeps the last low first">
+          <img src="assets/img/bos-quality/01-good-bos.png" alt="Line drawing of an uptrend. Price makes a high, pulls back to a low, breaks the high, then pulls back below the previous low, marked X, before rallying to break the latest high. An arrow points to the sweep low.">
+        </button>
+        <figcaption>Slide 1 — “Good BoS: Swept liquidity before creating a new higher high, leaving a protected low.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">1 · The idea</span>
+        <h2>Good BoS: the pullback sweeps the last low first</h2>
+        <h4>What the drawing shows</h4>
+        <ol>
+          <li><strong>A normal uptrend.</strong> A high, a pullback low, then a break above the high (the first BoS).</li>
+          <li><strong>A deeper second pullback.</strong> It goes under the previous pullback low. That is the X.</li>
+          <li><strong>The break.</strong> From that sweep low price rallies and breaks the latest high (the second BoS).</li>
+        </ol>
+
+        <h4>Why the new low is protected</h4>
+        <p>Buyers from the first leg had stops under the first pullback low. The sweep took them. There is no clean low left under the new one, so price has less reason to come back down. The new low also launched a break of structure, which makes it the level the uptrend now depends on.</p>
+
+        <div class="callout warn">
+          <h4>A sweep, not a close</h4>
+          <p>A line drawing cannot show wicks. In the candle example below, price dips under the earlier low and turns straight back up. If price closes below the previous low and stays there, that is structure breaking down, not a sweep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 2 ===== -->
+  <section id="s2">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge: Bad BoS: a higher low with stops still under it">
+          <img src="assets/img/bos-quality/02-bad-bos.png" alt="Line drawing of an uptrend. Price makes a high, pulls back to a low, breaks the high, pulls back to a higher low without reaching the previous low, and breaks the latest high. An arrow points to the higher low." loading="lazy">
+        </button>
+        <figcaption>Slide 2 — “Bad BoS: Did not sweep liquidity before breaking structure. This leaves an unprotected low with high potential to be swept in the future.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">2 · The contrast</span>
+        <h2>Bad BoS: a higher low with stops still under it</h2>
+        <h4>What the drawing shows</h4>
+        <ol>
+          <li><strong>The same uptrend.</strong> High, pullback low, break.</li>
+          <li><strong>A shallow second pullback.</strong> It stops above the previous low. A tidy higher low.</li>
+          <li><strong>The break.</strong> Price breaks the latest high all the same.</li>
+        </ol>
+
+        <h4>Why the low is unprotected</h4>
+        <p>Nothing was taken. Stops are still under the first low, and new stops are now under the second. That is two layers of sell-side liquidity stacked under price. The post says such a low has “high potential to be swept in the future”.</p>
+        <p>“Bad” does not mean the break is fake. Price did make a higher high. It means the low is a poor place to buy from and a poor place to hide a stop behind.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>After every break of structure, look at the low it came from and ask one question: did that low take out the low before it? If yes, it is protected. If no, mark it as liquidity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 3 ===== -->
+  <section id="s3">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge: Example: the good break holds">
+          <img src="assets/img/bos-quality/03-example-good.png" alt="Candle chart. Two breaks of structure upward. Before the second, price dips under an earlier low, marked X, and a large bullish candle follows. A demand zone is drawn from that sweep low. Price rallies to a high marked BSL, returns into the zone, and the long from the top of the zone reaches the BSL." loading="lazy">
+        </button>
+        <figcaption>Slide 3 — “Example, Good BoS. Swept liquidity before creating a new higher high, leaving a protected low.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">3 · On a chart</span>
+        <h2>Example: the good break holds</h2>
+        <h4>What happened</h4>
+        <ol>
+          <li><strong>An uptrend with a BoS.</strong> Then a pullback.</li>
+          <li><strong>The sweep (X).</strong> The pullback dips under an earlier low. A large bullish candle follows at once.</li>
+          <li><strong>The second BoS.</strong> Price breaks the previous high and keeps climbing to a new one. That high is marked BSL.</li>
+          <li><strong>The zone.</strong> A box from the sweep low up to the base of the rally.</li>
+          <li><strong>The return.</strong> Price falls back and dips into the upper part of the zone.</li>
+          <li><strong>The result.</strong> It turns there and rallies through the BSL.</li>
+        </ol>
+
+        <h4>The position box</h4>
+        <ul class="ticks">
+          <li>Entry at the top edge of the zone.</li>
+          <li>Stop at the bottom of the zone, which is the sweep low.</li>
+          <li>Target at the BSL, about 2.6 times the stop.</li>
+        </ul>
+        <p>The pullback into the zone never came near the sweep low. There was nothing left under it to take.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 4 ===== -->
+  <section id="s4">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge: Example: the bad break fails">
+          <img src="assets/img/bos-quality/04-example-bad.png" alt="Candle chart. Two breaks of structure upward. An order block is drawn at a pullback low that sits above an earlier, untouched low marked with a line. Price rallies to a high marked BSL, returns to the order block, bounces about halfway to the target, then falls through the order block, the earlier low and the stop." loading="lazy">
+        </button>
+        <figcaption>Slide 4 — “Example, Bad BoS. Did not sweep liquidity before breaking structure. Leaves an unprotected low.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">4 · On a chart</span>
+        <h2>Example: the bad break fails</h2>
+        <h4>What happened</h4>
+        <ol>
+          <li><strong>An uptrend with a BoS.</strong> A pullback leaves a low. The line under the chart is drawn from it.</li>
+          <li><strong>A higher low.</strong> The next pullback stops above that line. The order block (OB) is drawn here.</li>
+          <li><strong>The second BoS.</strong> Price breaks higher and runs to a new high, marked BSL.</li>
+          <li><strong>The return.</strong> Price falls back and taps the top of the order block. The long fills.</li>
+          <li><strong>A bounce.</strong> Price climbs roughly halfway to the target.</li>
+          <li><strong>The failure.</strong> It rolls over, goes through the order block, through the earlier low and through the stop. The last wick ends well below.</li>
+        </ol>
+
+        <h4>The position box</h4>
+        <ul class="ticks no">
+          <li>Entry at the top edge of the order block.</li>
+          <li>Stop under the order block. As far as I can read the slide, it sits just beneath the earlier low.</li>
+          <li>Target at the BSL, about 3 times the stop. Not reached. The trade lost 1R.</li>
+        </ul>
+        <p>On the way up, this chart looked the same as the good one: two breaks, a zone, a return to the zone. The difference was underneath. An untouched low sat just below the order block, and price went and took it.</p>
+
+        <div class="callout warn">
+          <h4>The bounce is the dangerous part</h4>
+          <p>The trade was in profit by roughly 1.4R, measured from the box, before it failed. A trader who moved the stop to break-even there lost nothing. A trader who held for the full target lost 1R. Neither changes the lesson: the entry was at a zone with liquidity under it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tell">
+    <div class="wrap">
+      <p class="eyebrow">Telling them apart</p>
+      <h2>Protected or unprotected?</h2>
+      <figure style="max-width:420px;margin:18px 0">
+        <button class="shot" type="button" aria-label="Enlarge cover slide">
+          <img src="assets/img/bos-quality/00-cover.png" alt="Cover slide: Good vs Bad Break of Structure. Two line drawings side by side. On the left the second pullback sweeps the previous low, marked X. On the right the second pullback makes a higher low." loading="lazy">
+        </button>
+        <figcaption>Cover — good on the left, bad on the right.</figcaption>
+      </figure>
+      <p class="lead">The check has to be made before the order is placed. The first row comes from the slides. The others are my additions, drawn from the case studies.</p>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Check</th><th>Protected low (good BoS)</th><th>Unprotected low (bad BoS)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Did the low take out the low before it?</strong></td><td>Yes. There is an X</td><td>No. It is a higher low</td></tr>
+            <tr><td><strong>What is under the zone?</strong></td><td>Only the sweep low itself</td><td>One or more clean, untouched lows</td></tr>
+            <tr><td><strong>How did price leave the low?</strong></td><td>Fast, usually one large candle with an imbalance</td><td>Often a steady climb</td></tr>
+            <tr><td><strong>Is it at a higher-timeframe zone?</strong></td><td>Often. The sweep runs into HTF demand</td><td>Often mid-leg, above any HTF zone</td></tr>
+            <tr><td><strong>What to do</strong></td><td>Buy the zone at the low</td><td>Mark the low as liquidity. Wait for it to be swept, or pass</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout rule" style="margin-top:22px">
+        <h4>A bad BoS can become a good setup</h4>
+        <p>In the losing example, price ended by sweeping the unprotected low. That sweep is step one of the sequence on this site. If price then shifts structure back up with an imbalance, the zone that shift leaves is the one to buy. The slide does not show what happened next, so this is a rule to test, not a result.</p>
+      </div>
+
+      <div class="callout warn" style="margin-top:22px">
+        <h4>Not a guarantee in either direction</h4>
+        <p>Protected lows are broken when the trend ends. Unprotected lows sometimes hold for a long time in a strong trend, and waiting for the sweep means missing those moves. The post says “high potential”, not certainty.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="orders">
+    <div class="wrap">
+      <p class="eyebrow">Order placement</p>
+      <h2>Entry, stop loss and take profit</h2>
+      <p class="lead">For the long after a good break, as drawn on slide 3.</p>
+      <div class="ticket" style="margin-top:22px">
+        <div class="card entry">
+          <h4>Entry</h4>
+          <p class="where">Buy limit at the top edge of the zone at the protected low.</p>
+          <ul>
+            <li>The zone runs from the sweep low up to the base of the candle that launched the break.</li>
+            <li>The example filled in the upper part of the zone.</li>
+            <li>Only place the order once the break of structure has closed.</li>
+          </ul>
+        </div>
+        <div class="card sl">
+          <h4>Stop loss</h4>
+          <p class="where">Below the sweep low, plus a buffer.</p>
+          <ul>
+            <li>The grey box on slide 3 ends at the sweep low. Go a little beyond the wick.</li>
+            <li>If that low breaks, the protected low has failed and the uptrend is in question.</li>
+            <li>If an untouched low sits under your stop, the stop is not safe. That is the losing example.</li>
+          </ul>
+        </div>
+        <div class="card tp">
+          <h4>Take profit</h4>
+          <p class="where">The BSL: the high made after the break.</p>
+          <ul>
+            <li>About 2.6R in the example.</li>
+            <li>Set the order a little before the line.</li>
+            <li>Skip the trade if the high is closer than twice the stop.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="repeat">
+    <div class="wrap narrow">
+      <p class="eyebrow">Repeatable strategy</p>
+      <h2>Step-by-step for the next trade</h2>
+      <p class="lead">Written for longs. For shorts, mirror it: a good break down comes after a high is swept.</p>
+
+      <ol class="checklist" style="margin-top:24px">
+        <li><span class="q">Find the last break of structure in the trend direction.</span><span class="a">Mark the low it launched from.</span></li>
+        <li><span class="q">Did that low sweep the low before it?</span><span class="a">Yes: protected. Go to step 4. No: unprotected. Go to step 3.</span></li>
+        <li><span class="q">Unprotected: mark it as liquidity and do not buy the zone.</span><span class="a">Set an alert under the low. If it is swept and price shifts back up, treat that as a new setup.</span></li>
+        <li><span class="q">Protected: draw the zone from the sweep low to the base of the launch candle.</span><span class="a">Check that nothing clean and untouched lies beneath it.</span></li>
+        <li><span class="q">Mark the high made after the break.</span><span class="a">That is the BSL and the target.</span></li>
+        <li><span class="q">Buy limit at the top edge of the zone, stop below the sweep low.</span><span class="a">At least 1:2 to the target.</span></li>
+        <li><span class="q">Size, place, hold, record.</span><span class="a">Risk 0.5–1%. Note in the journal whether the low was protected.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="wrap">
+      <p class="eyebrow">In the case studies</p>
+      <h2>Where this has already appeared</h2>
+      <p class="lead">Every case study on this site took its entry from a low or high that followed a sweep. The <a href="playbook.html#patterns">comparison table in the playbook</a> has a row for it, “Sweep before the LTF shift”, and it reads yes in all nine.</p>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Page</th><th>How it connects</th></tr></thead>
+          <tbody>
+            <tr><td><a href="full-sequence.html">The full sequence</a></td><td>The same idea one step earlier: sweep, then shift, then zone. A good BoS is that sequence seen from the trend's side</td></tr>
+            <tr><td><a href="inducement.html">Inducement</a></td><td>A zone that forms after the break, with a clean low under it, is bait. That is an unprotected low by another name</td></tr>
+            <tr><td><a href="liquidity.html#p3">Types of liquidity</a></td><td>Two higher lows close together are relative equal lows or trendline liquidity. Both are targets</td></tr>
+            <tr><td><a href="cases/gbpjpy-sweep-before-structure.html">GBP/JPY long</a></td><td>“Strong structure starts with a sweep.” The same claim, shown on a winning trade</td></tr>
+            <tr><td><a href="cases/usdjpy-case-study-breakdown.html">USD/JPY long (1H)</a></td><td>The pullback low before the 30m BoS was unprotected. Price came back through it to the demand below</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout info" style="margin-top:22px">
+        <h4>Why the losing example matters</h4>
+        <p>This is the first losing trade on the site. One good and one bad example prove nothing about frequency. Their use is to give you something to count: when you backtest, record for every zone entry whether the low was protected, and compare the two win rates yourself.</p>
+      </div>
+
+      <p style="margin-top:26px"><a class="btn" href="playbook.html">Open the playbook</a><a class="btn ghost" href="index.html#cases">All case studies</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. Charts and diagrams are credited to TrendForge.FX; the commentary is an independent reading of them and may differ from the original author's reasoning.</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=16"></script>
+</body>
+</html>
