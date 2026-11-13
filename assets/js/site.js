@@ -71,6 +71,17 @@ const CASES = [
     result: "TP hit · ≈ 1:3.2",
     summary:
       "H4 is bullish and price reaches demand. The M15 shifts up, then offers two entries that are early. The long is taken at the M15 demand at the origin of the shift, after the inducement and the lows above the zone are cleared."
+  },
+  {
+    pair: "GBP/AUD",
+    title: "Trade Breakdown",
+    href: "cases/gbpaud-trade-breakdown.html",
+    thumb: "assets/img/gbpaud-trade-breakdown/00-cover.png",
+    direction: "Long",
+    model: "1H demand → 15m MSS → 15m demand",
+    result: "TP hit · ≈ 1:2.9",
+    summary:
+      "A 1H demand that broke structure is tapped. The 15m ranges, sweeps the range low and shifts on one candle. The long is taken at the 15m demand after the inducement low is cleared, targeting the high above."
   }
 ];
 
