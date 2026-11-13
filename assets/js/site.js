@@ -147,7 +147,7 @@ const CASES = [
             <div class="menu">
               <a href="${root}entry-models.html"${cur("entry-models.html")}>Entry models<small>Aggressive vs confirmation entry</small></a>
               <a href="${root}full-sequence.html"${cur("full-sequence.html")}>The full sequence<small>Structure, sweep, MSS, IMB and OB in one trade</small></a>
-              <a href="${root}liquidity.html"${cur("liquidity.html")}>Types of liquidity<small>Trendlines, ranges and session highs and lows</small></a>
+              <a href="${root}liquidity.html"${cur("liquidity.html")}>Types of liquidity<small>Swings, equal highs and lows, trendlines, ranges, sessions</small></a>
               <a href="${root}inducement.html"${cur("inducement.html")}>Inducement<small>The liquidity trap before the real zone</small></a>
             </div>
           </details>
