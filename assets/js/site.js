@@ -16,6 +16,17 @@ const CASES = [
     result: "TP hit · ≈ 1:3",
     summary:
       "Price returns to a 4H demand zone, sweeps the last low, shifts structure on the 30m, and offers a 15m order-block entry targeting the opposing 30m supply."
+  },
+  {
+    pair: "XAU/USD",
+    title: "Textbook Institutional Flow",
+    href: "cases/xauusd-institutional-flow.html",
+    thumb: "assets/img/xauusd-institutional-flow/00-cover.png",
+    direction: "Short",
+    model: "4H sweep + MSS → 1H sweep → 15m OB",
+    result: "TP hit · ≈ 1:3.8",
+    summary:
+      "The 4H sweeps a high and shifts bearish. The pullback runs the 1H internal highs, the 15m shifts down, and the short is taken from the order block to the demand zone below."
   }
 ];
 
@@ -86,7 +97,7 @@ const CASES = [
                 <h3>${esc(c.pair)} — ${esc(c.title)}</h3>
                 <p>${esc(c.summary)}</p>
                 <ul class="chips">
-                  <li class="chip demand">${esc(c.direction)}</li>
+                  <li class="chip ${c.direction === "Short" ? "supply" : "demand"}">${esc(c.direction)}</li>
                   <li class="chip">${esc(c.model)}</li>
                   <li class="chip target">${esc(c.result)}</li>
                 </ul>
