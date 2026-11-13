@@ -98,19 +98,27 @@ const CASES = [
         <nav class="nav" aria-label="Main">
           <a class="hide-sm" href="${root}index.html"${cur("index.html")}>Home</a>
           <a href="${root}playbook.html"${cur("playbook.html")}>Playbook</a>
-          <a href="${root}entry-models.html"${cur("entry-models.html")}>Entry models</a>
+          <details>
+            <summary>Concepts</summary>
+            <div class="menu">
+              <a href="${root}entry-models.html"${cur("entry-models.html")}>Entry models<small>Aggressive vs confirmation entry</small></a>
+              <a href="${root}inducement.html"${cur("inducement.html")}>Inducement<small>The liquidity trap before the real zone</small></a>
+            </div>
+          </details>
           <details>
             <summary>Case studies</summary>
             <div class="menu">${menu}</div>
           </details>
         </nav>
       </div>`;
-    const details = header.querySelector("details");
+    const allDetails = header.querySelectorAll("details");
     document.addEventListener("click", (e) => {
-      if (!details.contains(e.target)) details.removeAttribute("open");
+      allDetails.forEach((d) => {
+        if (!d.contains(e.target)) d.removeAttribute("open");
+      });
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") details.removeAttribute("open");
+      if (e.key === "Escape") allDetails.forEach((d) => d.removeAttribute("open"));
     });
   }
 

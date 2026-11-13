@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inducement — A Liquidity Trap</title>
+  <meta name="description" content="Inducement explained step by step: why the first clean-looking setup after a structure shift is often a liquidity trap, how to tell it from the real zone, and where to place entry, stop loss and take profit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=8">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <!-- ===== Intro ===== -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Concept</p>
+      <h1>Inducement: a liquidity trap</h1>
+      <p class="lead">After a sweep and a structure shift, price often pauses and leaves a small, tidy zone close to current price. It has a break of structure, a pullback and sometimes an imbalance. It looks like the entry. Its real job is to collect buyers and their stops, so that price has something to take on its way to the zone the move actually came from.</p>
+      <ul class="chips">
+        <li class="chip demand">Drawn as longs</li>
+        <li class="chip">Concept, no pair named</li>
+        <li class="chip target">Mirror for shorts</li>
+      </ul>
+
+      <div class="callout" style="margin-top:8px">
+        <h4>From the post's closing slide</h4>
+        <p>“The first setup that looks valid is often not the best one. The better entry usually comes after the trap, not before it.”</p>
+      </div>
+
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#s1">1 · Two zones</a></li>
+        <li><a href="#s2">2 · Why it looks clean</a></li>
+        <li><a href="#s3">3 · Early entries stopped</a></li>
+        <li><a href="#s4">4 · The real zone</a></li>
+        <li><a href="#tell">Telling them apart</a></li>
+        <li><a href="#orders">Entry, SL &amp; TP</a></li>
+        <li><a href="#repeat">Repeatable steps</a></li>
+        <li><a href="#cases">In the case studies</a></li>
+      </ul>
+
+      <div class="callout info" style="margin-top:28px">
+        <h4>How to read this page</h4>
+        <p>The slides show one candle chart at three moments, plus one line drawing of the same idea. No pair, timeframe or price scale is given. <strong>X</strong> marks a liquidity sweep. <strong>$$$</strong> marks resting liquidity. <strong>BSL</strong> is buy-side liquidity. Where I give a reward-to-risk figure it is measured from the drawn boxes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Slide 1 ===== -->
+  <section id="s1">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: inducement cover">
+          <img src="assets/img/inducement/01-cover.png" alt="Candle chart. A range low is swept (X), a large bullish candle breaks structure (MSS), price pauses briefly and continues up. Two demand zones are marked: a lower one at the base of the large candle and an upper one at the pause, with a liquidity line under the upper one.">
+        </button>
+        <figcaption>Slide 1 — “Inducement: A Liquidity Trap.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 1 · The setup</span>
+        <h2>One move, two zones</h2>
+
+        <h4>What the chart shows</h4>
+        <ol>
+          <li><strong>A range, then a sweep (X).</strong> Price drifts sideways. A wick runs under the earlier low of the range and is rejected.</li>
+          <li><strong>MSS on one large candle.</strong> A single bullish candle closes above the range high. This is the displacement.</li>
+          <li><strong>The lower zone.</strong> Drawn at the base of that candle, where the move began. Price has not been back to it.</li>
+          <li><strong>A short pause, then continuation.</strong> Two small candles pull back a little. The next candle breaks to a new high.</li>
+          <li><strong>The upper zone.</strong> Drawn around that pause. The line under it is marked $$$: the low of the pause, where stops will sit.</li>
+        </ol>
+
+        <h4>The question the slide is asking</h4>
+        <p>Both boxes are demand zones by the usual definition. The upper one is closer, it formed after the shift and it led to a new high. The lower one is further away and needs a deeper pullback. Which do you buy?</p>
+        <p>The label gives it away. The upper zone has liquidity marked directly beneath it. The lower one has nothing beneath it except the sweep that has already happened.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>When two zones are stacked, ask which one is the origin of the displacement that broke structure. That is the real zone. A zone formed after the break, on the way up, is a candidate for inducement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 2 ===== -->
+  <section id="s2">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge diagram: a small structure forms">
+          <img src="assets/img/inducement/02-small-structure.png" alt="Line diagram. Price rallies from a higher-timeframe order block, breaks structure, and returns to a zone labelled Inducement where it sweeps a low and shifts up; a long is taken and then stopped out as price falls through the zone. Price then sweeps a low inside the higher-timeframe order block, shifts up, and a second long from a lower-timeframe order block reaches the target.">
+        </button>
+        <figcaption>Slide 2 — “A small structure forms. A BOS, a pullback, maybe a IBM. It looks like a clean entry.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 2 · The trap in detail</span>
+        <h2>Why the trap looks like a clean entry</h2>
+        <p>This drawing shows two trades with the same pattern. The first loses. The second wins. Read it left to right.</p>
+
+        <h4>The first trade: at the inducement zone</h4>
+        <ol>
+          <li><strong>Price leaves the HTF order block and breaks structure (BoS).</strong> The pullback low that led to the break is boxed and labelled Inducement, with $$$ under it.</li>
+          <li><strong>Price returns to that zone.</strong></li>
+          <li><strong>Inside it, a small low is swept (X) and structure shifts up (MSS).</strong> That is a complete confirmation pattern.</li>
+          <li><strong>A long is taken.</strong> The first position box: entry at the top of the zone, stop just under the $$$ low.</li>
+          <li><strong>Price falls straight through.</strong> The $$$ low and the stop are taken.</li>
+        </ol>
+
+        <h4>The second trade: at the HTF order block</h4>
+        <ol>
+          <li><strong>Price carries on down into the HTF OB.</strong></li>
+          <li><strong>The same pattern prints again.</strong> A low is swept (X), then an MSS.</li>
+          <li><strong>A long is taken from the LTF order block</strong> that the shift leaves behind, with the stop under the sweep low.</li>
+          <li><strong>Price rallies to the earlier high.</strong> About three times the risk on the drawing.</li>
+        </ol>
+
+        <h4>Why this matters</h4>
+        <p>This is the uncomfortable part. The first trade was not careless. It waited for a sweep and a shift, which is exactly what the confirmation model asks for. It still lost, because of <em>where</em> it happened: above the higher-timeframe zone, with a clean low underneath it and the real zone still untouched below that.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>A confirmation pattern is only as good as its location. Sweep plus shift inside the higher-timeframe zone is a signal. The same pattern above the zone, with liquidity resting beneath it, is bait.</p>
+        </div>
+        <p class="small muted">The slide text says “IBM”. From the other posts I read it as IMB, imbalance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 3 ===== -->
+  <section id="s3">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: traders enter early">
+          <img src="assets/img/inducement/03-early-entries.png" alt="Candle chart continued. Price has made a new high and fallen back into the upper zone. A long position is drawn from the top of the upper zone with its stop under the liquidity line; the last candle's wick goes below that stop. An imbalance separates the upper and lower zones, and a BSL line marks the target above.">
+        </button>
+        <figcaption>Slide 3 — “Traders enter early. Price goes against them and takes their stops.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 3 · The trap closes</span>
+        <h2>Traders enter early and are stopped</h2>
+
+        <h4>What happened</h4>
+        <ol>
+          <li><strong>Price made its new high and turned.</strong> A run of bearish candles brings it back to the upper zone.</li>
+          <li><strong>The early long.</strong> The position box shows the trade most people take: buy the top of the upper zone, stop just under the $$$ low, target the BSL line at the top.</li>
+          <li><strong>Price stalls inside the zone.</strong> A few small candles. It looks like the zone is holding.</li>
+          <li><strong>One candle drops through the $$$ line.</strong> Its wick goes below the stop. The early longs are out.</li>
+          <li><strong>An imbalance lies below (IMB).</strong> The gap left by the displacement candle sits between the two zones and has not been filled.</li>
+        </ol>
+
+        <h4>What gave it away beforehand</h4>
+        <ul class="ticks no">
+          <li>An unfilled imbalance directly beneath the upper zone.</li>
+          <li>An untouched zone at the origin of the move, beneath the imbalance.</li>
+          <li>A single obvious low under the upper zone for stops to gather at.</li>
+          <li>A shallow pullback. The upper zone is roughly at the middle of the leg; the lower zone is in the discount half.</li>
+        </ul>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>Before buying a zone, look underneath it. If there is an unfilled imbalance and an untouched origin zone below, expect price to go there, and expect the stops under your zone to be taken on the way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 4 ===== -->
+  <section id="s4">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: price reaches the real zone">
+          <img src="assets/img/inducement/04-real-zone.png" alt="Candle chart continued. Price falls through the upper zone and the imbalance, a wick touches the top of the lower zone, and price then rallies up to and through the BSL line.">
+        </button>
+        <figcaption>Slide 4 — “Only then does price reach the real zone. This is where the move starts.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 4 · The real entry</span>
+        <h2>Only then does price reach the real zone</h2>
+
+        <h4>What happened</h4>
+        <ol>
+          <li><strong>Price kept falling after the stops were taken.</strong> It filled the imbalance.</li>
+          <li><strong>A wick touched the top of the lower zone.</strong> Just the edge, then a close back above.</li>
+          <li><strong>Price turned and rallied.</strong> Back up through the upper zone, to the earlier high, then on to the BSL line and through it.</li>
+        </ol>
+        <p>The position box still on the slide is the early trade from slide 3, shown for comparison. Its target was reached in the end, but only after its stop had been hit.</p>
+
+        <h4>What to take from it</h4>
+        <ul>
+          <li><strong>The early traders had the direction and the target right.</strong> They lost on location alone.</li>
+          <li><strong>The fill at the real zone was a wick.</strong> A limit order at the top edge filled. Waiting to watch a reaction would have meant chasing.</li>
+          <li><strong>The trap supplied the fuel.</strong> Stops from the early longs are sell orders. They gave larger buyers something to fill against at a better price.</li>
+        </ul>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>Put the limit order at the origin zone and treat everything above it as liquidity. The better entry comes after the trap, not before it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Tell apart ===== -->
+  <section id="tell">
+    <div class="wrap">
+      <p class="eyebrow">Telling them apart</p>
+      <h2>Inducement or the real zone?</h2>
+      <p class="lead">The slides show what inducement looks like after the fact. The table below turns that into checks you can run beforehand. The first two rows come from the slides. The rest are my reading.</p>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Check</th><th>Inducement</th><th>Real zone</th></tr></thead>
+          <tbody>
+            <tr><td><strong>What is underneath it?</strong></td><td>A clean low with stops ($$$), and often an unfilled imbalance</td><td>The sweep low. The liquidity there has already been taken</td></tr>
+            <tr><td><strong>How did it form?</strong></td><td>A pause or small pullback after structure had already broken</td><td>The base of the displacement that broke structure</td></tr>
+            <tr><td><strong>Where is it in the leg?</strong></td><td>Shallow, around or above the midpoint</td><td>Deep, in the discount half</td></tr>
+            <tr><td><strong>Where is it relative to the HTF zone?</strong></td><td>Above it. Price has left the HTF zone and not come back</td><td>Inside it</td></tr>
+            <tr><td><strong>Is another untouched zone below?</strong></td><td>Yes</td><td>No. It is the last zone before the sweep low</td></tr>
+            <tr><td><strong>How obvious is it?</strong></td><td>Very. It is the first thing everyone sees</td><td>Less. It needs a deeper pullback that feels like the move is failing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn" style="margin-top:22px">
+        <h4>The first zone sometimes holds</h4>
+        <p>None of these checks is certain. In a strong trend price can turn at the shallow zone and never come back for the deep one. If you always wait for the origin zone you will miss those moves. That is the price of avoiding the trap, and it is why the post says “often” and “usually”, not “always”.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Orders ===== -->
+  <section id="orders">
+    <div class="wrap">
+      <p class="eyebrow">Order placement</p>
+      <h2>Entry, stop loss and take profit</h2>
+      <p class="lead">For the trade at the real zone. The candle slides do not draw this position, so the placements follow the line drawing on slide 2 and the case studies.</p>
+      <div class="ticket" style="margin-top:22px">
+        <div class="card entry">
+          <h4>Entry</h4>
+          <p class="where">Buy limit at the top edge of the origin zone.</p>
+          <ul>
+            <li>The origin zone is the base of the displacement candle that made the MSS.</li>
+            <li>On the candle chart only a wick reached it. A limit at the edge filled.</li>
+            <li>Stricter version, from the line drawing: wait for a sweep and MSS inside the zone and buy the LTF order block it leaves.</li>
+          </ul>
+        </div>
+        <div class="card sl">
+          <h4>Stop loss</h4>
+          <p class="where">Below the origin zone, under the sweep low.</p>
+          <ul>
+            <li>The sweep low (X) is where the whole move began. If it breaks, the idea is finished.</li>
+            <li>In the line drawing the stop sits at the low of the sweep inside the HTF OB.</li>
+            <li>Never under the inducement low. That is the level price is being drawn to.</li>
+          </ul>
+        </div>
+        <div class="card tp">
+          <h4>Take profit</h4>
+          <p class="where">The high above, or the BSL beyond it.</p>
+          <ul>
+            <li>The line drawing targets the high made before the pullback, at about 1:3.</li>
+            <li>The candle chart marks a BSL line higher up, which price also reached.</li>
+            <li>The entry is lower than the early trader's and the target is the same, so the deeper zone can pay more per unit of risk.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Repeatable steps ===== -->
+  <section id="repeat">
+    <div class="wrap narrow">
+      <p class="eyebrow">Repeatable strategy</p>
+      <h2>Step-by-step for the next trade</h2>
+      <p class="lead">Written for longs. For shorts, mirror it.</p>
+
+      <ol class="checklist" style="margin-top:24px">
+        <li><span class="q">Find the sweep and the shift.</span><span class="a">A low taken and rejected, then a displacement candle closing above the prior high.</span></li>
+        <li><span class="q">Mark the origin zone.</span><span class="a">The base of the displacement candle, above the sweep low. Place the buy limit at its top edge.</span></li>
+        <li><span class="q">Mark every zone and low that forms above it afterwards.</span><span class="a">Pauses, small pullbacks, first higher lows. Label each one as liquidity, not as an entry.</span></li>
+        <li><span class="q">Check what lies between price and the origin zone.</span><span class="a">An unfilled imbalance or an untaken low means price has a reason to come down.</span></li>
+        <li><span class="q">If price reacts at an upper zone, do nothing.</span><span class="a">Even if it prints a sweep and a shift there. Note the new low it leaves.</span></li>
+        <li><span class="q">If price runs to target without you, accept it.</span><span class="a">Cancel the order. Record it as a missed trade.</span></li>
+        <li><span class="q">When price reaches the origin zone, the order fills.</span><span class="a">Stop under the sweep low, target at the high above. At least 1:2, risk 0.5–1%.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Cases ===== -->
+  <section id="cases">
+    <div class="wrap">
+      <p class="eyebrow">In the case studies</p>
+      <h2>Where this has already appeared</h2>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Case</th><th>The inducement</th><th>What price did</th></tr></thead>
+          <tbody>
+            <tr><td><a href="cases/audusd-real-zone.html">AUD/USD long</a></td><td>The IDM low after the shift, then a bounce above the zone that left a $$$ low</td><td>Took both, then filled deep in the M15 demand about 13 hours after the shift</td></tr>
+            <tr><td><a href="cases/btcusd-after-the-sweep.html">BTC/USD long</a></td><td>A sharp pullback that turned just above the order block, leaving a $$ low</td><td>Rallied to a new high, then came back through that low deep into the order block</td></tr>
+            <tr><td><a href="cases/gbpjpy-sweep-before-structure.html">GBP/JPY long</a></td><td>A wick low and a cluster of lows sitting above the order block</td><td>Swept both, then one wick tapped the order block about 12 hours after the shift</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px">In all three, the low that looked like support was taken before the zone was reached. The AUD/USD case is the closest match to this page: it uses the IDM label and nearly the same slide captions.</p>
+      <p>Compare this with the <a href="entry-models.html">entry models</a>. The confirmation entry asks for a sweep and a shift before entering. This page adds the condition that makes it work: the sweep and shift have to happen at the zone, not above it.</p>
+
+      <div class="callout warn" style="margin-top:22px">
+        <h4>Keep this in proportion</h4>
+        <p>Every example on this site was chosen because the deep zone was reached and held. To know how often that happens, you need the other outcomes too: the times the shallow zone held and the trade was missed, and the times the origin zone was reached and failed. Log all three when you backtest.</p>
+      </div>
+
+      <p style="margin-top:26px"><a class="btn" href="playbook.html">Open the playbook</a><a class="btn ghost" href="index.html#cases">All case studies</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. Charts and diagrams are credited to TrendForge.FX; the commentary is an independent reading of them and may differ from the original author's reasoning.</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=8"></script>
+</body>
+</html>
