@@ -130,7 +130,7 @@ const CASES = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "23" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "24" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
