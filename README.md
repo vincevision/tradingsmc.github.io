@@ -7,6 +7,7 @@ SMC trade case studies: why each trade was taken, where the stop and target go, 
 - `entry-models.html` — aggressive vs confirmation entry models
 - `inducement.html` — inducement (liquidity trap) concept page
 - `full-sequence.html` — the five-part sequence (structure, sweep, MSS, IMB, OB) concept page
+- `bos-quality.html` — good vs bad break of structure (protected and unprotected lows) concept page
 - `liquidity.html` — types of liquidity (swings, equal highs/lows, trendlines, ranges, sessions) concept page
 - `cases/` — one page per case study
 - `assets/img/<slug>/` — screenshots for each case
