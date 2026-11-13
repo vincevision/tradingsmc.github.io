@@ -18,7 +18,7 @@
     <div class="wrap">
       <p class="eyebrow">Playbook</p>
       <h1>One model, run the same way every day.</h1>
-      <p class="lead">This page collects the rules that the case studies have in common. It grows as more examples are added. Right now it is built from one trade, <a href="cases/usdjpy-confirmation-entry.html">USD/JPY Confirmation Entry</a>, so treat it as a first draft to be tested, not a finished system.</p>
+      <p class="lead">This page collects the rules that the case studies have in common. It grows as more examples are added. Right now it is built from two trades, the <a href="cases/usdjpy-confirmation-entry.html">USD/JPY long</a> and the <a href="cases/xauusd-institutional-flow.html">XAU/USD short</a>, so treat it as a draft to be tested, not a finished system.</p>
       <ul class="toc" aria-label="On this page">
         <li><a href="#model">The model</a></li>
         <li><a href="#routine">Daily routine</a></li>
@@ -38,16 +38,16 @@
         <table>
           <thead><tr><th>Stage</th><th>Timeframe</th><th>What you need to see (long)</th><th>For shorts</th></tr></thead>
           <tbody>
-            <tr><td><strong>1. Location</strong></td><td>4H (or 1H)</td><td>Price inside a fresh demand zone that caused a break of structure, in the discount half of the leg.</td><td>Fresh supply in premium.</td></tr>
-            <tr><td><strong>2. Liquidity</strong></td><td>30m</td><td>The last low of the pullback is taken while price is in the zone.</td><td>The last high is taken.</td></tr>
-            <tr><td><strong>3. Confirmation</strong></td><td>30m</td><td>A displacement candle closes above the last lower high (MSS).</td><td>Close below the last higher low.</td></tr>
+            <tr><td><strong>1. Location</strong></td><td>4H (or 1H)</td><td>The 4H has swept a low and shifted bullish. Price has pulled back into the discount half of the leg, either into a fresh demand zone (USD/JPY) or to internal lows left inside the leg.</td><td>4H swept a high and shifted bearish. Pullback into premium: fresh supply, or internal highs (XAU/USD).</td></tr>
+            <tr><td><strong>2. Liquidity</strong></td><td>30m</td><td>A low of the pullback is taken while price is at that location.</td><td>A high is taken. Expect more than one sweep.</td></tr>
+            <tr><td><strong>3. Confirmation</strong></td><td>30m</td><td>A displacement candle closes above the last lower high (MSS).</td><td>Close below the last higher low (15m in the XAU/USD case).</td></tr>
             <tr><td><strong>4. Entry</strong></td><td>15m</td><td>Unmitigated order block at the origin of the displacement, with an imbalance beside it. Buy limit at its top edge.</td><td>Sell limit at the OB's bottom edge.</td></tr>
-            <tr><td><strong>5. Stop</strong></td><td>15m</td><td>Below the protected low that launched the MSS, plus a buffer.</td><td>Above the protected high, plus buffer and spread.</td></tr>
+            <tr><td><strong>5. Stop</strong></td><td>15m</td><td>Below the protected low that launched the MSS, plus a buffer. Tighter variant: just below the order block.</td><td>Above the protected high, plus buffer and spread. Tighter variant: just above the order block.</td></tr>
             <tr><td><strong>6. Target</strong></td><td>30m</td><td>Near edge of the first opposing supply zone or liquidity pool. Minimum 1:2.</td><td>Near edge of the first opposing demand.</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="small muted" style="margin-top:12px">The 4H / 30m / 15m ladder is the one used in the USD/JPY example. The same logic can be stepped down (1H / 15m / 5m) as long as the three roles stay separate: one chart for location, one for confirmation, one for entry.</p>
+      <p class="small muted" style="margin-top:12px">USD/JPY used a 4H / 30m / 15m ladder and XAU/USD used 4H / 1H / 15m with the shift read on the 15m. The same logic can be stepped down (1H / 15m / 5m) as long as the three roles stay separate: one chart for location, one for confirmation, one for entry.</p>
     </div>
   </section>
 
@@ -59,8 +59,8 @@
       <h3 style="margin-top:24px">Before the session</h3>
       <ol class="checklist">
         <li><span class="q">Mark 4H structure on each pair you trade.</span><span class="a">Last break of structure, the current swing high and low, and the 50% level of that leg.</span></li>
-        <li><span class="q">Mark the fresh zones.</span><span class="a">Demand in discount, supply in premium. Delete any zone that has already been tapped.</span></li>
-        <li><span class="q">Set alerts at the near edge of each zone.</span><span class="a">Then close the chart. Pairs sitting in the middle of their range are not candidates today.</span></li>
+        <li><span class="q">Mark the fresh zones and the internal liquidity.</span><span class="a">Demand in discount, supply in premium. Also mark internal highs and lows left inside the last 4H leg. Delete any zone that has already been tapped.</span></li>
+        <li><span class="q">Set alerts at the near edge of each zone and at each internal high or low.</span><span class="a">Then close the chart. Pairs sitting in the middle of their range are not candidates today.</span></li>
         <li><span class="q">Check the news calendar.</span><span class="a">Note high-impact releases for the currencies involved. Do not leave a limit order resting through one.</span></li>
       </ol>
 
@@ -101,7 +101,7 @@
           <p class="where">Beyond the swing that launched the MSS.</p>
           <ul>
             <li>Long: below the protected low. Short: above the protected high.</li>
-            <li>Not just beyond the order block. The swing is the real invalidation.</li>
+            <li>The swing is the real invalidation. The XAU/USD chart used a tighter stop just beyond the order block: more reward per unit of risk, and more often stopped by a deep wick. Pick one placement and test it.</li>
             <li>Add a buffer of a few pips. On shorts add the spread too, because buy stops trigger on the ask.</li>
             <li>Never widen a stop after entry. Never size the stop to fit a lot size; size the lot to fit the stop.</li>
           </ul>
