@@ -51,6 +51,17 @@ const CASES = [
       "Price sweeps a low and shifts up on the 15m, then rallies without filling the order. About nine hours later it returns deep into the order block, fills the long and runs to the highs."
   },
   {
+    pair: "BTC/USD",
+    title: "Sweep, Shift and Zone",
+    href: "cases/btcusd-sweep-shift-zone.html",
+    thumb: "assets/img/btcusd-sweep-shift-zone/00-cover.png",
+    direction: "Long",
+    model: "4H sweep + MSS → 1H MSS → 1H demand",
+    result: "TP hit · ≈ 1:3.4",
+    summary:
+      "The 4H sweeps its range lows and shifts up. On the 1H, equal lows are run into demand, structure shifts, and the long is taken from the 1H demand the shift leaves behind."
+  },
+  {
     pair: "AUD/USD",
     title: "Waiting for the Real Zone",
     href: "cases/audusd-real-zone.html",
