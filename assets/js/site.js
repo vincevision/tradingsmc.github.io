@@ -49,6 +49,17 @@ const CASES = [
     result: "TP hit · ≈ 1:3.5",
     summary:
       "Price sweeps a low and shifts up on the 15m, then rallies without filling the order. About nine hours later it returns deep into the order block, fills the long and runs to the highs."
+  },
+  {
+    pair: "AUD/USD",
+    title: "Waiting for the Real Zone",
+    href: "cases/audusd-real-zone.html",
+    thumb: "assets/img/audusd-real-zone/04-result.png",
+    direction: "Long",
+    model: "H4 demand → M15 MSS → M15 demand",
+    result: "TP hit · ≈ 1:3.2",
+    summary:
+      "H4 is bullish and price reaches demand. The M15 shifts up, then offers two entries that are early. The long is taken at the M15 demand at the origin of the shift, after the inducement and the lows above the zone are cleared."
   }
 ];
 
