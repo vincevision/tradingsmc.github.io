@@ -65,7 +65,7 @@ section + section { border-top: 1px solid var(--line); }
 }
 .site-header .wrap { display: flex; align-items: center; gap: 18px; min-height: 64px; }
 .brand { font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; margin-right: auto; white-space: nowrap; }
-.brand span { color: var(--ink-3); font-weight: 500; }
+.brand span { color: var(--ink-3); font-weight: 600; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav > a, .nav summary {
   display: block; padding: 8px 12px; border-radius: 8px;
@@ -209,8 +209,8 @@ tr:last-child td { border-bottom: 0; }
   section { padding: 40px 0; }
   .case-card { grid-template-columns: 96px 1fr; }
   .nav > a.hide-sm { display: none; }
-  .brand span { display: none; }
-  .nav > a, .nav summary { padding: 8px 8px; font-size: .86rem; }
+  .brand { font-size: .95rem; }
+  .nav > a, .nav summary { padding: 8px 6px; font-size: .84rem; }
   .site-header .wrap { gap: 8px; }
   /* On phones the dropdown spans the screen width, anchored to the header. */
   .nav details { position: static; }

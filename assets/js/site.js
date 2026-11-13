@@ -1,4 +1,4 @@
-/* SMC Case Studies — shared header, case-study menu and lightbox.
+/* VinceVision SMC — shared header, case-study menu and lightbox.
  *
  * TO ADD A NEW CASE STUDY:
  *   1. Put the screenshots in assets/img/<slug>/
@@ -160,7 +160,7 @@ const CASES = [
     header.className = "site-header";
     header.innerHTML = `
       <div class="wrap">
-        <a class="brand" href="${root}index.html">SMC <span>Case Studies</span></a>
+        <a class="brand" href="${root}index.html">VinceVision <span>SMC</span></a>
         <nav class="nav" aria-label="Main">
           <a class="hide-sm" href="${root}index.html"${cur("index.html")}>Home</a>
           <a href="${root}playbook.html"${cur("playbook.html")}>Playbook</a>
@@ -169,6 +169,7 @@ const CASES = [
             <div class="menu">
               <a href="${root}entry-models.html"${cur("entry-models.html")}>Entry models<small>Aggressive vs confirmation entry</small></a>
               <a href="${root}structure-entries.html"${cur("structure-entries.html")}>Structure &amp; entry models<small>Strong and weak points, four ways to enter</small></a>
+              <a href="${root}supply-demand.html"${cur("supply-demand.html")}>Imbalance, supply &amp; demand<small>How zones form and which ones to trade</small></a>
               <a href="${root}top-down.html"${cur("top-down.html")}>Top-down analysis<small>4H, 1H, 30m and 5m on one trade</small></a>
               <a href="${root}full-sequence.html"${cur("full-sequence.html")}>The full sequence<small>Structure, sweep, MSS, IMB and OB in one trade</small></a>
               <a href="${root}bos-quality.html"${cur("bos-quality.html")}>Good vs bad BoS<small>Protected and unprotected lows</small></a>

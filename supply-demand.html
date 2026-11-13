@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imbalance, Supply and Demand — VinceVision SMC</title>
+  <meta name="description" content="What an imbalance is, how supply and demand zones form, which zones are worth trading, and where the entry, stop loss and take profit go.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=22">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Concept</p>
+      <h1>Imbalance, supply and demand</h1>
+      <p class="lead">Liquidity explains why price moves. Structure gives the direction. Supply and demand zones give the price for the order, and the imbalance is how you tell a real zone from a rectangle drawn on any candle. This page covers how each one forms, which ones to trade, and where the entry, stop and target go.</p>
+      <ul class="chips">
+        <li class="chip target">Imbalance</li>
+        <li class="chip demand">Demand</li>
+        <li class="chip supply">Supply</li>
+      </ul>
+
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#imb">1 · Imbalance</a></li>
+        <li><a href="#imb-use">Using an imbalance</a></li>
+        <li><a href="#demand">2 · Demand</a></li>
+        <li><a href="#supply">3 · Supply</a></li>
+        <li><a href="#valid">Which zones to trade</a></li>
+        <li><a href="#pd">Premium &amp; discount</a></li>
+        <li><a href="#whole">Everything as one</a></li>
+        <li><a href="#orders">Entry, SL &amp; TP</a></li>
+        <li><a href="#repeat">Repeatable steps</a></li>
+        <li><a href="#cases">In the case studies</a></li>
+      </ul>
+
+      <div class="callout info" style="margin-top:28px">
+        <h4>How to read this page</h4>
+        <p>No screenshots came with this topic, so the diagrams are drawn for this page. They show the definition, not a real trade. Hollow candles close up and solid candles close down. <strong>IMB</strong> is an imbalance, which other sources call a fair value gap (FVG). An <strong>order block (OB)</strong> is the single-candle version of a supply or demand zone, and the case studies use the two names for the same job. Definitions differ between teachers. The ones here are the ones this site uses.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="imb">
+    <div class="wrap narrow">
+      <p class="eyebrow">Part 1</p>
+      <h2>What an imbalance is</h2>
+      <p class="lead">An imbalance is a stretch of price that was crossed by one candle only. It needs three candles to define.</p>
+      <div class="diagram" style="margin-top:22px">
+        <svg viewBox="0 0 800 440" role="img" aria-labelledby="imb-t imb-d">
+          <title id="imb-t">A bullish imbalance between three candles</title>
+          <desc id="imb-d">Three numbered candles. The second is a long up candle. The high of the first candle and the low of the third do not overlap, and the space between them is shaded as the imbalance. Later a candle dips back into the shaded area, fills part of it, and price continues up.</desc>
+          <rect x="240" y="235" width="360" height="65" fill="#4f7186" opacity=".38"/>
+          <line x1="240" y1="300" x2="600" y2="300" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/>
+          <line x1="240" y1="235" x2="600" y2="235" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/>
+          <line x1="133.0" y1="290" x2="133.0" y2="335" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="120" y="300" width="26" height="25" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="193.0" y1="318" x2="193.0" y2="350" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="180" y="325" width="26" height="5" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="253.0" y1="300" x2="253.0" y2="338" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="240" y="305" width="26" height="25" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="313.0" y1="180" x2="313.0" y2="308" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="300" y="188" width="26" height="117" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="373.0" y1="150" x2="373.0" y2="235" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="360" y="160" width="26" height="28" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="433.0" y1="140" x2="433.0" y2="200" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="420" y="160" width="26" height="25" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="493.0" y1="172" x2="493.0" y2="262" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="480" y="185" width="26" height="65" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="553.0" y1="160" x2="553.0" y2="256" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="540" y="170" width="26" height="80" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="613.0" y1="120" x2="613.0" y2="176" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="600" y="128" width="26" height="42" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <text x="253" y="362" font-size="14" font-weight="700" text-anchor="middle" fill="#1f1d1b">1</text><text x="313" y="332" font-size="14" font-weight="700" text-anchor="middle" fill="#1f1d1b">2</text><text x="373" y="132" font-size="14" font-weight="700" text-anchor="middle" fill="#1f1d1b">3</text><text x="614" y="304" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">High of candle 1</text><text x="614" y="239" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">Low of candle 3</text><text x="614" y="272" font-size="14" font-weight="700" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><text x="493" y="286" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#1f1d1b">partial fill</text><text x="40" y="40" font-size="15" font-weight="700" text-anchor="start" fill="#1f1d1b">Bullish imbalance</text>
+        </svg>
+      </div>
+      <p style="font-size:.86rem;color:var(--ink-3);margin-top:8px">Candles 1 and 3 do not overlap. The space between the high of candle 1 and the low of candle 3 is the imbalance.</p>
+
+      <h4>The definition</h4>
+      <ol>
+        <li><strong>Bullish.</strong> Candle 2 is a strong up candle. The low of candle 3 is above the high of candle 1. The gap between those two prices is the imbalance.</li>
+        <li><strong>Bearish.</strong> Candle 2 is a strong down candle. The high of candle 3 is below the low of candle 1.</li>
+        <li><strong>If the wicks of candles 1 and 3 overlap,</strong> there is no imbalance, however large candle 2 looks.</li>
+      </ol>
+
+      <h4>What it means</h4>
+      <p>Inside the gap, price traded in one direction only. Buyers took every offer and moved on before sellers could trade back. It is a record of urgency. This move, where price leaves quickly and leaves a gap, is called displacement.</p>
+
+      <div class="callout rule">
+        <h4>Rule to carry forward</h4>
+        <p>Mark an imbalance only when the move that made it also broke structure. Small gaps appear on every low-timeframe chart and most mean nothing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="imb-use">
+    <div class="wrap">
+      <p class="eyebrow">Part 1 · In practice</p>
+      <h2>Three uses of an imbalance</h2>
+      <div class="grid c3" style="margin-top:20px">
+        <div class="card"><span class="num">1</span><h3>Proof</h3><p>A break of structure that leaves an imbalance was made with force. A break that crawls through the level with overlapping candles is weaker. In the case studies the shift almost always comes with an IMB.</p></div>
+        <div class="card"><span class="num">2</span><h3>Magnet</h3><p>Price often comes back to trade inside the gap before continuing. That is why you can wait for a pullback after a strong move, and why an unfilled gap beyond your target is a reason to hold.</p></div>
+        <div class="card"><span class="num">3</span><h3>Location</h3><p>The zone the displacement started from sits just beyond the imbalance. The gap leads price back to the zone. An order at the zone is filled after the gap has been filled.</p></div>
+      </div>
+
+      <h4 style="margin-top:28px">How far it fills</h4>
+      <div class="table-wrap" style="margin-top:10px">
+        <table>
+          <thead><tr><th>What price does</th><th>What it tells you</th><th>What to do</th></tr></thead>
+          <tbody>
+            <tr><td>Never returns</td><td>Strong move. The order at the zone is not filled.</td><td>Let it go. Do not chase with a market order.</td></tr>
+            <tr><td>Fills part of the gap and turns</td><td>Strong. Common when the trend is running.</td><td>An order at the zone is missed. An order at the middle of the gap is the more aggressive choice, with the stop still beyond the zone.</td></tr>
+            <tr><td>Fills the whole gap and reaches the zone</td><td>The standard case on this site.</td><td>The limit at the edge of the zone fills.</td></tr>
+            <tr><td>Closes through the gap and the zone</td><td>The move has failed.</td><td>The stop is hit. The idea is finished.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn" style="margin-top:22px">
+        <h4>Entering at the gap or at the zone</h4>
+        <p>Entering at the imbalance gets more fills and has a wider stop. Entering at the zone has a tighter stop and misses some trades. Pick one and keep to it for a full sample. Mixing them trade by trade makes the journal useless.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="demand">
+    <div class="wrap narrow">
+      <p class="eyebrow">Part 2</p>
+      <h2>Demand: where buying started</h2>
+      <p class="lead">A demand zone is the last place sellers were in control before buyers moved price far enough to break structure.</p>
+      <div class="diagram" style="margin-top:22px">
+        <svg viewBox="0 0 800 440" role="img" aria-labelledby="dem-t dem-d">
+          <title id="dem-t">How a demand zone forms and is used</title>
+          <desc id="dem-d">Price falls in a series of down candles. The last down candle is followed by three strong up candles that leave an imbalance and close above the previous lower high, marked BoS. The demand zone is drawn from that last down candle, from its low to its open, and extended to the right. Price later falls back through the imbalance, touches the top of the zone and rallies to a new high.</desc>
+          <rect x="226" y="260" width="396" height="58" fill="#6f7558" opacity=".6"/>
+          <rect x="292" y="150" width="220" height="58" fill="#4f7186" opacity=".38"/>
+          <line x1="105" y1="122" x2="369" y2="122" stroke="#1f1d1b" stroke-width="1.2"/>
+          <line x1="61.0" y1="92" x2="61.0" y2="158" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="50" y="100" width="22" height="50" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="105.0" y1="122" x2="105.0" y2="156" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="94" y="130" width="22" height="20" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="149.0" y1="126" x2="149.0" y2="206" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="138" y="130" width="22" height="70" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="193.0" y1="196" x2="193.0" y2="268" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="182" y="200" width="22" height="60" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="237.0" y1="255" x2="237.0" y2="318" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="226" y="260" width="22" height="40" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="281.0" y1="208" x2="281.0" y2="302" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="270" y="215" width="22" height="85" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="325.0" y1="118" x2="325.0" y2="218" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="314" y="125" width="22" height="90" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="369.0" y1="85" x2="369.0" y2="150" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="358" y="95" width="22" height="30" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="413.0" y1="88" x2="413.0" y2="128" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="402" y="95" width="22" height="25" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="457.0" y1="112" x2="457.0" y2="178" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="446" y="120" width="22" height="50" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="501.0" y1="165" x2="501.0" y2="250" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="490" y="170" width="22" height="60" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="545.0" y1="224" x2="545.0" y2="285" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="534" y="230" width="22" height="32" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="589.0" y1="196" x2="589.0" y2="266" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="578" y="200" width="22" height="62" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="633.0" y1="134" x2="633.0" y2="204" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="622" y="140" width="22" height="60" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="677.0" y1="72" x2="677.0" y2="144" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="666" y="80" width="22" height="60" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <text x="226" y="114" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">BoS</text><text x="520" y="184" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><text x="634" y="294" font-size="14" font-weight="700" font-style="italic" text-anchor="start" fill="#1f1d1b">Demand</text><text x="237" y="336" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#1f1d1b">last down candle</text><text x="545" y="303" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#1f1d1b">return</text><text x="40" y="36" font-size="15" font-weight="700" text-anchor="start" fill="#1f1d1b">Demand zone</text>
+        </svg>
+      </div>
+      <p style="font-size:.86rem;color:var(--ink-3);margin-top:8px">The last down candle before the move that broke structure. The zone runs from its low to its open and is extended to the right.</p>
+
+      <h4>How to draw it</h4>
+      <ol>
+        <li><strong>Find the break.</strong> A close above a previous high, made by strong candles that leave an imbalance.</li>
+        <li><strong>Walk back to the start of that move.</strong> The last down candle before it is the zone.</li>
+        <li><strong>Mark two prices.</strong> The low of that candle, including the wick, is the far edge. The open of that candle is the near edge. If the candle is very small, use its high as the near edge.</li>
+        <li><strong>If price paused for a few small candles</strong> before leaving, draw the zone around the whole pause.</li>
+        <li><strong>Extend it to the right</strong> until price comes back.</li>
+      </ol>
+
+      <h4>Why price reacts there</h4>
+      <p>The usual explanation is that large buyers could not fill their whole order before price left, and buy again when it returns. Nobody can verify that from a chart. What you can verify is the behaviour: price left this level fast and broke structure. Treat the zone as a level to test, not as a promise.</p>
+
+      <h4>Fresh and used</h4>
+      <ul class="ticks">
+        <li><strong>Fresh:</strong> price has not returned since the zone formed. This is the one to trade.</li>
+        <li><strong>Mitigated:</strong> price has returned once and reacted. A second visit is weaker. Trade it only with a sweep and a shift on the lower timeframe. See <a href="structure-entries.html#s7">sweep, then confirm</a>.</li>
+        <li><strong>Broken:</strong> a candle has closed below the far edge. Delete it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="supply">
+    <div class="wrap narrow">
+      <p class="eyebrow">Part 3</p>
+      <h2>Supply: where selling started</h2>
+      <p class="lead">The mirror image. A supply zone is the last up candle before a move that broke structure downward.</p>
+      <div class="diagram" style="margin-top:22px">
+        <svg viewBox="0 0 800 440" role="img" aria-labelledby="sup-t sup-d">
+          <title id="sup-t">How a supply zone forms and is used</title>
+          <desc id="sup-d">The mirror image. Price rises in a series of up candles. The last up candle is followed by three strong down candles that leave an imbalance and close below the previous higher low, marked BoS. The supply zone is drawn from that last up candle, from its high to its open, and extended to the right. Price later rises back through the imbalance, touches the bottom of the zone and falls to a new low.</desc>
+          <rect x="226" y="122" width="396" height="58" fill="#a9837a" opacity=".6"/>
+          <rect x="292" y="232" width="220" height="58" fill="#4f7186" opacity=".38"/>
+          <line x1="105" y1="318" x2="369" y2="318" stroke="#1f1d1b" stroke-width="1.2"/>
+          <line x1="61.0" y1="282" x2="61.0" y2="348" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="50" y="290" width="22" height="50" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="105.0" y1="284" x2="105.0" y2="318" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="94" y="290" width="22" height="20" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="149.0" y1="234" x2="149.0" y2="314" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="138" y="240" width="22" height="70" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="193.0" y1="172" x2="193.0" y2="244" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="182" y="180" width="22" height="60" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="237.0" y1="122" x2="237.0" y2="185" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="226" y="140" width="22" height="40" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="281.0" y1="138" x2="281.0" y2="232" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="270" y="140" width="22" height="85" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="325.0" y1="222" x2="325.0" y2="322" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="314" y="225" width="22" height="90" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="369.0" y1="290" x2="369.0" y2="355" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="358" y="315" width="22" height="30" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="413.0" y1="312" x2="413.0" y2="352" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="402" y="320" width="22" height="25" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="457.0" y1="262" x2="457.0" y2="328" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="446" y="270" width="22" height="50" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="501.0" y1="190" x2="501.0" y2="275" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="490" y="210" width="22" height="60" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="545.0" y1="155" x2="545.0" y2="216" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="534" y="178" width="22" height="32" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="589.0" y1="174" x2="589.0" y2="244" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="578" y="178" width="22" height="62" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="633.0" y1="236" x2="633.0" y2="306" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="622" y="240" width="22" height="60" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="677.0" y1="296" x2="677.0" y2="368" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="666" y="300" width="22" height="60" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <text x="226" y="336" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">BoS</text><text x="520" y="264" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><text x="634" y="154" font-size="14" font-weight="700" font-style="italic" text-anchor="start" fill="#1f1d1b">Supply</text><text x="237" y="110" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#1f1d1b">last up candle</text><text x="545" y="143" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#1f1d1b">return</text><text x="40" y="36" font-size="15" font-weight="700" text-anchor="start" fill="#1f1d1b">Supply zone</text>
+        </svg>
+      </div>
+      <p style="font-size:.86rem;color:var(--ink-3);margin-top:8px">The last up candle before the move that broke structure downward. The zone runs from its high to its open.</p>
+
+      <h4>How to draw it</h4>
+      <ol>
+        <li><strong>Find the break.</strong> A close below a previous low, with an imbalance.</li>
+        <li><strong>Walk back to the start of that move.</strong> The last up candle before it is the zone.</li>
+        <li><strong>Mark two prices.</strong> The high of that candle, including the wick, is the far edge. The open is the near edge.</li>
+      </ol>
+
+      <h4>The edges for a short</h4>
+      <p>For supply, the near edge is the <strong>bottom</strong> of the zone. That is where the sell limit goes. The stop goes above the top. It is easy to get this backwards when you have been looking at longs. The <a href="cases/xauusd-institutional-flow.html">XAU/USD</a> and <a href="cases/gbpusd-simple-confirmation-entry.html">GBP/USD</a> shorts both sell the bottom edge.</p>
+
+      <div class="callout info">
+        <h4>Spread on shorts</h4>
+        <p>Charts show the bid price. A short is closed at the ask, which is higher by the spread. Add the spread to the stop above a supply zone, or a wick that never shows on the chart can close the trade.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="valid">
+    <div class="wrap">
+      <p class="eyebrow">Selection</p>
+      <h2>Which zones are worth trading</h2>
+      <p class="lead">Any chart has dozens of last-down candles. Six questions cut them down. The first three are required.</p>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Question</th><th>Why it matters</th><th>If the answer is no</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. Did the move from the zone break structure?</strong></td><td>Without a break, nothing shows the zone had any effect.</td><td>Not a zone. Do not draw it.</td></tr>
+            <tr><td><strong>2. Did it leave an imbalance?</strong></td><td>Shows price left with force.</td><td>Skip it.</td></tr>
+            <tr><td><strong>3. Is it fresh?</strong></td><td>A zone that has been tested has already done its work.</td><td>Only with lower-timeframe confirmation.</td></tr>
+            <tr><td><strong>4. Did the zone’s extreme sweep liquidity?</strong></td><td>The stops under an old low were taken when the zone formed, so there is less reason for price to dig under it again.</td><td>Expect a deeper move. Look for the zone below that did sweep.</td></tr>
+            <tr><td><strong>5. Is it on the right side of the range?</strong></td><td>Demand in discount, supply in premium. See the next section.</td><td>Poor reward-to-risk. Usually skip.</td></tr>
+            <tr><td><strong>6. Does it agree with the higher timeframe?</strong></td><td>A 15m demand zone inside a 4H demand zone has two reasons to hold.</td><td>Counter-trend. Smaller target or skip.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn" style="margin-top:22px">
+        <h4>Liquidity in front of the zone</h4>
+        <p>If small equal lows sit just above a demand zone, the zone is better, because price has a reason to come down to it. If a clean zone sits above an untouched origin zone with liquidity under it, the upper zone is likely the trap. That is covered in <a href="inducement.html">inducement</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pd">
+    <div class="wrap narrow">
+      <p class="eyebrow">Location</p>
+      <h2>Premium and discount</h2>
+      <p class="lead">Split the current swing in half. Buy in the lower half and sell in the upper half.</p>
+      <div class="diagram" style="margin-top:22px">
+        <svg viewBox="0 0 800 420" role="img" aria-labelledby="pd-t pd-d">
+          <title id="pd-t">Premium and discount halves of a range</title>
+          <desc id="pd-d">A price leg rises from a swing low to a swing high. The range is split at 50 percent. The upper half is shaded as premium and the lower half as discount. A demand zone in the discount half is ticked. A demand zone in the premium half is crossed out.</desc>
+          <rect x="60" y="60" width="680" height="160" fill="#a9837a" opacity=".3"/>
+          <rect x="60" y="220" width="680" height="160" fill="#6f7558" opacity=".3"/>
+          <line x1="60" y1="220" x2="740" y2="220" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="6 5"/>
+          <line x1="60" y1="60" x2="740" y2="60" stroke="#1f1d1b" stroke-width="1.2"/>
+          <line x1="60" y1="380" x2="740" y2="380" stroke="#1f1d1b" stroke-width="1.2"/>
+          <rect x="255" y="150" width="330" height="34" fill="#6f7558" opacity=".75"/>
+          <rect x="150" y="300" width="500" height="40" fill="#6f7558" opacity=".75"/>
+          <polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="80,380 140,290 160,335 250,140 275,185 330,60 380,120 420,95 470,170 500,140 560,320 650,110"/>
+          <text x="70" y="82" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">Premium: sell here</text><text x="200" y="370" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">Discount: buy here</text><text x="660" y="214" font-size="13" font-weight="700" font-style="italic" text-anchor="start" fill="#1f1d1b">50%</text><text x="596" y="172" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">✕ demand in premium</text><text x="662" y="325" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">✓ demand</text><text x="662" y="340" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">in discount</text><text x="338" y="52" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">swing high</text><text x="92" y="398" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">swing low</text>
+        </svg>
+      </div>
+      <p style="font-size:.86rem;color:var(--ink-3);margin-top:8px">Two demand zones in the same leg. Only the one below the midpoint leaves room to the high.</p>
+
+      <h4>How to use it</h4>
+      <ol>
+        <li><strong>Take the swing</strong> from the last strong low to the high it made (for longs).</li>
+        <li><strong>Mark 50%.</strong> Below it is discount, above it is premium.</li>
+        <li><strong>Buy only from demand in discount.</strong> A zone in premium is close to the high, so the target is near and the stop is the same size. The numbers do not work.</li>
+        <li><strong>For shorts,</strong> sell only from supply in premium.</li>
+      </ol>
+      <p>This is an arithmetic rule more than a market theory. It makes sure the distance to the target is larger than the distance to the stop before you look at anything else.</p>
+    </div>
+  </section>
+
+  <section id="whole">
+    <div class="wrap">
+      <p class="eyebrow">Everything as one</p>
+      <h2>Liquidity, structure, imbalance and zone in one trade</h2>
+      <p class="lead">The same order of events as every case study on this site.</p>
+      <div class="diagram" style="margin-top:22px">
+        <svg viewBox="0 0 820 400" role="img" aria-labelledby="all-t all-d">
+          <title id="all-t">Sweep, displacement with imbalance, demand zone, entry, stop and target</title>
+          <desc id="all-d">Price makes two equal lows, sweeps them, then rises in one strong leg that leaves an imbalance and breaks the last lower high, marked MSS. A demand zone is drawn at the base of the leg. Price makes a high, returns through the imbalance to the top of the demand zone where the buy fills, and rallies to the high. The stop is below the sweep low and the target is at the high.</desc>
+          <rect x="600" y="70" width="110" height="208" fill="#4f7186" opacity=".5"/>
+          <rect x="600" y="278" width="110" height="72" fill="#7d7a76" opacity=".5"/>
+          <rect x="318" y="278" width="300" height="56" fill="#6f7558" opacity=".6"/>
+          <rect x="372" y="170" width="170" height="60" fill="#4f7186" opacity=".3"/>
+          <line x1="170" y1="250" x2="318" y2="250" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/>
+          <line x1="215" y1="190" x2="372" y2="190" stroke="#1f1d1b" stroke-width="1.2"/>
+          <line x1="520" y1="70" x2="600" y2="70" stroke="#1f1d1b" stroke-width="1.2"/>
+          <polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="30,110 80,200 120,140 170,250 215,190 255,250 290,210 330,334 420,100 465,135 520,70 555,170 570,140 600,280 640,170 665,200 700,62"/>
+          <circle cx="600" cy="279" r="5" fill="#1f1d1b"/><circle cx="700" cy="68" r="5" fill="#1f1d1b"/>
+          <text x="196" y="268" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">$$$</text><text x="322" y="268" font-size="13" font-weight="700" text-anchor="start" fill="#1f1d1b">X</text><text x="240" y="182" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">MSS</text><text x="436" y="205" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><text x="400" y="312" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">Demand</text><text x="470" y="58" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">weak high</text><g font-size="13" font-weight="600" fill="#1f1d1b"><text x="720" y="75">Take profit</text><text x="720" y="283">Entry</text><text x="720" y="355">Stop loss</text></g>
+        </svg>
+      </div>
+      <p style="font-size:.86rem;color:var(--ink-3);margin-top:8px">Equal lows are swept. One leg breaks structure and leaves an imbalance. The demand zone is the base of that leg. Price returns through the gap to the zone.</p>
+
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><span class="num">1</span><h3>Sweep</h3><p>Price takes the equal lows (X). The low of the sweep becomes the far edge of the zone.</p></div>
+        <div class="card"><span class="num">2</span><h3>Displacement</h3><p>One leg closes above the last lower high (MSS) and leaves an imbalance. Now the zone is valid.</p></div>
+        <div class="card"><span class="num">3</span><h3>Return</h3><p>Price fills the imbalance and reaches the near edge of the demand zone. The limit fills. The target is the weak high.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="orders">
+    <div class="wrap">
+      <p class="eyebrow">Order placement</p>
+      <h2>Entry, stop loss and take profit</h2>
+      <p class="lead">For a long from demand. Reverse every edge for a short from supply.</p>
+      <div class="ticket" style="margin-top:22px">
+        <div class="card entry">
+          <h4>Entry</h4>
+          <p class="where">Buy limit at the near (top) edge of the demand zone.</p>
+          <ul>
+            <li>Place it when the candle that broke structure has closed.</li>
+            <li>In six of the eleven case studies price only touched the edge. An order deeper in the zone would have been missed.</li>
+            <li>For supply: sell limit at the bottom edge.</li>
+          </ul>
+        </div>
+        <div class="card sl">
+          <h4>Stop loss</h4>
+          <p class="where">Below the far edge of the zone, plus a buffer.</p>
+          <ul>
+            <li>The far edge is the wick low. If that low was a sweep, the stop is under the sweep.</li>
+            <li>A close below the zone means it has failed. Do not move the stop down.</li>
+            <li>For supply: above the wick high, plus spread.</li>
+          </ul>
+        </div>
+        <div class="card tp">
+          <h4>Take profit</h4>
+          <p class="where">The first opposing zone or untouched liquidity.</p>
+          <ul>
+            <li>The weak high that the displacement made is the standard target.</li>
+            <li>If a fresh supply zone sits before it, close there, or close part.</li>
+            <li>Set the order a little before the level.</li>
+            <li>Less than 1:2, skip the trade.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="repeat">
+    <div class="wrap narrow">
+      <p class="eyebrow">Repeatable strategy</p>
+      <h2>Step-by-step for the next trade</h2>
+      <p class="lead">Written for longs. For shorts, mirror it. A “no” at any step ends the process.</p>
+      <ol class="checklist" style="margin-top:24px">
+        <li><span class="q">Is the higher timeframe bullish, and is price in the discount half of its swing?</span><span class="a">If price is in premium, wait for it to come down.</span></li>
+        <li><span class="q">Has a move just closed above a previous high?</span><span class="a">That is the break. No break, no zone.</span></li>
+        <li><span class="q">Did that move leave an imbalance?</span><span class="a">Check that the wicks of candles 1 and 3 do not overlap.</span></li>
+        <li><span class="q">Mark the last down candle before the move.</span><span class="a">Low to open. Extend it right.</span></li>
+        <li><span class="q">Is the zone fresh, and did its low sweep an earlier low?</span><span class="a">Fresh is required. The sweep makes it the better zone.</span></li>
+        <li><span class="q">Is there liquidity between price and the zone?</span><span class="a">Good. Expect it to be taken before the fill.</span></li>
+        <li><span class="q">Buy limit at the top edge, stop under the wick low.</span><span class="a">Or wait for a lower-timeframe shift inside the zone and use the smaller zone it leaves.</span></li>
+        <li><span class="q">Is the first opposing zone or high at least 2R away?</span><span class="a">If not, skip it.</span></li>
+        <li><span class="q">Size, place, hold, record.</span><span class="a">Risk 0.5–1%. Record whether price touched the edge, went deep, or never came back.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="wrap">
+      <p class="eyebrow">On real charts</p>
+      <h2>Where to see it in the case studies</h2>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Case</th><th>Zone</th><th>What to look at</th></tr></thead>
+          <tbody>
+            <tr><td><a href="cases/usdjpy-confirmation-entry.html">USD/JPY confirmation entry</a></td><td>4H demand in discount, then a 15m OB</td><td>Higher-timeframe zone and discount, with an imbalance resting on the 15m block</td></tr>
+            <tr><td><a href="cases/audusd-real-zone.html">AUD/USD real zone</a></td><td>H4 demand in discount, M15 demand</td><td>Waiting for the zone that swept, and a deep fill</td></tr>
+            <tr><td><a href="cases/xauusd-institutional-flow.html">XAU/USD short</a></td><td>15m supply (OB)</td><td>Selling the bottom edge, stop above the top plus spread, target at the top of demand</td></tr>
+            <tr><td><a href="cases/gbpusd-simple-confirmation-entry.html">GBP/USD short</a></td><td>15m supply inside a larger supply</td><td>The smaller zone left by the shift</td></tr>
+            <tr><td><a href="cases/btcusd-sweep-shift-zone.html">BTC/USD sweep, shift and zone</a></td><td>1H demand</td><td>A fill that only reached the edge</td></tr>
+            <tr><td><a href="cases/gbpjpy-1h-15m-5m.html">GBP/JPY 1H, 15m, 5m</a></td><td>1H OB, 15m OB, 5m OB</td><td>A zone inside a zone inside a zone, and a second dip halfway into the block</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout info" style="margin-top:22px">
+        <h4>Related pages</h4>
+        <p><a href="liquidity.html">Types of liquidity</a> covers what gets swept. <a href="structure-entries.html">Structure and entry models</a> covers strong and weak points and when to enter. <a href="inducement.html">Inducement</a> covers the zone that is a trap. The <a href="playbook.html">playbook</a> has the daily routine.</p>
+      </div>
+
+      <p style="margin-top:26px"><a class="btn" href="playbook.html">Open the playbook</a><a class="btn ghost" href="index.html#cases">All case studies</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. The diagrams on this page are drawn for this site and are not real trades. Backtest any rule on your own charts before risking money.</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=22"></script>
+</body>
+</html>
