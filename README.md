@@ -17,3 +17,5 @@ SMC trade case studies: why each trade was taken, where the stop and target go, 
 5. Bump the `?v=` number on the `site.js` and `style.css` links in every page so browsers fetch the new files.
 
 Plain static HTML, no build step. Preview locally with `python3 -m http.server`.
+
+The root-level `<slug>.html` files are redirects to `cases/<slug>.html`, so the short address works too. Add one for each new case.
