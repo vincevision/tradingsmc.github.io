@@ -187,6 +187,16 @@ const CASES = [
         if (!d.contains(e.target)) d.removeAttribute("open");
       });
     });
+    // Only one dropdown open at a time; show the current page when a menu opens.
+    allDetails.forEach((d) => {
+      d.addEventListener("toggle", () => {
+        if (!d.open) return;
+        allDetails.forEach((o) => { if (o !== d) o.removeAttribute("open"); });
+        const m = d.querySelector(".menu");
+        const active = m && m.querySelector('[aria-current="page"]');
+        if (m) m.scrollTop = active ? Math.max(0, active.offsetTop - m.clientHeight / 2) : 0;
+      });
+    });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") allDetails.forEach((d) => d.removeAttribute("open"));
     });
