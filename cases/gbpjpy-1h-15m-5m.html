@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GBP/JPY 1H, 15m, 5m Long — SMC Case Study</title>
+  <meta name="description" content="GBP/JPY long across three timeframes: 1H order block tapped with a sweep, 15m shift and order block, 5m sweep and shift, entry at the 5m order block with stop loss and take profit explained.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=18">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <!-- ===== Intro ===== -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Case study · GBP/JPY</p>
+      <h1>Three Timeframes: 1H, 15m, 5m</h1>
+      <p class="lead">A long on GBP/JPY that steps down twice. The 1H is in an uptrend and pulls back into its order block, sweeping a low on the way. The 15m shifts up from there and leaves its own order block. Price returns to that, and the 5m sweeps and shifts inside it. The entry is the 5m order block. The target is the high the last drop came from.</p>
+      <ul class="chips">
+        <li class="chip demand">Long</li>
+        <li class="chip">1H → 15m → 5m</li>
+        <li class="chip target">Target: buy-side liquidity</li>
+        <li class="chip target">TP hit · ≈ 1:2.5</li>
+      </ul>
+
+      <dl class="facts">
+        <div><dt>HTF bias</dt><dd>1H uptrend, three breaks of structure</dd></div>
+        <div><dt>HTF location</dt><dd>1H order block, tapped with a sweep</dd></div>
+        <div><dt>Middle timeframe</dt><dd>15m MSS, then the 15m order block</dd></div>
+        <div><dt>Confirmation</dt><dd>5m sweep and MSS inside the 15m OB</dd></div>
+        <div><dt>Entry</dt><dd>Top edge of the 5m OB</dd></div>
+        <div><dt>Stop loss</dt><dd>Below the 5m sweep low (SSL)</dd></div>
+        <div><dt>Take profit</dt><dd>BSL: the high before the drop</dd></div>
+        <div><dt>Outcome</dt><dd>Target reached, ≈ 2.5R, about 3 hours after the fill</dd></div>
+      </dl>
+
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#s1">1 · 1H order block</a></li>
+        <li><a href="#s2">2 · 15m shift</a></li>
+        <li><a href="#s3">3 · 5m plan</a></li>
+        <li><a href="#s4">4 · Result</a></li>
+        <li><a href="#whole">Everything as one</a></li>
+        <li><a href="#orders">Entry, SL &amp; TP</a></li>
+        <li><a href="#repeat">Repeatable steps</a></li>
+        <li><a href="#skip">When to skip</a></li>
+      </ul>
+
+      <div class="callout info" style="margin-top:28px">
+        <h4>How to read this page</h4>
+        <p><strong>X</strong> marks a liquidity sweep. <strong>SSL</strong> and <strong>BSL</strong> are sell-side and buy-side liquidity. <strong>IMB</strong> is an imbalance and <strong>OB</strong> an order block. The post has no caption and the slides carry only timeframe titles, so the reasoning is my reading of the charts. There is no price axis. Times are read from the time axis and are approximate. Reward-to-risk is measured from the position box.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Slide 1 ===== -->
+  <section id="s1">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: 1H: an uptrend pulls back into its order block">
+          <img src="../assets/img/gbpjpy-1h-15m-5m/01-1h-ob-sweep.png" alt="1-hour GBP/JPY chart. Price climbs through three breaks of structure to a peak, then falls back. A 1-hour order block is drawn at the base of the first leg. A wick at the right dips under an earlier pullback low, marked X, into the top of the order block, and price bounces.">
+        </button>
+        <figcaption>Slide 1 — “1h Timeframe.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 1 · Higher-timeframe bias and zone</span>
+        <h2>1H: an uptrend pulls back into its order block</h2>
+        <h4>What happened</h4>
+        <ol>
+          <li><strong>Three breaks of structure upward.</strong> Each BoS is a close above the previous high. The 1H trend is up.</li>
+          <li><strong>The 1H order block.</strong> A wide box at the base of the leg that made the first break.</li>
+          <li><strong>A full pullback.</strong> From the peak, price gives back the whole of the last leg in about a day.</li>
+          <li><strong>The sweep (X).</strong> A wick drops under an earlier pullback low, reaches the top of the order block, and closes back up.</li>
+        </ol>
+
+        <h4>Why this matters</h4>
+        <p>Three things line up at one price: an uptrend, an order block that started it, and a low just above that block whose stops have now been taken. That is the place to look for a long. It is not yet a reason to buy. The pullback was steep, and a 1H wick alone does not show that it is over.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>In a 1H uptrend, mark the order block and the lows sitting above it. When a wick takes one of those lows and reaches the block, go down to the 15m.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 2 ===== -->
+  <section id="s2">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: 15m: a shift up, then a return to the 15m order block">
+          <img src="../assets/img/gbpjpy-1h-15m-5m/02-15m-shift-ob.png" alt="15-minute GBP/JPY chart. Price drops from a flat range into the 1-hour order block, where a wick is marked X. It rallies strongly and closes above the range high (MSS). A 15-minute order block is drawn partway up the rally. Price ranges at the top, then falls back, and a long wick reaches into the 15-minute order block." loading="lazy">
+        </button>
+        <figcaption>Slide 2 — “15m Timeframe.” The lower box is the top of the 1H OB.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 2 · Middle timeframe</span>
+        <h2>15m: a shift up, then a return to the 15m order block</h2>
+        <h4>What happened</h4>
+        <ol>
+          <li><strong>The drop into the 1H OB.</strong> From a quiet range, price falls hard. The wick marked X is the 1H sweep seen up close.</li>
+          <li><strong>The rally.</strong> A run of bullish candles takes back the whole drop.</li>
+          <li><strong>MSS.</strong> Price closes above the high the drop started from.</li>
+          <li><strong>The 15m order block.</strong> A box partway up the rally, at the small candles before the strongest push.</li>
+          <li><strong>The return.</strong> After a range at the top, price drops. It takes a small low and one long wick reaches into the 15m OB.</li>
+        </ol>
+
+        <h4>Why this matters</h4>
+        <p>The 15m confirms what the 1H suggested: the sweep was followed by a shift. On most pages of this site, the entry would now be a limit at the 15m order block. This trade goes one step further and asks the 5m for the same proof inside that block. The reward is a smaller stop.</p>
+
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>After the 15m shift, mark the 15m order block. When price comes back to it, drop to the 5m and look for a sweep and a shift there.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 3 ===== -->
+  <section id="s3">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: 5m: sweep and shift inside the 15m order block">
+          <img src="../assets/img/gbpjpy-1h-15m-5m/03-5m-plan.png" alt="5-minute GBP/JPY chart with the long planned. A BSL line runs from the high at the left. Price drops, makes a low, and a later candle sweeps it (X) with a long wick into the 15-minute order block; the wick low is labelled SSL. Price then closes above a prior high (MSS), leaving an imbalance and a 5-minute order block. The position box has its entry at the top of the 5-minute order block, its stop just under the SSL line and its target at the BSL line." loading="lazy">
+        </button>
+        <figcaption>Slide 3 — “5m Timeframe.” The lower-left box is the 15m OB.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 3 · Confirmation and plan</span>
+        <h2>5m: sweep and shift inside the 15m order block</h2>
+        <h4>What happened</h4>
+        <ol>
+          <li><strong>The high at the left.</strong> The top of the 15m range. The BSL line is drawn from it.</li>
+          <li><strong>The drop.</strong> Just before 02:00 price falls away from that high and makes a low.</li>
+          <li><strong>The sweep (X), a little after 03:00.</strong> One candle takes that low. Its long wick goes into the 15m order block. The wick low is labelled SSL.</li>
+          <li><strong>MSS, about 03:20–03:30.</strong> Price closes above the last 5m high. The move leaves an imbalance (IMB).</li>
+          <li><strong>The 5m order block.</strong> A box from the base of the MSS move down to the sweep low.</li>
+        </ol>
+
+        <h4>The position box</h4>
+        <ul class="ticks">
+          <li><strong>Entry:</strong> the top edge of the 5m OB.</li>
+          <li><strong>Stop:</strong> just under the SSL line, the low of the sweep wick. That is inside the 15m OB, not under it.</li>
+          <li><strong>Target:</strong> the BSL line. About 2.5 times the stop.</li>
+        </ul>
+        <p>The 5m order block is tall because it includes the whole sweep wick. That makes the stop wide for a 5m entry and is why the ratio is 2.5 and not higher.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Slide 4 ===== -->
+  <section id="s4">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: Result: two more sweeps, then the target">
+          <img src="../assets/img/gbpjpy-1h-15m-5m/04-result.png" alt="5-minute GBP/JPY result. After the shift price rallies, then drops sharply. It sweeps a small low (X) and reaches the top of the 5-minute order block, filling the long. It chops, then dips again, sweeping another low (X) about halfway into the order block. It then rallies, pauses, and one large candle reaches the BSL line." loading="lazy">
+        </button>
+        <figcaption>Slide 4 — “Result.”</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Step 4 · Result</span>
+        <h2>Result: two more sweeps, then the target</h2>
+        <h4>What happened</h4>
+        <ol>
+          <li><strong>A rally without a fill.</strong> After the shift price ran up until about 04:30. It stopped short of the BSL.</li>
+          <li><strong>A sharp drop, about 04:40.</strong> It left a small low.</li>
+          <li><strong>First sweep and the fill, about 05:10.</strong> That low was taken (X) and price reached the top of the 5m OB. The buy limit filled, roughly an hour and three quarters after the shift.</li>
+          <li><strong>An hour of chop.</strong> Price moved sideways just above the block.</li>
+          <li><strong>Second sweep, about 06:15.</strong> One candle took the low of the chop (X) and went about halfway into the 5m OB. The stop was not reached.</li>
+          <li><strong>The rally.</strong> Up until about 07:00, a pause for an hour with one sharp dip, then a single large candle to the BSL a little after 08:00.</li>
+        </ol>
+
+        <h4>What to take from it</h4>
+        <ul class="ticks">
+          <li>The trade was underwater by about half its stop an hour after the fill. That is normal for an edge entry.</li>
+          <li>Each dip took a low that had just formed. On the 5m, liquidity builds and is taken within an hour.</li>
+          <li>A stop tucked just inside the block would have been hit at 06:15. The one under the sweep low held.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Whole ===== -->
+  <section id="whole">
+    <div class="wrap">
+      <p class="eyebrow">Everything as one</p>
+      <h2>The whole trade on one page</h2>
+      <figure style="max-width:420px;margin:18px 0">
+        <button class="shot" type="button" aria-label="Enlarge cover slide">
+          <img src="../assets/img/gbpjpy-1h-15m-5m/00-cover.png" alt="Cover slide: GBPJPY, showing the finished 5-minute long from the order block to the BSL line." loading="lazy">
+        </button>
+        <figcaption>Cover — “GBPJPY.” The finished trade.</figcaption>
+      </figure>
+      <p class="lead">The same three steps repeat on each timeframe: a sweep, a reaction, a zone. Each zone sits inside the one above it.</p>
+
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th></th><th>1H</th><th>15m</th><th>5m</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Job</strong></td><td>Direction and location</td><td>First confirmation</td><td>Entry</td></tr>
+            <tr><td><strong>Sweep</strong></td><td>An earlier pullback low, into the 1H OB</td><td>The same wick, seen up close</td><td>A 5m low, into the 15m OB</td></tr>
+            <tr><td><strong>Shift</strong></td><td>None needed. The trend is already up</td><td>MSS above the high before the drop</td><td>MSS above the last 5m high</td></tr>
+            <tr><td><strong>Zone</strong></td><td>1H OB</td><td>15m OB</td><td>5m OB</td></tr>
+            <tr><td><strong>Used for</strong></td><td>Where to start looking</td><td>Where to drop to the 5m</td><td>The limit order and the stop</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="diagram" style="margin:26px 0">
+        <svg viewBox="0 0 800 420" role="img" aria-labelledby="gj-title gj-desc">
+          <title id="gj-title">Schematic of the GBP/JPY long on the 5-minute chart</title>
+          <desc id="gj-desc">Price drops from a high, makes a low, sweeps it into the 15-minute order block, then closes above the prior high (MSS), leaving a 5-minute order block. Price rallies, drops back to the top of the 5-minute order block where the buy order fills, dips about halfway into the block, and then rallies to the buy-side liquidity line at the starting high.</desc>
+          <line x1="60" y1="50" x2="445" y2="50" stroke="#1f1d1b" stroke-width="1.2"/>
+          <text x="240" y="42" font-size="13" font-weight="600" font-style="italic" fill="#1f1d1b">BSL</text>
+          <rect x="30" y="325" width="270" height="75" fill="#8f9477" opacity=".4"/>
+          <text x="44" y="388" font-size="13" font-weight="600" font-style="italic" fill="#1f1d1b">15m OB</text>
+          <rect x="445" y="50" width="255" height="210" fill="#4f7186" opacity=".5"/>
+          <rect x="445" y="260" width="255" height="84" fill="#7d7a76" opacity=".5"/>
+          <rect x="265" y="260" width="205" height="80" fill="#6f7558" opacity=".6"/>
+          <text x="330" y="318" font-size="13" font-weight="600" font-style="italic" fill="#1f1d1b">5m OB</text>
+          <line x1="205" y1="292" x2="255" y2="292" stroke="#1f1d1b" stroke-width="1"/>
+          <text x="222" y="285" font-size="13" font-weight="700" fill="#1f1d1b">X</text>
+          <line x1="230" y1="215" x2="292" y2="215" stroke="#1f1d1b" stroke-width="1.2"/>
+          <text x="236" y="208" font-size="12" font-weight="600" font-style="italic" fill="#1f1d1b">MSS</text>
+          <text x="306" y="215" font-size="12" font-weight="600" font-style="italic" fill="#1f1d1b">IMB</text>
+          <text x="232" y="358" font-size="12" font-weight="600" font-style="italic" fill="#1f1d1b">SSL</text>
+          <text x="505" y="318" font-size="13" font-weight="700" fill="#1f1d1b">X</text>
+          <polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"
+            points="30,85 60,50 100,72 150,270 175,235 205,292 230,215 262,340 300,150 330,180 370,95 400,228 420,205 445,264 470,220 500,300 560,120 590,150 615,190 640,50 650,34"/>
+          <circle cx="445" cy="262" r="5" fill="#1f1d1b"/>
+          <circle cx="640" cy="50" r="5" fill="#1f1d1b"/>
+          <g font-size="13" font-weight="600" fill="#1f1d1b">
+            <text x="710" y="55">Take profit</text>
+            <text x="710" y="265">Entry</text>
+            <text x="710" y="349">Stop loss</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="grid c3">
+        <div class="card"><div class="num">1 · BIAS AND LOCATION</div><p>The 1H is in an uptrend. A pullback sweeps a low and taps the 1H order block.</p></div>
+        <div class="card"><div class="num">2 · 15m CONFIRMATION</div><p>The 15m rallies from the tap and closes above the high before the drop. It leaves a 15m order block.</p></div>
+        <div class="card"><div class="num">3 · 5m SWEEP AND SHIFT</div><p>Price returns. A 5m low is swept with a wick into the 15m order block, then the 5m shifts up with an imbalance.</p></div>
+        <div class="card"><div class="num">4 · ENTRY</div><p>Buy limit at the top of the 5m order block. It fills after a small low above it is swept. A second dip goes halfway into the block and holds.</p></div>
+        <div class="card"><div class="num">5 · TARGET</div><p>Price returns to the high the drop came from. About 2.5R, roughly three hours after the fill.</p></div>
+        <div class="card"><div class="num">THE LOGIC IN ONE SENTENCE</div><p>In a 1H uptrend at the 1H order block, wait for the 15m to shift, then buy the 5m order block that forms when price returns to the 15m one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Orders ===== -->
+  <section id="orders">
+    <div class="wrap">
+      <p class="eyebrow">Order placement</p>
+      <h2>Entry, stop loss and take profit</h2>
+      <div class="ticket" style="margin-top:22px">
+        <div class="card entry">
+          <h4>Entry</h4>
+          <p class="where">Buy limit at the top edge of the 5m OB.</p>
+          <ul>
+            <li>The block runs from the base of the 5m MSS move down to the sweep low.</li>
+            <li>The first touch filled an order at the edge. The second dip, an hour later, went about halfway in.</li>
+            <li>Buys fill on the ask. GBP/JPY has a wide spread, so allow for it in the limit price.</li>
+          </ul>
+        </div>
+        <div class="card sl">
+          <h4>Stop loss</h4>
+          <p class="where">Below the 5m sweep low (the SSL line), plus a buffer.</p>
+          <ul>
+            <li>The grey box ends just under the SSL line.</li>
+            <li>If that low breaks, the 5m sweep is undone and the shift is void.</li>
+            <li>It sits inside the 15m OB. The wider alternative is under the 15m OB. It brings the ratio down to about 1:2 on this chart.</li>
+            <li>GBP/JPY moves fast. Leave a few pips beyond the wick.</li>
+          </ul>
+        </div>
+        <div class="card tp">
+          <h4>Take profit</h4>
+          <p class="where">The BSL line: the high before the drop. About 2.5R.</p>
+          <ul>
+            <li>It is the top of the 15m range, where the fall into the 15m OB began.</li>
+            <li>The first rally after the shift stopped short of it. The level was still untouched when the order filled.</li>
+            <li>Price wicked through it. Set the order a few pips before the line.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card">
+          <h3>Managing the position</h3>
+          <p class="small muted">The post shows a single entry and a single exit. The points below are my suggested handling, not something marked on the slides.</p>
+          <ul>
+            <li><strong>While waiting:</strong> cancel if price reaches the BSL without filling you, or if a 5m candle closes below the SSL line.</li>
+            <li><strong>Once filled:</strong> leave the stop alone. A stop moved to break-even during the first hour would have been hit by the 06:15 dip.</li>
+            <li><strong>Time of day:</strong> the axis runs from 01:00 to 09:00 and the slides do not say which timezone. Check the spread at the hour you trade. It widens in quiet hours.</li>
+            <li><strong>News:</strong> check the calendar for GBP and JPY releases before leaving an order or a position open.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Position size</h3>
+          <p>Fix the money at risk first, then let the stop distance decide the lot size.</p>
+          <p><strong>Lots = money at risk ÷ (stop in pips × pip value per lot)</strong></p>
+          <p class="small">On GBP/JPY one standard lot moves ¥1,000 per pip. In dollars that is 1,000 ÷ the USD/JPY rate, for example about $6.67 at 150.00.</p>
+          <p class="small">Example: $10,000 account, 1% risk = $100. Stop of 20 pips at $6.67 per pip per lot gives 100 ÷ (20 × 6.67) ≈ 0.75 lots. At 1:2.5 the target pays about $250. The 20 pips is an illustration. The slides show no prices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Repeatable steps ===== -->
+  <section id="repeat">
+    <div class="wrap narrow">
+      <p class="eyebrow">Repeatable strategy</p>
+      <h2>Step-by-step for the next trade</h2>
+      <p class="lead">Written for longs. For shorts, mirror it. A “no” at any step ends the process.</p>
+
+      <ol class="checklist" style="margin-top:24px">
+        <li><span class="q">1H: is structure breaking upward?</span><span class="a">Mark the order block under the trend and the lows above it. Set an alert at the block.</span></li>
+        <li><span class="q">Has a wick swept one of those lows and reached the 1H OB?</span><span class="a">Open the 15m.</span></li>
+        <li><span class="q">15m: has price closed above the high the drop came from?</span><span class="a">That is the 15m MSS. Draw the 15m OB inside the rally.</span></li>
+        <li><span class="q">Mark the high price pulls back from.</span><span class="a">That is the BSL and the target.</span></li>
+        <li><span class="q">Has price come back to the 15m OB?</span><span class="a">Open the 5m.</span></li>
+        <li><span class="q">5m: is a low swept into the 15m OB, and does a candle then close above the last 5m high?</span><span class="a">That is the 5m MSS. It should leave an imbalance.</span></li>
+        <li><span class="q">Draw the 5m OB from the base of that move to the sweep low.</span><span class="a">Buy limit at its top edge. Stop under the sweep low. Target the BSL.</span></li>
+        <li><span class="q">Does it pay at least 1:2?</span><span class="a">If not, skip it.</span></li>
+        <li><span class="q">Size, place, hold, record.</span><span class="a">Risk 0.5–1%. Exit at target or stop. Screenshot the 1H, 15m and 5m.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== When to skip ===== -->
+  <section id="skip">
+    <div class="wrap">
+      <p class="eyebrow">Filters</p>
+      <h2>When this setup should be skipped</h2>
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card">
+          <h3>Do not take it if</h3>
+          <ul class="ticks no">
+            <li>The 1H is not in an uptrend, or a 1H candle closes below the 1H OB.</li>
+            <li>The 15m has not shifted up from the 1H OB.</li>
+            <li>Price has not returned to the 15m OB. A 5m pattern above it is inducement.</li>
+            <li>The 5m breaks up without first sweeping a low.</li>
+            <li>The 5m break has no imbalance.</li>
+            <li>The spread is a large part of the stop. On a 5m entry it can be.</li>
+            <li>The high above is closer than 1:2.</li>
+            <li>High-impact GBP or JPY news is due while the order rests.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>This trade had all of these</h3>
+          <ul class="ticks">
+            <li>A 1H uptrend with three breaks of structure.</li>
+            <li>A sweep of a low into the 1H order block.</li>
+            <li>A 15m MSS and a 15m order block.</li>
+            <li>A 5m sweep and MSS inside the 15m order block, with an imbalance.</li>
+            <li>A low above the entry taken before the fill.</li>
+            <li>An untouched high about 2.5R away.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout warn" style="margin-top:26px">
+        <h4>Keep this in proportion</h4>
+        <p>A 5m entry gives a smaller stop in pips, which means a larger position for the same risk. Spread and slippage then take a bigger share of each trade, and a few pips of noise decide more outcomes. This trade dipped halfway to its stop before it worked. If you are still building consistency, the 15m order block entry is the slower and more forgiving version of the same idea.</p>
+      </div>
+
+      <p style="margin-top:26px"><a class="btn" href="../playbook.html">Open the playbook</a><a class="btn ghost" href="../index.html#cases">All case studies</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. Chart screenshots are credited to TrendForge.FX; the commentary is an independent reading of those charts and may differ from the original author's reasoning.</p>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js?v=18"></script>
+</body>
+</html>
