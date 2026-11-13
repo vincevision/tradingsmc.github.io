@@ -93,6 +93,17 @@ const CASES = [
     result: "TP hit · ≈ 1:2.9",
     summary:
       "A 1H demand that broke structure is tapped. The 15m ranges, sweeps the range low and shifts on one candle. The long is taken at the 15m demand after the inducement low is cleared, targeting the high above."
+  },
+  {
+    pair: "GBP/USD",
+    title: "Simple Confirmation Entry",
+    href: "cases/gbpusd-simple-confirmation-entry.html",
+    thumb: "assets/img/gbpusd-simple-confirmation-entry/00-cover.png",
+    direction: "Short",
+    model: "1H BoS → 15m supply → 15m MSS",
+    result: "TP hit · ≈ 1:3.8",
+    summary:
+      "The 1H breaks structure down and bounces. The 15m rallies into supply, takes two highs and shifts down. The short is taken at the new supply the shift leaves, targeting the low."
   }
 ];
 
