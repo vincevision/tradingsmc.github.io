@@ -5,6 +5,7 @@ Site: https://vincevision.github.io/tradingsmc.github.io/
 SMC trade case studies: why each trade was taken, where the stop and target go, and a repeatable checklist.
 
 - `index.html` — home page and case-study menu
+- `strategy.html` — the strategy step by step, from direction to journal, with inline SVG diagrams (top-level menu item)
 - `playbook.html` — the combined daily routine, order rules, risk rules and glossary
 - `entry-models.html` — aggressive vs confirmation entry models
 - `inducement.html` — inducement (liquidity trap) concept page
