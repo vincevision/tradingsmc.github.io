@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Sweep Model, Step by Step — VinceVision SMC</title>
+  <meta name="description" content="The sweep model step by step: mark the liquidity, wait for the sweep of a low or high, wait for the shift, then enter at the zone the sweep created, with stop loss and take profit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=27">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Strategy · Sweep model</p>
+      <h1>The sweep model, step by step</h1>
+      <p class="lead">The second way into a trade. Price does not come back to a demand or supply zone. It takes a clear low or high, turns, and shifts structure. The zone you enter from is made by the sweep itself. Six steps, in order, with a diagram that builds up one long.</p>
+      <ul class="chips">
+        <li class="chip">6 steps</li>
+        <li class="chip demand">Drawn as a long</li>
+        <li class="chip target">Mirror it for shorts</li>
+      </ul>
+
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#compare">The two models</a></li><li><a href="#s1">1 · Context</a></li><li><a href="#s2">2 · Liquidity &amp; target</a></li><li><a href="#s3">3 · Sweep</a></li><li><a href="#s4">4 · Shift</a></li><li><a href="#s5">5 · Zone &amp; order</a></li><li><a href="#s6">6 · Size, hold, exit</a></li><li><a href="#shorts">Shorts</a></li><li><a href="#whole">One page</a></li><li><a href="#examples">Examples</a></li>
+      </ul>
+
+      <div class="callout info" style="margin-top:28px">
+        <h4>How to use this page</h4>
+        <p>Read the <a href="strategy.html">zone model</a> first. This page covers what is different and links back for what is the same. The diagrams are drawn for this page and are not real trades. The black dot is where price is at that step. <strong>X</strong> marks the sweep and <strong>$$$</strong> the resting liquidity.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="compare">
+    <div class="wrap">
+      <p class="eyebrow">Before step 1</p>
+      <h2>The two models side by side</h2>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th></th><th><a href="strategy.html">Zone model</a></th><th>Sweep model</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Where you wait</strong></td><td>At a higher-timeframe demand or supply zone</td><td>At a clear low or high: equal lows, a range edge, a previous day’s or session’s low</td></tr>
+            <tr><td><strong>What price must do first</strong></td><td>Pull back into the zone</td><td>Trade through the level</td></tr>
+            <tr><td><strong>Sweep</strong></td><td>Of lows at or inside the zone</td><td>Of the level itself</td></tr>
+            <tr><td><strong>Shift</strong></td><td>Required</td><td>Required</td></tr>
+            <tr><td><strong>Entry zone</strong></td><td>Small zone inside the higher-timeframe zone</td><td>The zone made by the sweep, or the imbalance</td></tr>
+            <tr><td><strong>Stop</strong></td><td>Under the sweep low</td><td>Under the sweep low</td></tr>
+            <tr><td><strong>Target</strong></td><td>The weak high, or the first supply zone</td><td>The opposite liquidity: the nearest clear high</td></tr>
+            <tr><td><strong>What backs the trade</strong></td><td>A zone that already produced a break, plus the sweep and shift</td><td>Only the sweep and shift</td></tr>
+            <tr><td><strong>Main risk</strong></td><td>Price goes through the zone</td><td>The sweep was the start of a real break</td></tr>
+            <tr><td><strong>When it appears</strong></td><td>After a trend has pulled back</td><td>At range edges and at the end of a move, where no fresh zone is nearby</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout rule" style="margin-top:22px">
+        <h4>When both are present</h4>
+        <p>If the lows that get swept sit at a higher-timeframe demand zone, you have the zone model, which is the stronger case. Use the sweep model when the level is clear and there is no zone behind it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s1">
+    <div class="wrap">
+      <span class="step-no">Step 1 · Higher timeframe</span>
+      <h2>Check the context</h2>
+      <p class="lead">There is no zone in this model, so the higher timeframe has one job: tell you whether a reversal here is with the trend or against it.</p>
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><h3>What you are waiting for</h3><ul class="ticks"><li>Nothing yet. This is a check before you start.</li></ul></div>
+        <div class="card"><h3>What you do</h3><ul class="ticks"><li>Read the last higher-timeframe break of structure.</li><li><strong>With the trend:</strong> the higher timeframe is bullish and you are looking for a low to be swept. This is the stronger version.</li><li><strong>Against the trend:</strong> the higher timeframe is bearish and you want to buy a swept low. Only at a major level, with a nearer target and half the risk.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>The higher timeframe has just broken down with force and price is still falling fast. Lows get taken one after another in that phase.</li><li>You cannot say which side the higher timeframe favours.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s2">
+    <div class="wrap">
+      <span class="step-no">Step 2 · Entry timeframe</span>
+      <h2>Mark the liquidity and the target</h2>
+      <p class="lead">The level takes the place of the zone. Pick lows that many traders can see.</p>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 140 800 235" role="img" aria-labelledby="sw1-t sw1-d"><title id="sw1-t">Sweep model diagram 1</title><desc id="sw1-d">Price falls from an old high and makes two lows at the same level, marked as equal lows with dollar signs. A dashed line at the old high marks the target.</desc><line x1="175" y1="292" x2="335" y2="292" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/><text x="208" y="310" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">$$$ equal lows</text><line x1="20" y1="180" x2="700" y2="180" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/><text x="300" y="173" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">target: buy-side liquidity (old high)</text><polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="20,180 80,250 120,205 175,290 225,235 270,292 310,250"/><circle cx="310" cy="250" r="5" fill="#1f1d1b"/></svg>
+      </div>
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><h3>What you are waiting for</h3><ul class="ticks"><li>Clear lows forming: equal lows, a range low, the previous day’s low, a session low, a trendline of lows.</li></ul></div>
+        <div class="card"><h3>What you do</h3><ul class="ticks"><li>Draw a line under the lows. That is the sell-side liquidity.</li><li>Mark the target: the nearest clear high above, where buy-side liquidity rests.</li><li>Check the distance. The target should be several times the depth you expect the sweep to go.</li><li>Set an alert at the lows.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>The low is a minor one in the middle of a move. Few stops rest there.</li><li>The low has already been swept once.</li><li>A supply zone or old high sits just above, leaving no room.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:22px">
+        <h4>Which lows are worth it</h4>
+        <p>The more obvious the level, the more stops sit under it. Equal lows and range lows are the clearest. The <a href="liquidity.html">types of liquidity</a> page covers each kind.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s3">
+    <div class="wrap">
+      <span class="step-no">Step 3 · Entry timeframe</span>
+      <h2>Wait for the sweep</h2>
+      <p class="lead">Price goes under the lows. The question is whether it stays there.</p>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 140 800 235" role="img" aria-labelledby="sw2-t sw2-d"><title id="sw2-t">Sweep model diagram 2</title><desc id="sw2-d">Price drops below the equal lows. The drop is marked X.</desc><line x1="175" y1="292" x2="335" y2="292" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/><text x="208" y="310" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">$$$ equal lows</text><line x1="20" y1="180" x2="700" y2="180" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/><text x="300" y="173" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">target: buy-side liquidity (old high)</text><text x="344" y="356" font-size="13" font-weight="700" text-anchor="start" fill="#1f1d1b">X</text><polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="20,180 80,250 120,205 175,290 225,235 270,292 310,250 350,335"/><circle cx="350" cy="335" r="5" fill="#1f1d1b"/></svg>
+      </div>
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><h3>What you are waiting for</h3><ul class="ticks"><li>Price trading below the line.</li><li>A close back above it within a candle or two, or a long lower wick.</li></ul></div>
+        <div class="card"><h3>What you do</h3><ul class="ticks"><li>Mark the lowest point of the sweep. Your stop will go under it.</li><li>Do not buy the wick. A sweep and a break look the same while they are happening.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>Candles close below the line and keep closing there.</li><li>Price comes back up to the line from underneath and is rejected.</li><li>The move down came on high-impact news that is still being priced.</li></ul></div>
+      </div>
+
+      <h4 style="margin-top:28px">A sweep and a break</h4>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 0 800 240" role="img" aria-labelledby="svb-t svb-d"><title id="svb-t">A sweep compared with a break</title><desc id="svb-d">Two panels. On the left, a sweep: price dips briefly below a low, comes straight back above it and rises. On the right, a break: price falls below the low, stays there, returns to the level from underneath, is rejected and falls further.</desc><line x1="20" y1="120" x2="350" y2="120" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/><text x="24" y="112" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">the low</text><text x="20" y="40" font-size="15" font-weight="700" text-anchor="start" fill="#1f1d1b">Sweep</text><polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="30,70 90,120 120,85 170,150 205,95 235,110 330,55"/><text x="20" y="205" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">A brief dip. Closes back above</text><text x="20" y="223" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">within a candle or two, then leaves fast.</text><line x1="400" y1="20" x2="400" y2="225" stroke="#1f1d1b" stroke-width="1"/><line x1="440" y1="120" x2="770" y2="120" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/><text x="444" y="112" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">the low</text><text x="440" y="40" font-size="15" font-weight="700" text-anchor="start" fill="#1f1d1b">Break</text><polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="450,70 510,120 540,85 590,150 620,135 655,165 690,122 760,185"/><text x="440" y="205" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">Closes below and stays there. Comes back</text><text x="440" y="223" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">to the level from underneath and is rejected.</text></svg>
+      </div>
+      <p style="margin-top:12px">You cannot be sure which one it is at the low. That is why the entry waits for step 4. Buying the wick is guessing; the shift is what tells you it was a sweep.</p>
+    </div>
+  </section>
+
+  <section id="s4">
+    <div class="wrap">
+      <span class="step-no">Step 4 · Entry timeframe</span>
+      <h2>Wait for the shift</h2>
+      <p class="lead">The same rule as in the zone model, and more important here, because there is no zone behind the trade.</p>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 140 800 235" role="img" aria-labelledby="sw3-t sw3-d"><title id="sw3-t">Sweep model diagram 3</title><desc id="sw3-d">From the sweep low, price rises in one strong leg that closes above the last lower high, marked MSS, leaving an imbalance.</desc><rect x="374" y="256" width="44" height="34" fill="#4f7186" opacity=".35"/><text x="424" y="280" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><line x1="175" y1="292" x2="335" y2="292" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/><text x="208" y="310" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">$$$ equal lows</text><line x1="20" y1="180" x2="700" y2="180" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/><text x="300" y="173" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">target: buy-side liquidity (old high)</text><text x="344" y="356" font-size="13" font-weight="700" text-anchor="start" fill="#1f1d1b">X</text><line x1="310" y1="250" x2="388" y2="250" stroke="#1f1d1b" stroke-width="1.2"/><text x="318" y="244" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">MSS</text><polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="20,180 80,250 120,205 175,290 225,235 270,292 310,250 350,335 420,215"/><circle cx="420" cy="215" r="5" fill="#1f1d1b"/></svg>
+      </div>
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><h3>What you are waiting for</h3><ul class="ticks"><li>A candle <strong>close</strong> above the last lower high (MSS or CHoCH).</li><li>An imbalance left by the move.</li></ul></div>
+        <div class="card"><h3>What you do</h3><ul class="ticks"><li>Mark the high that was broken and the imbalance.</li><li>Wait for the breaking candle to close.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>Only a wick went above the high.</li><li>The break is slow and leaves no imbalance.</li><li>Price makes a lower low under the sweep.</li></ul></div>
+      </div>
+      <div class="callout warn" style="margin-top:22px">
+        <h4>Rule</h4>
+        <p>Sweep without shift is not a setup. Many lows are swept and then broken properly on the next push.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s5">
+    <div class="wrap">
+      <span class="step-no">Step 5 · Entry timeframe</span>
+      <h2>Mark the zone the sweep created, and place the order</h2>
+      <p class="lead">In this model the zone does not exist beforehand. The sweep and the shift make it.</p>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 140 800 235" role="img" aria-labelledby="sw4-t sw4-d"><title id="sw4-t">Sweep model diagram 4</title><desc id="sw4-d">A zone is drawn at the base of the strong leg, below the old equal lows. A long position is drawn with entry at the top of the zone, stop below the sweep low and target under the old high. A dashed line shows the expected return and rally.</desc><rect x="374" y="256" width="44" height="34" fill="#4f7186" opacity=".35"/><text x="424" y="280" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><rect x="338" y="305" width="262" height="30" fill="#6f7558" opacity=".7"/><text x="410" y="325" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">sweep zone</text><rect x="560" y="186" width="140" height="119" fill="#4f7186" opacity=".5"/><rect x="560" y="305" width="140" height="40" fill="#7d7a76" opacity=".55"/><g font-size="13" font-weight="600" fill="#1f1d1b"><text x="708" y="191">Take profit</text><text x="708" y="310">Entry</text><text x="708" y="350">Stop loss</text></g><line x1="20" y1="180" x2="700" y2="180" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/><text x="300" y="173" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">target: buy-side liquidity (old high)</text><text x="344" y="356" font-size="13" font-weight="700" text-anchor="start" fill="#1f1d1b">X</text><line x1="310" y1="250" x2="388" y2="250" stroke="#1f1d1b" stroke-width="1.2"/><text x="318" y="244" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">MSS</text><polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="20,180 80,250 120,205 175,290 225,235 270,292 310,250 350,335 420,215 445,235 480,200"/><polyline fill="none" stroke="#1f1d1b" stroke-width="1.6" stroke-dasharray="4 5" stroke-linejoin="round" points="480,200 510,228 525,214 560,307 690,172"/><circle cx="480" cy="200" r="5" fill="#1f1d1b"/></svg>
+      </div>
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><h3>What you are waiting for</h3><ul class="ticks"><li>Nothing. Place the order when the shift candle has closed.</li></ul></div>
+        <div class="card"><h3>What you do</h3><ul class="ticks"><li>Draw the zone: the last down candle before the move that made the shift. Its low is the sweep low.</li><li><strong>Entry:</strong> buy limit at the top edge of that zone.</li><li><strong>Stop loss:</strong> below the sweep low, plus 5–10 pips and the spread.</li><li><strong>Take profit:</strong> the high from step 2, a few pips before it.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>The ratio is under 1:2.</li><li>The zone is very tall because the sweep candle was large. The stop becomes too wide for the target.</li><li>Price has already come back and tapped the zone.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:22px">
+        <h4>If price does not come back that far</h4>
+        <p>A strong reversal often turns in the imbalance and never reaches the zone. You can place the limit at the middle of the imbalance instead, with the same stop under the sweep low. The stop is wider, so check the ratio again. Decide which you use before the trade and keep to it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="s6">
+    <div class="wrap">
+      <span class="step-no">Step 6 · After the order is placed</span>
+      <h2>Size, hold and exit</h2>
+      <p class="lead">From here the two models are the same.</p>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 140 800 235" role="img" aria-labelledby="sw5-t sw5-d"><title id="sw5-t">Sweep model diagram 5</title><desc id="sw5-d">The whole trade. Price returns to the top of the zone, the order fills, and price rallies to the old high.</desc><rect x="374" y="256" width="44" height="34" fill="#4f7186" opacity=".35"/><text x="424" y="280" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><rect x="338" y="305" width="262" height="30" fill="#6f7558" opacity=".7"/><text x="410" y="325" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">sweep zone</text><rect x="560" y="186" width="140" height="119" fill="#4f7186" opacity=".5"/><rect x="560" y="305" width="140" height="40" fill="#7d7a76" opacity=".55"/><g font-size="13" font-weight="600" fill="#1f1d1b"><text x="708" y="191">Take profit</text><text x="708" y="310">Entry</text><text x="708" y="350">Stop loss</text></g><line x1="175" y1="292" x2="335" y2="292" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/><text x="208" y="310" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">$$$ equal lows</text><line x1="20" y1="180" x2="700" y2="180" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/><text x="300" y="173" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">target: buy-side liquidity (old high)</text><text x="344" y="356" font-size="13" font-weight="700" text-anchor="start" fill="#1f1d1b">X</text><line x1="310" y1="250" x2="388" y2="250" stroke="#1f1d1b" stroke-width="1.2"/><text x="318" y="244" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">MSS</text><polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="20,180 80,250 120,205 175,290 225,235 270,292 310,250 350,335 420,215 445,235 480,200 510,228 525,214 560,307 690,172"/><circle cx="690" cy="172" r="5" fill="#1f1d1b"/><circle cx="560" cy="306" r="5" fill="#1f1d1b"/></svg>
+      </div>
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><h3>What you are waiting for</h3><ul class="ticks"><li>Price returning to the top edge of the zone.</li></ul></div>
+        <div class="card"><h3>What you do</h3><ul class="ticks"><li>Size the position so the stop costs 0.5–1% of the account.</li><li>Leave the stop and target alone once filled.</li><li>Journal it, and note that it was a sweep-model trade so you can compare the two models later.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li><strong>Cancel</strong> if price reaches the target before filling you.</li><li>Cancel if a candle closes below the sweep low before the fill.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:22px">
+        <h4>The details</h4>
+        <p>Sizing, the cancel rules, break-even and the review are in steps 7 to 9 of the <a href="strategy.html#s7">zone model page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="shorts">
+    <div class="wrap narrow">
+      <p class="eyebrow">The other direction</p>
+      <h2>Sweeping a high: the short</h2>
+      <p class="lead">Everything is mirrored.</p>
+      <ol>
+        <li><strong>Context.</strong> Stronger when the higher timeframe is bearish.</li>
+        <li><strong>Liquidity.</strong> Equal highs, a range high, the previous day’s high. Target the nearest clear low.</li>
+        <li><strong>Sweep.</strong> Price trades above the highs and closes back below.</li>
+        <li><strong>Shift.</strong> A close below the last higher low, with an imbalance.</li>
+        <li><strong>Zone and order.</strong> The last up candle before the drop. Sell limit at its <strong>bottom</strong> edge, stop above the sweep high plus the spread, target just before the low.</li>
+        <li><strong>Size, hold, exit.</strong> As for longs.</li>
+      </ol>
+      <p>The range example on the <a href="liquidity.html#part2">liquidity page</a> is a short of this kind, and the <a href="cases/xauusd-institutional-flow.html">XAU/USD case</a> starts with the 4H sweeping an old high.</p>
+    </div>
+  </section>
+
+  <section id="whole">
+    <div class="wrap">
+      <p class="eyebrow">Everything as one</p>
+      <h2>The sweep model on one page</h2>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 140 800 235" role="img" aria-labelledby="swall5-t swall5-d"><title id="swall5-t">Sweep model diagram 5</title><desc id="swall5-d">The whole trade. Price returns to the top of the zone, the order fills, and price rallies to the old high.</desc><rect x="374" y="256" width="44" height="34" fill="#4f7186" opacity=".35"/><text x="424" y="280" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><rect x="338" y="305" width="262" height="30" fill="#6f7558" opacity=".7"/><text x="410" y="325" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">sweep zone</text><rect x="560" y="186" width="140" height="119" fill="#4f7186" opacity=".5"/><rect x="560" y="305" width="140" height="40" fill="#7d7a76" opacity=".55"/><g font-size="13" font-weight="600" fill="#1f1d1b"><text x="708" y="191">Take profit</text><text x="708" y="310">Entry</text><text x="708" y="350">Stop loss</text></g><line x1="175" y1="292" x2="335" y2="292" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/><text x="208" y="310" font-size="12" font-weight="700" text-anchor="start" fill="#1f1d1b">$$$ equal lows</text><line x1="20" y1="180" x2="700" y2="180" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/><text x="300" y="173" font-size="12" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">target: buy-side liquidity (old high)</text><text x="344" y="356" font-size="13" font-weight="700" text-anchor="start" fill="#1f1d1b">X</text><line x1="310" y1="250" x2="388" y2="250" stroke="#1f1d1b" stroke-width="1.2"/><text x="318" y="244" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">MSS</text><polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="20,180 80,250 120,205 175,290 225,235 270,292 310,250 350,335 420,215 445,235 480,200 510,228 525,214 560,307 690,172"/><circle cx="690" cy="172" r="5" fill="#1f1d1b"/><circle cx="560" cy="306" r="5" fill="#1f1d1b"/></svg>
+      </div>
+      <ol class="checklist" style="margin-top:26px">
+        <li><span class="q">Context: is the higher timeframe with you, or at least not falling hard against you?</span><span class="a">With the trend: full risk. Against: half risk, nearer target.</span></li>
+        <li><span class="q">Liquidity: is there a clear low with stops under it, and a clear high above?</span><span class="a">Draw both lines. Set an alert.</span></li>
+        <li><span class="q">Sweep: has price gone under the low and closed back above?</span><span class="a">Mark the sweep low. Do not buy yet.</span></li>
+        <li><span class="q">Shift: has a candle closed above the last lower high, with an imbalance?</span><span class="a">Mark the break.</span></li>
+        <li><span class="q">Zone and order: limit at the top of the zone the sweep made, stop under the sweep low, target at the high. At least 1:2?</span><span class="a">Place all three.</span></li>
+        <li><span class="q">Size, hold, exit, record.</span><span class="a">0.5–1% risk. Cancel if the target is reached first.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="examples">
+    <div class="wrap">
+      <p class="eyebrow">On real charts</p>
+      <h2>Where to see it in the case studies</h2>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Case</th><th>What was swept</th><th>What to look at</th></tr></thead>
+          <tbody>
+            <tr><td><a href="cases/gbpjpy-sweep-before-structure.html">GBP/JPY — Strong structure starts with a sweep</a></td><td>A higher-timeframe low, then a 15m double low</td><td>No higher-timeframe shift first. The sweep is the start of the idea.</td></tr>
+            <tr><td><a href="cases/btcusd-after-the-sweep.html">BTC/USD — What happens after the sweep</a></td><td>A 15m low</td><td>Sweep, shift with an imbalance, then a deep fill about nine hours later.</td></tr>
+            <tr><td><a href="cases/btcusd-sweep-shift-zone.html">BTC/USD — Sweep, shift and zone</a></td><td>4H range lows, then 1H equal lows</td><td>The three words of the model in order, on two timeframes.</td></tr>
+            <tr><td><a href="bos-quality.html">Good vs bad BoS</a></td><td>The previous low, before the break</td><td>What happens when the low was not swept: the site’s one losing example.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn" style="margin-top:22px">
+        <h4>Keep this in proportion</h4>
+        <p>With no zone behind it, this model depends on two things you judge in real time: that the level mattered and that the shift was real. Expect more losing trades than with the zone model. The site has no numbers for either. Backtest the two separately, at least fifty setups each on one pair, and compare the results before choosing.</p>
+      </div>
+
+      <p style="margin-top:26px"><a class="btn" href="strategy.html">The zone model</a><a class="btn ghost" href="playbook.html">Open the playbook</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. The diagrams on this page are drawn for this site and are not real trades. Backtest and forward-test the steps on your own charts before risking money.</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=27"></script>
+</body>
+</html>
