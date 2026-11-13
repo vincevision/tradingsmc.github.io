@@ -203,6 +203,9 @@ tr:last-child td { border-bottom: 0; }
   section { padding: 40px 0; }
   .case-card { grid-template-columns: 96px 1fr; }
   .nav > a.hide-sm { display: none; }
+  .brand span { display: none; }
+  .nav > a, .nav summary { padding: 8px 8px; font-size: .86rem; }
+  .site-header .wrap { gap: 8px; }
   .nav .menu { min-width: 240px; }
   .checklist > li { padding-left: 56px; }
 }

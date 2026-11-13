@@ -87,6 +87,7 @@ const CASES = [
         <nav class="nav" aria-label="Main">
           <a class="hide-sm" href="${root}index.html"${cur("index.html")}>Home</a>
           <a href="${root}playbook.html"${cur("playbook.html")}>Playbook</a>
+          <a href="${root}entry-models.html"${cur("entry-models.html")}>Entry models</a>
           <details>
             <summary>Case studies</summary>
             <div class="menu">${menu}</div>
