@@ -141,7 +141,7 @@ const CASES = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "26" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "27" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -177,7 +177,13 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "26" };
         <a class="brand" href="${root}index.html">VinceVision <span>SMC</span></a>
         <nav class="nav" aria-label="Main">
           <a class="hide-sm" href="${root}index.html"${cur("index.html")}>Home</a>
-          <a href="${root}strategy.html"${cur("strategy.html")}>Strategy</a>
+          <details>
+            <summary>Strategy</summary>
+            <div class="menu">
+              <a href="${root}strategy.html"${cur("strategy.html")}>Zone model<small>Step by step: from a demand or supply zone</small></a>
+              <a href="${root}sweep-model.html"${cur("sweep-model.html")}>Sweep model<small>Step by step: a swept low or high, then a shift</small></a>
+            </div>
+          </details>
           <a href="${root}playbook.html"${cur("playbook.html")}>Playbook</a>
           <details>
             <summary>Concepts</summary>
