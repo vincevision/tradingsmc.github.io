@@ -27,6 +27,17 @@ const CASES = [
     result: "TP hit · ≈ 1:3.8",
     summary:
       "The 4H sweeps a high and shifts bearish. The pullback runs the 1H internal highs, the 15m shifts down, and the short is taken from the order block to the demand zone below."
+  },
+  {
+    pair: "GBP/JPY",
+    title: "Strong Structure Starts With a Sweep",
+    href: "cases/gbpjpy-sweep-before-structure.html",
+    thumb: "assets/img/gbpjpy-sweep-before-structure/00-cover.png",
+    direction: "Long",
+    model: "HTF sweep → 15m MSS → 15m OB",
+    result: "TP hit · ≈ 1:3.8",
+    summary:
+      "The higher timeframe sweeps its low and recovers. The 15m then breaks structure up, and the long is taken from the order block, after the lows above it are cleared, to the buy-side liquidity overhead."
   }
 ];
 
