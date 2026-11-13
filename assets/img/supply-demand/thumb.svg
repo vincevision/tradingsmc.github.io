@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dem-t dem-d">
+          <rect width="800" height="440" fill="#c3b9ad"/><title id="dem-t">How a demand zone forms and is used</title>
+          <desc id="dem-d">Price falls in a series of down candles. The last down candle is followed by three strong up candles that leave an imbalance and close above the previous lower high, marked BoS. The demand zone is drawn from that last down candle, from its low to its open, and extended to the right. Price later falls back through the imbalance, touches the top of the zone and rallies to a new high.</desc>
+          <rect x="226" y="260" width="396" height="58" fill="#6f7558" opacity=".6"/>
+          <rect x="292" y="150" width="220" height="58" fill="#4f7186" opacity=".38"/>
+          <line x1="105" y1="122" x2="369" y2="122" stroke="#1f1d1b" stroke-width="1.2"/>
+          <line x1="61.0" y1="92" x2="61.0" y2="158" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="50" y="100" width="22" height="50" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="105.0" y1="122" x2="105.0" y2="156" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="94" y="130" width="22" height="20" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="149.0" y1="126" x2="149.0" y2="206" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="138" y="130" width="22" height="70" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="193.0" y1="196" x2="193.0" y2="268" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="182" y="200" width="22" height="60" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="237.0" y1="255" x2="237.0" y2="318" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="226" y="260" width="22" height="40" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="281.0" y1="208" x2="281.0" y2="302" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="270" y="215" width="22" height="85" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="325.0" y1="118" x2="325.0" y2="218" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="314" y="125" width="22" height="90" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="369.0" y1="85" x2="369.0" y2="150" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="358" y="95" width="22" height="30" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="413.0" y1="88" x2="413.0" y2="128" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="402" y="95" width="22" height="25" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="457.0" y1="112" x2="457.0" y2="178" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="446" y="120" width="22" height="50" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="501.0" y1="165" x2="501.0" y2="250" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="490" y="170" width="22" height="60" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="545.0" y1="224" x2="545.0" y2="285" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="534" y="230" width="22" height="32" fill="#1f1d1b" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="589.0" y1="196" x2="589.0" y2="266" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="578" y="200" width="22" height="62" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="633.0" y1="134" x2="633.0" y2="204" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="622" y="140" width="22" height="60" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <line x1="677.0" y1="72" x2="677.0" y2="144" stroke="#1f1d1b" stroke-width="1.6"/>
+          <rect x="666" y="80" width="22" height="60" fill="#f6f2ec" stroke="#1f1d1b" stroke-width="1.6"/>
+          <text font-family="Poppins, Arial, sans-serif" x="226" y="114" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">BoS</text><text font-family="Poppins, Arial, sans-serif" x="520" y="184" font-size="13" font-weight="600" font-style="italic" text-anchor="start" fill="#1f1d1b">IMB</text><text font-family="Poppins, Arial, sans-serif" x="634" y="294" font-size="14" font-weight="700" font-style="italic" text-anchor="start" fill="#1f1d1b">Demand</text><text font-family="Poppins, Arial, sans-serif" x="237" y="336" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#1f1d1b">last down candle</text><text font-family="Poppins, Arial, sans-serif" x="545" y="303" font-size="12" font-weight="600" font-style="italic" text-anchor="middle" fill="#1f1d1b">return</text><text font-family="Poppins, Arial, sans-serif" x="40" y="36" font-size="15" font-weight="700" text-anchor="start" fill="#1f1d1b">Demand zone</text>
+        </svg>
