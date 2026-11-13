@@ -141,7 +141,7 @@ const CASES = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "25" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "26" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -177,6 +177,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "25" };
         <a class="brand" href="${root}index.html">VinceVision <span>SMC</span></a>
         <nav class="nav" aria-label="Main">
           <a class="hide-sm" href="${root}index.html"${cur("index.html")}>Home</a>
+          <a href="${root}strategy.html"${cur("strategy.html")}>Strategy</a>
           <a href="${root}playbook.html"${cur("playbook.html")}>Playbook</a>
           <details>
             <summary>Concepts</summary>
