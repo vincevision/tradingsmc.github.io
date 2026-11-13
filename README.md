@@ -6,6 +6,7 @@ SMC trade case studies: why each trade was taken, where the stop and target go, 
 - `playbook.html` — the combined daily routine, order rules, risk rules and glossary
 - `entry-models.html` — aggressive vs confirmation entry models
 - `inducement.html` — inducement (liquidity trap) concept page
+- `structure-entries.html` — market structure (strong/weak points) and four entry models concept page
 - `top-down.html` — top-down analysis (4H, 1H, 30m, 5m) concept page
 - `full-sequence.html` — the five-part sequence (structure, sweep, MSS, IMB, OB) concept page
 - `bos-quality.html` — good vs bad break of structure (protected and unprotected lows) concept page
