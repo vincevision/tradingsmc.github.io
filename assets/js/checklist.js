@@ -40,10 +40,12 @@
       want: "The higher timeframe has just broken structure " + d("upward", "downward") + " and is pulling back.",
       checks: [
         "A " + S.htf + " candle has closed " + above + " the last " + highlow + " (break of structure).",
+        "Before that break, the pullback took out a previous " + lowhigh + " (a sweep). The break did not come without one.",
+        "I have marked the " + lowhigh + " of that sweep as the protected " + lowhigh + ".",
         "Price is now pulling back from that break.",
         "I have marked the weak " + highlow + " (target side) and the strong " + lowhigh + " the break came from."
       ],
-      stop: ["The " + S.htf + " is moving sideways with no recent break.", "The last break was in the other direction."]
+      stop: ["The " + S.htf + " is moving sideways with no recent break.", "The last break was in the other direction.", "The " + highlow + " broke with no sweep of a " + lowhigh + " before it. Wait: price may come back for that " + lowhigh + "."]
     } : {
       id: "direction", tf: S.htf, title: "Context", chart: true,
       want: "The higher timeframe is with the trade, or at least not moving hard against it.",
