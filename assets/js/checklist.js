@@ -86,6 +86,7 @@
       checks: [
         zone ? "Price has reached the " + z + " zone." : "Price has traded " + below + " the line.",
         zone ? d("Lows", "Highs") + " at or inside the zone have been taken." : "It closed back " + above + " the line within a candle or two, or left a long wick.",
+        zone ? "This is an internal sweep: no " + S.htf + " candle has closed beyond the protected " + lowhigh + "." : "I know which " + lowhigh + " this is: an internal one, or the external " + lowhigh + " of the " + S.htf + " range.",
         "I have marked the extreme of the sweep. My stop will go beyond it.",
         "I have not entered yet."
       ],
