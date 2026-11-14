@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internal and External Structure and Sweeps — VinceVision SMC</title>
+  <meta name="description" content="Internal and external market structure, internal and external liquidity, and which sweep matters at each step of the trade.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=30">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Concept</p>
+      <h1>Internal and external structure, and their sweeps</h1>
+      <p class="lead">External structure is the main swings that set the trend. Internal structure is the smaller swings inside one of those legs. Each has its own liquidity and its own sweeps. Knowing which one you are looking at tells you whether a move is the trend changing, or only a pullback collecting orders on its way to your zone.</p>
+      <ul class="chips">
+        <li class="chip demand">Drawn as a long</li>
+        <li class="chip">No pair named</li>
+        <li class="chip target">Mirror it for shorts</li>
+      </ul>
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#two">Two structures</a></li><li><a href="#mark">How to mark them</a></li><li><a href="#breaks">Two kinds of break</a></li><li><a href="#liq">Two kinds of liquidity</a></li><li><a href="#sweeps">The four sweeps</a></li><li><a href="#flow">Internal to external</a></li><li><a href="#notes">In the routine</a></li><li><a href="#tf">Timeframes</a></li><li><a href="#mistakes">Mistakes</a></li><li><a href="#repeat">Checklist</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="two">
+    <div class="wrap">
+      <span class="step-no">Part 1</span>
+      <h2>Two structures on one chart</h2>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 30 820 280" role="img" aria-labelledby="ie1-t ie1-d"><title id="ie1-t">External and internal structure</title><desc id="ie1-d">Price rises from an external low to an external high. The pullback makes its own smaller lower highs and lower lows, which are the internal structure. Price then closes above the last internal high, and later above the external high, which is the break of structure.</desc>
+<line x1="250" y1="110" x2="640" y2="110" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="400" y1="170" x2="505" y2="170" stroke="#7d7a76" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="290" y1="246" x2="450" y2="246" stroke="#7d7a76" stroke-width="1"/><line x1="290" y1="240" x2="290" y2="246" stroke="#7d7a76"/><line x1="450" y1="240" x2="450" y2="246" stroke="#7d7a76"/>
+<polyline points="70,270 250,110 290,152 320,132 370,192 400,170 450,226 540,128 562,152 680,56" fill="none" stroke="#1f1d1b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<g fill="#1f1d1b"><circle cx="70" cy="270" r="5"/><circle cx="250" cy="110" r="5"/><circle cx="450" cy="226" r="5"/><circle cx="680" cy="56" r="5"/></g>
+<g fill="#fff" stroke="#7d7a76" stroke-width="1.5"><circle cx="290" cy="152" r="3.5"/><circle cx="320" cy="132" r="3.5"/><circle cx="370" cy="192" r="3.5"/><circle cx="400" cy="170" r="3.5"/></g>
+<g font-family="Inter, Arial, sans-serif" font-size="12" fill="#1f1d1b">
+<text x="60" y="292" font-weight="700">External low</text>
+<text x="196" y="98" font-weight="700">External high</text>
+<text x="262" y="264" fill="#7d7a76">Internal structure: the pullback</text>
+<text x="462" y="240" font-weight="700" fill="#6f7558">External higher low</text>
+<text x="462" y="256" fill="#6f7558">(protected once the high breaks)</text>
+<text x="512" y="186" fill="#7d7a76">internal break</text>
+<text x="462" y="102" font-weight="700">BoS (external)</text>
+<text x="664" y="50" text-anchor="end" font-weight="700">New external high</text>
+</g></svg>
+      </div>
+      <p class="small muted">Filled dots are external swing points. Open dots are internal swing points.</p>
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card"><h3>External structure</h3><ul class="ticks"><li>The main swing highs and lows on the timeframe you are reading.</li><li>It decides the trend: higher highs and higher lows, or lower lows and lower highs.</li><li>A candle close beyond an external point is a real break of structure (BoS), or a change of direction if it is against the trend.</li><li>The protected low or high is always an external point.</li></ul></div>
+        <div class="card"><h3>Internal structure</h3><ul class="ticks"><li>The smaller highs and lows inside one external leg, mostly inside the pullback.</li><li>It shows how the pullback is developing and when it is ending.</li><li>A close beyond an internal point is an internal break. It is an early sign, not a trend change.</li><li>Internal highs and lows are where inducement forms.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mark">
+    <div class="wrap narrow">
+      <span class="step-no">Part 2</span>
+      <h2>How to mark them the same way every time</h2>
+      <p class="lead">The labels need one fixed rule, or you will redraw them to suit the trade you want.</p>
+      <ol class="checklist">
+        <li><span class="q">Start from the last break of structure.</span><span class="a">Find the last candle close above an external high (uptrend).</span></li>
+        <li><span class="q">Confirm the external low.</span><span class="a">The lowest point of the pullback before that break becomes the external higher low. A low is only confirmed as external once the high after it has been broken.</span></li>
+        <li><span class="q">Mark the external high.</span><span class="a">The highest point reached after the break, once price starts pulling back.</span></li>
+        <li><span class="q">Everything between them is internal.</span><span class="a">Every smaller high and low between the external low and the external high belongs to internal structure, however clear it looks.</span></li>
+        <li><span class="q">Update only on a close.</span><span class="a">The external points move only when a candle closes beyond one of them. Wicks do not move them.</span></li>
+      </ol>
+      <div class="callout info" style="margin-top:18px"><h4>This is a judgement, so keep it simple</h4><p>Traders draw internal and external structure slightly differently, and no version is the official one. What matters is that you use one rule, the same way, on every chart. The rule above is the one this site uses: a swing point is external when it caused, or was made by, a break of structure.</p></div>
+    </div>
+  </section>
+
+  <section id="breaks">
+    <div class="wrap narrow">
+      <span class="step-no">Part 3</span>
+      <h2>Two kinds of break</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th></th><th>Internal break</th><th>External break (BoS)</th></tr></thead>
+        <tbody>
+          <tr><td>What closes</td><td>A candle beyond a small high or low inside the leg</td><td>A candle beyond a main swing high or low</td></tr>
+          <tr><td>What it means</td><td>The pullback is turning, or only pausing</td><td>The trend continues, or has changed</td></tr>
+          <tr><td>Changes your direction?</td><td>No</td><td>Yes, if it is against the trend</td></tr>
+          <tr><td>How you use it</td><td>As the shift for an entry, but only at a marked zone and after a sweep</td><td>To set long or short, the protected point and the target</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout rule" style="margin-top:18px"><h4>Rule</h4><p>An internal break against the external trend is a pullback until an external point breaks. Do not sell an uptrend because a small low gave way. That move is usually price coming down to your demand.</p></div>
+    </div>
+  </section>
+
+  <section id="liq">
+    <div class="wrap narrow">
+      <span class="step-no">Part 4</span>
+      <h2>Two kinds of liquidity</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th></th><th>Internal liquidity</th><th>External liquidity</th></tr></thead>
+        <tbody>
+          <tr><td>Where it sits</td><td>Inside the current range: under internal lows, above internal highs, at inducement points, and in unfilled imbalances and zones</td><td>Outside the current range: above the external high and below the external low; also previous day and week highs and lows, and clear equal highs or lows at the range edge</td></tr>
+          <tr><td>Who is there</td><td>Early buyers and sellers with tight stops</td><td>Swing stops and breakout orders</td></tr>
+          <tr><td>What price does with it</td><td>Takes it during the pullback, on the way to a zone</td><td>Travels to it after the zone holds. It is the target</td></tr>
+        </tbody>
+      </table></div>
+      <p>For more on where stops collect, see <a href="liquidity.html">liquidity</a> and <a href="inducement.html">inducement</a>.</p>
+    </div>
+  </section>
+
+  <section id="sweeps">
+    <div class="wrap">
+      <span class="step-no">Part 5</span>
+      <h2>The four sweeps, and what each one tells you</h2>
+      <p class="lead">A sweep is always the same event: price trades beyond a level, takes the stops and closes back. Where it happens decides what it means.</p>
+      <div class="grid c2" style="margin-top:20px">
+        <div class="card"><span class="num">1</span><h3>Internal sweep during the pullback</h3><p>Price takes an internal low on the way down, before it has reached your zone. This is inducement being cleared.</p><ul class="ticks"><li>Meaning: the pullback is still running.</li><li>Action: none. Keep waiting for the zone.</li></ul></div>
+        <div class="card"><span class="num">2</span><h3>Internal sweep at the zone</h3><p>Price takes an internal low inside or just into your demand, then turns.</p><ul class="ticks"><li>Meaning: the pullback may be finishing here.</li><li>Action: wait for the shift, then place the order. The stop goes below this sweep.</li></ul></div>
+        <div class="card"><span class="num">3</span><h3>External sweep with the trend</h3><p>Price runs above the external high and takes the stops there.</p><ul class="ticks"><li>Meaning: the target has been reached.</li><li>Action: the trade is over. A close above gives a new BoS; a wick only can start a deeper pullback.</li></ul></div>
+        <div class="card"><span class="num">4</span><h3>External sweep against the trend</h3><p>Price dips below the external low, closes back above it, and then shifts up.</p><ul class="ticks"><li>Meaning: the largest pool of sell stops has been taken and the trend has held. This is the strongest sweep.</li><li>Action: trade it with the <a href="sweep-model.html">sweep model</a>. If candles close below instead, it is a break and the trend has changed.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="wrap">
+      <span class="step-no">Part 6</span>
+      <h2>Price moves from internal liquidity to external liquidity</h2>
+      <p class="lead">After a break, price comes back inside the range to collect internal liquidity and fill a zone. Then it leaves for the external liquidity on the other side. Then the cycle repeats.</p>
+      <div class="diagram" style="margin-top:20px">
+        <svg viewBox="0 30 820 280" role="img" aria-labelledby="ie2-t ie2-d"><title id="ie2-t">From internal liquidity to external liquidity</title><desc id="ie2-d">After a break of structure, price pulls back. It sweeps one internal low, then a second internal low inside the demand zone, shifts up and runs to the external high, where the external liquidity sits.</desc>
+<rect x="150" y="206" width="330" height="30" fill="#6f7558" fill-opacity=".18" stroke="#6f7558"/>
+<line x1="200" y1="88" x2="700" y2="88" stroke="#4f7186" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="60" y1="262" x2="480" y2="262" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="5 4"/>
+<line x1="250" y1="150" x2="350" y2="150" stroke="#7d7a76" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="340" y1="186" x2="440" y2="186" stroke="#7d7a76" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="378" y1="160" x2="470" y2="160" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="3 3"/>
+<polyline points="60,262 200,88 250,150 290,118 340,186 378,160 430,224 500,140 520,162 650,70 690,112" fill="none" stroke="#1f1d1b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="340" cy="186" r="4" fill="#7d7a76"/><circle cx="430" cy="224" r="4" fill="#6f7558"/><circle cx="650" cy="70" r="4" fill="#4f7186"/>
+<g font-family="Inter, Arial, sans-serif" font-size="12" fill="#1f1d1b">
+<text x="60" y="284" font-weight="700">External low (protected)</text>
+<text x="210" y="80" font-weight="700" fill="#4f7186">External liquidity: stops above the external high</text>
+<text x="196" y="170" fill="#7d7a76">internal low</text>
+<text x="326" y="194" text-anchor="end" font-weight="700" fill="#7d7a76">1 Internal sweep</text>
+<text x="486" y="226" font-weight="700" fill="#6f7558">2 Internal sweep in demand</text>
+<text x="478" y="128" text-anchor="end" font-weight="700">3 Shift</text>
+<text x="664" y="64" font-weight="700" fill="#4f7186">4 External sweep</text>
+<text x="812" y="136" text-anchor="end" fill="#7d7a76">then a new pullback</text>
+</g></svg>
+      </div>
+      <div class="grid c3" style="margin-top:22px">
+        <div class="card"><h3>Pullback</h3><p>Price works down through internal lows. Each one taken is an internal sweep. None of them is a reason to buy yet.</p></div>
+        <div class="card"><h3>Zone</h3><p>The last internal sweep happens at demand. The shift that follows is an internal break in the direction of the external trend.</p></div>
+        <div class="card"><h3>Expansion</h3><p>Price runs to the external high. That is where the trade is closed, because that is where the opposite orders are waiting.</p></div>
+      </div>
+      <div class="callout rule" style="margin-top:22px"><h4>Rule</h4><p>Enter on internal liquidity being taken. Exit at external liquidity. If you are entering where external liquidity sits, you are probably the liquidity.</p></div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="wrap narrow">
+      <span class="step-no">Part 7</span>
+      <h2>Where this fits in the routine</h2>
+      <p>These are the same steps as the <a href="notes.html">trading notes</a>, with the structure named.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Note</th><th>Which structure</th><th>What to check</th></tr></thead>
+        <tbody>
+          <tr><td>1 Trend</td><td>External, higher timeframe</td><td>A close beyond an external high or low. Internal breaks do not count.</td></tr>
+          <tr><td>2 Sweep before the break</td><td>Either</td><td>The pullback took a low before the high broke. An internal low taken is the minimum. A dip under the previous external low that closed back above is stronger.</td></tr>
+          <tr><td>3 Protected low</td><td>External</td><td>The low of that pullback. It is now the external higher low.</td></tr>
+          <tr><td>4 Demand</td><td>External leg</td><td>The zone at the origin of the leg that broke the external high.</td></tr>
+          <tr><td>5 Target</td><td>External liquidity</td><td>The external high, or the supply in front of it.</td></tr>
+          <tr><td>6 Return</td><td>Internal, higher timeframe</td><td>Internal lows are taken on the way down. Do nothing.</td></tr>
+          <tr><td>7 Sweep in the zone</td><td>Internal, lower timeframe</td><td>A lower-timeframe low is taken at the zone. The protected low has not been closed below.</td></tr>
+          <tr><td>8 Shift</td><td>Lower timeframe</td><td>A close above the last lower high. On the higher timeframe this is only an internal break, which is why it needs the zone and the sweep with it.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="tf">
+    <div class="wrap narrow">
+      <span class="step-no">Part 8</span>
+      <h2>Internal on one timeframe is external on the next</h2>
+      <p class="lead">The two words are relative to the chart you are on.</p>
+      <ul class="ticks">
+        <li>The internal structure of the 4H is roughly the external structure of the 15m.</li>
+        <li>So when the 15m breaks its own external high inside a 4H demand, the 4H sees only an internal break. Both are true.</li>
+        <li>Name the timeframe every time: “4H external high”, “15m external low”. It removes most of the confusion.</li>
+        <li>Take direction and target from the higher timeframe’s external structure. Take the entry from the lower timeframe’s structure. See <a href="top-down.html">top-down analysis</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <div class="wrap narrow">
+      <h2>Common mistakes</h2>
+      <ul class="ticks no">
+        <li>Calling an internal break a trend change and trading against the external trend.</li>
+        <li>Buying the first internal sweep in the middle of the pullback, before price has reached a zone.</li>
+        <li>Putting the target at an internal high. Price can stall there, but the draw is the external high.</li>
+        <li>Putting the stop behind an internal low that has not been swept. It is liquidity, and the pullback is likely to take it.</li>
+        <li>Treating a close below the external low as a sweep. A sweep closes back inside; a close beyond is a break.</li>
+        <li>Re-labelling the external points after the fact so the trade looks valid.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="repeat">
+    <div class="wrap narrow">
+      <p class="eyebrow">Repeatable</p>
+      <h2>Checklist</h2>
+      <ol class="checklist">
+        <li><span class="q">Where are the external high and low?</span><span class="a">Marked on the higher timeframe, from the last break of structure.</span></li>
+        <li><span class="q">Which way did the last external break go?</span><span class="a">That is the only direction I trade.</span></li>
+        <li><span class="q">Is the current move internal?</span><span class="a">Yes while price is between the two external points. I treat it as a pullback.</span></li>
+        <li><span class="q">Where is the internal liquidity?</span><span class="a">Internal lows above my zone. I expect them to be taken first.</span></li>
+        <li><span class="q">Has an internal sweep happened at my zone?</span><span class="a">Yes, with the protected low still intact. Now I wait for the shift.</span></li>
+        <li><span class="q">Where is the external liquidity?</span><span class="a">Above the external high. That is the target.</span></li>
+        <li><span class="q">What cancels it?</span><span class="a">A candle close below the external low.</span></li>
+      </ol>
+      <p style="margin-top:26px"><a class="btn" href="notes.html">The routine in order</a><a class="btn ghost" href="checklist.html">Live checklist</a><a class="btn ghost" href="liquidity.html">Liquidity</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. Charts and diagrams are credited to TrendForge.FX; the commentary is an independent reading of them and may differ from the original author's reasoning.</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=30"></script>
+</body>
+</html>

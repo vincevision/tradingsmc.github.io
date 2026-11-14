@@ -141,7 +141,7 @@ const CASES = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "29" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "30" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -192,6 +192,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "29" };
             <div class="menu">
               <a href="${root}entry-models.html"${cur("entry-models.html")}>Entry models<small>Aggressive vs confirmation entry</small></a>
               <a href="${root}structure-entries.html"${cur("structure-entries.html")}>Structure &amp; entry models<small>Strong and weak points, four ways to enter</small></a>
+              <a href="${root}internal-external.html"${cur("internal-external.html")}>Internal &amp; external structure<small>Two structures, two kinds of liquidity, four sweeps</small></a>
               <a href="${root}supply-demand.html"${cur("supply-demand.html")}>Imbalance, supply &amp; demand<small>How zones form and which ones to trade</small></a>
               <a href="${root}top-down.html"${cur("top-down.html")}>Top-down analysis<small>4H, 1H, 30m and 5m on one trade</small></a>
               <a href="${root}full-sequence.html"${cur("full-sequence.html")}>The full sequence<small>Structure, sweep, MSS, IMB and OB in one trade</small></a>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 30 820 280" role="img" aria-labelledby="ie1-t ie1-d"><title id="ie1-t">External and internal structure</title><desc id="ie1-d">Price rises from an external low to an external high. The pullback makes its own smaller lower highs and lower lows, which are the internal structure. Price then closes above the last internal high, and later above the external high, which is the break of structure.</desc>
+<rect x="0" y="30" width="820" height="280" fill="#c3b9ad"/><line x1="250" y1="110" x2="640" y2="110" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="400" y1="170" x2="505" y2="170" stroke="#7d7a76" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="290" y1="246" x2="450" y2="246" stroke="#7d7a76" stroke-width="1"/><line x1="290" y1="240" x2="290" y2="246" stroke="#7d7a76"/><line x1="450" y1="240" x2="450" y2="246" stroke="#7d7a76"/>
+<polyline points="70,270 250,110 290,152 320,132 370,192 400,170 450,226 540,128 562,152 680,56" fill="none" stroke="#1f1d1b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<g fill="#1f1d1b"><circle cx="70" cy="270" r="5"/><circle cx="250" cy="110" r="5"/><circle cx="450" cy="226" r="5"/><circle cx="680" cy="56" r="5"/></g>
+<g fill="#fff" stroke="#7d7a76" stroke-width="1.5"><circle cx="290" cy="152" r="3.5"/><circle cx="320" cy="132" r="3.5"/><circle cx="370" cy="192" r="3.5"/><circle cx="400" cy="170" r="3.5"/></g>
+<g font-family="Inter, Arial, sans-serif" font-size="12" fill="#1f1d1b">
+<text x="60" y="292" font-weight="700">External low</text>
+<text x="196" y="98" font-weight="700">External high</text>
+<text x="262" y="264" fill="#7d7a76">Internal structure: the pullback</text>
+<text x="462" y="240" font-weight="700" fill="#6f7558">External higher low</text>
+<text x="462" y="256" fill="#6f7558">(protected once the high breaks)</text>
+<text x="512" y="186" fill="#7d7a76">internal break</text>
+<text x="462" y="102" font-weight="700">BoS (external)</text>
+<text x="664" y="50" text-anchor="end" font-weight="700">New external high</text>
+</g></svg>
