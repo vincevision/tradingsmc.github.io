@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trading Notes: The Routine in Order — VinceVision SMC</title>
+  <meta name="description" content="Short trading notes: mark the trend, check the break had a sweep before it, mark the protected low and the demand or supply that caused the break, wait for the return, the sweep and the shift, then place the order.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=29">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Strategy · Notes</p>
+      <h1>Trading notes: the routine in order</h1>
+      <p class="lead">The whole method as ten short notes. Mark the trend. Check that the break had a sweep before it. Mark the protected low and the zone that caused the break. Wait for price to return, sweep and shift. Then place the order. It is written for longs; the table at the end mirrors it for shorts.</p>
+      <ul class="chips">
+        <li class="chip">10 notes</li>
+        <li class="chip demand">Trend continuation</li>
+        <li class="chip target">Same order every day</li>
+      </ul>
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#short">Short version</a></li><li><a href="#n1">1 · Mark the trend</a></li><li><a href="#n2">2 · Sweep before the break</a></li><li><a href="#n3">3 · Mark the protected low</a></li><li><a href="#n4">4 · Mark the demand that caused the break</a></li><li><a href="#n5">5 · Mark the target</a></li><li><a href="#n6">6 · Wait for price to return</a></li><li><a href="#n7">7 · Inside the zone, wait for a sweep</a></li><li><a href="#n8">8 · Wait for the shift</a></li><li><a href="#n9">9 · Mark the small zone and place the order</a></li><li><a href="#n10">10 · Hold, then record</a></li><li><a href="#shorts">Shorts</a></li><li><a href="#honest">How strict?</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="short">
+    <div class="wrap narrow">
+      <p class="eyebrow">Read this every morning</p>
+      <h2>The short version</h2>
+      <ol class="checklist">
+        <li><span class="q">Trend.</span><span class="a">Higher timeframe has closed above a high. I am looking for longs only.</span></li>
+        <li><span class="q">Sweep before the break.</span><span class="a">The pullback before that break took a previous low. No sweep, no trade yet.</span></li>
+        <li><span class="q">Protected low.</span><span class="a">The low of that sweep is marked. A close below it cancels the idea.</span></li>
+        <li><span class="q">Demand.</span><span class="a">The last down candle before the break is marked. It is fresh, left an imbalance and is in discount.</span></li>
+        <li><span class="q">Target.</span><span class="a">The weak high, or the supply in front of it. Room for 1:2 or more.</span></li>
+        <li><span class="q">Wait.</span><span class="a">Alert at the zone. Nothing until it rings.</span></li>
+        <li><span class="q">Sweep in the zone.</span><span class="a">Lower timeframe takes a small low and turns.</span></li>
+        <li><span class="q">Shift.</span><span class="a">Lower timeframe closes above the last lower high, with an imbalance.</span></li>
+        <li><span class="q">Order.</span><span class="a">Buy limit at the top of the small demand. Stop below the sweep low. Target from step 5. Risk 0.5–1%.</span></li>
+        <li><span class="q">Hold and record.</span><span class="a">No changes. Screenshot and result in R.</span></li>
+      </ol>
+      <div class="diagram" style="margin-top:24px">
+        <svg viewBox="0 40 820 260" role="img" aria-labelledby="nt-t nt-d"><title id="nt-t">The whole routine in one picture</title><desc id="nt-d">Price makes a low and a high, pulls back below the old low, then breaks the high. The low of that pullback is the protected low and the last down candle before the break is the demand zone. Price returns to the zone, sweeps a small low, shifts up and runs to the high.</desc>
+<rect x="318" y="226" width="400" height="26" fill="#6f7558" fill-opacity=".18" stroke="#6f7558" stroke-width="1"/>
+<line x1="178" y1="238" x2="345" y2="238" stroke="#7d7a76" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="258" y1="150" x2="420" y2="150" stroke="#1f1d1b" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="450" y1="88" x2="780" y2="88" stroke="#4f7186" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="586" y1="204" x2="650" y2="204" stroke="#1f1d1b" stroke-width="1" stroke-dasharray="3 3"/>
+<polyline points="50,255 120,195 178,238 258,150 330,266 450,88 560,229 586,204 608,243 644,186 664,212 770,92" fill="none" stroke="#1f1d1b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="330" cy="266" r="4" fill="#6f7558"/><circle cx="608" cy="243" r="4" fill="#6f7558"/><circle cx="664" cy="212" r="4" fill="#4f7186"/>
+<g font-family="Inter, Arial, sans-serif" font-size="12" fill="#1f1d1b">
+<text x="60" y="62" font-weight="700">1 Trend up</text>
+<text x="150" y="256" fill="#7d7a76">old low</text>
+<text x="262" y="288" font-weight="700" fill="#6f7558">2 Sweep, then 3 protected low</text>
+<text x="352" y="142" font-weight="700">BoS (close above)</text>
+<text x="724" y="243" font-weight="700" fill="#6f7558">4 Demand</text>
+<text x="462" y="80" font-weight="700" fill="#4f7186">5 Target: the weak high</text>
+<text x="462" y="216" font-weight="700">6 Return</text>
+<text x="560" y="274" font-weight="700" fill="#6f7558">7 Small sweep</text>
+<text x="622" y="174" font-weight="700">8 Shift</text>
+<text x="676" y="216" font-weight="700" fill="#4f7186">9 Entry</text>
+</g></svg>
+      </div>
+      <p class="small muted">One long from start to finish. The numbers match the notes below.</p>
+      <div class="callout rule" style="margin-top:20px">
+        <h4>The idea in one sentence</h4>
+        <p>The same three events happen twice: <strong>sweep, break, zone</strong> on the higher timeframe to give you the place, then <strong>sweep, shift, zone</strong> on the lower timeframe to give you the entry.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="n1">
+    <div class="wrap narrow">
+      <span class="step-no">Note 1 · Higher timeframe</span>
+      <h2>Mark the trend</h2>
+      <p class="lead">Open the higher timeframe and decide whether it is making higher highs and higher lows, or lower lows and lower highs.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Find the last break of structure: a candle <strong>close</strong> above the previous high (uptrend) or below the previous low (downtrend).</li><li>Write one word: long or short. You only trade in that direction.</li><li>Mark the high that the break made. It is the weak high.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>Price is moving sideways and has not broken a high or low recently.</li><li>The last two breaks point in opposite directions.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>Trading with the higher timeframe means the larger orders are on your side. Every case study on this site starts here.</p></div>
+    </div>
+  </section>
+
+  <section id="n2">
+    <div class="wrap narrow">
+      <span class="step-no">Note 2 · Higher timeframe</span>
+      <h2>Check the break: was there a sweep first?</h2>
+      <p class="lead">In a continuing uptrend, the pullback before the break must have gone below a previous low and taken the stops there. Only then did price break the high.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Look at the pullback that came before the break of the high.</li><li>Find the low it took: a previous swing low, equal lows, or the low of a range.</li><li>Confirm price went below that low and then turned up. That is the sweep.</li><li>If you find it, the break is a good one. Carry on.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>The high broke without the pullback taking any low. Treat the low as unprotected and wait: price may return to sweep it. That sweep can become your setup.</li><li>The break was a wick only, with no candle close beyond the high.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>A sweep collects the sell stops resting under the low. Those stops become the buy orders that fuel the break. When a high breaks with no sweep before it, the stops under the low are still there, and price often comes back for them before the trend continues. See <a href="bos-quality.html">a good break of structure</a>.</p></div>
+    </div>
+  </section>
+
+  <section id="n3">
+    <div class="wrap narrow">
+      <span class="step-no">Note 3 · Higher timeframe</span>
+      <h2>Mark the protected low</h2>
+      <p class="lead">The low of the pullback that swept and then broke the high is now the protected low. The trend is intact while price stays above it.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Draw a line at the lowest point of the sweep.</li><li>Label it “protected low”.</li><li>Remember what it means: a candle close below it cancels the long idea.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>A candle has already closed below this low. The trend has changed; go back to note 1.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>This low did its job: it took liquidity and produced a break. Price has no reason to return below it while the trend holds. That makes it the level your stop loss hides behind, and the level that tells you when you are wrong.</p></div>
+    </div>
+  </section>
+
+  <section id="n4">
+    <div class="wrap narrow">
+      <span class="step-no">Note 4 · Higher timeframe</span>
+      <h2>Mark the demand that caused the break</h2>
+      <p class="lead">The zone is the last down candle before the move that broke the high. It sits at or just above the protected low.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Draw the zone from that candle’s low to its high.</li><li>Check it left an imbalance: a fast move away with a gap between candles.</li><li>Check it is fresh: price has not come back to it since.</li><li>Check it is in discount: in the lower half of the move from the protected low to the new high.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>The zone has already been tapped.</li><li>There is no clear candle, or the move away was slow and overlapping.</li><li>The zone is in the upper half of the move (premium).</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>This is where the buying that broke the high began. Orders that were not filled on the way up are still waiting there. A zone that did not break structure has not shown that strength. See <a href="supply-demand.html">supply and demand</a>.</p></div>
+    </div>
+  </section>
+
+  <section id="n5">
+    <div class="wrap narrow">
+      <span class="step-no">Note 5 · Higher timeframe</span>
+      <h2>Mark the target</h2>
+      <p class="lead">Decide where the trade ends before you look for an entry.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Mark the weak high from note 1. Price is expected to break it.</li><li>If a supply zone sits in front of that high, the target is the lower edge of that zone instead.</li><li>Measure from the demand zone to the target. You need room for at least 1:2.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>The target is too close for 1:2.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>The target comes from the chart, not from the reward you would like. If the room is not there, the trade is not there.</p></div>
+    </div>
+  </section>
+
+  <section id="n6">
+    <div class="wrap narrow">
+      <span class="step-no">Note 6 · Waiting</span>
+      <h2>Wait for price to return</h2>
+      <p class="lead">Set an alert at the top of the demand zone and close the chart.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Set the alert.</li><li>Do nothing until it rings. No trades in the middle of the move.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>Price reaches the target before it returns to the zone. Delete the zone and start again.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>Most losing trades are taken between the zones out of boredom. The alert does the watching for you.</p></div>
+    </div>
+  </section>
+
+  <section id="n7">
+    <div class="wrap narrow">
+      <span class="step-no">Note 7 · Lower timeframe</span>
+      <h2>Inside the zone, wait for a sweep</h2>
+      <p class="lead">When the alert rings, drop to the lower timeframe. Price should take one more small low inside or just into the zone.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Watch price arrive in the zone.</li><li>Wait for it to go below a lower-timeframe low and turn back up.</li><li>Mark the low of that sweep. Your stop will go below it.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>A candle closes below the higher-timeframe zone. The zone has failed.</li><li>Price drops through the zone without slowing.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>This is the same event as note 2 on a smaller scale. It shows the selling is being absorbed at your zone, and it gives you a tight, logical place for the stop.</p></div>
+    </div>
+  </section>
+
+  <section id="n8">
+    <div class="wrap narrow">
+      <span class="step-no">Note 8 · Lower timeframe</span>
+      <h2>Wait for the shift</h2>
+      <p class="lead">After the sweep, a lower-timeframe candle must close above the last lower high. That is the shift (also called MSS or CHoCH).</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Mark the last lower high before the sweep.</li><li>Wait for a candle to <strong>close</strong> above it.</li><li>Check the move left an imbalance.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>Price only wicks above the high and closes back below.</li><li>The shift is slow and leaves no imbalance.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>The shift is the confirmation. Before it, price touching the zone is only a touch. After it, the lower timeframe has turned in the direction of the higher one.</p></div>
+    </div>
+  </section>
+
+  <section id="n9">
+    <div class="wrap narrow">
+      <span class="step-no">Note 9 · Lower timeframe</span>
+      <h2>Mark the small zone and place the order</h2>
+      <p class="lead">The entry zone is the last down candle before the shift move. This is the same rule as note 4, one timeframe down.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Draw the small demand zone.</li><li>Buy limit at its top edge.</li><li>Stop loss below the sweep low from note 7, plus 5–10 pips and the spread.</li><li>Take profit at the target from note 5.</li><li>Check the reward is at least 1:2. Risk 0.5–1% of the account.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>Reward is below 1:2.</li><li>Price reaches the target before filling the order. Cancel it.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>Entering on the return to the small zone gives a better price and a smaller stop than buying the shift candle. If price leaves without filling you, you have lost nothing.</p></div>
+    </div>
+  </section>
+
+  <section id="n10">
+    <div class="wrap narrow">
+      <span class="step-no">Note 10 · After the order</span>
+      <h2>Hold, then record</h2>
+      <p class="lead">Once the order is placed, the work is done.</p>
+      <div class="grid c2" style="margin-top:18px">
+        <div class="card"><h3>Do this</h3><ul class="ticks"><li>Leave the stop and target where they are.</li><li>When the trade closes, save a screenshot and write the result in R.</li><li>Review every 20 trades, not every trade.</li></ul></div>
+        <div class="card"><h3>Stop here if</h3><ul class="ticks no"><li>You feel like moving the stop to break-even early. The plan already has a stop.</li></ul></div>
+      </div>
+      <div class="callout info" style="margin-top:16px"><h4>Why</h4><p>One trade proves nothing. Twenty trades taken the same way show whether the routine works for you.</p></div>
+    </div>
+  </section>
+
+  <section id="shorts">
+    <div class="wrap narrow">
+      <h2>The same notes for shorts</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Note</th><th>Long</th><th>Short</th></tr></thead>
+        <tbody>
+          <tr><td>1 Trend</td><td>Close above a high</td><td>Close below a low</td></tr>
+          <tr><td>2 Sweep before the break</td><td>Pullback took a previous low</td><td>Pullback took a previous high</td></tr>
+          <tr><td>3 Protected point</td><td>Protected low</td><td>Protected high</td></tr>
+          <tr><td>4 Zone</td><td>Demand: last down candle before the break, in discount</td><td>Supply: last up candle before the break, in premium</td></tr>
+          <tr><td>5 Target</td><td>Weak high, or supply in front of it</td><td>Weak low, or demand in front of it</td></tr>
+          <tr><td>7 Sweep in the zone</td><td>Small low taken</td><td>Small high taken</td></tr>
+          <tr><td>8 Shift</td><td>Close above the last lower high</td><td>Close below the last higher low</td></tr>
+          <tr><td>9 Order</td><td>Buy limit at the top edge; stop below the sweep low</td><td>Sell limit at the bottom edge; stop above the sweep high plus spread</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="honest">
+    <div class="wrap narrow">
+      <h2>How strict is “must”?</h2>
+      <p>The sweep before the break is a filter you choose to apply, not a law of the market. Highs do break without a sweep and price sometimes keeps going. The filter is worth keeping because it removes the breaks that are most likely to be pulled back, and because it gives you a clear protected low for the stop.</p>
+      <ul class="ticks">
+        <li>Keep it as a fixed rule while you backtest. A rule you bend cannot be measured.</li>
+        <li>Count the setups you skipped because of it. If many of them would have won, review the rule after 50 samples, not after one.</li>
+        <li>When a low was not swept, mark it as liquidity. A later sweep of that low followed by a shift is a setup for the <a href="sweep-model.html">sweep model</a>.</li>
+      </ul>
+      <p style="margin-top:26px"><a class="btn" href="checklist.html">Use the live checklist</a><a class="btn ghost" href="strategy.html">The full zone model</a><a class="btn ghost" href="bos-quality.html">A good break of structure</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. The diagrams on this page are drawn for this site and are not real trades. Backtest and forward-test the steps on your own charts before risking money.</p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=29"></script>
+</body>
+</html>
