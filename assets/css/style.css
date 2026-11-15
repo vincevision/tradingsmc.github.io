@@ -350,3 +350,8 @@ tr:last-child td { border-bottom: 0; }
 .path-n { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; background: var(--paper-2); color: var(--ink-2); }
 .path-list li.done .path-n { background: var(--demand); color: #fff; }
 .path-state { flex: none; font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--demand); }
+
+/* ---------- Page video ---------- */
+.video-section { padding-bottom: 0; }
+.video-frame { position: relative; aspect-ratio: 16 / 9; margin-top: 16px; border-radius: var(--radius); overflow: hidden; background: var(--ink); box-shadow: 0 14px 36px rgba(31, 29, 27, .15); }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

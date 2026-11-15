@@ -151,6 +151,30 @@ const CASES = [
   }
 ];
 
+/*
+ * Videos. To add a video to a page, paste its link between the quotes.
+ * YouTube, Vimeo and Google Drive links are accepted as they appear in the
+ * address bar or the Share button. Leave the quotes empty for no video.
+ * For a case study use its path, for example "cases/usdjpy-confirmation-entry.html".
+ */
+const VIDEOS = {
+  "structure-entries.html": "",
+  "internal-external.html": "",
+  "liquidity.html": "",
+  "inducement.html": "",
+  "bos-quality.html": "",
+  "supply-demand.html": "",
+  "entry-models.html": "",
+  "top-down.html": "",
+  "full-sequence.html": "",
+  "failed-trade.html": "",
+  "notes.html": "",
+  "strategy.html": "",
+  "sweep-model.html": "",
+  "playbook.html": "",
+  "checklist.html": "",
+};
+
 const STUDY_PATH = [
  {
   "href": "structure-entries.html",
@@ -323,7 +347,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "33" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "34" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -441,6 +465,43 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "33" };
       )
       .join("");
   }
+
+  // ----- Video for this page -----
+  (function () {
+    const toEmbed = (u) => {
+      u = String(u || "").trim();
+      if (!/^https:\/\//i.test(u)) return "";
+      let m;
+      if ((m = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/i))) {
+        const t = u.match(/[?&](?:t|start)=(\d+)/);
+        return "https://www.youtube-nocookie.com/embed/" + m[1] + "?rel=0" + (t ? "&start=" + t[1] : "");
+      }
+      if ((m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/i))) return "https://player.vimeo.com/video/" + m[1];
+      if ((m = u.match(/drive\.google\.com\/file\/d\/([\w-]+)/i))) return "https://drive.google.com/file/d/" + m[1] + "/preview";
+      return u;
+    };
+    const inCases = /\/cases\/[^/]*$/.test(location.pathname);
+    const key = (inCases ? "cases/" : "") + here;
+    const src = toEmbed(VIDEOS[key]);
+    const hero = document.querySelector("main .hero");
+    if (!src || !hero) return;
+    const h1 = document.querySelector("main h1");
+    const sec = document.createElement("section");
+    sec.id = "video";
+    sec.className = "video-section";
+    sec.innerHTML = `
+      <div class="wrap narrow">
+        <p class="eyebrow">Watch first</p>
+        <h2>Video: ${esc(h1 ? h1.textContent.trim() : "this page")}</h2>
+        <div class="video-frame">
+          <iframe src="${esc(src)}" title="Video: ${esc(h1 ? h1.textContent.trim() : "this page")}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <p class="small muted">Watch the video, then read the page below. The written steps are the reference.</p>
+      </div>`;
+    hero.insertAdjacentElement("afterend", sec);
+    const toc = hero.querySelector(".toc");
+    if (toc) toc.insertAdjacentHTML("afterbegin", '<li><a href="#video">Video</a></li>');
+  })();
 
   // ----- Study path: next / previous bar on every page, progress on the guide -----
   (function () {
