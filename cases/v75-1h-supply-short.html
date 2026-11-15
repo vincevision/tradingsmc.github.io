@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volatility 75 (1s): 1H Supply Short — VinceVision SMC</title>
+  <meta name="description" content="A short on the Volatility 75 (1s) synthetic index from the 1H supply zone that broke structure: sweep, entry at the zone edge, stop above the zone, target at demand, and what a synthetic index changes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=31">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Case study · Volatility 75 (1s) · Your own chart</p>
+      <h1>1H Supply Short on Volatility 75 (1s)</h1>
+      <p class="lead">A short on the Volatility 75 (1s) index from your own 1H chart. Price takes a high, then breaks two lows. The supply zone that caused those breaks is marked. Two days later price rallies back, takes one more high on the way and enters the zone. The short is placed at the bottom edge of the zone, with the stop above it and the target at the demand zone below. Price reaches the target about a day and a half later, after one full return to the entry.</p>
+      <ul class="chips">
+        <li class="chip supply">Short</li>
+        <li class="chip">1H only</li>
+        <li class="chip target">Target: 1H demand</li>
+        <li class="chip target">Target reached · ≈ 1:4.9</li>
+      </ul>
+
+      <dl class="facts">
+        <div><dt>Bias</dt><dd>Two 1H breaks of structure downward</dd></div>
+        <div><dt>Before the break</dt><dd>A high near 4,328 is swept to about 4,347</dd></div>
+        <div><dt>Zone traded from</dt><dd>1H supply, about 4,294–4,347</dd></div>
+        <div><dt>On the way back</dt><dd>The lower high near 4,282 is taken</dd></div>
+        <div><dt>Entry</dt><dd>4,294.29, bottom edge of the supply</dd></div>
+        <div><dt>Stop loss</dt><dd>4,349.84, above the zone (55.55 points)</dd></div>
+        <div><dt>Take profit</dt><dd>About 4,017, top of the 1H demand (≈ 277 points)</dd></div>
+        <div><dt>Outcome</dt><dd>Target reached, about 4.9R, with three smaller shorts added lower</dd></div>
+      </dl>
+
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#synthetic">Synthetic index</a></li>
+        <li><a href="#chart">The chart</a></li>
+        <li><a href="#s1">1 · Sweep &amp; break</a></li>
+        <li><a href="#s2">2 · The zone</a></li>
+        <li><a href="#s3">3 · The return</a></li>
+        <li><a href="#s4">4 · The order</a></li>
+        <li><a href="#s5">5 · The hold</a></li>
+        <li><a href="#s6">6 · Adding shorts</a></li>
+        <li><a href="#s7">7 · Result</a></li>
+        <li><a href="#orders">Entry, SL &amp; TP</a></li>
+        <li><a href="#review">Review</a></li>
+        <li><a href="#repeat">Repeatable steps</a></li>
+        <li><a href="#skip">When to skip</a></li>
+      </ul>
+
+      <div class="callout info" style="margin-top:28px">
+        <h4>How to read this page</h4>
+        <p>You sent one screenshot and no notes, so the reasoning is my reading of what you drew: <strong>bos</strong>, <strong>MSS</strong>, <strong>X</strong> for a level that was swept, grey boxes for zones and the position boxes. Order prices are the ones printed on the price axis. Other prices are read from the axis and are approximate. The chart is on a paper-trading account, so no money was at risk.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="synthetic">
+    <div class="wrap narrow">
+      <div class="callout warn">
+        <h4>Read this first: a synthetic index is not a market</h4>
+        <p>Volatility 75 (1s) is one of Deriv’s synthetic indices. Its price is produced by the provider’s random number generator with a fixed volatility of 75% a year, one tick every second. No buyers, sellers or banks are behind it, and no stop orders move it.</p>
+        <ul class="ticks no">
+          <li>The reasons this site gives for a sweep or a zone (stops being collected, unfilled orders waiting) cannot be what moves this chart.</li>
+          <li>Random prices also draw sweeps, breaks and zones. A setup that works here once, or several times, is not evidence of an edge.</li>
+          <li>A volatility of 75% a year is roughly 4% a day, about 160 points at this price. The 55-point stop on this trade is about a third of one ordinary day’s movement.</li>
+        </ul>
+        <p>The page is still useful as practice in marking structure, placing the three orders and holding a trade. Keep its result out of the statistics for your forex, gold and Bitcoin trades, and backtest this index separately before risking money on it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="chart">
+    <div class="wrap">
+      <figure style="margin:0">
+        <button class="shot" type="button" style="aspect-ratio:1568/882" aria-label="Enlarge chart: Volatility 75 (1s), one-hour chart">
+          <img src="../assets/img/v75-1h-supply-short/01-1h.png" alt="One-hour chart of the Volatility 75 (1s) index over about four days. Price falls and breaks two lows marked bos. A grey supply zone sits from about 4,294 to 4,347 above them. Price returns to the zone two days later, where a short position is drawn with entry 4,294.29, stop 4,349.84 and a target near 4,017. Price falls, rallies back to about 4,322, then falls to a grey demand zone near 4,015. Three smaller short positions are drawn on the way down.">
+        </button>
+        <figcaption>Your screenshot — Volatility 75 (1s), 1H, Deriv feed, four days. Select it to enlarge.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="s1">
+    <div class="wrap narrow">
+      <span class="step-no">Step 1 · Left of the chart</span>
+      <h2>A high is swept, then two lows break</h2>
+      <h4>What the chart shows</h4>
+      <ol>
+        <li><strong>X near 4,328.</strong> A high from earlier on the first day. One tall candle trades above it to about 4,347 and the next candle falls back below.</li>
+        <li><strong>Two bos lines.</strong> Price then drops fast and closes below two earlier lows, near 4,203 and near 4,160.</li>
+        <li><strong>The low.</strong> The fall ends near 4,050 early on the second day.</li>
+      </ol>
+      <h4>Why it matters</h4>
+      <p>This is the order from the <a href="../notes.html">trading notes</a>, mirrored for a short: a sweep first, then the break. The two breaks set the direction to short. The high of the sweep, about 4,347, becomes the protected high.</p>
+      <div class="callout rule"><h4>Rule to carry forward</h4><p>For shorts, the break of a low should follow a sweep of a high. The top of that sweep is the protected high, and the stop goes above it.</p></div>
+    </div>
+  </section>
+
+  <section id="s2">
+    <div class="wrap narrow">
+      <span class="step-no">Step 2 · The zone</span>
+      <h2>Mark the supply that broke the lows</h2>
+      <h4>What the chart shows</h4>
+      <ol>
+        <li><strong>The grey box at the top.</strong> About 4,294 to 4,347. It covers the last up candle before the fall, including the sweep wick.</li>
+        <li><strong>It is extended to the right</strong> until price comes back to it.</li>
+        <li><strong>The grey box at the bottom.</strong> A demand zone from about 3,980 to 4,015. This is the target area.</li>
+      </ol>
+      <h4>Why it matters</h4>
+      <p>The zone is the start of the move that broke structure, and it has not been revisited. The demand below is the first opposing zone, so it is where the trade should end. Both are marked before price returns, which is what makes the trade a plan.</p>
+      <div class="callout rule"><h4>Rule to carry forward</h4><p>Mark the entry zone and the target zone as soon as the break happens. If the distance between them is less than twice the height of the stop, there is no trade.</p></div>
+    </div>
+  </section>
+
+  <section id="s3">
+    <div class="wrap narrow">
+      <span class="step-no">Step 3 · The return</span>
+      <h2>Price climbs back and takes a high on the way</h2>
+      <h4>What the chart shows</h4>
+      <ol>
+        <li><strong>The long X line near 4,282.</strong> It marks the lower high left just after the fall began.</li>
+        <li><strong>The rally.</strong> From about 4,050, price climbs for roughly a day.</li>
+        <li><strong>The line is crossed</strong> early on the third day, and price continues into the supply zone a few points above.</li>
+      </ol>
+      <h4>Why it matters</h4>
+      <p>That lower high sat just under the zone. On a traded market it would be <a href="../inducement.html">inducement</a>: sellers who shorted early have stops above it, and those are taken before the real zone is reached. Selling at 4,282 would have meant a stop inside the supply zone.</p>
+      <div class="callout rule"><h4>Rule to carry forward</h4><p>When a clear high sits just in front of your supply, expect it to be taken first. Keep the order at the zone, not at the high.</p></div>
+    </div>
+  </section>
+
+  <section id="s4">
+    <div class="wrap narrow">
+      <span class="step-no">Step 4 · The order</span>
+      <h2>Sell at the bottom edge of the zone</h2>
+      <h4>What the chart shows</h4>
+      <ol>
+        <li><strong>Entry 4,294.29.</strong> The bottom edge of the supply.</li>
+        <li><strong>Stop 4,349.84.</strong> About 3 points above the top of the zone and the sweep high.</li>
+        <li><strong>Target near 4,017 to 4,020.</strong> Just above the demand zone.</li>
+        <li><strong>The fill.</strong> Price trades up to about 4,325 inside the zone, then turns down.</li>
+      </ol>
+      <h4>Why it matters</h4>
+      <p>The order is at the first price where the zone can react. Price went about 31 points past it, a little over half of the stop distance, before falling. A stop inside the zone would have been hit.</p>
+      <div class="callout info"><h4>This is an entry without a lower-timeframe shift</h4><p>The chart shows no 15m or 5m shift before this entry. If there was none, this is an aggressive entry: a limit order at the zone, taken on the touch. The other twelve cases on this site waited for a shift. See <a href="../entry-models.html">entry models</a> for the difference. If you did confirm on a lower timeframe, send that chart and I will add it.</p></div>
+    </div>
+  </section>
+
+  <section id="s5">
+    <div class="wrap narrow">
+      <span class="step-no">Step 5 · The hold</span>
+      <h2>Price comes all the way back, and the stop holds</h2>
+      <h4>What the chart shows</h4>
+      <ol>
+        <li><strong>The first fall.</strong> Price drops to about 4,068 by the evening of the third day, roughly 225 points in profit.</li>
+        <li><strong>The rally.</strong> Early on the fourth day, three tall candles take price back to about 4,322. That is 28 points above the entry.</li>
+        <li><strong>X near 4,296.</strong> A small high from the first fall is taken by that rally.</li>
+        <li><strong>The MSS line near 4,323.</strong> The top of the rally. A close above it would have turned the 1H upward. Price did not close above it.</li>
+        <li><strong>The stop at 4,349.84</strong> was about 28 points away at the worst moment.</li>
+      </ol>
+      <h4>Why it matters</h4>
+      <p>This is the hardest part of the trade. A stop moved to the entry price after the first fall would have closed the trade for nothing, hours before the target was reached. The original stop was beyond the protected high, and the protected high was never broken, so the idea was still valid.</p>
+      <div class="callout rule"><h4>Rule to carry forward</h4><p>The trade is wrong when the protected high breaks, not when price returns to your entry. Decide before entering whether you will move the stop, and at what point. Then follow that.</p></div>
+    </div>
+  </section>
+
+  <section id="s6">
+    <div class="wrap narrow">
+      <span class="step-no">Step 6 · Fourth day</span>
+      <h2>A new supply zone, and three smaller shorts</h2>
+      <h4>What the chart shows</h4>
+      <ol>
+        <li><strong>MSS near 4,125.</strong> After the rally fails, price closes below the low it started from. The 1H is pointing down again.</li>
+        <li><strong>A new grey box, about 4,201 to 4,240.</strong> The supply left by that fall, with the prices 4,201.57 and 4,244.72 beside it. These look like a second sell order and its stop. Price did not return to it, so it was not filled.</li>
+        <li><strong>Three small position boxes</strong> lower down, each beside small X and MSS marks. Reading the axis labels, they are roughly: sell 4,108 with stop 4,138; sell 4,099 with stop 4,116; sell 4,077 with stop 4,096.</li>
+        <li><strong>All targets are together</strong> between 4,014 and 4,020.</li>
+      </ol>
+      <h4>Why it matters</h4>
+      <p>Each small short repeats the same sequence at a smaller size: a small high is taken, structure shifts down, and a sell is placed at the small supply. Adding in the direction of a trade that is already working is a reasonable way to build a position. It also adds risk each time.</p>
+      <div class="callout warn"><h4>Count the total risk</h4><p>Four open shorts on one idea are one trade for risk purposes. If each one risks 1%, a sharp move against you costs 4%. Keep the total within your limit for one trade, for example by risking 0.25–0.5% on each addition, or by adding only after the stop on the earlier position has been moved to lock in profit.</p></div>
+      <p class="small muted">The pairing of entry and stop prices for the three small shorts is my reading of the labels at this zoom, and may be slightly off.</p>
+    </div>
+  </section>
+
+  <section id="s7">
+    <div class="wrap narrow">
+      <span class="step-no">Step 7 · Result</span>
+      <h2>Target reached at the demand zone</h2>
+      <h4>What the chart shows</h4>
+      <ol>
+        <li><strong>The last fall.</strong> Late on the fourth day price drops through 4,040 into the demand zone.</li>
+        <li><strong>The targets near 4,017 are reached.</strong> The low is about 3,975, at the bottom of the zone.</li>
+        <li><strong>The bounce.</strong> Price turns up from the zone and is at about 4,062 when the screenshot is taken.</li>
+      </ol>
+      <h4>Why it matters</h4>
+      <p>The target was just above the demand zone, not inside it. Price did go deeper, but the bounce began within a few candles. Taking profit before the opposing zone is what the plan said, and it kept the result.</p>
+    </div>
+  </section>
+
+  <section id="orders">
+    <div class="wrap">
+      <p class="eyebrow">Order placement</p>
+      <h2>Entry, stop loss and take profit</h2>
+      <div class="ticket" style="margin-top:22px">
+        <div class="card entry">
+          <h4>Entry</h4>
+          <p class="where">Sell limit at 4,294.29, the bottom edge of the 1H supply zone.</p>
+          <ul>
+            <li>The zone is the start of the fall that broke two lows.</li>
+            <li>The order is placed once the breaks have closed, and left until price returns.</li>
+            <li>Price went about 31 points past the entry before turning.</li>
+          </ul>
+        </div>
+        <div class="card sl">
+          <h4>Stop loss</h4>
+          <p class="where">4,349.84, above the zone and the sweep high. 55.55 points.</p>
+          <ul>
+            <li>Above about 4,347 the protected high has broken and the short has no reason left.</li>
+            <li>The buffer is about 3 points. On an index this volatile that is thin.</li>
+            <li>Add the spread: a sell is closed at the buy price, which is above the chart price.</li>
+          </ul>
+        </div>
+        <div class="card tp">
+          <h4>Take profit</h4>
+          <p class="where">About 4,017, just above the 1H demand zone. About 277 points.</p>
+          <ul>
+            <li>The first opposing zone below the entry.</li>
+            <li>The low near 4,050 from the second day is taken on the way.</li>
+            <li>The order sits above the zone edge, so the zone does not have to be entered.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout info" style="margin-top:22px">
+        <h4>Position size with a 55.55-point stop</h4>
+        <p>Size = money at risk ÷ (stop in points × value of one point per lot). The value of a point and the smallest lot for this index are set by the broker, so read them from the contract specification in your platform first. As an example only: if one lot moves $1 per point, a 55.55-point stop costs $55.55 per lot, and 1% of a $1,000 account ($10) is 10 ÷ 55.55 ≈ 0.18 lots. If the smallest lot allowed risks more than your limit, the trade is too big for the account.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="review">
+    <div class="wrap">
+      <p class="eyebrow">Review</p>
+      <h2>What was done well and what to tighten</h2>
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card">
+          <h3>Done well</h3>
+          <ul class="ticks">
+            <li>The break of the lows came after a sweep of a high.</li>
+            <li>The zone traded is the one that caused the break, and it was fresh.</li>
+            <li>The entry waited for the lower high in front of the zone to be taken.</li>
+            <li>The stop was beyond the protected high and was not moved during the rally back.</li>
+            <li>The target was the first opposing zone, placed just before it.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>To tighten</h3>
+          <ul class="ticks no">
+            <li>No higher timeframe is shown. Check the 4H direction before using a 1H zone.</li>
+            <li>No lower-timeframe shift is shown at the entry. Decide whether you trade this as an aggressive entry, and backtest it as its own model.</li>
+            <li>The stop buffer is about 3 points on an index that moves about 160 a day.</li>
+            <li>Write down the total risk before adding positions.</li>
+            <li>Record how far the trade went against you. Here it was about 31 points at entry and 28 points a day later.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="repeat">
+    <div class="wrap narrow">
+      <p class="eyebrow">Repeatable</p>
+      <h2>The steps for the next short like this</h2>
+      <ol class="checklist">
+        <li><span class="q">Has a high been swept and then a low broken?</span><span class="a">Yes, with a candle close below the low. Direction: short.</span></li>
+        <li><span class="q">Where is the protected high?</span><span class="a">The top of the sweep. Marked.</span></li>
+        <li><span class="q">Where is the supply that caused the break?</span><span class="a">The last up candle before the fall. Fresh, and in the upper half of the move.</span></li>
+        <li><span class="q">Where is the target?</span><span class="a">The top of the first demand zone below, at least 1:2 away.</span></li>
+        <li><span class="q">Is there a high in front of the zone?</span><span class="a">If so, wait for it to be taken.</span></li>
+        <li><span class="q">Confirmation or not?</span><span class="a">Preferably a lower-timeframe sweep and shift inside the zone. If entering on the touch, say so in the journal.</span></li>
+        <li><span class="q">Orders?</span><span class="a">Sell limit at the bottom edge. Stop above the protected high plus buffer and spread. Target before the demand.</span></li>
+        <li><span class="q">Size?</span><span class="a">0.5–1% in total, including any positions added later.</span></li>
+        <li><span class="q">What cancels it?</span><span class="a">A close above the protected high, or the target being reached before the fill.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skip">
+    <div class="wrap">
+      <p class="eyebrow">Filters</p>
+      <h2>When this setup should be skipped</h2>
+      <div class="grid c2" style="margin-top:22px">
+        <div class="card">
+          <h3>Do not take it if</h3>
+          <ul class="ticks no">
+            <li>The low broke without a high being swept first.</li>
+            <li>The supply zone has already been touched.</li>
+            <li>The demand zone is closer than 1:2 from the entry.</li>
+            <li>A 1H candle has closed above the protected high.</li>
+            <li>The higher timeframe has just broken upward.</li>
+            <li>The smallest position your broker allows risks more than your limit.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>This trade had all of these</h3>
+          <ul class="ticks">
+            <li>A sweep of a high, then two breaks of structure down.</li>
+            <li>A fresh supply zone at the start of the fall.</li>
+            <li>A lower high taken on the way back to the zone.</li>
+            <li>A stop above the protected high.</li>
+            <li>A demand zone about 4.9R away.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout warn" style="margin-top:26px">
+        <h4>Keep this in proportion</h4>
+        <p>This is one winning trade on a paper account, on an index whose prices are generated by its provider. It shows the routine being followed well. It does not show that the routine makes money on this index. Test at least fifty setups on Volatility 75 (1s) in replay, as their own set, before trading it with real money.</p>
+      </div>
+      <p style="margin-top:26px"><a class="btn" href="../notes.html">The routine in order</a><a class="btn ghost" href="../playbook.html">Open the playbook</a><a class="btn ghost" href="../index.html#cases">All case studies</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Educational material only, not financial advice. The screenshot is the site owner’s own TradingView chart on a paper-trading account. Volatility 75 (1s) is a synthetic index: its prices are generated by the provider, not by a traded market. One winning trade does not prove a strategy.</p>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js?v=31"></script>
+</body>
+</html>

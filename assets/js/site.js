@@ -137,11 +137,22 @@ const CASES = [
     result: "TP hit · ≈ 1:3.8",
     summary:
       "The 1H breaks structure down and bounces. The 15m rallies into supply, takes two highs and shifts down. The short is taken at the new supply the shift leaves, targeting the low."
+  },
+  {
+    pair: "Volatility 75 (1s)",
+    title: "1H Supply Short",
+    href: "cases/v75-1h-supply-short.html",
+    thumb: "assets/img/v75-1h-supply-short/01-1h.png",
+    direction: "Short",
+    model: "1H sweep → BoS → 1H supply",
+    result: "Target reached · ≈ 1:4.9",
+    summary:
+      "Price sweeps a high and breaks two 1H lows. Two days later it returns to the supply that caused the break, taking a lower high on the way. The short is taken at the zone edge toward the demand below. A synthetic index, kept separate from the other cases."
   }
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "30" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "31" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
