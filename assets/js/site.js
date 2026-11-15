@@ -383,7 +383,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "41" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "42" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -400,6 +400,22 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "41" };
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
   const cur = (href) => (isCurrent(href) ? ' aria-current="page"' : "");
+
+  // ----- Preloader: the overlay is pure CSS; this removes it once the page has loaded -----
+  (function () {
+    const done = () => document.documentElement.classList.add("loaded");
+    if (document.readyState === "complete") done();
+    else {
+      window.addEventListener("load", done);
+      setTimeout(done, 2500); // never hold the page for slow images or videos
+    }
+  })();
+
+  // ----- Contact line in the footer of every page -----
+  (function () {
+    const wrap = document.querySelector("footer.site-footer .wrap");
+    if (wrap && !wrap.querySelector(".contact")) wrap.insertAdjacentHTML("beforeend", '<p class="contact">Contact: <a href="tel:+254742850266">+254 742 850 266</a> · <a href="https://wa.me/254742850266" target="_blank" rel="noopener">WhatsApp</a></p>');
+  })();
 
   // ----- Header -----
   const header = document.getElementById("site-header");
