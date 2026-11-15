@@ -174,7 +174,12 @@ const VIDEOS = {
   "inducement.html": "",
   "bos-quality.html": "",
   "supply-demand.html": "",
-  "entry-models.html": "",
+  "entry-models.html": [
+    "https://youtu.be/4VzzxGte9sc",
+    "https://youtu.be/iu3FkHjeMOA",
+    "https://youtu.be/pyTw-c64eFA",
+    "https://youtu.be/9nRFcetXqkA"
+  ],
   "top-down.html": "",
   "full-sequence.html": "",
   "failed-trade.html": "",
@@ -357,7 +362,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "36" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "37" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
