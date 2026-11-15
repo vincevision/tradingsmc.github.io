@@ -360,3 +360,25 @@ tr:last-child td { border-bottom: 0; }
 .video-more { margin-top: 16px; }
 .video-more > summary { cursor: pointer; font-weight: 600; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
 .video-more[open] > summary { margin-bottom: 4px; }
+
+/* ---------- Preloader ----------
+   Drawn with CSS only, so it shows before any script runs. site.js adds
+   .loaded to <html> to remove it. If the script never runs, the overlay
+   removes itself after 4 seconds. */
+body::before {
+  content: "VinceVision SMC"; position: fixed; inset: 0; z-index: 9998; display: grid; place-items: center;
+  padding-bottom: 76px; background: var(--paper); color: var(--ink); font-weight: 700; font-size: 1.15rem; letter-spacing: .02em;
+  transition: opacity .3s ease, visibility .3s ease; animation: pre-hide .3s ease 4s forwards;
+}
+body::after {
+  content: ""; position: fixed; z-index: 9999; left: 50%; top: 50%; width: 30px; height: 30px; margin: 4px 0 0 -15px;
+  border: 3px solid var(--line); border-top-color: var(--ink); border-radius: 50%;
+  transition: opacity .3s ease, visibility .3s ease; animation: pre-spin .8s linear infinite, pre-hide .3s ease 4s forwards;
+}
+html.loaded body::before, html.loaded body::after { opacity: 0; visibility: hidden; pointer-events: none; }
+@keyframes pre-spin { to { transform: rotate(360deg); } }
+@keyframes pre-hide { to { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { body::after { animation: pre-hide .3s ease 4s forwards; } }
+@media print { body::before, body::after { display: none; } }
+
+.site-footer .contact { margin-top: 10px; font-weight: 600; color: var(--ink-2); }
