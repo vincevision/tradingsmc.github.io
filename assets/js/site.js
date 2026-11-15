@@ -160,7 +160,11 @@ const CASES = [
  * For a case study use its path, for example "cases/usdjpy-confirmation-entry.html".
  */
 const VIDEOS = {
-  "structure-entries.html": "",
+  "structure-entries.html": [
+    "https://youtu.be/Pd9ASRCHWmQ",
+    "https://youtu.be/ygleB1CLhUE",
+    "https://youtube.com/playlist?list=PLguWwLNVYKWeGlaKrhB3Tp9MfMmj7BlQg"
+  ],
   "internal-external.html": "",
   "liquidity.html": [
     "https://youtu.be/YUUefUXeZwI",
@@ -353,7 +357,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "35" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "36" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
