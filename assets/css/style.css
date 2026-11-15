@@ -362,23 +362,40 @@ tr:last-child td { border-bottom: 0; }
 .video-more[open] > summary { margin-bottom: 4px; }
 
 /* ---------- Preloader ----------
-   Drawn with CSS only, so it shows before any script runs. site.js adds
-   .loaded to <html> to remove it. If the script never runs, the overlay
-   removes itself after 4 seconds. */
-body::before {
-  content: "VinceVision SMC"; position: fixed; inset: 0; z-index: 9998; display: grid; place-items: center;
-  padding-bottom: 76px; background: var(--paper); color: var(--ink); font-weight: 700; font-size: 1.15rem; letter-spacing: .02em;
-  transition: opacity .3s ease, visibility .3s ease; animation: pre-hide .3s ease 4s forwards;
+   The markup is the first element in <body> on every page, so it shows
+   before any script runs. site.js adds .loaded to <html> to remove it.
+   If the script never runs, it removes itself after 7 seconds. */
+.preloader {
+  position: fixed; inset: 0; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  background: var(--paper); color: var(--ink); transition: opacity .45s ease, visibility .45s ease; animation: pre-hide .45s ease 7s forwards;
 }
-body::after {
-  content: ""; position: fixed; z-index: 9999; left: 50%; top: 50%; width: 30px; height: 30px; margin: 4px 0 0 -15px;
-  border: 3px solid var(--line); border-top-color: var(--ink); border-radius: 50%;
-  transition: opacity .3s ease, visibility .3s ease; animation: pre-spin .8s linear infinite, pre-hide .3s ease 4s forwards;
+html.loaded .preloader { opacity: 0; visibility: hidden; pointer-events: none; }
+.preloader p { margin: 14px 0 0; font-weight: 700; font-size: 1.15rem; letter-spacing: .02em; }
+.preloader span { font-size: .82rem; color: var(--ink-3); }
+.pl-chart { position: relative; display: flex; align-items: flex-end; gap: 9px; height: 120px; padding: 0 6px; border-bottom: 1px solid var(--line); }
+.pl-chart i {
+  position: relative; display: block; width: 13px; height: var(--h); margin-bottom: var(--b); border-radius: 2px;
+  background: var(--demand); transform-origin: 50% 100%; opacity: 0;
+  animation: pl-candle 3.2s ease-out infinite; animation-delay: calc(var(--n) * .22s);
 }
-html.loaded body::before, html.loaded body::after { opacity: 0; visibility: hidden; pointer-events: none; }
-@keyframes pre-spin { to { transform: rotate(360deg); } }
+.pl-chart i::before { content: ""; position: absolute; left: 50%; top: calc(var(--w) * -1); bottom: calc(var(--w) * -.7); width: 2px; margin-left: -1px; background: inherit; border-radius: 1px; z-index: -1; }
+.pl-chart i.dn { background: var(--supply); }
+.pl-chart i:nth-child(1) { --n: 0; --h: 22px; --b: 6px;  --w: 8px; }
+.pl-chart i:nth-child(2) { --n: 1; --h: 30px; --b: 20px; --w: 10px; }
+.pl-chart i:nth-child(3) { --n: 2; --h: 16px; --b: 30px; --w: 7px; }
+.pl-chart i:nth-child(4) { --n: 3; --h: 20px; --b: 14px; --w: 12px; }
+.pl-chart i:nth-child(5) { --n: 4; --h: 34px; --b: 22px; --w: 9px; }
+.pl-chart i:nth-child(6) { --n: 5; --h: 28px; --b: 50px; --w: 10px; }
+.pl-chart i:nth-child(7) { --n: 6; --h: 14px; --b: 62px; --w: 8px; }
+.pl-chart i:nth-child(8) { --n: 7; --h: 30px; --b: 66px; --w: 11px; }
+.pl-chart i:nth-child(9) { --n: 8; --h: 20px; --b: 92px; --w: 7px; }
+@keyframes pl-candle {
+  0% { opacity: 0; transform: scaleY(0); }
+  10%, 72% { opacity: 1; transform: scaleY(1); }
+  86%, 100% { opacity: 0; transform: scaleY(1); }
+}
 @keyframes pre-hide { to { opacity: 0; visibility: hidden; } }
-@media (prefers-reduced-motion: reduce) { body::after { animation: pre-hide .3s ease 4s forwards; } }
-@media print { body::before, body::after { display: none; } }
+@media (prefers-reduced-motion: reduce) { .pl-chart i { animation: none; opacity: 1; } }
+@media print { .preloader { display: none; } }
 
 .site-footer .contact { margin-top: 10px; font-weight: 600; color: var(--ink-2); }

@@ -383,7 +383,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "42" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "43" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -401,14 +401,20 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "42" };
   const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
   const cur = (href) => (isCurrent(href) ? ' aria-current="page"' : "");
 
-  // ----- Preloader: the overlay is pure CSS; this removes it once the page has loaded -----
+  // ----- Preloader: the markup is in each page; this removes it once the page has loaded -----
   (function () {
-    const done = () => document.documentElement.classList.add("loaded");
-    if (document.readyState === "complete") done();
-    else {
-      window.addEventListener("load", done);
-      setTimeout(done, 2500); // never hold the page for slow images or videos
-    }
+    // Keep it on screen long enough to be seen: longer on the first page of a visit.
+    let first = true;
+    try { first = !sessionStorage.getItem("smc-seen"); sessionStorage.setItem("smc-seen", "1"); } catch (e) {}
+    const MIN = first ? 2600 : 1300;
+    const MAX = 5000; // never hold the page longer than this for slow images or videos
+    const since = () => (window.performance && performance.now ? performance.now() : MIN);
+    let hidden = false;
+    const hide = () => { if (!hidden) { hidden = true; document.documentElement.classList.add("loaded"); } };
+    const ready = () => setTimeout(hide, Math.max(0, MIN - since()));
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready);
+    setTimeout(hide, Math.max(0, MAX - since()));
   })();
 
   // ----- Contact line in the footer of every page -----
