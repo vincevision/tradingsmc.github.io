@@ -171,7 +171,10 @@ const VIDEOS = {
     "https://youtu.be/JhBX0TQ41H8",
     "https://youtube.com/playlist?list=PLguWwLNVYKWdw0qsZWLLzwJlw6sWKUsjI"
   ],
-  "inducement.html": "",
+  "inducement.html": [
+    "https://youtu.be/9nRFcetXqkA",
+    "https://youtu.be/nudje7WT-Vs"
+  ],
   "bos-quality.html": "",
   "supply-demand.html": "",
   "entry-models.html": [
@@ -362,7 +365,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "37" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "38" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
