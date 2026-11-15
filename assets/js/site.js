@@ -151,8 +151,173 @@ const CASES = [
   }
 ];
 
+const STUDY_PATH = [
+ {
+  "href": "structure-entries.html",
+  "title": "Structure and entry models",
+  "part": "Part 1 · Concepts",
+  "q": "Which low is strong, which high is weak, and why?"
+ },
+ {
+  "href": "internal-external.html",
+  "title": "Internal and external structure",
+  "part": "Part 1 · Concepts",
+  "q": "Is a break of a small low inside a pullback a trend change?"
+ },
+ {
+  "href": "liquidity.html",
+  "title": "Types of liquidity",
+  "part": "Part 1 · Concepts",
+  "q": "Name three places where stops collect."
+ },
+ {
+  "href": "inducement.html",
+  "title": "Inducement",
+  "part": "Part 1 · Concepts",
+  "q": "Why is the first zone price reaches often not the one to trade?"
+ },
+ {
+  "href": "bos-quality.html",
+  "title": "Good and bad break of structure",
+  "part": "Part 1 · Concepts",
+  "q": "What makes a low protected?"
+ },
+ {
+  "href": "supply-demand.html",
+  "title": "Imbalance, supply and demand",
+  "part": "Part 1 · Concepts",
+  "q": "What three things must a zone have?"
+ },
+ {
+  "href": "entry-models.html",
+  "title": "Entry models",
+  "part": "Part 1 · Concepts",
+  "q": "What do you wait for in a confirmation entry?"
+ },
+ {
+  "href": "top-down.html",
+  "title": "Top-down analysis",
+  "part": "Part 1 · Concepts",
+  "q": "Which timeframe gives the direction and which gives the entry?"
+ },
+ {
+  "href": "full-sequence.html",
+  "title": "The full sequence",
+  "part": "Part 1 · Concepts",
+  "q": "Put these in order: zone, sweep, shift."
+ },
+ {
+  "href": "notes.html",
+  "title": "Trading notes: the routine in order",
+  "part": "Part 2 · The method",
+  "q": "Can you say the ten notes from memory?"
+ },
+ {
+  "href": "strategy.html",
+  "title": "The zone model, step by step",
+  "part": "Part 2 · The method",
+  "q": "Where does the stop go, and what is the minimum reward to risk?"
+ },
+ {
+  "href": "sweep-model.html",
+  "title": "The sweep model, step by step",
+  "part": "Part 2 · The method",
+  "q": "When do you use the sweep model and not the zone model?"
+ },
+ {
+  "href": "playbook.html",
+  "title": "The playbook",
+  "part": "Part 2 · The method",
+  "q": "How much of the account do you risk on one trade?"
+ },
+ {
+  "href": "cases/usdjpy-confirmation-entry.html",
+  "title": "USD/JPY: Confirmation Entry",
+  "part": "Part 3 · Case studies",
+  "q": "Where was the stop and why there?"
+ },
+ {
+  "href": "cases/gbpjpy-sweep-before-structure.html",
+  "title": "GBP/JPY: Strong Structure Starts With a Sweep",
+  "part": "Part 3 · Case studies",
+  "q": "Which low was swept before the shift?"
+ },
+ {
+  "href": "cases/btcusd-after-the-sweep.html",
+  "title": "BTC/USD: What Happens After the Sweep",
+  "part": "Part 3 · Case studies",
+  "q": "How deep did price go into the zone before turning?"
+ },
+ {
+  "href": "cases/audusd-real-zone.html",
+  "title": "AUD/USD: Waiting for the Real Zone",
+  "part": "Part 3 · Case studies",
+  "q": "What told you the first reaction was not the entry?"
+ },
+ {
+  "href": "cases/btcusd-sweep-shift-zone.html",
+  "title": "BTC/USD: Sweep, Shift and Zone",
+  "part": "Part 3 · Case studies",
+  "q": "What is the order of the three events?"
+ },
+ {
+  "href": "cases/gbpaud-trade-breakdown.html",
+  "title": "GBP/AUD: Trade Breakdown",
+  "part": "Part 3 · Case studies",
+  "q": "Which level was the inducement?"
+ },
+ {
+  "href": "cases/usdjpy-case-study-breakdown.html",
+  "title": "USD/JPY: Case Study Breakdown",
+  "part": "Part 3 · Case studies",
+  "q": "What did each timeframe add?"
+ },
+ {
+  "href": "cases/gbpjpy-1h-15m-5m.html",
+  "title": "GBP/JPY: Three Timeframes",
+  "part": "Part 3 · Case studies",
+  "q": "Why did the 5m entry allow a smaller stop?"
+ },
+ {
+  "href": "cases/xauusd-institutional-flow.html",
+  "title": "XAU/USD: Textbook Institutional Flow",
+  "part": "Part 3 · Case studies",
+  "q": "Which edge of a supply zone takes the sell limit?"
+ },
+ {
+  "href": "cases/gbpusd-simple-confirmation-entry.html",
+  "title": "GBP/USD: Simple Confirmation Entry",
+  "part": "Part 3 · Case studies",
+  "q": "Where does the stop go on a short, and what is added to it?"
+ },
+ {
+  "href": "cases/audusd-1h-ob-short.html",
+  "title": "AUD/USD: Short From the 1H Order Block",
+  "part": "Part 3 · Case studies",
+  "q": "Would a deeper order have been filled?"
+ },
+ {
+  "href": "cases/usdjpy-weekly-daily-4h.html",
+  "title": "USD/JPY: Weekly, Daily and 4H Swing Long",
+  "part": "Part 3 · Case studies",
+  "q": "How does a wide stop change the position size?"
+ },
+ {
+  "href": "cases/v75-1h-supply-short.html",
+  "title": "Volatility 75 (1s): 1H Supply Short",
+  "part": "Part 3 · Case studies",
+  "q": "Why is this case kept apart from the others?"
+ },
+ {
+  "href": "checklist.html",
+  "title": "Live checklist",
+  "part": "Part 4 · Practice",
+  "q": "Did every step pass before you placed the order?"
+ }
+];
+
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "31" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "32" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -188,6 +353,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "31" };
         <a class="brand" href="${root}index.html">VinceVision <span>SMC</span></a>
         <nav class="nav" aria-label="Main">
           <a class="hide-sm" href="${root}index.html"${cur("index.html")}>Home</a>
+          <a href="${root}guide.html"${cur("guide.html")}>Start here</a>
           <details>
             <summary>Strategy</summary>
             <div class="menu">
@@ -268,6 +434,70 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "31" };
       )
       .join("");
   }
+
+  // ----- Study path: next / previous bar on every page, progress on the guide -----
+  (function () {
+    const KEY = "smc-path-v1";
+    let done = [];
+    try { done = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { done = []; }
+    if (!Array.isArray(done)) done = [];
+    const save = () => { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} };
+    const total = STUDY_PATH.length;
+    const firstOpen = () => STUDY_PATH.findIndex((s) => done.indexOf(s.href) < 0);
+    const inCases = /\/cases\/[^/]*$/.test(location.pathname);
+    const idx = STUDY_PATH.findIndex((s) => isCurrent(s.href) && (s.href.indexOf("cases/") === 0) === inCases);
+
+    // Guide page
+    const cont = document.getElementById("path-continue");
+    if (cont) {
+      document.querySelectorAll(".path-list li[data-step]").forEach((li) => {
+        if (done.indexOf(li.dataset.step) >= 0) {
+          li.classList.add("done");
+          const st = li.querySelector(".path-state");
+          if (st) st.textContent = "Studied";
+        }
+      });
+      const f = firstOpen();
+      const prog = document.getElementById("path-progress");
+      if (prog) prog.textContent = done.length ? Math.min(done.length, total) + " of " + total + " studied" : "";
+      if (f < 0) { cont.textContent = "All steps studied: what to do next"; cont.setAttribute("href", "#after"); }
+      else if (f > 0 || done.length) { cont.textContent = "Continue with step " + (f + 1) + ": " + STUDY_PATH[f].title; cont.setAttribute("href", root + STUDY_PATH[f].href); }
+    }
+
+    if (idx < 0) return;
+    const step = STUDY_PATH[idx];
+    const prev = STUDY_PATH[idx - 1];
+    const next = STUDY_PATH[idx + 1];
+    const bar = document.createElement("aside");
+    bar.className = "path-bar";
+    bar.setAttribute("aria-label", "Study path");
+    const render = () => {
+      const f = firstOpen();
+      const isDone = done.indexOf(step.href) >= 0;
+      const behind = f >= 0 && f < idx;
+      bar.innerHTML = `
+        <div class="wrap">
+          <p class="path-where"><a href="${root}guide.html">Study path</a> · Step ${idx + 1} of ${total} · ${esc(step.part)}</p>
+          ${behind ? `<p class="path-warn">You have not ticked step ${f + 1} yet: <a href="${root}${STUDY_PATH[f].href}">${esc(STUDY_PATH[f].title)}</a>. The pages build on each other, so it is best to go back to it first.</p>` : ""}
+          <p class="path-q"><strong>Before you go on:</strong> ${esc(step.q)}</p>
+          <label class="path-tick"><input type="checkbox" id="path-done"${isDone ? " checked" : ""}> I have studied this page</label>
+          <div class="path-links">
+            ${prev ? `<a class="btn ghost" href="${root}${prev.href}">← Step ${idx}: ${esc(prev.title)}</a>` : `<a class="btn ghost" href="${root}guide.html">← Start here</a>`}
+            ${next ? `<a class="btn" href="${root}${next.href}">Next, step ${idx + 2}: ${esc(next.title)} →</a>` : `<a class="btn" href="${root}guide.html#after">Finished: what to do next →</a>`}
+          </div>
+        </div>`;
+      bar.querySelector("#path-done").addEventListener("change", (e) => {
+        done = done.filter((h) => h !== step.href);
+        if (e.target.checked) done.push(step.href);
+        save();
+        render();
+      });
+    };
+    render();
+    const footer = document.querySelector("footer.site-footer");
+    if (footer && footer.parentNode) footer.parentNode.insertBefore(bar, footer);
+    else document.body.appendChild(bar);
+  })();
 
   // ----- Lightbox for screenshots -----
   const shots = document.querySelectorAll(".shot");

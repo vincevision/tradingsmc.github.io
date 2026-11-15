@@ -5,6 +5,7 @@ Site: https://vincevision.github.io/tradingsmc.github.io/
 SMC trade case studies: why each trade was taken, where the stop and target go, and a repeatable checklist.
 
 - `index.html` — home page and case-study menu
+- `guide.html` — "Start here": the study path through every page in order. The same order is in `STUDY_PATH` in `assets/js/site.js`, which adds the next/previous bar to each page. When a page is added, add it to both.
 - `notes.html` — the routine as ten short notes (first item in the Strategy menu)
 - `strategy.html` — the strategy step by step, from direction to journal, with inline SVG diagrams (top-level menu item)
 - `sweep-model.html` — the sweep model step by step (second item in the Strategy menu)
