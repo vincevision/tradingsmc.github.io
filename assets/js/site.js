@@ -187,7 +187,14 @@ const VIDEOS = {
     "https://youtu.be/pyTw-c64eFA",
     "https://youtu.be/9nRFcetXqkA"
   ],
-  "top-down.html": "",
+  "top-down.html": [
+    "https://youtu.be/GKN-iVjJpyA",
+    "https://youtu.be/8DQL0VTkZmw",
+    "https://youtu.be/UjEC2uxVi1E",
+    "https://youtu.be/csZXLLu0KzU",
+    "https://youtu.be/defSZjhGq9s",
+    "https://youtu.be/8-p5kR290x4"
+  ],
   "full-sequence.html": "",
   "failed-trade.html": "",
   "notes.html": "",
@@ -369,7 +376,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "39" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "40" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -527,6 +534,13 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "39" };
         <div class="video-frame">
           <iframe src="${esc(src)}" title="${esc(label + ": " + name)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>`;
+          })
+          .map((html, n, all) => {
+            // With three or more, keep the first open and fold the rest away.
+            if (all.length < 3) return html;
+            if (n === 1) return `<details class="video-more"><summary>Show ${all.length - 1} more videos</summary>` + html;
+            if (n === all.length - 1) return html + "</details>";
+            return html;
           })
           .join("")}
         <p class="small muted">${many ? "Watch these in order" : "Watch the video"}, then read the page below. The written steps are the reference. The videos are by their own creators on YouTube and may use slightly different terms from this site.</p>
