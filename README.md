@@ -14,6 +14,7 @@ SMC trade case studies: why each trade was taken, where the stop and target go, 
 - `entry-models.html` — aggressive vs confirmation entry models
 - `inducement.html` — inducement (liquidity trap) concept page
 - `structure-entries.html` — market structure (strong/weak points) and four entry models concept page
+- `scaling-reentry.html` — scaling into trades and re-entering after a stop (concept page, inline SVG)
 - `failed-trade.html` — a losing long explained: lower-timeframe signal against the higher-timeframe trend (concept page)
 - `internal-external.html` — internal and external structure, liquidity and sweeps concept page (diagrams are inline SVG)
 - `supply-demand.html` — imbalance, supply and demand concept page (diagrams are inline SVG)

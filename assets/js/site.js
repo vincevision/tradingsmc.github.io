@@ -195,8 +195,9 @@ const VIDEOS = {
     "https://youtu.be/defSZjhGq9s",
     "https://youtu.be/8-p5kR290x4"
   ],
-  "full-sequence.html": "",
+  "full-sequence.html": "https://youtu.be/fg-kBYiChK4",
   "failed-trade.html": "",
+  "scaling-reentry.html": "https://youtu.be/qgoxRH057cw",
   "notes.html": "",
   "strategy.html": "",
   "sweep-model.html": "",
@@ -290,6 +291,12 @@ const STUDY_PATH = [
   "q": "How much of the account do you risk on one trade?"
  },
  {
+  "href": "scaling-reentry.html",
+  "title": "Scaling in and re-entering",
+  "part": "Part 2 · The method",
+  "q": "What must happen to the first stop before you add a second position?"
+ },
+ {
   "href": "cases/usdjpy-confirmation-entry.html",
   "title": "USD/JPY: Confirmation Entry",
   "part": "Part 3 · Case studies",
@@ -376,7 +383,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "40" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "41" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -431,6 +438,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "40" };
               <a href="${root}internal-external.html"${cur("internal-external.html")}>Internal &amp; external structure<small>Two structures, two kinds of liquidity, four sweeps</small></a>
               <a href="${root}supply-demand.html"${cur("supply-demand.html")}>Imbalance, supply &amp; demand<small>How zones form and which ones to trade</small></a>
               <a href="${root}top-down.html"${cur("top-down.html")}>Top-down analysis<small>4H, 1H, 30m and 5m on one trade</small></a>
+              <a href="${root}scaling-reentry.html"${cur("scaling-reentry.html")}>Scaling in &amp; re-entering<small>Adding to winners, second attempts, total risk</small></a>
               <a href="${root}failed-trade.html"${cur("failed-trade.html")}>Why a trade failed<small>A 5m signal against a bearish 1H</small></a>
               <a href="${root}full-sequence.html"${cur("full-sequence.html")}>The full sequence<small>Structure, sweep, MSS, IMB and OB in one trade</small></a>
               <a href="${root}bos-quality.html"${cur("bos-quality.html")}>Good vs bad BoS<small>Protected and unprotected lows</small></a>
