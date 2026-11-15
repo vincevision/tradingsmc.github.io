@@ -332,3 +332,21 @@ tr:last-child td { border-bottom: 0; }
 .cl-notes textarea, .cl-journal { resize: vertical; }
 .cl-journal { display: block; width: 100%; margin: 10px 0; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; font: .82rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--ink); }
 .cl-finish { margin-top: 20px; }
+
+/* ---------- Study path ---------- */
+.path-bar { border-top: 1px solid var(--line); background: var(--paper-2); padding: 26px 0 30px; }
+.path-where { margin: 0 0 8px; font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.path-q { margin: 0 0 10px; max-width: 70ch; }
+.path-warn { margin: 0 0 10px; padding: 10px 14px; border-left: 4px solid var(--supply); background: var(--supply-bg); border-radius: 8px; font-size: .9rem; max-width: 70ch; }
+.path-tick { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; cursor: pointer; padding: 6px 0; }
+.path-tick input { width: 20px; height: 20px; accent-color: var(--demand); }
+.path-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.path-links .btn { margin: 0; }
+.path-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+.path-list li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.path-list li > div { flex: 1; min-width: 0; }
+.path-list li a { font-weight: 600; }
+.path-list li p { margin: 2px 0 0; font-size: .92rem; }
+.path-n { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; background: var(--paper-2); color: var(--ink-2); }
+.path-list li.done .path-n { background: var(--demand); color: #fff; }
+.path-state { flex: none; font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--demand); }
