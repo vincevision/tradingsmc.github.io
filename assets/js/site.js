@@ -176,7 +176,11 @@ const VIDEOS = {
     "https://youtu.be/nudje7WT-Vs"
   ],
   "bos-quality.html": "",
-  "supply-demand.html": "",
+  "supply-demand.html": [
+    "https://youtu.be/yaCM_cr5BXo",
+    "https://youtu.be/vCh4so18bDg",
+    "https://youtu.be/91-eWDvL-No"
+  ],
   "entry-models.html": [
     "https://youtu.be/4VzzxGte9sc",
     "https://youtu.be/iu3FkHjeMOA",
@@ -365,7 +369,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "38" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "39" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
