@@ -148,6 +148,17 @@ const CASES = [
     result: "Target reached · ≈ 1:4.9",
     summary:
       "Price sweeps a high and breaks two 1H lows. Two days later it returns to the supply that caused the break, taking a lower high on the way. The short is taken at the zone edge toward the demand below. A synthetic index, kept separate from the other cases."
+  },
+  {
+    pair: "Volatility 75 (1s)",
+    title: "15m Supply Short, Two Entries",
+    href: "cases/v75-15m-supply-two-entries.html",
+    thumb: "assets/img/v75-15m-supply-two-entries/05-result.png",
+    direction: "Short",
+    model: "15m BoS → supply → sweep and MSS",
+    result: "Targets reached · ≈ 1:3.8 and 1:3.2",
+    summary:
+      "A 15m low breaks and the protected swing and supply are marked. Price returns and a first short is placed at the zone edge. A high is then swept, structure shifts down and a second short is added. Both reach the low. A replay on a synthetic index."
   }
 ];
 
@@ -375,6 +386,12 @@ const STUDY_PATH = [
   "q": "Why is this case kept apart from the others?"
  },
  {
+  "href": "cases/v75-15m-supply-two-entries.html",
+  "title": "Volatility 75 (1s): 15m Supply Short, Two Entries",
+  "part": "Part 3 · Case studies",
+  "q": "Which of the two entries had confirmation, and what was it?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -383,7 +400,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "43" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "44" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
