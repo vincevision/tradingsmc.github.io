@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 30 820 270" role="img" aria-labelledby="sc-t sc-d"><title id="sc-t">Adding to a winning long</title><desc id="sc-d">Price sweeps a low, shifts up and returns to a demand zone where the first long is entered with a stop under the sweep. Price breaks a high, pulls back to a new higher demand zone where a second long is added. The stop for both is moved up under the new protected low. Price continues to the target.</desc>
+<rect x="0" y="30" width="820" height="270" fill="#c3b9ad"/><rect x="120" y="232" width="150" height="20" fill="#6f7558" fill-opacity=".18" stroke="#6f7558"/>
+<rect x="300" y="180" width="150" height="20" fill="#6f7558" fill-opacity=".18" stroke="#6f7558"/>
+<line x1="120" y1="278" x2="330" y2="278" stroke="#a9837a" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="400" y1="210" x2="640" y2="210" stroke="#a9837a" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="520" y1="56" x2="780" y2="56" stroke="#4f7186" stroke-width="1.2" stroke-dasharray="5 4"/>
+<polyline points="50,200 120,268 190,205 225,238 330,140 400,188 520,92 575,126 720,56" fill="none" stroke="#1f1d1b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="225" cy="238" r="4.5" fill="#4f7186"/><circle cx="400" cy="188" r="4.5" fill="#4f7186"/>
+<g font-family="Inter, Arial, sans-serif" font-size="12" fill="#1f1d1b">
+<text x="238" y="262" font-weight="700" fill="#4f7186">Entry 1</text>
+<text x="120" y="294" fill="#8a5a4f" font-weight="700">Stop at the start</text>
+<text x="300" y="216" font-weight="700" fill="#4f7186">Entry 2: the add</text>
+<text x="412" y="226" fill="#8a5a4f" font-weight="700">Stop for both, moved up before adding</text>
+<text x="330" y="130" text-anchor="middle" fill="#7d7a76">break of a high</text>
+<text x="530" y="48" font-weight="700" fill="#4f7186">Same target for both</text>
+</g></svg>
