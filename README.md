@@ -26,6 +26,10 @@ SMC trade case studies: why each trade was taken, where the stop and target go, 
 - `assets/img/<slug>/` — screenshots for each case
 - `assets/js/site.js` — header, menu and home-page list (driven by the `CASES` array)
 
+## Preloader
+
+Every page starts with a `<div class="preloader">` block straight after `<body>`. New pages copied from an existing one get it automatically. Its look is in `assets/css/style.css` and its timing in `assets/js/site.js`.
+
 ## Adding a video to a page
 
 Open `assets/js/site.js`, find `VIDEOS` near the top and paste the video link between the quotes for that page. YouTube, Vimeo and Google Drive links work as copied. The video appears under the page heading. Then raise the `?v=` number on the pages so browsers load the new script.
