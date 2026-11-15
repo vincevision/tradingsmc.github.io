@@ -207,6 +207,12 @@ const STUDY_PATH = [
   "q": "Put these in order: zone, sweep, shift."
  },
  {
+  "href": "failed-trade.html",
+  "title": "Why a trade failed: context before the signal",
+  "part": "Part 1 · Concepts",
+  "q": "Name two things that were wrong with the long before the entry."
+ },
+ {
   "href": "notes.html",
   "title": "Trading notes: the routine in order",
   "part": "Part 2 · The method",
@@ -317,7 +323,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "32" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "33" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -372,6 +378,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "32" };
               <a href="${root}internal-external.html"${cur("internal-external.html")}>Internal &amp; external structure<small>Two structures, two kinds of liquidity, four sweeps</small></a>
               <a href="${root}supply-demand.html"${cur("supply-demand.html")}>Imbalance, supply &amp; demand<small>How zones form and which ones to trade</small></a>
               <a href="${root}top-down.html"${cur("top-down.html")}>Top-down analysis<small>4H, 1H, 30m and 5m on one trade</small></a>
+              <a href="${root}failed-trade.html"${cur("failed-trade.html")}>Why a trade failed<small>A 5m signal against a bearish 1H</small></a>
               <a href="${root}full-sequence.html"${cur("full-sequence.html")}>The full sequence<small>Structure, sweep, MSS, IMB and OB in one trade</small></a>
               <a href="${root}bos-quality.html"${cur("bos-quality.html")}>Good vs bad BoS<small>Protected and unprotected lows</small></a>
               <a href="${root}liquidity.html"${cur("liquidity.html")}>Types of liquidity<small>Swings, equal highs and lows, trendlines, ranges, sessions</small></a>
