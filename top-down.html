@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=50">
+  <link rel="stylesheet" href="assets/css/style.css?v=51">
 </head>
 <body>
 <div class="preloader" aria-hidden="true"><div class="pl-chart"><i></i><i></i><i class="dn"></i><i class="dn"></i><i></i><i></i><i class="dn"></i><i></i><i></i></div><p>VinceVision SMC</p><span>Loading the charts…</span></div>
@@ -36,6 +36,7 @@
         <li><a href="#s6">6 · Result</a></li>
         <li><a href="#whole">Everything as one</a></li>
         <li><a href="#choice">30m or 5m entry?</a></li>
+        <li><a href="#pairs">Timeframe pairs</a></li>
         <li><a href="#orders">Entry, SL &amp; TP</a></li>
         <li><a href="#repeat">Repeatable steps</a></li>
       </ul>
@@ -285,6 +286,31 @@
     </div>
   </section>
 
+  <section id="pairs">
+    <div class="wrap narrow">
+      <p class="eyebrow">The rule</p>
+      <h2>Timeframe pairs: analysis above, entry two rungs below</h2>
+      <p class="lead">One ladder, seven rungs: 1m · 5m · 15m · 1H · 4H · Daily · Weekly. Analyse on one rung — direction, zones, liquidity. Take the confirmation and the entry two rungs below it — the sweep, the shift, the order with its three numbers. The rung in between is optional: use it for the shift or the zone refinement when the trade needs it, exactly as this page’s own example does with the 1H and the 30m.</p>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Analysis rung</th><th>Entry &amp; confirmation rung</th><th>The optional rung between</th><th>Entry candles in one analysis candle</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Weekly</strong></td><td>4H</td><td>Daily</td><td>About 30</td></tr>
+            <tr><td><strong>Daily</strong></td><td>1H</td><td>4H</td><td>24</td></tr>
+            <tr><td><strong>4H</strong></td><td>15m</td><td>1H</td><td>16</td></tr>
+            <tr><td><strong>1H</strong></td><td>5m</td><td>15m</td><td>12</td></tr>
+            <tr><td><strong>15m</strong></td><td>1m</td><td>5m</td><td>15</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4 style="margin-top:24px">Why exactly two rungs</h4>
+      <p>One rung below — 4H into 1H — confirms too slowly and leaves the stop almost as wide as the analysis chart: few trades, big risks, and a confirmation that adds little the analysis chart did not already show. Three rungs or more below — 4H into 5m or 1m — puts the entry chart inside the noise of a single analysis candle: every wick looks like a sweep, stops get hunted by moves the analysis chart cannot even see, and the session fills with trades the higher timeframe never asked for. Two rungs gives twelve to thirty entry candles per analysis candle: enough room for a sweep and a shift to print, few enough to read at a glance.</p>
+      <div class="callout rule"><h4>Rule to carry forward</h4><p>Name both rungs out loud before the session: “4H and 15m today”, “1H and 5m this London”. A shift on any other timeframe does not count for that analysis — not the rung above, not three below. If the paired entry rung never confirms, the trade is skipped, not moved to a convenient timeframe.</p></div>
+      <div class="callout info"><h4>If your feed is missing a rung</h4><p>No 1m, or no 3m on your platform? Use the nearest rung that exists and keep the skip: with no 1m available, a 15m analysis enters on the 5m and simply waits longer. The skip is the rule; the labels are only its usual spelling.</p></div>
+      <p>Every case on this site names its pair in hindsight. The real-market trades mostly run 4H into 15m or 1H into 5m, this page’s example refines through the 1H and 30m on the way to a 5m entry, your gold replays ran 15m into 5m, and the two Volatility 75 cases ran a single timeframe and say so on the page. When a case shows only one chart, treat the pair as an open question — the review sections do.</p>
+    </div>
+  </section>
+
   <section id="orders">
     <div class="wrap">
       <p class="eyebrow">Order placement</p>
@@ -356,6 +382,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=50"></script>
+<script src="assets/js/site.js?v=51"></script>
 </body>
 </html>
