@@ -62,6 +62,17 @@ const CASES = [
       "Gold falls, breaks a low and sweeps it, then shifts up. The pullback builds a double bottom, that is swept too, and the 5m shifts a second time. The demand left by the second shift is marked to the cent and bought from its top edge; the rally takes the marked $$$ high and closes through the supply above it. A replay on the FOREX.com feed."
   },
   {
+    pair: "XAU/USD",
+    title: "Two Swept Highs, One Supply Short",
+    href: "cases/xauusd-15m-supply-retest.html",
+    thumb: "assets/img/xauusd-15m-supply-retest/04-run.png",
+    direction: "Short",
+    model: "15m swept highs → MSS down → supply retest",
+    result: "Targets hit · wick to 3,847.5 · ≈ 1:2.4",
+    summary:
+      "The 15m falls, then a deep retracement sweeps two marked highs before shifting down again. The supply left by that fall is drawn before price returns to it, and a sell limit at its near edge fills on the way up. The fall runs down a drawn corridor into the demand below. A replay on the FOREX.com feed."
+  },
+  {
     pair: "GBP/JPY",
     title: "Strong Structure Starts With a Sweep",
     href: "cases/gbpjpy-sweep-before-structure.html",
@@ -409,6 +420,12 @@ const STUDY_PATH = [
   "q": "Why does the stop sit below the zone and not below the sweep wick?"
  },
  {
+  "href": "cases/xauusd-15m-supply-retest.html",
+  "title": "XAU/USD: Two Swept Highs, One Supply Short",
+  "part": "Part 3 · Case studies",
+  "q": "Why does the stop sit above the zone top and not above the internal high?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -417,7 +434,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "45" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "46" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
