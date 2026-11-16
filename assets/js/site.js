@@ -73,6 +73,17 @@ const CASES = [
       "The 15m falls, then a deep retracement sweeps two marked highs before shifting down again. The supply left by that fall is drawn before price returns to it, and a sell limit at its near edge fills on the way up. The fall runs down a drawn corridor into the demand below. A replay on the FOREX.com feed."
   },
   {
+    pair: "XAU/USD",
+    title: "Sweep, MSS, FVG and OB",
+    href: "cases/xauusd-sweep-mss-fvg-ob.html",
+    thumb: "assets/img/xauusd-sweep-mss-fvg-ob/01-cover.png",
+    direction: "Short",
+    model: "4H bearish → 15m sweep + MSS → OB/FVG",
+    result: "SSL broken · no axis, no R:R quoted",
+    summary:
+      "A posted breakdown in four slides: the 4H is bearish with liquidity taken above, the 15m sweeps its swing high and shifts down, leaving an FVG and a bearish order block. Mitigation taps the block about halfway and price delivers lower, breaking the session lows. The slides carry no price axis."
+  },
+  {
     pair: "GBP/JPY",
     title: "Strong Structure Starts With a Sweep",
     href: "cases/gbpjpy-sweep-before-structure.html",
@@ -426,6 +437,12 @@ const STUDY_PATH = [
   "q": "Why does the stop sit above the zone top and not above the internal high?"
  },
  {
+  "href": "cases/xauusd-sweep-mss-fvg-ob.html",
+  "title": "XAU/USD: Sweep, MSS, FVG and OB",
+  "part": "Part 3 · Case studies",
+  "q": "Which timeframe gave the direction, and which gave the entry?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -434,7 +451,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "46" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "47" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
