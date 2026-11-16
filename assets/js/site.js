@@ -466,7 +466,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "53" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "54" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
