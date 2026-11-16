@@ -32,7 +32,7 @@ Every page starts with a `<div class="preloader">` block straight after `<body>`
 
 ## Adding a video to a page
 
-Open `assets/js/site.js`, find `VIDEOS` near the top and paste the video link between the quotes for that page. YouTube, Vimeo and Google Drive links work as copied, and Instagram reel and post links (`instagram.com/reel/…`) work too; a reel is embedded with Instagram's own embed script and plays inside the page where Instagram allows it, with a link under it that opens it on Instagram. The video appears under the page heading. Then raise the `?v=` number on the pages so browsers load the new script.
+Open `assets/js/site.js`, find `VIDEOS` near the top and paste the video link between the quotes for that page. YouTube, Vimeo and Google Drive links work as copied, and Instagram reel and post links (`instagram.com/reel/…`) work too; a reel is embedded with Instagram's own embed script and plays inside the page where Instagram allows it, with a link under it that opens it on Instagram. Files dropped in the `videos/` folder can be referenced as `videos/name.mp4` and play in the page's own player. The video appears under the page heading. Then raise the `?v=` number on the pages so browsers load the new script.
 
 ## Adding a case study
 

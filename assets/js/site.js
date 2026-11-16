@@ -250,7 +250,10 @@ const VIDEOS = {
   "failed-trade.html": "https://www.instagram.com/reel/Dfs6fKfyCIb/",
   "scaling-reentry.html": "https://youtu.be/qgoxRH057cw",
   "notes.html": "",
-  "strategy.html": "",
+  "strategy.html": [
+    "videos/ig_240330.mp4",
+    "videos/ig_893675.mp4"
+  ],
   "sweep-model.html": "",
   "playbook.html": "",
   "checklist.html": [
@@ -462,7 +465,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "51" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "52" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -608,6 +611,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "51" };
   (function () {
     const toEmbed = (u) => {
       u = String(u || "").trim();
+      if (/^videos\/[\w.-]+\.(?:mp4|webm|ogg|mov|m4v)$/i.test(u)) return u;
       if (!/^https:\/\//i.test(u)) return "";
       let m;
       if ((m = u.match(/youtube\.com\/playlist\?(?:.*&)?list=([\w-]{10,})/i))) return "https://www.youtube-nocookie.com/embed/videoseries?list=" + m[1] + "&rel=0";
@@ -649,6 +653,12 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "51" };
         <div class="reel-slot">
           <blockquote class="instagram-media" data-instgrm-permalink="${esc(permalink)}" data-instgrm-version="14"></blockquote>
           <p class="small muted reel-fallback"><a href="${esc(permalink)}" target="_blank" rel="noopener">If the reel does not play here, open it on Instagram.</a></p>
+        </div>`;
+            }
+            if (!/^https:\/\//i.test(src)) {
+              return `${many ? `<p class="video-label">${label}</p>` : ""}
+        <div class="video-frame">
+          <video controls preload="metadata" src="${esc(root + src)}" title="${esc(label + ": " + name)}"></video>
         </div>`;
             }
             return `${many ? `<p class="video-label">${label}</p>` : ""}
