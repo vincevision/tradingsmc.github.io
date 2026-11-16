@@ -231,7 +231,8 @@ const VIDEOS = {
     "https://youtu.be/4VzzxGte9sc",
     "https://youtu.be/iu3FkHjeMOA",
     "https://youtu.be/pyTw-c64eFA",
-    "https://youtu.be/9nRFcetXqkA"
+    "https://youtu.be/9nRFcetXqkA",
+    "https://www.instagram.com/reel/DfdNEBBpp_W/"
   ],
   "top-down.html": [
     "https://youtu.be/GKN-iVjJpyA",
@@ -239,16 +240,24 @@ const VIDEOS = {
     "https://youtu.be/UjEC2uxVi1E",
     "https://youtu.be/csZXLLu0KzU",
     "https://youtu.be/defSZjhGq9s",
-    "https://youtu.be/8-p5kR290x4"
+    "https://youtu.be/8-p5kR290x4",
+    "https://www.instagram.com/reel/DfiefJWSTkc/"
   ],
-  "full-sequence.html": "https://youtu.be/fg-kBYiChK4",
-  "failed-trade.html": "",
+  "full-sequence.html": [
+    "https://youtu.be/fg-kBYiChK4",
+    "https://www.instagram.com/reel/DfmbC0eJNYF/"
+  ],
+  "failed-trade.html": "https://www.instagram.com/reel/Dfs6fKfyCIb/",
   "scaling-reentry.html": "https://youtu.be/qgoxRH057cw",
   "notes.html": "",
   "strategy.html": "",
   "sweep-model.html": "",
   "playbook.html": "",
-  "checklist.html": "",
+  "checklist.html": [
+    "https://www.instagram.com/reel/DfTCopEyIMP/",
+    "https://www.instagram.com/reel/Dff4yOWpaTn/"
+  ],
+  "guide.html": "https://www.instagram.com/reel/DfawXkcvfR-/",
 };
 
 const STUDY_PATH = [
@@ -453,7 +462,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "48" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "49" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
