@@ -198,7 +198,9 @@ const CASES = [
 /*
  * Videos. To add a video to a page, paste its link between the quotes.
  * YouTube, Vimeo and Google Drive links are accepted as they appear in the
- * address bar or the Share button. Leave the quotes empty for no video.
+ * address bar or the Share button. Instagram reel and post links are accepted
+ * too (instagram.com/reel/…); a reel appears in a tall frame of its own.
+ * Leave the quotes empty for no video.
  * For several videos on one page, use a list: ["link 1", "link 2"].
  * A YouTube playlist link shows the whole playlist in one player.
  * For a case study use its path, for example "cases/usdjpy-confirmation-entry.html".
@@ -451,7 +453,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "47" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "48" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -605,6 +607,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "47" };
         return "https://www.youtube-nocookie.com/embed/" + m[1] + "?rel=0" + (t ? "&start=" + t[1] : "");
       }
       if ((m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/i))) return "https://player.vimeo.com/video/" + m[1];
+      if ((m = u.match(/(?:instagram\.com|instagr\.am)\/(reel|reels|p|tv)\/([\w-]+)/i))) return "https://www.instagram.com/" + (m[1] === "reels" ? "reel" : m[1]) + "/" + m[2] + "/embed/";
       if ((m = u.match(/drive\.google\.com\/file\/d\/([\w-]+)/i))) return "https://drive.google.com/file/d/" + m[1] + "/preview";
       return u;
     };
@@ -617,19 +620,22 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "47" };
     const h1 = document.querySelector("main h1");
     const name = h1 ? h1.textContent.trim() : "this page";
     const many = srcs.length > 1;
+    const allReels = srcs.length > 0 && srcs.every((s) => s.indexOf("instagram.com") >= 0);
+    const noun = allReels ? (many ? "Reels" : "Reel") : many ? "Videos" : "Video";
     const sec = document.createElement("section");
     sec.id = "video";
     sec.className = "video-section";
     sec.innerHTML = `
       <div class="wrap narrow">
         <p class="eyebrow">Watch first</p>
-        <h2>${many ? "Videos" : "Video"}: ${esc(name)}</h2>
+        <h2>${noun}: ${esc(name)}</h2>
         ${srcs
           .map((src, n) => {
             const list = src.indexOf("videoseries") >= 0;
-            const label = (list ? "Playlist" : "Video") + (many ? " " + (n + 1) + " of " + srcs.length : "");
+            const reel = src.indexOf("instagram.com") >= 0;
+            const label = (list ? "Playlist" : reel ? "Reel" : "Video") + (many ? " " + (n + 1) + " of " + srcs.length : "");
             return `${many ? `<p class="video-label">${label}</p>` : ""}
-        <div class="video-frame">
+        <div class="video-frame${reel ? " portrait" : ""}">
           <iframe src="${esc(src)}" title="${esc(label + ": " + name)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>`;
           })
@@ -641,11 +647,11 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "47" };
             return html;
           })
           .join("")}
-        <p class="small muted">${many ? "Watch these in order" : "Watch the video"}, then read the page below. The written steps are the reference. The videos are by their own creators on YouTube and may use slightly different terms from this site.</p>
+        <p class="small muted">${many ? "Watch these in order" : "Watch the " + noun.toLowerCase()}, then read the page below. The written steps are the reference. The videos and reels are by their own creators on YouTube and Instagram and may use slightly different terms from this site.</p>
       </div>`;
     hero.insertAdjacentElement("afterend", sec);
     const toc = hero.querySelector(".toc");
-    if (toc) toc.insertAdjacentHTML("afterbegin", '<li><a href="#video">Video</a></li>');
+    if (toc) toc.insertAdjacentHTML("afterbegin", '<li><a href="#video">' + noun + '</a></li>');
   })();
 
   // ----- Study path: next / previous bar on every page, progress on the guide -----
