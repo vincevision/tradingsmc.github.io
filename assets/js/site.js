@@ -252,7 +252,8 @@ const VIDEOS = {
   "notes.html": "",
   "strategy.html": [
     "videos/ig_240330.mp4",
-    "videos/ig_893675.mp4"
+    "videos/ig_893675.mp4",
+    "videos/ssss.mp4"
   ],
   "sweep-model.html": "",
   "playbook.html": "",
@@ -465,7 +466,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "52" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "53" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
