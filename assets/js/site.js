@@ -51,6 +51,17 @@ const CASES = [
       "The 4H sweeps a high and shifts bearish. The pullback runs the 1H internal highs, the 15m shifts down, and the short is taken from the order block to the demand zone below."
   },
   {
+    pair: "XAU/USD",
+    title: "Two Sweeps Into 5m Demand",
+    href: "cases/xauusd-5m-demand-double-sweep.html",
+    thumb: "assets/img/xauusd-5m-demand-double-sweep/02-run.png",
+    direction: "Long",
+    model: "5m sweep, sweep, MSS → 5m demand",
+    result: "Zone held · targets taken · ≈ 1:2.1",
+    summary:
+      "Gold falls, breaks a low and sweeps it, then shifts up. The pullback builds a double bottom, that is swept too, and the 5m shifts a second time. The demand left by the second shift is marked to the cent and bought from its top edge; the rally takes the marked $$$ high and closes through the supply above it. A replay on the FOREX.com feed."
+  },
+  {
     pair: "GBP/JPY",
     title: "Strong Structure Starts With a Sweep",
     href: "cases/gbpjpy-sweep-before-structure.html",
@@ -392,6 +403,12 @@ const STUDY_PATH = [
   "q": "Which of the two entries had confirmation, and what was it?"
  },
  {
+  "href": "cases/xauusd-5m-demand-double-sweep.html",
+  "title": "XAU/USD: Two Sweeps Into 5m Demand",
+  "part": "Part 3 · Case studies",
+  "q": "Why does the stop sit below the zone and not below the sweep wick?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -400,7 +417,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "44" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "45" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
