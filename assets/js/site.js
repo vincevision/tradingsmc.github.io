@@ -462,7 +462,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "49" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "50" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -643,8 +643,16 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "49" };
             const list = src.indexOf("videoseries") >= 0;
             const reel = src.indexOf("instagram.com") >= 0;
             const label = (list ? "Playlist" : reel ? "Reel" : "Video") + (many ? " " + (n + 1) + " of " + srcs.length : "");
+            if (reel) {
+              const permalink = src.replace("/embed/", "/");
+              return `${many ? `<p class="video-label">${label}</p>` : ""}
+        <div class="reel-slot">
+          <blockquote class="instagram-media" data-instgrm-permalink="${esc(permalink)}" data-instgrm-version="14"></blockquote>
+          <p class="small muted reel-fallback"><a href="${esc(permalink)}" target="_blank" rel="noopener">If the reel does not play here, open it on Instagram.</a></p>
+        </div>`;
+            }
             return `${many ? `<p class="video-label">${label}</p>` : ""}
-        <div class="video-frame${reel ? " portrait" : ""}">
+        <div class="video-frame">
           <iframe src="${esc(src)}" title="${esc(label + ": " + name)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>`;
           })
@@ -659,6 +667,14 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "49" };
         <p class="small muted">${many ? "Watch these in order" : "Watch the " + noun.toLowerCase()}, then read the page below. The written steps are the reference. The videos and reels are by their own creators on YouTube and Instagram and may use slightly different terms from this site.</p>
       </div>`;
     hero.insertAdjacentElement("afterend", sec);
+    if (srcs.some((s) => s.indexOf("instagram.com") >= 0)) {
+      // Instagram's own embed script turns the blockquotes above into players.
+      const ig = document.createElement("script");
+      ig.src = "https://www.instagram.com/embed.js";
+      ig.async = true;
+      ig.onload = () => { if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process(); };
+      document.body.appendChild(ig);
+    }
     const toc = hero.querySelector(".toc");
     if (toc) toc.insertAdjacentHTML("afterbegin", '<li><a href="#video">' + noun + '</a></li>');
   })();
