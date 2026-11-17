@@ -197,6 +197,10 @@ evInvL   = false
 
 buf = stopTicks * syminfo.mintick
 
+// Fallback targets, computed every bar so ta.* stays consistent.
+hiFall = ta.highest(high, tgtLook)
+loFall = ta.lowest(low, tgtLook)
+
 if evSweepL and stL == 0
     sh = float(na)
     if array.size(hiBar) > 0
@@ -212,8 +216,8 @@ if evSweepL and stL == 0
         structHL  := sh
         legHiL    := high
         counterL  := bias != 1
-        line.new(x1=bar_index - pivotLen, y1=poolLowEv, x2=bar_index, y2=poolLowEv, extend=extend.right, style=line_style_dotted, color=C_SWEEP, width=1)
-        line.new(x1=bar_index, y1=protL, x2=bar_index + 1, y2=protL, extend=extend.right, style=line_style_dashed, color=C_SL, width=1)
+        line.new(x1=bar_index - pivotLen, y1=poolLowEv, x2=bar_index, y2=poolLowEv, extend=extend.right, style=line.style_dotted, color=C_SWEEP, width=1)
+        line.new(x1=bar_index, y1=protL, x2=bar_index + 1, y2=protL, extend=extend.right, style=line.style_dashed, color=C_SL, width=1)
         label.new(x=bar_index, y=sweepLowEv, text="X  $$$", style=label.style_label_up, color=C_SWEEP, textcolor=color.white, size=size.small)
         evShiftL := false
     else if showSkips and not okBias
@@ -279,7 +283,7 @@ if stL == 1 and bar_index > sweepBarL
                                 if array.get(hiSt, i) != 2 and array.get(hiLvl, i) > close
                                     tt := na(tt) ? array.get(hiLvl, i) : math.min(tt, array.get(hiLvl, i))
                         if na(tt)
-                            tt := ta.highest(high, tgtLook)[1]
+                            tt := hiFall[1]
                         tgtL := tt
                         rrL  := (tgtL - entryL) / (entryL - stopL)
                         if rrL < minRR
@@ -292,9 +296,9 @@ if stL == 1 and bar_index > sweepBarL
                             evReadyL := true
                             zoneBoxL := box.new(left=bar_index - zk, top=zoneTopL, right=bar_index, bottom=zoneBotL, extend=extend.right, border_color=C_ZONE, bgcolor=color.new(C_ZONE, 68))
                             box.new(left=imbBar - 2, top=imbTop, right=imbBar, bottom=imbBot, border_color=C_IMB, bgcolor=color.new(C_IMB, 65))
-                            entLnL := line.new(x1=bar_index, y1=entryL, x2=bar_index + 1, y2=entryL, extend=extend.right, style=line_style_dashed, color=C_IMB, width=1)
-                            stLnL  := line.new(x1=bar_index, y1=stopL, x2=bar_index + 1, y2=stopL, extend=extend.right, style=line_style_solid, color=C_SL, width=1)
-                            tpLnL  := line.new(x1=bar_index, y1=tgtL, x2=bar_index + 1, y2=tgtL, extend=extend.right, style=line_style_dashed, color=C_IMB, width=1)
+                            entLnL := line.new(x1=bar_index, y1=entryL, x2=bar_index + 1, y2=entryL, extend=extend.right, style=line.style_dashed, color=C_IMB, width=1)
+                            stLnL  := line.new(x1=bar_index, y1=stopL, x2=bar_index + 1, y2=stopL, extend=extend.right, style=line.style_solid, color=C_SL, width=1)
+                            tpLnL  := line.new(x1=bar_index, y1=tgtL, x2=bar_index + 1, y2=tgtL, extend=extend.right, style=line.style_dashed, color=C_IMB, width=1)
                             label.new(x=bar_index, y=entryL, text="limit " + str.tostring(entryL, format.mintick) + " · RR " + str.tostring(rrL, "#.##") + (counterL ? " · counter-trend, half risk" : ""), style=label.style_label_left, color=C_ZONE, textcolor=color.white, size=size.small)
                             evShiftL := true
 
@@ -357,8 +361,8 @@ if evSweepS and stS == 0
         structLS  := sl
         legLoS    := low
         counterS  := bias != -1
-        line.new(x1=bar_index - pivotLen, y1=poolHighEv, x2=bar_index, y2=poolHighEv, extend=extend.right, style=line_style_dotted, color=C_SWEEP, width=1)
-        line.new(x1=bar_index, y1=protS, x2=bar_index + 1, y2=protS, extend=extend.right, style=line_style_dashed, color=C_SL, width=1)
+        line.new(x1=bar_index - pivotLen, y1=poolHighEv, x2=bar_index, y2=poolHighEv, extend=extend.right, style=line.style_dotted, color=C_SWEEP, width=1)
+        line.new(x1=bar_index, y1=protS, x2=bar_index + 1, y2=protS, extend=extend.right, style=line.style_dashed, color=C_SL, width=1)
         label.new(x=bar_index, y=sweepHighEv, text="X  $$$", style=label.style_label_down, color=C_SWEEP, textcolor=color.white, size=size.small)
     else if showSkips and not okBias
         label.new(x=bar_index, y=sweepHighEv, text="sweep vs HTF — skipped", style=label.style_label_down, color=C_SL, textcolor=color.white, size=size.tiny)
@@ -423,7 +427,7 @@ if stS == 1 and bar_index > sweepBarS
                                 if array.get(loSt, i) != 2 and array.get(loLvl, i) < close
                                     tt := na(tt) ? array.get(loLvl, i) : math.min(tt, array.get(loLvl, i))
                         if na(tt)
-                            tt := ta.lowest(low, tgtLook)[1]
+                            tt := loFall[1]
                         tgtS := tt
                         rrS  := (entryS - tgtS) / (stopS - entryS)
                         if rrS < minRR
@@ -436,9 +440,9 @@ if stS == 1 and bar_index > sweepBarS
                             evReadyS  := true
                             box.new(left=bar_index - zk, top=zoneTopS, right=bar_index, bottom=zoneBotS, extend=extend.right, border_color=C_SWEEP, bgcolor=color.new(C_SWEEP, 68))
                             box.new(left=imbBar - 2, top=imbTop, right=imbBar, bottom=imbBot, border_color=C_IMB, bgcolor=color.new(C_IMB, 65))
-                            line.new(x1=bar_index, y1=entryS, x2=bar_index + 1, y2=entryS, extend=extend.right, style=line_style_dashed, color=C_IMB, width=1)
-                            line.new(x1=bar_index, y1=stopS, x2=bar_index + 1, y2=stopS, extend=extend.right, style=line_style_solid, color=C_SL, width=1)
-                            line.new(x1=bar_index, y1=tgtS, x2=bar_index + 1, y2=tgtS, extend=extend.right, style=line_style_dashed, color=C_IMB, width=1)
+                            line.new(x1=bar_index, y1=entryS, x2=bar_index + 1, y2=entryS, extend=extend.right, style=line.style_dashed, color=C_IMB, width=1)
+                            line.new(x1=bar_index, y1=stopS, x2=bar_index + 1, y2=stopS, extend=extend.right, style=line.style_solid, color=C_SL, width=1)
+                            line.new(x1=bar_index, y1=tgtS, x2=bar_index + 1, y2=tgtS, extend=extend.right, style=line.style_dashed, color=C_IMB, width=1)
                             label.new(x=bar_index, y=entryS, text="limit " + str.tostring(entryS, format.mintick) + " · RR " + str.tostring(rrS, "#.##") + (counterS ? " · counter-trend, half risk" : ""), style=label.style_label_left, color=C_SWEEP, textcolor=color.white, size=size.small)
 
 if stS == 2 and bar_index > shiftBarS
