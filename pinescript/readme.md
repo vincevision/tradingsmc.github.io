@@ -30,6 +30,27 @@ those stay a human judgement, exactly as the site teaches.
 Colours are the site's drawing palette: olive zones, blue imbalance/entry/target,
 grey stop, rust sweeps.
 
+## Targets follow the origin (backtest rule, v4)
+
+The analysis rung now reports not just direction but **where its current leg started**:
+
+- `origin = demand` — the HTF shift leg began with a tap of a demand/supply zone.
+- `origin = swept liq` — the HTF shift leg began at swept liquidity (HTF sweep, then shift).
+- `origin = none` — a mid-range break with neither backing.
+
+And the entry-TF sweep is classified against the HTF zone band of that leg:
+
+| Setup | Gate | Target |
+|---|---|---|
+| Sweep **at** the HTF zone, HTF origin = demand | with-trend bias | far liquidity: nearest HTF swing high/low, else the week high/low |
+| Sweep **at** the HTF zone, HTF origin = swept liq | with-trend bias | next entry-TF liquidity point only |
+| **Bare** sweep (no zone behind it) | only when HTF origin = swept liq — the HTF itself shifted away from that swept liquidity | next entry-TF liquidity point only; session/HTF levels excluded |
+| Bare sweep with HTF origin = demand or none | refused, labelled | — |
+
+The ready label and the ready alert say which target scale is in force
+(`HTF target` / `next LTF liq`), and the panel's "HTF origin" row shows the
+context at a glance.
+
 ## Chart reading (v3 of the script)
 
 - **Swing ticks** — a three-bar tick at every confirmed swing high/low: the structure
