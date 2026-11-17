@@ -250,6 +250,7 @@ const VIDEOS = {
   "failed-trade.html": "https://www.instagram.com/reel/Dfs6fKfyCIb/",
   "scaling-reentry.html": "https://youtu.be/qgoxRH057cw",
   "notes.html": "",
+  "key-points.html": "",
   "strategy.html": [
     "videos/ig_240330.mp4",
     "videos/ig_893675.mp4",
@@ -462,11 +463,17 @@ const STUDY_PATH = [
   "title": "Live checklist",
   "part": "Part 4 · Practice",
   "q": "Did every step pass before you placed the order?"
+ },
+ {
+  "href": "key-points.html",
+  "title": "Key points: the method in one page",
+  "part": "Part 4 · Practice",
+  "q": "Can you say the skips from memory, in order?"
  }
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "54" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "55" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -533,6 +540,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "54" };
               <a href="${root}sweep-model.html"${cur("sweep-model.html")}>Sweep model<small>Step by step: a swept low or high, then a shift</small></a>
             </div>
           </details>
+          <a href="${root}key-points.html"${cur("key-points.html")}>Key points</a>
           <a href="${root}checklist.html"${cur("checklist.html")}>Checklist</a>
           <a href="${root}playbook.html"${cur("playbook.html")}>Playbook</a>
           <details>
