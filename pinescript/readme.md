@@ -30,6 +30,18 @@ those stay a human judgement, exactly as the site teaches.
 Colours are the site's drawing palette: olive zones, blue imbalance/entry/target,
 grey stop, rust sweeps.
 
+## Chart reading (v3 of the script)
+
+- **Swing ticks** — a three-bar tick at every confirmed swing high/low: the structure
+  skeleton, without full-width lines.
+- **BoS / MSS labels** — a close through the last swing prints `BoS`; the shift inside a
+  setup prints `MSS` beside its imbalance box, exactly like the site diagrams.
+- **Trend tint** — the chart background is faintly olive while the analysis rung favours
+  longs, rust while it favours shorts, with a label where the stance flips.
+- **Bounded lines** — liquidity pools are invisible until swept; the swept pool becomes a
+  short dotted segment; every protective, entry, stop and target line is truncated at the
+  bar where the idea ends (invalidated, skipped, stopped or target). History stays readable.
+
 ## Alerts
 
 - **Sweep** — liquidity taken; wait for the shift, do not trade the wick.
