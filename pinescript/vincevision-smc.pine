@@ -1,0 +1,503 @@
+//@version=5
+// VinceVision SMC — sweep model, codified.
+// Mirrors the site's rules: sweep-model.html steps 1-6, the pair table from
+// top-down.html#pairs, the skip rules from checklist.html, and both retracement
+// doors (50% equilibrium, 75% deep) from notes.html#n11.
+// The zone model's higher-timeframe zone stays a human drawing: this indicator
+// enforces its gates (direction, sweep before shift, protected level, 1:2 room)
+// and runs the sweep model's sequence end to end, longs and shorts.
+indicator("VinceVision SMC — sweep model", shorttitle="VV SMC", overlay=true, max_boxes_count=500, max_lines_count=500, max_labels_count=500)
+
+// ── Inputs ────────────────────────────────────────────────────────────
+grpTF   = "Timeframe pair (top-down)"
+autoPair   = input.bool(true, "Auto pair from chart TF", group=grpTF, tooltip="Site pair table: 1m→15m, 5m→1H, 15m→4H, 1H→Daily, 4H→Weekly. The middle rung is optional and not used here.")
+manualHTF  = input.timeframe("240", "Analysis TF (when auto is off)", group=grpTF)
+allowCounter = input.bool(false, "Allow counter-trend setups", group=grpTF, tooltip="Site rule: against the trend only at a major level, nearer target, half risk. Off by default.")
+
+grpLiq  = "Liquidity"
+pivotLen  = input.int(5, "Swing lookback (left = right)", minval=2, maxval=30, group=grpLiq)
+useSession = input.bool(true, "Previous day high/low count as liquidity", group=grpLiq)
+maxPools  = input.int(40, "Pools kept per side", minval=5, maxval=200, group=grpLiq)
+
+grpSet  = "Setup rules"
+maxShiftBars = input.int(30, "Max bars from sweep to shift", minval=5, group=grpSet)
+trigger   = input.string("zone", "Entry trigger", options=["zone", "50", "75"], group=grpSet, tooltip="zone = limit at the zone edge (site default). 50 = equilibrium retracement. 75 = the deep door from Note 11.")
+minRR     = input.float(2.0, "Minimum reward : risk", minval=0.5, step=0.1, group=grpSet)
+stopTicks = input.int(50, "Stop buffer beyond the sweep (ticks)", minval=0, group=grpSet)
+tgtLook   = input.int(100, "Target fallback lookback (bars)", minval=20, group=grpSet)
+showSkips = input.bool(true, "Label the skips", group=grpSet)
+
+// Site palette, so the chart reads like the drawings.
+C_TXT   = #1f1d1b
+C_ZONE  = #6f7558
+C_IMB   = #4f7186
+C_SL    = #7d7a76
+C_SWEEP = #8a5a4f
+
+// ── Step 1 · direction from the analysis rung ─────────────────────────
+chartMins = timeframe.in_seconds() / 60
+autoTF    = chartMins <= 1 ? "15" : chartMins <= 5 ? "60" : chartMins <= 15 ? "240" : chartMins <= 60 ? "D" : "W"
+htfTF     = autoPair ? autoTF : manualHTF
+
+f_bias() =>
+    ph = ta.pivothigh(high, 3, 3)
+    pl = ta.pivotlow(low, 3, 3)
+    var int   b   = 0
+    var float lph = na
+    var float lpl = na
+    if not na(ph)
+        lph := ph
+    if not na(pl)
+        lpl := pl
+    if not na(lph) and close > lph
+        b := 1
+    if not na(lpl) and close < lpl
+        b := -1
+    b
+
+bias = request.security(syminfo.tickerid, htfTF, f_bias(), barmerge.gaps_off, barmerge.lookahead_off)
+
+// ── Step 2 · liquidity pools and the target ───────────────────────────
+ph = ta.pivothigh(high, pivotLen, pivotLen)
+pl = ta.pivotlow(low, pivotLen, pivotLen)
+
+var float[] hiLvl  = array.new_float()
+var int[]   hiBar  = array.new_int()
+var int[]   hiSt   = array.new_int()
+var float[] hiExt  = array.new_float()
+var int[]   hiExtB = array.new_int()
+var float[] loLvl  = array.new_float()
+var int[]   loBar  = array.new_int()
+var int[]   loSt   = array.new_int()
+var float[] loExt  = array.new_float()
+var int[]   loExtB = array.new_int()
+
+f_push(bool isHigh, float lvl, int b) =>
+    if isHigh
+        array.push(hiLvl, lvl)
+        array.push(hiBar, b)
+        array.push(hiSt, 0)
+        array.push(hiExt, 0.0)
+        array.push(hiExtB, 0)
+        while array.size(hiLvl) > maxPools
+            array.shift(hiLvl)
+            array.shift(hiBar)
+            array.shift(hiSt)
+            array.shift(hiExt)
+            array.shift(hiExtB)
+    else
+        array.push(loLvl, lvl)
+        array.push(loBar, b)
+        array.push(loSt, 0)
+        array.push(loExt, 0.0)
+        array.push(loExtB, 0)
+        while array.size(loLvl) > maxPools
+            array.shift(loLvl)
+            array.shift(loBar)
+            array.shift(loSt)
+            array.shift(loExt)
+            array.shift(loExtB)
+
+if not na(ph)
+    f_push(true, ph, bar_index - pivotLen)
+if not na(pl)
+    f_push(false, pl, bar_index - pivotLen)
+
+pdh = request.security(syminfo.tickerid, "D", high[1], barmerge.gaps_off, barmerge.lookahead_on)
+pdl = request.security(syminfo.tickerid, "D", low[1],  barmerge.gaps_off, barmerge.lookahead_on)
+if useSession and timeframe.change("D") and not na(pdh)
+    f_push(true, pdh, bar_index)
+    f_push(false, pdl, bar_index)
+
+// ── Step 3 · sweep detection (wick through, close back within 2 bars) ──
+evSweepL   = false
+sweepLowEv = float(na)
+poolLowEv  = float(na)
+if array.size(loLvl) > 0
+    for i = array.size(loLvl) - 1 to 0
+        st  = array.get(loSt, i)
+        lvl = array.get(loLvl, i)
+        if st == 0
+            if low < lvl and close > lvl
+                array.set(loSt, i, 2)
+                evSweepL   := true
+                sweepLowEv := low
+                poolLowEv  := lvl
+                break
+            else if low < lvl and close <= lvl
+                array.set(loSt, i, 1)
+                array.set(loExt, i, low)
+                array.set(loExtB, i, bar_index)
+        else if st == 1
+            array.set(loExt, i, math.min(array.get(loExt, i), low))
+            if close > lvl
+                array.set(loSt, i, 2)
+                evSweepL   := true
+                sweepLowEv := array.get(loExt, i)
+                poolLowEv  := lvl
+                break
+            else if bar_index - array.get(loExtB, i) > 2
+                array.set(loSt, i, 2)
+
+evSweepS    = false
+sweepHighEv = float(na)
+poolHighEv  = float(na)
+if array.size(hiLvl) > 0
+    for i = array.size(hiLvl) - 1 to 0
+        st  = array.get(hiSt, i)
+        lvl = array.get(hiLvl, i)
+        if st == 0
+            if high > lvl and close < lvl
+                array.set(hiSt, i, 2)
+                evSweepS    := true
+                sweepHighEv := high
+                poolHighEv  := lvl
+                break
+            else if high > lvl and close >= lvl
+                array.set(hiSt, i, 1)
+                array.set(hiExt, i, high)
+                array.set(hiExtB, i, bar_index)
+        else if st == 1
+            array.set(hiExt, i, math.max(array.get(hiExt, i), high))
+            if close < lvl
+                array.set(hiSt, i, 2)
+                evSweepS    := true
+                sweepHighEv := array.get(hiExt, i)
+                poolHighEv  := lvl
+                break
+            else if bar_index - array.get(hiExtB, i) > 2
+                array.set(hiSt, i, 2)
+
+// ── State: longs ──────────────────────────────────────────────────────
+var int   stL       = 0
+var int   sweepBarL = na
+var float protL     = na
+var float structHL  = na
+var float legHiL    = na
+var int   shiftBarL = na
+var float zoneTopL  = na
+var float zoneBotL  = na
+var float entryL    = na
+var float stopL     = na
+var float tgtL      = na
+var float rrL       = na
+var int   fillBarL  = na
+var bool  counterL  = false
+var box   zoneBoxL  = na
+var line  entLnL    = na
+var line  stLnL     = na
+var line  tpLnL     = na
+
+evShiftL = false
+evReadyL = false
+evFillL  = false
+evWinL   = false
+evLossL  = false
+evInvL   = false
+
+buf = stopTicks * syminfo.mintick
+
+if evSweepL and stL == 0
+    sh = float(na)
+    if array.size(hiBar) > 0
+        for i = array.size(hiBar) - 1 to 0
+            if array.get(hiBar, i) < bar_index and array.get(hiSt, i) != 2
+                sh := array.get(hiLvl, i)
+                break
+    okBias = bias == 1 or (allowCounter and bias == -1)
+    if not na(sh) and okBias
+        stL       := 1
+        sweepBarL := bar_index
+        protL     := sweepLowEv
+        structHL  := sh
+        legHiL    := high
+        counterL  := bias != 1
+        line.new(x1=bar_index - pivotLen, y1=poolLowEv, x2=bar_index, y2=poolLowEv, extend=extend.right, style=line_style_dotted, color=C_SWEEP, width=1)
+        line.new(x1=bar_index, y1=protL, x2=bar_index + 1, y2=protL, extend=extend.right, style=line_style_dashed, color=C_SL, width=1)
+        label.new(x=bar_index, y=sweepLowEv, text="X  $$$", style=label.style_label_up, color=C_SWEEP, textcolor=color.white, size=size.small)
+        evShiftL := false
+    else if showSkips and not okBias
+        label.new(x=bar_index, y=sweepLowEv, text="sweep vs HTF — skipped", style=label.style_label_up, color=C_SL, textcolor=color.white, size=size.tiny)
+
+if stL == 1 and bar_index > sweepBarL
+    legHiL := math.max(legHiL, high)
+    if close < protL
+        stL    := 0
+        evInvL := true
+        if showSkips
+            label.new(x=bar_index, y=close, text="invalidated: close under protected low", style=label.style_label_down, color=C_SWEEP, textcolor=color.white, size=size.tiny)
+    else if bar_index - sweepBarL > maxShiftBars
+        stL := 0
+    else if close > structHL
+        imb    = false
+        imbTop = float(na)
+        imbBot = float(na)
+        imbBar = int(na)
+        span   = bar_index - sweepBarL - 2
+        if span >= 0
+            for off = 0 to span
+                if low[off] > high[off + 2]
+                    imb    := true
+                    imbTop := low[off]
+                    imbBot := high[off + 2]
+                    imbBar := bar_index - off
+                    break
+        if not imb
+            stL := 0
+            if showSkips
+                label.new(x=bar_index, y=high, text="break without imbalance — no trade", style=label.style_label_down, color=C_SL, textcolor=color.white, size=size.tiny)
+        else
+            zk = int(na)
+            for off = 1 to bar_index - sweepBarL
+                if close[off] < open[off]
+                    zk := off
+                    break
+            if na(zk)
+                stL := 0
+            else
+                zoneTopL := high[zk]
+                zoneBotL := low[zk]
+                fresh    = true
+                for off = 1 to zk - 1
+                    if low[off] < zoneTopL
+                        fresh := false
+                        break
+                if not fresh
+                    stL := 0
+                    if showSkips
+                        label.new(x=bar_index, y=high, text="zone already tapped — no trade", style=label.style_label_down, color=C_SL, textcolor=color.white, size=size.tiny)
+                else
+                    legLo  = protL
+                    entryL := trigger == "zone" ? zoneTopL : trigger == "50" ? legHiL - 0.5 * (legHiL - legLo) : legHiL - 0.75 * (legHiL - legLo)
+                    stopL  := protL - buf
+                    if entryL <= stopL
+                        stL := 0
+                    else
+                        tt = float(na)
+                        if array.size(hiLvl) > 0
+                            for i = 0 to array.size(hiLvl) - 1
+                                if array.get(hiSt, i) != 2 and array.get(hiLvl, i) > close
+                                    tt := na(tt) ? array.get(hiLvl, i) : math.min(tt, array.get(hiLvl, i))
+                        if na(tt)
+                            tt := ta.highest(high, tgtLook)[1]
+                        tgtL := tt
+                        rrL  := (tgtL - entryL) / (entryL - stopL)
+                        if rrL < minRR
+                            stL := 0
+                            if showSkips
+                                label.new(x=bar_index, y=high, text="skip: RR " + str.tostring(rrL, "#.##") + " under " + str.tostring(minRR, "#.#"), style=label.style_label_down, color=C_SL, textcolor=color.white, size=size.tiny)
+                        else
+                            stL      := 2
+                            shiftBarL := bar_index
+                            evReadyL := true
+                            zoneBoxL := box.new(left=bar_index - zk, top=zoneTopL, right=bar_index, bottom=zoneBotL, extend=extend.right, border_color=C_ZONE, bgcolor=color.new(C_ZONE, 68))
+                            box.new(left=imbBar - 2, top=imbTop, right=imbBar, bottom=imbBot, border_color=C_IMB, bgcolor=color.new(C_IMB, 65))
+                            entLnL := line.new(x1=bar_index, y1=entryL, x2=bar_index + 1, y2=entryL, extend=extend.right, style=line_style_dashed, color=C_IMB, width=1)
+                            stLnL  := line.new(x1=bar_index, y1=stopL, x2=bar_index + 1, y2=stopL, extend=extend.right, style=line_style_solid, color=C_SL, width=1)
+                            tpLnL  := line.new(x1=bar_index, y1=tgtL, x2=bar_index + 1, y2=tgtL, extend=extend.right, style=line_style_dashed, color=C_IMB, width=1)
+                            label.new(x=bar_index, y=entryL, text="limit " + str.tostring(entryL, format.mintick) + " · RR " + str.tostring(rrL, "#.##") + (counterL ? " · counter-trend, half risk" : ""), style=label.style_label_left, color=C_ZONE, textcolor=color.white, size=size.small)
+                            evShiftL := true
+
+if stL == 2 and bar_index > shiftBarL
+    if close < protL
+        stL    := 0
+        evInvL := true
+        if showSkips
+            label.new(x=bar_index, y=close, text="invalidated before fill", style=label.style_label_down, color=C_SWEEP, textcolor=color.white, size=size.tiny)
+    else if low <= entryL
+        stL      := 3
+        fillBarL := bar_index
+        evFillL  := true
+        label.new(x=bar_index, y=entryL, text="filled", style=label.style_label_up, color=C_IMB, textcolor=color.white, size=size.tiny)
+
+if stL == 3 and bar_index > fillBarL
+    if low <= stopL
+        stL    := 0
+        evLossL := true
+        label.new(x=bar_index, y=stopL, text="stopped −1R", style=label.style_label_down, color=C_SWEEP, textcolor=color.white, size=size.tiny)
+    else if high >= tgtL
+        stL    := 0
+        evWinL := true
+        label.new(x=bar_index, y=tgtL, text="target", style=label.style_label_up, color=C_ZONE, textcolor=color.white, size=size.tiny)
+
+// ── State: shorts (mirror) ────────────────────────────────────────────
+var int   stS       = 0
+var int   sweepBarS = na
+var float protS     = na
+var structLS        = float(na)
+var float legLoS    = na
+var int   shiftBarS = na
+var float zoneTopS  = na
+var float zoneBotS  = na
+var float entryS    = na
+var float stopS     = na
+var float tgtS      = na
+var float rrS       = na
+var int   fillBarS  = na
+var bool  counterS  = false
+
+evReadyS = false
+evFillS  = false
+evWinS   = false
+evLossS  = false
+evInvS   = false
+
+if evSweepS and stS == 0
+    sl = float(na)
+    if array.size(loBar) > 0
+        for i = array.size(loBar) - 1 to 0
+            if array.get(loBar, i) < bar_index and array.get(loSt, i) != 2
+                sl := array.get(loLvl, i)
+                break
+    okBias = bias == -1 or (allowCounter and bias == 1)
+    if not na(sl) and okBias
+        stS       := 1
+        sweepBarS := bar_index
+        protS     := sweepHighEv
+        structLS  := sl
+        legLoS    := low
+        counterS  := bias != -1
+        line.new(x1=bar_index - pivotLen, y1=poolHighEv, x2=bar_index, y2=poolHighEv, extend=extend.right, style=line_style_dotted, color=C_SWEEP, width=1)
+        line.new(x1=bar_index, y1=protS, x2=bar_index + 1, y2=protS, extend=extend.right, style=line_style_dashed, color=C_SL, width=1)
+        label.new(x=bar_index, y=sweepHighEv, text="X  $$$", style=label.style_label_down, color=C_SWEEP, textcolor=color.white, size=size.small)
+    else if showSkips and not okBias
+        label.new(x=bar_index, y=sweepHighEv, text="sweep vs HTF — skipped", style=label.style_label_down, color=C_SL, textcolor=color.white, size=size.tiny)
+
+if stS == 1 and bar_index > sweepBarS
+    legLoS := math.min(legLoS, low)
+    if close > protS
+        stS    := 0
+        evInvS := true
+        if showSkips
+            label.new(x=bar_index, y=close, text="invalidated: close over protected high", style=label.style_label_up, color=C_SWEEP, textcolor=color.white, size=size.tiny)
+    else if bar_index - sweepBarS > maxShiftBars
+        stS := 0
+    else if close < structLS
+        imb    = false
+        imbTop = float(na)
+        imbBot = float(na)
+        imbBar = int(na)
+        span   = bar_index - sweepBarS - 2
+        if span >= 0
+            for off = 0 to span
+                if high[off] < low[off + 2]
+                    imb    := true
+                    imbTop := low[off + 2]
+                    imbBot := high[off]
+                    imbBar := bar_index - off
+                    break
+        if not imb
+            stS := 0
+            if showSkips
+                label.new(x=bar_index, y=low, text="break without imbalance — no trade", style=label.style_label_up, color=C_SL, textcolor=color.white, size=size.tiny)
+        else
+            zk = int(na)
+            for off = 1 to bar_index - sweepBarS
+                if close[off] > open[off]
+                    zk := off
+                    break
+            if na(zk)
+                stS := 0
+            else
+                zoneTopS := high[zk]
+                zoneBotS := low[zk]
+                fresh    = true
+                for off = 1 to zk - 1
+                    if high[off] > zoneBotS
+                        fresh := false
+                        break
+                if not fresh
+                    stS := 0
+                    if showSkips
+                        label.new(x=bar_index, y=low, text="zone already tapped — no trade", style=label.style_label_up, color=C_SL, textcolor=color.white, size=size.tiny)
+                else
+                    legHi  = protS
+                    entryS := trigger == "zone" ? zoneBotS : trigger == "50" ? legLoS + 0.5 * (legHi - legLoS) : legLoS + 0.75 * (legHi - legLoS)
+                    stopS  := protS + buf
+                    if entryS >= stopS
+                        stS := 0
+                    else
+                        tt = float(na)
+                        if array.size(loLvl) > 0
+                            for i = 0 to array.size(loLvl) - 1
+                                if array.get(loSt, i) != 2 and array.get(loLvl, i) < close
+                                    tt := na(tt) ? array.get(loLvl, i) : math.min(tt, array.get(loLvl, i))
+                        if na(tt)
+                            tt := ta.lowest(low, tgtLook)[1]
+                        tgtS := tt
+                        rrS  := (entryS - tgtS) / (stopS - entryS)
+                        if rrS < minRR
+                            stS := 0
+                            if showSkips
+                                label.new(x=bar_index, y=low, text="skip: RR " + str.tostring(rrS, "#.##") + " under " + str.tostring(minRR, "#.#"), style=label.style_label_up, color=C_SL, textcolor=color.white, size=size.tiny)
+                        else
+                            stS       := 2
+                            shiftBarS := bar_index
+                            evReadyS  := true
+                            box.new(left=bar_index - zk, top=zoneTopS, right=bar_index, bottom=zoneBotS, extend=extend.right, border_color=C_SWEEP, bgcolor=color.new(C_SWEEP, 68))
+                            box.new(left=imbBar - 2, top=imbTop, right=imbBar, bottom=imbBot, border_color=C_IMB, bgcolor=color.new(C_IMB, 65))
+                            line.new(x1=bar_index, y1=entryS, x2=bar_index + 1, y2=entryS, extend=extend.right, style=line_style_dashed, color=C_IMB, width=1)
+                            line.new(x1=bar_index, y1=stopS, x2=bar_index + 1, y2=stopS, extend=extend.right, style=line_style_solid, color=C_SL, width=1)
+                            line.new(x1=bar_index, y1=tgtS, x2=bar_index + 1, y2=tgtS, extend=extend.right, style=line_style_dashed, color=C_IMB, width=1)
+                            label.new(x=bar_index, y=entryS, text="limit " + str.tostring(entryS, format.mintick) + " · RR " + str.tostring(rrS, "#.##") + (counterS ? " · counter-trend, half risk" : ""), style=label.style_label_left, color=C_SWEEP, textcolor=color.white, size=size.small)
+
+if stS == 2 and bar_index > shiftBarS
+    if close > protS
+        stS    := 0
+        evInvS := true
+        if showSkips
+            label.new(x=bar_index, y=close, text="invalidated before fill", style=label.style_label_up, color=C_SWEEP, textcolor=color.white, size=size.tiny)
+    else if high >= entryS
+        stS      := 3
+        fillBarS := bar_index
+        evFillS  := true
+        label.new(x=bar_index, y=entryS, text="filled", style=label.style_label_down, color=C_IMB, textcolor=color.white, size=size.tiny)
+
+if stS == 3 and bar_index > fillBarS
+    if high >= stopS
+        stS    := 0
+        evLossS := true
+        label.new(x=bar_index, y=stopS, text="stopped −1R", style=label.style_label_up, color=C_SWEEP, textcolor=color.white, size=size.tiny)
+    else if low <= tgtS
+        stS    := 0
+        evWinS  := true
+        label.new(x=bar_index, y=tgtS, text="target", style=label.style_label_down, color=C_ZONE, textcolor=color.white, size=size.tiny)
+
+// ── Checklist panel (the site's short version, live) ──────────────────
+var table pnl = table.new(position.top_right, 3, 7, bgcolor=color.new(color.white, 15), border_color=color.new(C_TXT, 70), border_width=1, frame_color=color.new(C_TXT, 70), frame_width=1)
+if barstate.islast
+    table.cell(pnl, 0, 0, "VV SMC", text_color=C_TXT, text_size=size.small, text_halign=text.align_left)
+    table.cell(pnl, 1, 0, "long", text_color=C_ZONE, text_size=size.small)
+    table.cell(pnl, 2, 0, "short", text_color=C_SWEEP, text_size=size.small)
+    table.cell(pnl, 0, 1, "HTF " + htfTF, text_color=C_TXT, text_size=size.tiny, text_halign=text.align_left)
+    table.cell(pnl, 1, 1, bias == 1 ? "with trend" : bias == -1 ? "counter" : "flat", text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 2, 1, bias == -1 ? "with trend" : bias == 1 ? "counter" : "flat", text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 0, 2, "sweep", text_color=C_TXT, text_size=size.tiny, text_halign=text.align_left)
+    table.cell(pnl, 1, 2, stL >= 1 ? "taken" : "waiting", text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 2, 2, stS >= 1 ? "taken" : "waiting", text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 0, 3, "protected", text_color=C_TXT, text_size=size.tiny, text_halign=text.align_left)
+    table.cell(pnl, 1, 3, na(protL) or stL == 0 ? "—" : str.tostring(protL, format.mintick), text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 2, 3, na(protS) or stS == 0 ? "—" : str.tostring(protS, format.mintick), text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 0, 4, "limit", text_color=C_TXT, text_size=size.tiny, text_halign=text.align_left)
+    table.cell(pnl, 1, 4, stL == 2 ? str.tostring(entryL, format.mintick) : stL == 3 ? "filled" : "—", text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 2, 4, stS == 2 ? str.tostring(entryS, format.mintick) : stS == 3 ? "filled" : "—", text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 0, 5, "RR", text_color=C_TXT, text_size=size.tiny, text_halign=text.align_left)
+    table.cell(pnl, 1, 5, na(rrL) or stL == 0 ? "—" : str.tostring(rrL, "#.##"), text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 2, 5, na(rrS) or stS == 0 ? "—" : str.tostring(rrS, "#.##"), text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 0, 6, "state", text_color=C_TXT, text_size=size.tiny, text_halign=text.align_left)
+    table.cell(pnl, 1, 6, stL == 0 ? "wait" : stL == 1 ? "watch for shift" : stL == 2 ? "order ready" : "in trade", text_color=C_TXT, text_size=size.tiny)
+    table.cell(pnl, 2, 6, stS == 0 ? "wait" : stS == 1 ? "watch for shift" : stS == 2 ? "order ready" : "in trade", text_color=C_TXT, text_size=size.tiny)
+
+// ── Alerts ────────────────────────────────────────────────────────────
+if evReadyL
+    alert("VV SMC long ready: limit " + str.tostring(entryL, format.mintick) + ", stop " + str.tostring(stopL, format.mintick) + ", target " + str.tostring(tgtL, format.mintick) + ", RR " + str.tostring(rrL, "#.##"), alert.freq_once_per_bar_close)
+if evReadyS
+    alert("VV SMC short ready: limit " + str.tostring(entryS, format.mintick) + ", stop " + str.tostring(stopS, format.mintick) + ", target " + str.tostring(tgtS, format.mintick) + ", RR " + str.tostring(rrS, "#.##"), alert.freq_once_per_bar_close)
+if evLossL or evLossS
+    alert("VV SMC: setup stopped out. Record it — the log, not the feeling.", alert.freq_once_per_bar_close)
+if evWinL or evWinS
+    alert("VV SMC: target reached. Record it and stand down until the next sweep.", alert.freq_once_per_bar_close)
+
+alertcondition(evSweepL or evSweepS, title="Sweep", message="VV SMC: liquidity swept. Do not buy or sell the wick — wait for the shift.")
+alertcondition(evReadyL or evReadyS, title="Setup ready", message="VV SMC: sweep, shift and imbalance complete. Limit, stop and target are drawn.")
+alertcondition(evInvL or evInvS, title="Invalidated", message="VV SMC: close beyond the protected level. The idea is dead — delete the order.")
