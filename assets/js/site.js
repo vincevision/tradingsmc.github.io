@@ -473,7 +473,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "59" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "60" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -538,6 +538,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "59" };
               <a href="${root}notes.html"${cur("notes.html")}>Notes<small>The routine in ten short notes</small></a>
               <a href="${root}strategy.html"${cur("strategy.html")}>Zone model<small>Step by step: from a demand or supply zone</small></a>
               <a href="${root}sweep-model.html"${cur("sweep-model.html")}>Sweep model<small>Step by step: a swept low or high, then a shift</small></a>
+              <a href="${root}assets/docs/trading-model-setup.pdf">Trading model setup<small>The owner’s document, exported as PDF</small></a>
             </div>
           </details>
           <a href="${root}key-points.html"${cur("key-points.html")}>Key points</a>
