@@ -84,6 +84,17 @@ const CASES = [
       "A posted breakdown in four slides: the 4H is bearish with liquidity taken above, the 15m sweeps its swing high and shifts down, leaving an FVG and a bearish order block. Mitigation taps the block about halfway and price delivers lower, breaking the session lows. The slides carry no price axis."
   },
   {
+    pair: "XAU/USD",
+    title: "The Inducement Pays First (15m)",
+    href: "cases/xauusd-inducement-sweep-supply.html",
+    thumb: "assets/img/xauusd-inducement-sweep-supply/03-delivery-to-pool.png",
+    direction: "Short",
+    model: "Supply staircase → inducement swept → band tapped → $$$ pool",
+    result: "Pool paid · ≈ 1:4 · printed through",
+    summary:
+      "A three-step staircase of 15m supplies ends in the lowest untouched band at 3,788-3,792, with an INDUCEMENT line drawn just under it at 3,787.5. A crash leaves a $$$ pool at 3,743.48; then a V-spike sweeps the inducement and taps the band in one move. The sell limit at the band's bottom edge delivers to the pool and prints through to 3,737.38."
+  },
+  {
     pair: "GBP/JPY",
     title: "Strong Structure Starts With a Sweep",
     href: "cases/gbpjpy-sweep-before-structure.html",
@@ -493,6 +504,12 @@ const STUDY_PATH = [
   "q": "Why can a zone drawn on the 2-minute be traded from the 5-minute?"
  },
  {
+  "href": "cases/xauusd-inducement-sweep-supply.html",
+  "title": "XAU/USD: The Inducement Pays First",
+  "part": "Part 3 · Case studies",
+  "q": "What line has to be swept before the supply band above it can be sold?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -507,7 +524,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "64" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "65" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
