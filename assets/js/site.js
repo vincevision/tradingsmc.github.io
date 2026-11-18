@@ -172,6 +172,28 @@ const CASES = [
       "The 1H breaks structure down and bounces. The 15m rallies into supply, takes two highs and shifts down. The short is taken at the new supply the shift leaves, targeting the low."
   },
   {
+    pair: "EUR/CAD",
+    title: "15m: The Missed Short and the Second Chance",
+    href: "cases/eurcad-15m-second-chance-short.html",
+    thumb: "assets/img/eurcad-15m-second-chance-short/06-result.png",
+    direction: "Short",
+    model: "HTF supply → missed fill → sweep and shift → re-entry supply",
+    result: "Target reached · ≈ 1:5.9 from the re-entry",
+    summary:
+      "A sweep into a higher-timeframe supply sets up the short toward the demand below — and the entry is missed. Nothing is chased. The supply is tapped again, a fresh sweep and shift follow, and the re-entry sells the ratcheted supply at 1.57457–1.57557. The lower demand is reached at 1.56915. The missed trade is the case study."
+  },
+  {
+    pair: "EUR/USD",
+    title: "The Two-Minute Supply (2m → 5m)",
+    href: "cases/eurusd-2m-supply-sweep-shift.html",
+    thumb: "assets/img/eurusd-2m-supply-sweep-shift/03-trade-open.png",
+    direction: "Short",
+    model: "2m supply → 5m sweep and shift → $$$ pool",
+    result: "Target paid · ≈ 1:3.6 · open at replay close",
+    summary:
+      "A supply zone built on the 2-minute chart is carried up to the 5-minute and labelled 2MIN SUPPLY. The 5m rallies into it, sweeps its high at 1.09777, shifts down, and a sell limit at the zone's bottom edge rides the break of the $$$ pool at 1.09597 to about 1.09540. The replay ends with the short still open."
+  },
+  {
     pair: "Volatility 75 (1s)",
     title: "1H Supply Short",
     href: "cases/v75-1h-supply-short.html",
@@ -193,17 +215,6 @@ const CASES = [
     summary:
       "A 15m low breaks and the protected swing and supply are marked. Price returns and a first short is placed at the zone edge. A high is then swept, structure shifts down and a second short is added. Both reach the low. A replay on a synthetic index."
   },
-  {
-    pair: "EUR/CAD",
-    title: "15m: The Missed Short and the Second Chance",
-    href: "cases/eurcad-15m-second-chance-short.html",
-    thumb: "assets/img/eurcad-15m-second-chance-short/06-result.png",
-    direction: "Short",
-    model: "HTF supply → missed fill → sweep and shift → re-entry supply",
-    result: "Target reached · ≈ 1:5.9 from the re-entry",
-    summary:
-      "A sweep into a higher-timeframe supply sets up the short toward the demand below — and the entry is missed. Nothing is chased. The supply is tapped again, a fresh sweep and shift follow, and the re-entry sells the ratcheted supply at 1.57457–1.57557. The lower demand is reached at 1.56915. The missed trade is the case study."
-  }
 ];
 
 /*
@@ -476,6 +487,12 @@ const STUDY_PATH = [
   "q": "What has to appear before a missed trade earns a re-entry?"
  },
  {
+  "href": "cases/eurusd-2m-supply-sweep-shift.html",
+  "title": "EUR/USD: The Two-Minute Supply",
+  "part": "Part 3 · Case studies",
+  "q": "Why can a zone drawn on the 2-minute be traded from the 5-minute?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -490,7 +507,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "63" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "64" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
