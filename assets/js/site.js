@@ -192,6 +192,17 @@ const CASES = [
     result: "Targets reached · ≈ 1:3.8 and 1:3.2",
     summary:
       "A 15m low breaks and the protected swing and supply are marked. Price returns and a first short is placed at the zone edge. A high is then swept, structure shifts down and a second short is added. Both reach the low. A replay on a synthetic index."
+  },
+  {
+    pair: "EUR/CAD",
+    title: "15m: The Missed Short and the Second Chance",
+    href: "cases/eurcad-15m-second-chance-short.html",
+    thumb: "assets/img/eurcad-15m-second-chance-short/06-result.png",
+    direction: "Short",
+    model: "HTF supply → missed fill → sweep and shift → re-entry supply",
+    result: "Target reached · ≈ 1:5.9 from the re-entry",
+    summary:
+      "A sweep into a higher-timeframe supply sets up the short toward the demand below — and the entry is missed. Nothing is chased. The supply is tapped again, a fresh sweep and shift follow, and the re-entry sells the ratcheted supply at 1.57457–1.57557. The lower demand is reached at 1.56915. The missed trade is the case study."
   }
 ];
 
@@ -459,6 +470,12 @@ const STUDY_PATH = [
   "q": "Which timeframe gave the direction, and which gave the entry?"
  },
  {
+  "href": "cases/eurcad-15m-second-chance-short.html",
+  "title": "EUR/CAD: The Missed Short and the Second Chance",
+  "part": "Part 3 · Case studies",
+  "q": "What has to appear before a missed trade earns a re-entry?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -473,7 +490,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "62" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "63" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
