@@ -363,7 +363,7 @@ const STUDY_PATH = [
   "href": "notes.html",
   "title": "Trading notes: the routine in order",
   "part": "Part 2 · The method",
-  "q": "Can you say the ten notes from memory?"
+  "q": "Can you say the twelve notes from memory?"
  },
  {
   "href": "strategy.html",
@@ -524,7 +524,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "65" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "66" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -636,6 +636,20 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "65" };
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") allDetails.forEach((d) => d.removeAttribute("open"));
     });
+  }
+
+  // ----- The owner's pinned rule, on every case study -----
+  if (location.pathname.indexOf("/cases/") >= 0) {
+    const hero = document.querySelector("main .hero");
+    if (hero) {
+      const note = document.createElement("aside");
+      note.className = "sticky-note";
+      note.setAttribute("aria-label", "Pinned rule: trends");
+      note.innerHTML =
+        '<span class="sn-title">Pinned rule · trends</span>' +
+        "In a trend, liquidity keeps getting swept as the trend continues — each sweep is fuel for the next leg. When it happens, enter on the zone that carries the protected low (long) or protected high (short). New sweep + protected line intact = entry. Protected line closes = stop.";
+      hero.insertAdjacentElement("afterend", note);
+    }
   }
 
   // ----- Home page case list -----

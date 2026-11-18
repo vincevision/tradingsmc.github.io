@@ -404,3 +404,38 @@ html.loaded .preloader { opacity: 0; visibility: hidden; pointer-events: none; }
 @media print { .preloader { display: none; } }
 
 .site-footer .contact { margin-top: 10px; font-weight: 600; color: var(--ink-2); }
+
+/* ----- Sticky note: the owner's pinned rule ----- */
+.sticky-note {
+  position: relative;
+  max-width: 360px;
+  margin: 30px auto 8px;
+  padding: 22px 24px 18px;
+  background: #fff3a3;
+  color: #2a2415;
+  border-radius: 2px;
+  box-shadow: 0 12px 26px rgba(31, 29, 27, .22);
+  transform: rotate(-1.2deg);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+.sticky-note::before {
+  content: "";
+  position: absolute;
+  top: -11px; left: 50%;
+  width: 92px; height: 22px;
+  transform: translateX(-50%) rotate(1deg);
+  background: rgba(255, 255, 255, .55);
+  box-shadow: 0 2px 5px rgba(31, 29, 27, .15);
+}
+.sticky-note .sn-title {
+  display: block;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  opacity: .7;
+  margin-bottom: .5em;
+}
+@media (max-width: 560px) { .sticky-note { transform: none; max-width: 100%; } }
+@media print { .sticky-note { box-shadow: none; transform: none; } }
