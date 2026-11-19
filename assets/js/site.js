@@ -296,6 +296,7 @@ const VIDEOS = {
   "notes.html": "",
   "key-points.html": "",
   "strategy.html": [
+    "https://youtu.be/8-p5kR290x4",
     "videos/ig_240330.mp4",
     "videos/ig_893675.mp4",
     "videos/ssss.mp4"
@@ -541,7 +542,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "67" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "68" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
