@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=66">
+  <link rel="stylesheet" href="assets/css/style.css?v=67">
 </head>
 <body>
 <div class="preloader" aria-hidden="true"><div class="pl-chart"><i></i><i></i><i class="dn"></i><i class="dn"></i><i></i><i></i><i class="dn"></i><i></i><i></i></div><p>VinceVision SMC</p><span>Loading the charts…</span></div>
@@ -17,14 +17,16 @@
 <main>
   <div class="hero">
     <div class="wrap">
-      <p class="eyebrow">Concept · A losing trade</p>
+      <p class="eyebrow">Concept · Losing trades</p>
       <h1>Why this trade failed: context before the signal</h1>
-      <p class="lead">A long that had everything the entry needs: a higher-timeframe low swept, a 5m shift, an order block with an imbalance. It lost. The 1H was still bearish, and the rally that looked like a reversal was price returning to supply. This page goes through the six slides, then turns the lesson into questions to ask before any entry.</p>
+      <p class="lead">A long that had everything the entry needs: a higher-timeframe low swept, a 5m shift, an order block with an imbalance. It lost. The 1H was still bearish, and the rally that looked like a reversal was price returning to supply. This page goes through the six slides, then turns the lesson into questions to ask before any entry. A second loss joins it below: a 5m XAU/USD short stopped by the inducement resting above its entry band — the trade that wrote this site's confirmation rule.</p>
       <ul class="chips">
         <li class="chip supply">Losing long</li>
         <li class="chip">5m signal against the 1H</li>
         <li class="chip">No pair named</li>
         <li class="chip target">The short reached its target</li>
+        <li class="chip supply">Loss 2: XAU/USD short</li>
+        <li class="chip">Stopped by unswept inducement above</li>
       </ul>
 
       <dl class="facts">
@@ -34,10 +36,11 @@
         <div><dt>Below the stop</dt><dd>Equal lows</dd></div>
         <div><dt>Result of the long</dt><dd>Stopped out</dd></div>
         <div><dt>The better read</dt><dd>Short from the supply OB to below the equal lows</dd></div>
+        <div><dt>Loss 2</dt><dd>XAU/USD 5m short, stopped when the rally swept the inducement above its band — then dropped without it</dd></div>
       </dl>
 
       <ul class="toc" aria-label="On this page">
-        <li><a href="#s1">1 · The failed long</a></li><li><a href="#s2">2 · The signal</a></li><li><a href="#s3">3 · The 1H</a></li><li><a href="#s4">4 · The short plan</a></li><li><a href="#s5">5 · Result</a></li><li><a href="#s6">6 · Side by side</a></li><li><a href="#why">Four reasons</a></li><li><a href="#questions">Context questions</a></li><li><a href="#counter">If you trade against the trend</a></li><li><a href="#repeat">Checklist</a></li>
+        <li><a href="#s1">1 · The failed long</a></li><li><a href="#s2">2 · The signal</a></li><li><a href="#s3">3 · The 1H</a></li><li><a href="#s4">4 · The short plan</a></li><li><a href="#s5">5 · Result</a></li><li><a href="#s6">6 · Side by side</a></li><li><a href="#why">Four reasons</a></li><li><a href="#questions">Context questions</a></li><li><a href="#counter">If you trade against the trend</a></li><li><a href="#loss2">Loss 2 · The stopped short</a></li><li><a href="#loss2-confirm">Loss 2 · The version that waits</a></li><li><a href="#loss2-rule">Loss 2 · The rule it bought</a></li><li><a href="#repeat">Checklist</a></li>
       </ul>
 
       <div class="callout info" style="margin-top:28px">
@@ -233,6 +236,57 @@
     </div>
   </section>
 
+  <section id="loss2">
+    <div class="wrap slide">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge chart: the 5m XAU/USD short stopped by the inducement above its band">
+          <img src="assets/img/failed-trade/07-xauusd-inducement-stopout.png" alt="XAU/USD 5-minute chart, 18 into 19 Nov. A bearish staircase from above 3,7740 with a protected high near 3,7745, a supply box near 3,7660-3,7700, an INDUCEMENT line near 3,7620 swept (X near 3,7600), then a second supply band near 3,7580-3,7620 and a third near 3,7480-3,7520 whose own INDUCEMENT line at about 3,7520 is still unswept. After a low near 3,7200, a rally from 18:00 taps the third band (red box), sweeps 3,7520 and pushes to about 3,7640 (red box at the second band), then price collapses after 21:30 to about 3,6970 and recovers toward 3,7440. A short ticket is open at the right." loading="lazy">
+        </button>
+        <figcaption>Loss 2 — the whole frame: two inducement lines. The upper one was swept on the way down and paid; the lower one was still resting above the short's entry band when the order went in. The rally collected it, and the stop with it, before the drop to 3,6970.</figcaption>
+      </figure>
+      <div>
+        <span class="step-no">Loss 2 · XAU/USD 5m · 18–19 Nov '26</span>
+        <h2>The short the inducement above stopped out</h2>
+        <h4>What the frame shows</h4>
+        <ol>
+          <li><strong>A proper bearish board.</strong> Staircase of supplies from above 3,7740, protected high ≈ 3,7745, bos and MSS down through the morning. Direction was never the problem.</li>
+          <li><strong>One inducement paid, one left.</strong> The line at ≈ 3,7620 was swept on the way down (X at ≈ 3,7600). The line at ≈ 3,7520 — resting just above the third band, ≈ 3,7480–3,7520 — was not.</li>
+          <li><strong>The entry.</strong> A short at that third band, stop above it, placed while the 3,7520 inducement still sat between price and the zone above.</li>
+          <li><strong>The toll.</strong> From 18:00 the rally taps the band (red box ≈ 3,7480–3,7540), sweeps 3,7520, and pushes into the second band to ≈ 3,7640 (red box ≈ 3,7580–3,7640). The stop, parked in the inducement's path, is gone.</li>
+          <li><strong>The drop, after.</strong> At 21:30 price collapses to ≈ 3,6970 — the move the short was meant to ride, starting about ninety minutes after the stop-out.</li>
+        </ol>
+        <h4>What went wrong</h4>
+        <p>Nothing in the analysis — everything in the order of operations. Liquidity resting in front of a zone gets taken first; a stop placed inside that liquidity is part of the payment. The entry needed two marks it never waited for: the sweep of 3,7520 and a shift away from the band.</p>
+        <div class="callout rule">
+          <h4>Rule to carry forward</h4>
+          <p>If there is inducement, always wait for confirmation — the sweep of that line plus the shift away from the zone. The full write-up, with the ticket that waited, is case study: <a href="cases/xauusd-inducement-stopout.html">XAU/USD, stopped by the inducement above</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="loss2-confirm">
+    <div class="wrap narrow">
+      <span class="step-no">Loss 2 · The counterfactual</span>
+      <h2>The version that waits</h2>
+      <p>Same board, more patience. The rally sweeps 3,7520, then takes the second band's own inducement at ≈ 3,7620 and tags ≈ 3,7640 around 20:00–21:00; the shift down prints after 21:00. A short from the second band — ≈ 3,7580–3,7600, stop above ≈ 3,7640 — enters eighty points higher than the stopped one, with the toll already paid in front of it, and the collapse to 3,6970 pays roughly 1:8 to the old low near 3,7200 and about 1:13 to the print.</p>
+      <p>The market offered both tickets on one frame. The gate decided which one got paid. That is the pairing to read this loss against: <a href="cases/xauusd-inducement-sweep-supply.html">the inducement case that paid</a> waited for exactly these two marks on the same metal, one session earlier.</p>
+    </div>
+  </section>
+
+  <section id="loss2-rule">
+    <div class="wrap narrow">
+      <span class="step-no">Loss 2 · What it bought</span>
+      <h2>The rule this loss wrote</h2>
+      <ul class="ticks">
+        <li><strong>Draw the inducement before the order, not after the stop.</strong> The nearest liquidity between price and your zone: above a supply you sell, below a demand you buy.</li>
+        <li><strong>Unswept means wait.</strong> No limit, no market order at the zone. The pullback's first target is that line.</li>
+        <li><strong>Confirmation is two marks.</strong> The sweep of the inducement, then structure away from the zone on your entry chart. Nothing less counts.</li>
+        <li><strong>The rule now lives in three places:</strong> <a href="notes.html#n12">note 12</a> in the routine, the pinned sticky note on every case page, and <a href="inducement.html">the inducement concept page</a>'s family of examples.</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="repeat">
     <div class="wrap narrow">
       <p class="eyebrow">Repeatable</p>
@@ -243,6 +297,7 @@
         <li><span class="q">A target with a clear path.</span><span class="a">No fresh opposing zone between entry and target.</span></li>
         <li><span class="q">Then the lower timeframe.</span><span class="a">Sweep, shift, zone, in the same direction as step 1.</span></li>
         <li><span class="q">A shift against step 1.</span><span class="a">Treat it as a pullback. Look for where it is heading and whether that is my zone.</span></li>
+        <li><span class="q">Inducement in front of the entry.</span><span class="a">If liquidity rests between price and your zone — above a short, below a long — wait for its sweep and the shift. Confirmation first, entry second (Loss 2, note 12).</span></li>
         <li><span class="q">After a loss.</span><span class="a">Check which of these was skipped before blaming the entry.</span></li>
       </ol>
       <p style="margin-top:26px"><a class="btn" href="checklist.html">Use the live checklist</a><a class="btn ghost" href="top-down.html">Top-down analysis</a><a class="btn ghost" href="internal-external.html">Internal and external structure</a></p>
@@ -256,6 +311,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=66"></script>
+<script src="assets/js/site.js?v=67"></script>
 </body>
 </html>

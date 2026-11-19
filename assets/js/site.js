@@ -95,6 +95,17 @@ const CASES = [
       "A three-step staircase of 15m supplies ends in the lowest untouched band at 3,788-3,792, with an INDUCEMENT line drawn just under it at 3,787.5. A crash leaves a $$$ pool at 3,743.48; then a V-spike sweeps the inducement and taps the band in one move. The sell limit at the band's bottom edge delivers to the pool and prints through to 3,737.38."
   },
   {
+    pair: "XAU/USD",
+    title: "Stopped by the Inducement Above (5m, loss)",
+    href: "cases/xauusd-inducement-stopout.html",
+    thumb: "assets/img/xauusd-inducement-stopout/01-stopout.png",
+    direction: "Short",
+    model: "Zone entered with unswept inducement above → stop run",
+    result: "Stopped · lesson: wait for confirmation",
+    summary:
+      "A losing trade kept on purpose. A 5m short entered at the supply band 3,7480-3,7520 while its inducement at 3,7520 still rested above, unswept. The rally swept that line, ran the stop at about 3,7640, and only then dropped to 3,6970 without the trade. The rule it bought: if there is inducement, always wait for confirmation."
+  },
+  {
     pair: "GBP/JPY",
     title: "Strong Structure Starts With a Sweep",
     href: "cases/gbpjpy-sweep-before-structure.html",
@@ -510,6 +521,12 @@ const STUDY_PATH = [
   "q": "What line has to be swept before the supply band above it can be sold?"
  },
  {
+  "href": "cases/xauusd-inducement-stopout.html",
+  "title": "XAU/USD: Stopped by the Inducement Above",
+  "part": "Part 3 · Case studies",
+  "q": "Which line had to be swept before this short could be entered safely?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -524,7 +541,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "66" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "67" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
