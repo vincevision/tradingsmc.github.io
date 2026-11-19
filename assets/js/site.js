@@ -106,6 +106,17 @@ const CASES = [
       "A losing trade kept on purpose. A 5m short entered at the supply band 3,7480-3,7520 while its inducement at 3,7520 still rested above, unswept. The rally swept that line, ran the stop at about 3,7640, and only then dropped to 3,6970 without the trade. The rule it bought: if there is inducement, always wait for confirmation."
   },
   {
+    pair: "XAU/USD",
+    title: "Confirmation Pays (1h → 15m → 5m)",
+    href: "cases/xauusd-confirmation-pays.html",
+    thumb: "assets/img/xauusd-confirmation-pays/04-delivery.png",
+    direction: "Short",
+    model: "1h bearish → 15m sweep and bos → sell the supply",
+    result: "Target paid · R:R 4.23 on the ticket",
+    summary:
+      "The winning twin of the stopped inducement case. The 1h staircase forbids longs, the 5m labels the fuel, and the 15m enters only after the rally's high is swept into the supply at 3,7350-3,7450 and structure shifts: entry 3,733.89, stop 3,743.22, target the 1h pool at 3,694.42 - R:R 4.23 on the ticket. The target is paid and printed through to about 3,6870."
+  },
+  {
     pair: "GBP/JPY",
     title: "Strong Structure Starts With a Sweep",
     href: "cases/gbpjpy-sweep-before-structure.html",
@@ -530,6 +541,12 @@ const STUDY_PATH = [
   "q": "Which line had to be swept before this short could be entered safely?"
  },
  {
+  "href": "cases/xauusd-confirmation-pays.html",
+  "title": "XAU/USD: Confirmation Pays",
+  "part": "Part 3 · Case studies",
+  "q": "Which two marks had to print before this short was allowed?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -544,7 +561,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "69" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "70" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
