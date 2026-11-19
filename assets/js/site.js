@@ -285,6 +285,7 @@ const VIDEOS = {
     "https://youtu.be/csZXLLu0KzU",
     "https://youtu.be/defSZjhGq9s",
     "https://youtu.be/8-p5kR290x4",
+    "https://youtu.be/iYbevTXtejc",
     "https://www.instagram.com/reel/DfiefJWSTkc/"
   ],
   "full-sequence.html": [
@@ -297,6 +298,7 @@ const VIDEOS = {
   "key-points.html": "",
   "strategy.html": [
     "https://youtu.be/8-p5kR290x4",
+    "https://youtu.be/iYbevTXtejc",
     "videos/ig_240330.mp4",
     "videos/ig_893675.mp4",
     "videos/ssss.mp4"
@@ -542,7 +544,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "68" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "69" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
