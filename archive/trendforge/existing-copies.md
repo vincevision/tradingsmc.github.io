@@ -16,6 +16,7 @@ These are the copies that already exist in Git. Everything else (full profile, r
 - `./cases/usdjpy-confirmation-entry.html` → assets/img/usdjpy-confirmation-entry/ 
 - `./cases/xauusd-institutional-flow.html` → assets/img/xauusd-institutional-flow/ 
 - `./cases/xauusd-sweep-mss-fvg-ob.html` → assets/img/xauusd-sweep-mss-fvg-ob/ 
+- `./confirmation-model.html` → assets/img/confirmation-model/ 
 - `./entry-models.html` → assets/img/entry-models/ 
 - `./failed-trade.html` → assets/img/failed-trade/ 
 - `./full-sequence.html` → assets/img/full-sequence/ 
