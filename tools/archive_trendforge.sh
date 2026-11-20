@@ -16,22 +16,36 @@
 #                 otherwise ./downloads in the current folder
 #     profile     default: trendforge.fx   (https://www.instagram.com/trendforge.fx)
 #
-# Optional environment knobs — Instagram usually demands a login for a full
-# anonymous profile scrape, so one of these is often what makes it work:
-#   TF_LOGIN=yourhandle    instaloader logs in with YOUR account (prompts for
-#                          your password; stores a session file for re-runs)
-#   TF_BROWSER=firefox     gallery-dl and yt-dlp reuse your browser's IG
-#                          cookies instead of scraping anonymously
-#                          (firefox | chrome | chromium | brave | edge | safari)
-# Never use the artist's credentials — only your own.
+# Optional environment knobs
+# --------------------------
+#   TF_BROWSER=firefox   authenticate from your browser's Instagram cookies.
+#                        You must be logged into Instagram in that browser.
+#                        Supported: brave chrome chromium edge firefox
+#                        librewolf opera opera_gx safari vivaldi
+#                        instaloader needs the extra package for this:
+#                          pip install "instaloader[browser-cookie3]"
+#   TF_LOGIN=yourhandle  instaloader logs in with YOUR account instead
+#                        (prompts for your password, stores a session file
+#                        so later runs reuse it)
+#   TF_COOKIES=/path/cookies.txt   Netscape cookie file for gallery-dl
+#   TF_FAST=1            add --fast-update: stop at the first post you already
+#                        have. Best for monthly refresh runs.
+#   TF_TAGGED=1          also grab posts where he is tagged by others
+#   TF_STORIES=1         also grab current stories (needs a login)
+#
+# Only ever use YOUR OWN account/cookies — never the artist's credentials.
 #
 # What it does:
-#   1. instaloader  — whole profile: every post's images/videos, caption text
-#                     and JSON metadata (dates, likes, comments).
-#   2. gallery-dl   — fallback full-profile pass if instaloader got nothing.
-#   3. yt-dlp       — downloads each reel the site embeds as video +
-#                     description + info json, so the reels the case studies
-#                     quote survive even if the profile does not.
+#   1. instaloader  — the whole profile: every post's images and videos,
+#                     Reels and IGTV included, caption text per post, and JSON
+#                     metadata (dates, likes, comments).
+#   2. gallery-dl   — second full-profile pass. Only runs when authenticated:
+#                     its Instagram extractor requires browser cookies
+#                     (password login was removed upstream), and anonymously it
+#                     just reports "Requested user could not be found".
+#   3. yt-dlp       — each reel the site embeds, as video + description +
+#                     info json. This works WITHOUT any login, so the reels the
+#                     case studies quote are preserved even anonymously.
 #   4. Writes manifest.txt (file list) and failed.txt (anything that errored).
 #
 # Exit codes: 0 = something was archived, 1 = nothing to show for it.
@@ -88,53 +102,120 @@ if [ "$HAVE_IL" = 0 ] && [ "$HAVE_GD" = 0 ] && [ "$HAVE_YT" = 0 ]; then
   exit 1
 fi
 
+# Which python runs instaloader? (for checking optional extras)
+il_python() {
+  local exe shebang
+  exe="$(command -v instaloader 2>/dev/null)" || { command -v python3; return; }
+  shebang="$(head -1 "$exe" 2>/dev/null)"
+  case "$shebang" in
+    '#!'*) echo "${shebang#\#!}" ;;
+    *)     command -v python3 ;;
+  esac
+}
+
+# ---- authentication -------------------------------------------------------
+AUTH="none"
+BROWSER_OK=1
+if [ -n "${TF_BROWSER:-}" ]; then
+  case " brave chrome chromium edge firefox librewolf opera opera_gx safari vivaldi " in
+    *" ${TF_BROWSER} "*) : ;;
+    *) echo "ERROR: TF_BROWSER='$TF_BROWSER' is not supported by instaloader." >&2
+       echo "Use one of: brave chrome chromium edge firefox librewolf opera opera_gx safari vivaldi" >&2
+       exit 1 ;;
+  esac
+  if [ "$HAVE_IL" = 1 ] && ! "$(il_python)" -c 'import browser_cookie3' >/dev/null 2>&1; then
+    BROWSER_OK=0
+    echo "NOTE: instaloader cannot read browser cookies yet — browser_cookie3 is an"
+    echo "      optional extra. Install it to use TF_BROWSER for the profile pass:"
+    echo "        pip install \"instaloader[browser-cookie3]\""
+    echo "      Continuing; gallery-dl/yt-dlp can still use those cookies."
+    echo
+  fi
+fi
+if [ -n "${TF_BROWSER:-}" ]; then
+  if [ "$BROWSER_OK" = 1 ]; then
+    AUTH="browser:$TF_BROWSER (all three tools)"
+  else
+    AUTH="browser:$TF_BROWSER (gallery-dl + yt-dlp; instaloader needs browser_cookie3)"
+  fi
+elif [ -n "${TF_LOGIN:-}" ];   then AUTH="login:$TF_LOGIN (instaloader)"
+elif [ -n "${TF_COOKIES:-}" ]; then AUTH="cookiefile:$TF_COOKIES (gallery-dl)"
+fi
+
 mkdir -p "$OUT/profile" "$OUT/reels"
 : > "$OUT/failed.txt"
 
-IL_OPTS=()
-[ -n "${TF_LOGIN:-}" ] && IL_OPTS+=(--login="$TF_LOGIN")
-GD_OPTS=(--write-metadata)
-YT_OPTS=()
-if [ -n "${TF_BROWSER:-}" ]; then
-  GD_OPTS+=(--cookies-from-browser "$TF_BROWSER")
-  YT_OPTS+=(--cookies-from-browser "$TF_BROWSER")
+# ---- instaloader options (all verified against instaloader 4.16's parser) --
+IL_OPTS=(--reels --igtv --no-compress-json)
+IL_AUTHED=0
+if [ -n "${TF_BROWSER:-}" ] && [ "$BROWSER_OK" = 1 ]; then
+  IL_OPTS+=(--load-cookies "$TF_BROWSER"); IL_AUTHED=1
+elif [ -n "${TF_LOGIN:-}" ]; then
+  IL_OPTS+=(--login "$TF_LOGIN"); IL_AUTHED=1
 fi
+[ "${TF_FAST:-0}" = 1 ]    && IL_OPTS+=(--fast-update)
+[ "${TF_TAGGED:-0}" = 1 ]  && IL_OPTS+=(--tagged)
+if [ "${TF_STORIES:-0}" = 1 ]; then
+  if [ "$IL_AUTHED" = 0 ]; then
+    [ "$HAVE_IL" = 1 ] && echo "NOTE: TF_STORIES=1 ignored — stories require a login (TF_BROWSER or TF_LOGIN)."
+  else
+    IL_OPTS+=(--stories)
+  fi
+fi
+
+# ---- gallery-dl options (cookies are mandatory for Instagram there) -------
+GD_OPTS=(--write-metadata)
+GD_AUTHED=0
+if [ -n "${TF_BROWSER:-}" ]; then
+  GD_OPTS+=(--cookies-from-browser "$TF_BROWSER"); GD_AUTHED=1
+fi
+if [ -n "${TF_COOKIES:-}" ] && [ -f "${TF_COOKIES}" ]; then
+  GD_OPTS+=(-c "$TF_COOKIES"); GD_AUTHED=1
+fi
+
+# ---- yt-dlp options (reels work anonymously) ------------------------------
+YT_OPTS=()
+[ -n "${TF_BROWSER:-}" ] && YT_OPTS+=(--cookies-from-browser "$TF_BROWSER")
 
 echo "== TrendForge archive =="
 echo "profile  : $PROFILE  (https://www.instagram.com/$PROFILE)"
 echo "output   : $OUT"
 echo "tools    : instaloader=$HAVE_IL gallery-dl=$HAVE_GD yt-dlp=$HAVE_YT"
-[ -n "${TF_LOGIN:-}" ]   && echo "login    : instaloader as $TF_LOGIN"
-[ -n "${TF_BROWSER:-}" ] && echo "cookies  : from $TF_BROWSER"
+echo "auth     : $AUTH"
 echo
 
 BEFORE_PROFILE=$(find "$OUT/profile" -type f 2>/dev/null | wc -l | tr -d ' ')
 BEFORE_REELS=$(find "$OUT/reels" -type f 2>/dev/null | wc -l | tr -d ' ')
 
-# 1) Full profile via instaloader (posts + captions + metadata)
+# 1) Full profile via instaloader (posts + reels + igtv + captions + metadata)
 if [ "$HAVE_IL" = 1 ]; then
   echo "-- instaloader: full profile --"
   instaloader ${IL_OPTS[@]+"${IL_OPTS[@]}"} \
     --dirname-pattern="$OUT/profile/{date_utc:%Y-%m-%d}_{shortcode}" \
     --filename-pattern="{shortcode}_{typename}" \
-    --no-pictures-check \
-    -- "$PROFILE" || echo "instaloader exited nonzero — see its output above" >> "$OUT/failed.txt"
+    -- "$PROFILE" 2>&1 | tee -a "$OUT/instaloader.log"
+  [ "${PIPESTATUS[0]}" -eq 0 ] || echo "instaloader exited nonzero — see instaloader.log" >> "$OUT/failed.txt"
 else
-  echo "instaloader not found — skipping full-profile pass (gallery-dl may cover it)."
+  echo "instaloader not found — skipping full-profile pass."
 fi
 
-# 2) Fallback full profile via gallery-dl
+# 2) Second full-profile pass via gallery-dl (only when authenticated)
 if [ "$HAVE_GD" = 1 ]; then
-  if [ -z "$(ls -A "$OUT/profile" 2>/dev/null)" ]; then
-    echo "-- gallery-dl: full profile (fallback) --"
+  if [ "$GD_AUTHED" = 0 ]; then
+    echo "-- gallery-dl: skipped (no cookies). Its Instagram extractor requires"
+    echo "   browser cookies — password login was removed upstream, and an"
+    echo "   anonymous pass only reports 'Requested user could not be found'."
+    echo "   Set TF_BROWSER=firefox (or TF_COOKIES=/path/cookies.txt) to use it."
+  elif [ -z "$(ls -A "$OUT/profile" 2>/dev/null)" ]; then
+    echo "-- gallery-dl: full profile --"
     gallery-dl --directory "$OUT/profile" ${GD_OPTS[@]+"${GD_OPTS[@]}"} \
-      "https://www.instagram.com/$PROFILE/" \
-      || echo "gallery-dl failed" >> "$OUT/failed.txt"
+      "https://www.instagram.com/$PROFILE/" 2>&1 | tee -a "$OUT/gallery-dl.log"
+    [ "${PIPESTATUS[0]}" -eq 0 ] || echo "gallery-dl exited nonzero — see gallery-dl.log" >> "$OUT/failed.txt"
   else
     echo "-- gallery-dl: skipped, instaloader already filled profile/ --"
   fi
 else
-  echo "gallery-dl not found — skipping fallback pass."
+  echo "gallery-dl not found — skipping second profile pass."
 fi
 
 # 3) The reels the site embeds, as video + description
@@ -166,10 +247,13 @@ echo "reels/ files       : $AFTER_REELS (new this run: $((AFTER_REELS - BEFORE_R
 
 if [ "$AFTER_PROFILE" -eq 0 ]; then
   echo
-  echo "WARNING: the profile pass produced nothing. Instagram blocks most"
-  echo "anonymous scrapes. Re-run with your own login, either of:"
-  echo "  TF_LOGIN=yourhandle      ./archive_trendforge.sh"
-  echo "  TF_BROWSER=firefox       ./archive_trendforge.sh"
+  echo "The profile pass produced nothing. If the log says 'login required' or"
+  echo "'Requested user could not be found', Instagram wants an account. Then:"
+  echo "  1) log into instagram.com in Firefox,"
+  echo "  2) pip install \"instaloader[browser-cookie3]\","
+  echo "  3) TF_BROWSER=firefox ./archive_trendforge.sh"
+  echo "Or with a username/password prompt instead: TF_LOGIN=yourhandle"
+  echo "Reels do not need any of this — they are already in reels/."
 fi
 
 if [ -s "$OUT/failed.txt" ]; then
