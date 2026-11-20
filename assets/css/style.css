@@ -92,6 +92,17 @@ section + section { border-top: 1px solid var(--line); }
 .menu a { display: block; padding: 8px 10px; border-radius: 8px; text-decoration: none; color: var(--ink); font-size: .92rem; }
 .menu a small { display: block; color: var(--ink-3); font-size: .78rem; }
 .menu a:hover, .menu a[aria-current="page"] { background: var(--paper-2); }
+/* Provenance colours in the Case studies dropdown: green = the owner's own
+   captures, neutral = TrendForge.FX breakdowns. Legend sits at the top. */
+.menu a.own, .menu a.tf { border-left: 3px solid transparent; padding-left: 7px; }
+.menu a.own { border-left-color: var(--demand); background: linear-gradient(90deg, var(--demand-bg), rgba(223, 225, 208, 0) 62%); }
+.menu a.own:hover, .menu a.own[aria-current="page"] { background: var(--demand-bg); }
+.menu .src { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin: 0 6px 1px 0; vertical-align: middle; }
+.menu .src.own { background: var(--demand); box-shadow: 0 0 0 2px var(--demand-bg); }
+.menu .src.tf { background: var(--plate); box-shadow: 0 0 0 2px var(--paper-2); }
+.menu-key { display: flex; gap: 16px; margin: 2px 2px 8px; padding: 7px 9px; background: var(--paper-2); border-radius: 8px; color: var(--ink-3); font-size: .74rem; letter-spacing: .02em; }
+.menu-key span { display: inline-flex; align-items: center; }
+.menu-key .src { margin: 0 6px 0 0; }
 
 /* ---------- Hero ---------- */
 .hero { padding: 64px 0 48px; }
