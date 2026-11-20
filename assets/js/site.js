@@ -307,7 +307,7 @@ const VIDEOS = {
   "failed-trade.html": "https://www.instagram.com/reel/Dfs6fKfyCIb/",
   "scaling-reentry.html": "https://youtu.be/qgoxRH057cw",
   "notes.html": "",
-  "key-points.html": "",
+  "key-points.html": "https://youtu.be/mmv5I_4dx0g",
   "strategy.html": [
     "https://youtu.be/8-p5kR290x4",
     "https://youtu.be/iYbevTXtejc",
@@ -562,7 +562,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "71" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "72" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
