@@ -32,6 +32,7 @@ const CASES = [
     pair: "USD/JPY",
     title: "Weekly, Daily and 4H Swing Long",
     href: "cases/usdjpy-weekly-daily-4h.html",
+    own: true,
     thumb: "assets/img/usdjpy-weekly-daily-4h/09-result.png",
     direction: "Long",
     model: "Weekly BoS → Daily demand → 4H demand",
@@ -54,6 +55,7 @@ const CASES = [
     pair: "XAU/USD",
     title: "Two Sweeps Into 5m Demand",
     href: "cases/xauusd-5m-demand-double-sweep.html",
+    own: true,
     thumb: "assets/img/xauusd-5m-demand-double-sweep/02-run.png",
     direction: "Long",
     model: "5m sweep, sweep, MSS → 5m demand",
@@ -65,6 +67,7 @@ const CASES = [
     pair: "XAU/USD",
     title: "Two Swept Highs, One Supply Short",
     href: "cases/xauusd-15m-supply-retest.html",
+    own: true,
     thumb: "assets/img/xauusd-15m-supply-retest/04-run.png",
     direction: "Short",
     model: "15m swept highs → MSS down → supply retest",
@@ -87,6 +90,7 @@ const CASES = [
     pair: "XAU/USD",
     title: "The Inducement Pays First (15m)",
     href: "cases/xauusd-inducement-sweep-supply.html",
+    own: true,
     thumb: "assets/img/xauusd-inducement-sweep-supply/03-delivery-to-pool.png",
     direction: "Short",
     model: "Supply staircase → inducement swept → band tapped → $$$ pool",
@@ -98,6 +102,7 @@ const CASES = [
     pair: "XAU/USD",
     title: "Stopped by the Inducement Above (5m, loss)",
     href: "cases/xauusd-inducement-stopout.html",
+    own: true,
     thumb: "assets/img/xauusd-inducement-stopout/01-stopout.png",
     direction: "Short",
     model: "Zone entered with unswept inducement above → stop run",
@@ -109,6 +114,7 @@ const CASES = [
     pair: "XAU/USD",
     title: "Confirmation Pays (1h → 15m → 5m)",
     href: "cases/xauusd-confirmation-pays.html",
+    own: true,
     thumb: "assets/img/xauusd-confirmation-pays/04-delivery.png",
     direction: "Short",
     model: "1h bearish → 15m sweep and bos → sell the supply",
@@ -208,6 +214,7 @@ const CASES = [
     pair: "EUR/CAD",
     title: "15m: The Missed Short and the Second Chance",
     href: "cases/eurcad-15m-second-chance-short.html",
+    own: true,
     thumb: "assets/img/eurcad-15m-second-chance-short/06-result.png",
     direction: "Short",
     model: "HTF supply → missed fill → sweep and shift → re-entry supply",
@@ -219,6 +226,7 @@ const CASES = [
     pair: "EUR/USD",
     title: "The Two-Minute Supply (2m → 5m)",
     href: "cases/eurusd-2m-supply-sweep-shift.html",
+    own: true,
     thumb: "assets/img/eurusd-2m-supply-sweep-shift/03-trade-open.png",
     direction: "Short",
     model: "2m supply → 5m sweep and shift → $$$ pool",
@@ -230,6 +238,7 @@ const CASES = [
     pair: "Volatility 75 (1s)",
     title: "1H Supply Short",
     href: "cases/v75-1h-supply-short.html",
+    own: true,
     thumb: "assets/img/v75-1h-supply-short/01-1h.png",
     direction: "Short",
     model: "1H sweep → BoS → 1H supply",
@@ -241,6 +250,7 @@ const CASES = [
     pair: "Volatility 75 (1s)",
     title: "15m Supply Short, Two Entries",
     href: "cases/v75-15m-supply-two-entries.html",
+    own: true,
     thumb: "assets/img/v75-15m-supply-two-entries/05-result.png",
     direction: "Short",
     model: "15m BoS → supply → sweep and MSS",
@@ -569,7 +579,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "75" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "76" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -617,7 +627,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "75" };
         (g) =>
           `<div class="pair">${esc(g.pair)}</div>` +
           g.items
-            .map((c) => `<a href="${root}${c.href}"${cur(c.href)}>${esc(c.title)}<small>${esc(c.model)}</small></a>`)
+            .map((c) => `<a href="${root}${c.href}"${cur(c.href)} class="${c.own ? "own" : "tf"}" title="${c.own ? "Your own capture — chart and marks are yours" : "TrendForge.FX breakdown — slides credited to him"}"><i class="src ${c.own ? "own" : "tf"}" aria-hidden="true"></i>${esc(c.title)}<small>${esc(c.model)}</small></a>`)
             .join("")
       )
       .join("");
@@ -659,7 +669,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "75" };
           </details>
           <details>
             <summary>Case studies</summary>
-            <div class="menu">${menu}</div>
+            <div class="menu"><p class="menu-key"><span><i class="src own" aria-hidden="true"></i>Your captures</span><span><i class="src tf" aria-hidden="true"></i>TrendForge.FX</span></p>${menu}</div>
           </details>
         </nav>
       </div>`;
