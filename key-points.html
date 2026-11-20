@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=73">
+  <link rel="stylesheet" href="assets/css/style.css?v=74">
 </head>
 <body>
 <div class="preloader" aria-hidden="true"><div class="pl-chart"><i></i><i></i><i class="dn"></i><i class="dn"></i><i></i><i></i><i class="dn"></i><i></i><i></i></div><p>VinceVision SMC</p><span>Loading the charts…</span></div>
@@ -26,7 +26,7 @@
         <li class="chip target">No signals, only rules</li>
       </ul>
       <ul class="toc" aria-label="On this page">
-        <li><a href="#sequence">The only sequence</a></li><li><a href="#origin">Origin decides the target</a></li><li><a href="#replay">Exhibit: a replay, drawn</a></li><li><a href="#trend">Exhibit: a trend, in full</a></li><li><a href="#skips">The skips are the strategy</a></li><li><a href="#pairs">Timeframe pairs</a></li><li><a href="#doors">Two doors: 50 and 75</a></li><li><a href="#risk">Risk</a></li><li><a href="#mind">If not, I’ll wait</a></li><li><a href="#nobot">Why no indicator</a></li>
+        <li><a href="#sequence">The only sequence</a></li><li><a href="#origin">Origin decides the target</a></li><li><a href="#replay">Exhibit: a replay, drawn</a></li><li><a href="#trend">Exhibit: a trend, in full</a></li><li><a href="#live">Exhibit: your own chart</a></li><li><a href="#skips">The skips are the strategy</a></li><li><a href="#pairs">Timeframe pairs</a></li><li><a href="#doors">Two doors: 50 and 75</a></li><li><a href="#risk">Risk</a></li><li><a href="#mind">If not, I’ll wait</a></li><li><a href="#nobot">Why no indicator</a></li>
       </ul>
     </div>
   </div>
@@ -67,6 +67,7 @@
         <p>A bare sweep trades only when the higher timeframe shifted from swept liquidity, and then it aims at the first pool in front of it — never at HTF highs or week lows. Far targets belong to zone-backed moves whose higher timeframe also came from a demand.</p>
       </div>
       <p class="small muted" style="margin-top:14px">Exhibit A, drawn from a replay: <a href="#replay">BTCUSD 5m — sweep, MSS, and a target that stops at the first pool</a>.</p>
+      <p class="small muted" style="margin-top:6px">Exhibit C, drawn on your own terminal: <a href="#live">EURUSD 30m — two sweeps into one supply, one target drawn once</a>.</p>
     </div>
   </section>
 
@@ -136,6 +137,24 @@
         <li><strong>One level cancels it.</strong> While the protected high ratchets down — here to 159.62 — every rally is fuel, not a reversal. A close above it is a new chart, not a better discount.</li>
         <li><strong>Inducement is the market’s negotiation.</strong> The clean level just above real demand (158.66 in front of 158.54) exists to be taken first. A short targets through the internal $$$ into it and expects the final leg only after; a long never buys it — it waits for the sweep of the real level and the shift. See <a href="inducement.html">inducement</a>.</li>
       </ul>
+    </div>
+  </section>
+
+  <section id="live">
+    <div class="wrap narrow">
+      <h2>Exhibit C: your own chart, marked before the entry</h2>
+      <p class="lead">EURUSD 30m, marked on your own terminal across 22–26 Nov: not a replay and not a slide, the same discipline on a live chart with an order in mind. Two sweeps into one supply, a bos between them, and a target drawn at the low the first drop printed — drawn before the second sweep ever gave the entry.</p>
+      <figure style="margin:14px 0 26px">
+        <img src="assets/img/key-points/eurusd-30m-two-sweeps.png" alt="EURUSD 30m on TradingView, 22 to 27 Nov, drawn by hand in line form. A grey supply zone spans about 1.10975 to 1.11040 from 24 Nov rightwards. Price falls from about 1.11100 on the 22nd to about 1.10800, rallies to a high near 1.10990 that a red X line marks as a spike tags the zone's lower edge on the 24th, then breaks structure at a bos line near 1.10820 and drops to a low near 1.10625 on the 24th, where a white TARGET line is drawn and runs right. The pullback rallies on the 25th to a first high near 1.10910 that a second red X line marks; on the 26th price sweeps that high, tags the zone near 1.10980, and turns lower with an arrow near 1.10840 towards the unchanged target." style="width:100%;border-radius:10px" loading="lazy">
+        <figcaption class="small muted" style="margin-top:8px">Read it left to right. The grey 30m supply (about 1.10975–1.11040) is on the chart before price tests it. First X, the 24th: the high near 1.10990 is taken as the spike tags the zone — the buy-side above it cleared — then the bos near 1.10820 confirms sellers, and the drop prints its low near 1.10625: the white TARGET line, sell-side liquidity, drawn once on the 24th. The pullback then builds its own liquidity: the first rally high near 1.10910, the second X. On the 26th price sweeps that high and tags the zone near 1.10980 in the same push, and only then does the arrow turn down. Two sweeps, one zone, one target — and the target never moved.</figcaption>
+      </figure>
+      <ul class="ticks">
+        <li><strong>The zone comes first.</strong> The grey supply exists before price tests it, and nothing is traded until price shows its hand against it: a sweep, then a break. An area on the chart is not a position.</li>
+        <li><strong>The first sweep sets the side; the first drop sets the target.</strong> The X near 1.10990 with the bos near 1.10820 is sellers confirmed. The low that drop prints, near 1.10625, is the next pool below — so the target goes there and not further, exactly as the origin rule above demands.</li>
+        <li><strong>The second sweep sets the timing.</strong> The pullback's first high near 1.10910 is the inducement resting above the entry. The short waits for it to be taken; on the 26th it is swept and the zone tagged in one push. Selling the zone's first touch on the 24th would have meant carrying two days of pullback with the stops of the swept high above you.</li>
+        <li><strong>One target, drawn once.</strong> The TARGET line exists from the 24th and does not move on the 25th or the 26th, although price returns to the zone twice. If the second sweep never comes, there is simply no trade — and the marks were still right.</li>
+      </ul>
+      <p class="small muted" style="margin-top:14px">The same five frames in TrendForge's words: <a href="confirmation-model.html">the confirmation model</a>. Where the target sits and why: <a href="#origin">origin decides the target</a>, above on this page.</p>
     </div>
   </section>
 
@@ -242,6 +261,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=73"></script>
+<script src="assets/js/site.js?v=74"></script>
 </body>
 </html>
