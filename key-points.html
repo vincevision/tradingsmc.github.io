@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=74">
+  <link rel="stylesheet" href="assets/css/style.css?v=75">
 </head>
 <body>
 <div class="preloader" aria-hidden="true"><div class="pl-chart"><i></i><i></i><i class="dn"></i><i class="dn"></i><i></i><i></i><i class="dn"></i><i></i><i></i></div><p>VinceVision SMC</p><span>Loading the charts…</span></div>
@@ -26,7 +26,7 @@
         <li class="chip target">No signals, only rules</li>
       </ul>
       <ul class="toc" aria-label="On this page">
-        <li><a href="#sequence">The only sequence</a></li><li><a href="#origin">Origin decides the target</a></li><li><a href="#replay">Exhibit: a replay, drawn</a></li><li><a href="#trend">Exhibit: a trend, in full</a></li><li><a href="#live">Exhibit: your own chart</a></li><li><a href="#skips">The skips are the strategy</a></li><li><a href="#pairs">Timeframe pairs</a></li><li><a href="#doors">Two doors: 50 and 75</a></li><li><a href="#risk">Risk</a></li><li><a href="#mind">If not, I’ll wait</a></li><li><a href="#nobot">Why no indicator</a></li>
+        <li><a href="#sequence">The only sequence</a></li><li><a href="#origin">Origin decides the target</a></li><li><a href="#routine">The routine in four steps</a></li><li><a href="#replay">Exhibit: a replay, drawn</a></li><li><a href="#trend">Exhibit: a trend, in full</a></li><li><a href="#live">Exhibit: your own chart</a></li><li><a href="#skips">The skips are the strategy</a></li><li><a href="#pairs">Timeframe pairs</a></li><li><a href="#doors">Two doors: 50 and 75</a></li><li><a href="#risk">Risk</a></li><li><a href="#mind">If not, I’ll wait</a></li><li><a href="#nobot">Why no indicator</a></li>
       </ul>
     </div>
   </div>
@@ -44,6 +44,7 @@
         <li><span class="q">Size, hold, record.</span><span class="a">Half to one percent. Alert set, hands off. Win or lose, the trade goes in the log with its screenshots.</span></li>
       </ol>
       <p class="small muted" style="margin-top:14px">The long version with drawings: <a href="strategy.html">zone model</a> and <a href="sweep-model.html">sweep model</a>. The morning version: <a href="notes.html">notes</a>.</p>
+      <p class="small muted" style="margin-top:6px">The timeframe-stacked version, exactly as the note states it: <a href="#routine">the routine in four steps</a>.</p>
     </div>
   </section>
 
@@ -68,6 +69,27 @@
       </div>
       <p class="small muted" style="margin-top:14px">Exhibit A, drawn from a replay: <a href="#replay">BTCUSD 5m — sweep, MSS, and a target that stops at the first pool</a>.</p>
       <p class="small muted" style="margin-top:6px">Exhibit C, drawn on your own terminal: <a href="#live">EURUSD 30m — two sweeps into one supply, one target drawn once</a>.</p>
+    </div>
+  </section>
+
+  <section id="routine">
+    <div class="wrap narrow">
+      <h2>The routine in four steps</h2>
+      <p class="lead">The note as posted, then unpacked into the order it is actually executed. Every other line on this page is detail inside one of these four steps — nothing here is a fifth rule.</p>
+      <div class="callout info">
+        <h4>The note, verbatim</h4>
+        <p><em>“ON HIGHER TF SPOT LIQUIDITY SWEEP AND BREAK OF STRUCTURE AND A SUPPLY OR DEMAND FROM THE LEG, THEN WAIT FOR THE SHIFT. AS FOR TARGETS USE THOSE FROM THE TIMEFRAME OF THE SHIFT.”</em></p>
+      </div>
+      <ol class="checklist" style="margin-top:20px">
+        <li><span class="q">Step 1 · Higher timeframe: three marks.</span><span class="a">On the higher timeframe spot the liquidity sweep (the X), the break of structure that follows it, and the supply or demand the leg left at its origin. All three, or the chart is not ready: the sweep names the fuel, the break names the direction, the zone names where the move began. A sweep with no zone behind it is a different animal — see the bare-sweep rows in <a href="#origin">the origin table</a>.</span></li>
+        <li><span class="q">Step 2 · Wait for the shift, one frame down.</span><span class="a">Nothing is ordered on the strength of the higher-timeframe marks. Drop to the lower timeframe and wait for the shift — a candle close through the pullback’s last high or low, leaving an imbalance. A wick is not a shift; a slow break with no gap is not a shift. This is the confirmation <a href="notes.html#n12">note 12</a> demands, drawn in full on <a href="confirmation-model.html">the confirmation model</a>.</span></li>
+        <li><span class="q">Step 3 · Enter at what the shift leaves.</span><span class="a">The order block at the shift candle is the entry. The stop goes beyond the structure the shift depends on — the protected high or low it made — never inside the block. Under 1:2 to the step-4 target, there is no order.</span></li>
+        <li><span class="q">Step 4 · Target the shift’s own timeframe.</span><span class="a">The pools that belong to this trade are the ones on the timeframe of the shift: the next liquidity in front of it, drawn before the entry. Do not reach up for higher-timeframe swings or week lows — the <a href="#origin">origin table</a> says exactly when a far target is earned, and this is not it unless the sweep sat at a zone whose higher timeframe also came from a demand.</span></li>
+      </ol>
+      <div class="callout rule" style="margin-top:22px">
+        <h4>The sentence that ties it together</h4>
+        <p>The higher timeframe supplies the marks, the shift supplies the timing, and the shift’s timeframe supplies the target. Three different timeframes in one trade — which is why <a href="#pairs">the pairs table</a> is not optional, and why a step missing is a <a href="#skips">skip</a>, not a smaller size.</p>
+      </div>
     </div>
   </section>
 
@@ -261,6 +283,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=74"></script>
+<script src="assets/js/site.js?v=75"></script>
 </body>
 </html>
