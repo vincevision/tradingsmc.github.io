@@ -297,7 +297,8 @@ const VIDEOS = {
     "https://youtu.be/defSZjhGq9s",
     "https://youtu.be/8-p5kR290x4",
     "https://youtu.be/iYbevTXtejc",
-    "https://www.instagram.com/reel/DfiefJWSTkc/"
+    "https://www.instagram.com/reel/DfiefJWSTkc/",
+    "https://youtu.be/mmv5I_4dx0g"
   ],
   "full-sequence.html": [
     "https://youtu.be/fg-kBYiChK4",
@@ -561,7 +562,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "70" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "71" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
