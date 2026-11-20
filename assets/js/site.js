@@ -308,6 +308,7 @@ const VIDEOS = {
   "scaling-reentry.html": "https://youtu.be/qgoxRH057cw",
   "notes.html": "",
   "key-points.html": "https://youtu.be/mmv5I_4dx0g",
+  "confirmation-model.html": "",
   "strategy.html": [
     "https://youtu.be/8-p5kR290x4",
     "https://youtu.be/iYbevTXtejc",
@@ -402,6 +403,12 @@ const STUDY_PATH = [
   "title": "The sweep model, step by step",
   "part": "Part 2 · The method",
   "q": "When do you use the sweep model and not the zone model?"
+ },
+ {
+  "href": "confirmation-model.html",
+  "title": "The confirmation model, in his frames",
+  "part": "Part 2 · The method",
+  "q": "What must happen between the sweep and the entry?"
  },
  {
   "href": "playbook.html",
@@ -562,7 +569,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "72" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "73" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -637,6 +644,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "72" };
             <summary>Concepts</summary>
             <div class="menu">
               <a href="${root}entry-models.html"${cur("entry-models.html")}>Entry models<small>Aggressive vs confirmation entry</small></a>
+              <a href="${root}confirmation-model.html"${cur("confirmation-model.html")}>Confirmation model<small>His five frames: sweep, shift, entry, target</small></a>
               <a href="${root}structure-entries.html"${cur("structure-entries.html")}>Structure &amp; entry models<small>Strong and weak points, four ways to enter</small></a>
               <a href="${root}internal-external.html"${cur("internal-external.html")}>Internal &amp; external structure<small>Two structures, two kinds of liquidity, four sweeps</small></a>
               <a href="${root}supply-demand.html"${cur("supply-demand.html")}>Imbalance, supply &amp; demand<small>How zones form and which ones to trade</small></a>
