@@ -123,6 +123,18 @@ const CASES = [
       "The winning twin of the stopped inducement case. The 1h staircase forbids longs, the 5m labels the fuel, and the 15m enters only after the rally's high is swept into the supply at 3,7350-3,7450 and structure shifts: entry 3,733.89, stop 3,743.22, target the 1h pool at 3,694.42 - R:R 4.23 on the ticket. The target is paid and printed through to about 3,6870."
   },
   {
+    pair: "XAU/USD",
+    title: "The Tap After the Shift (1h → 30m)",
+    href: "cases/xauusd-tap-after-shift.html",
+    own: true,
+    thumb: "assets/img/xauusd-tap-after-shift/03-ticket.png",
+    direction: "Short",
+    model: "1h supply → 30m sweep and MSS → sell the tap",
+    result: "Target paid · ≈ 4.2 R, printed through",
+    summary:
+      "Your own gold replay, 19 into 23 Nov. The 1h supply 3,584-3,626 keeps the ceiling; the 30m sweeps the pullback's high about 3,590 into its floor and shifts at 3,572; the sell limit sits at the tap of the 30m OB the shift left, 3,584.00, stop 3,595.95 above the protected high, target 3,533.78 at the SSL cluster below. About 4.2 R, paid and printed through to 3,523.46."
+  },
+  {
     pair: "GBP/JPY",
     title: "Strong Structure Starts With a Sweep",
     href: "cases/gbpjpy-sweep-before-structure.html",
@@ -565,6 +577,12 @@ const STUDY_PATH = [
   "q": "Which two marks had to print before this short was allowed?"
  },
  {
+  "href": "cases/xauusd-tap-after-shift.html",
+  "title": "XAU/USD: The Tap After the Shift",
+  "part": "Part 3 · Case studies",
+  "q": "Which two marks had to print before the tap earned an order?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -579,7 +597,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "76" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "77" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
