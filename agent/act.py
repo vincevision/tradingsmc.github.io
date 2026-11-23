@@ -40,45 +40,80 @@ def want_aliases(canon: str) -> tuple:
     }.get(canon, ())
 
 
+DRAW_ADD = ("chart_drawing_add", "drawing_add", "draw_add", "drawing_create")
+
+
+def _enum_pick(schema: dict, keys: tuple, *subs: str):
+    """First enum member (of any of `keys`) whose name contains any of `subs`."""
+    props = schema.get("properties", {})
+    for key in keys:
+        e = (props.get(key) or {}).get("enum") or []
+        for sub in subs:
+            for v in e:
+                if sub in str(v).lower():
+                    return key, v
+        if e and key == "shape":
+            return key, e[0]
+    return None, None
+
+
+def _fill_nested(schema: dict, want: dict) -> dict:
+    """_fill, plus the single-nested-object payload shape some schemas use."""
+    args = _fill(schema, want)
+    if args:
+        return args
+    props = schema.get("properties", {})
+    objs = [k for k, v in props.items() if isinstance(v, dict) and v.get("type") == "object"]
+    if len(objs) == 1:
+        inner = _fill(props[objs[0]], want)
+        if inner:
+            return {objs[0]: inner}
+    return {}
+
+
 async def draw_marks(conn: Conn, prop: dict) -> list[str]:
-    """Zone rectangle + sweep/shift/entry/stop/target lines, if drawable."""
-    acted = []
-    rect = conn.find("draw_rect", "rect", "zone", "shape_box", "draw_box")
-    line = conn.find("draw_line", "line_add", "hline", "draw_hline", "price_line")
+    """Zone rectangle + entry/stop/target lines via the live drawing family."""
+    add = conn.find(*DRAW_ADD)
+    if not add:
+        return ["no drawing tool on this token; marks stay in the journal"]
+    schema = conn.schema(add)
+    acted: list[str] = []
     zone = prop.get("zone") or []
-    if rect and len(zone) == 2:
-        args = _fill(conn.schema(rect), {"price": zone[0], "price2": zone[1]})
-        if args:
-            try:
-                await conn.call(rect, args)
-                acted.append(f"drew zone {zone[0]}-{zone[1]} via {rect}")
-            except Exception as e:
-                acted.append(f"zone draw refused: {e}")
-    for label, key in (
-        ("entry", "entry"),
-        ("stop", "stop"),
-        ("target", "target"),
-    ):
-        lvl = prop.get(key)
-        if line and lvl is not None:
-            args = _fill(conn.schema(line), {"price": lvl, "text": label})
-            if args:
-                try:
-                    await conn.call(line, args)
-                    acted.append(f"drew {label} {lvl} via {line}")
-                except Exception as e:
-                    acted.append(f"{label} line refused: {e}")
+    marks = [("zone", zone[0], zone[1])] if len(zone) == 2 else []
+    marks += [(k, prop[k], None) for k in ("entry", "stop", "target")
+              if prop.get(k) is not None]
+    for kind, p1, p2 in marks:
+        want = {"price": p1, "text": f"SMC {kind}"}
+        if p2 is not None:
+            want["price2"] = p2
+        args = _fill_nested(schema, want)
+        key, val = _enum_pick(
+            schema, ("shape", "type", "kind", "tool"),
+            *(("rect", "box") if p2 is not None else ("line", "hline", "ray")),
+        )
+        if key:
+            args[key] = val
+        if not args:
+            acted.append(f"{kind}: payload shape not understood by {add}; left in journal")
+            continue
+        try:
+            await conn.call(add, args)
+            span = f"-{p2}" if p2 is not None else ""
+            acted.append(f"drew {kind} {p1}{span} via {add}")
+        except Exception as e:
+            acted.append(f"{kind} draw refused: {e}")
     if not acted:
-        acted.append("no drawable tools understood; marks stay in the journal")
+        acted.append("nothing drawable this cycle; marks stay in the journal")
     return acted
 
 
 async def tap_alert(conn: Conn, obs: dict, prop: dict) -> list[str]:
     """One price alert at the zone edge so the tap wakes the agent."""
+    zone = prop.get("zone") or []
     name = conn.find("alert_create")
     if not name:
-        return []
-    zone = prop.get("zone") or []
+        return (["no alert tool on this token (mcp:alerts not ticked at creation); "
+                 "tap-alert skipped"] if len(zone) == 2 else [])
     if len(zone) != 2:
         return []
     edge = zone[1] if prop.get("side") == "short" else zone[0]
