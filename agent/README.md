@@ -113,6 +113,7 @@ cp .env.example .env                        # then edit .env
 ./smc-agent once      # one observe → propose → gate → act cycle
 ./smc-agent watch     # loop every AGENT_CADENCE_MIN minutes
 ./smc-agent watch --confirm   # only if AGENT_TRADE=true and you mean it
+./smc-agent tools points chart_read chart_drawing_add   # print live input schemas
 ```
 
 The wrapper runs from any directory (it sets PYTHONPATH to the repo root

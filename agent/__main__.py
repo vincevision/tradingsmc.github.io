@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 import sys
 import time
 
@@ -74,7 +75,7 @@ async def analyze(confirm: bool) -> None:
             print(
                 f"tf {tf}: bars={nb}"
                 + (f" last={lastc}" if lastc is not None
-                   else f" blind ({(raw or '')[:80]})")
+                   else f" blind ({(raw or '')[:300]})")
             )
             packets[tf] = observe.packet_lines(b)
         entry_tf = pane_tf or tfs[-1]
@@ -115,6 +116,14 @@ async def watch(confirm: bool) -> None:
         time.sleep(config.CADENCE_MIN * 60)
 
 
+async def tools(names: list[str]) -> None:
+    """Print the live input schema of connector tools (metadata, no secrets)."""
+    async with connect() as conn:
+        for n in (names or conn.names()):
+            print(f"== {n} ==")
+            print(json.dumps(conn.schema(n), indent=1))
+
+
 def main() -> None:
     args = sys.argv[1:]
     cmd = args[0] if args else "intro"
@@ -130,8 +139,12 @@ def main() -> None:
         asyncio.run(analyze(confirm))
     elif cmd == "watch":
         asyncio.run(watch(confirm))
+    elif cmd == "tools":
+        asyncio.run(tools(args[1:]))
     else:
-        raise SystemExit("usage: python -m agent intro|once|watch [--confirm]")
+        raise SystemExit(
+            "usage: python -m agent intro|once|analyze|watch [--confirm] | tools [names...]"
+        )
 
 
 if __name__ == "__main__":
