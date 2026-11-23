@@ -34,30 +34,32 @@ async def read(conn: Conn, bars: int = 0) -> str:
 
 
 async def candles(conn: Conn, symbol: str, timeframe: str, count: int):
-    """Per-bar OHLC via `points` (works with no tab open). Returns list|None."""
+    """Per-bar OHLC via `points` (works with no tab open).
+
+    Returns (bars, raw) so a failure can show what the server actually said.
+    Argument names are tried across every schema-plausible combination.
+    """
     name = conn.find("points")
     if not name:
-        return None
-    schema = conn.schema(name)
-    props = schema.get("properties", {})
-    args: dict = {}
-    for key in ("symbol", "ticker", "market"):
-        if key in props:
-            args[key] = symbol
-            break
-    for key in ("timeframe", "interval", "resolution"):
-        if key in props:
-            args[key] = timeframe
-            break
-    for key in ("limit", "count", "bars"):
-        if key in props:
-            args[key] = count
-            break
-    try:
-        raw = await conn.text(name, args)
-    except Exception:
-        return None
-    return parse_candles(raw)
+        return None, "no points tool"
+    props = (conn.schema(name) or {}).get("properties", {}) or {}
+    skeys = [k for k in ("symbol", "ticker", "market", "pair") if k in props] or ["symbol"]
+    tkeys = [k for k in ("interval", "timeframe", "resolution", "tf") if k in props] or ["interval"]
+    nkeys = [k for k in ("limit", "count", "bars", "n") if k in props] or ["limit"]
+    raw = ""
+    for sk in skeys[:1]:
+        for tk in tkeys[:2]:
+            for nk in nkeys[:2]:
+                args = {sk: symbol, tk: timeframe, nk: count}
+                try:
+                    raw = await conn.text(name, args)
+                except Exception as e:
+                    raw = f"points error: {e}"
+                    continue
+                bars = parse_candles(raw)
+                if bars:
+                    return bars, raw
+    return None, raw
 
 
 def parse_candles(raw: str):
@@ -89,6 +91,16 @@ def parse_candles(raw: str):
         return None
     out = []
     for row in data:
+        if isinstance(row, (list, tuple)) and len(row) >= 4:
+            try:
+                if len(row) >= 5:
+                    t, o, h, l, c = row[0], row[1], row[2], row[3], row[4]
+                else:
+                    t, o, h, l, c = None, row[0], row[1], row[2], row[3]
+                out.append({"t": t, "o": o, "h": float(h), "l": float(l), "c": float(c)})
+            except Exception:
+                continue
+            continue
         if not isinstance(row, dict):
             continue
         low = {k.lower(): v for k, v in row.items()}
@@ -141,12 +153,13 @@ async def observe(conn: Conn) -> dict:
         timeframe = m.group(1) if m else ""
     bars = parse_candles(read_txt)
     src = "chart_read" if bars else ""
+    raw_points = ""
     if not bars and symbol and timeframe:
-        bars = await candles(conn, symbol, timeframe, config.BARS)
+        bars, raw_points = await candles(conn, symbol, timeframe, config.BARS)
         src = "points" if bars else "points-empty"
     if not bars and not src:
         src = "no-symbol"
-    diag = "" if bars else (read_txt or "")[:200].replace("\n", " ")
+    diag = "" if bars else (raw_points or read_txt or "")[:200].replace("\n", " ")
     return {
         "status": await status(conn),
         "refresh": await refresh(conn),
