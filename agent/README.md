@@ -77,10 +77,19 @@ cp .env.example .env                        # then edit .env
 ## Run
 
 ```bash
-.venv/bin/python -m agent intro     # handshake: tool inventory, workspace, what the chart shows
-.venv/bin/python -m agent once      # one observe → propose → gate → act cycle
-.venv/bin/python -m agent watch     # loop every AGENT_CADENCE_MIN minutes
-.venv/bin/python -m agent watch --confirm   # only if AGENT_TRADE=true and you mean it
+./smc-agent intro     # handshake: tool inventory, workspace, what the chart shows
+./smc-agent once      # one observe → propose → gate → act cycle
+./smc-agent watch     # loop every AGENT_CADENCE_MIN minutes
+./smc-agent watch --confirm   # only if AGENT_TRADE=true and you mean it
+```
+
+The wrapper runs from any directory (it sets PYTHONPATH to the repo root
+for you). Without it, `python -m agent` must be run **from the repo root**,
+never from inside `agent/` — inside the folder the package is the current
+directory and Python answers `No module named agent`:
+
+```bash
+cd ~/tradingsmc.github.io && agent/.venv/bin/python -m agent intro
 ```
 
 `intro` prints every tool the connector offers and writes the inventory to
