@@ -10,6 +10,8 @@ import json
 import time
 from contextlib import asynccontextmanager
 
+import httpx
+
 from mcp import ClientSession
 from mcp.client.streamable_http import streamable_http_client
 
@@ -74,20 +76,21 @@ async def connect():
             "put it in agent/.env, then re-run."
         )
     headers = {"Authorization": f"Bearer {config.TOKEN}"}
-    async with streamable_http_client(config.MCP_URL, headers=headers) as (r, w, _):
-        async with ClientSession(r, w) as session:
-            await session.initialize()
-            listed = await session.list_tools()
-            conn = Conn(session, listed.tools)
-            # keep a local inventory for offline debugging
-            try:
-                inv = {
-                    n: conn.schema(n)
-                    for n in conn.names()
-                }
-                (config.HERE / ".tools.json").write_text(
-                    json.dumps(inv, indent=1, default=str)
-                )
-            except Exception:
-                pass
-            yield conn
+    # Newer mcp SDKs take auth via a custom httpx client, not a headers kwarg.
+    async with httpx.AsyncClient(
+        headers=headers, timeout=httpx.Timeout(30.0, read=120.0)
+    ) as http:
+        async with streamable_http_client(config.MCP_URL, http_client=http) as (r, w, _):
+            async with ClientSession(r, w) as session:
+                await session.initialize()
+                listed = await session.list_tools()
+                conn = Conn(session, listed.tools)
+                # keep a local inventory for offline debugging
+                try:
+                    inv = {n: conn.schema(n) for n in conn.names()}
+                    (config.HERE / ".tools.json").write_text(
+                        json.dumps(inv, indent=1, default=str)
+                    )
+                except Exception:
+                    pass
+                yield conn
