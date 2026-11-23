@@ -52,6 +52,57 @@ async def cycle(confirm: bool) -> None:
         print("journal:", journal.PATH)
 
 
+async def analyze(confirm: bool) -> None:
+    """Top-down: candle ladder across timeframes, one narrative, one setup."""
+    pack = strategy.load()
+    async with connect() as conn:
+        await observe.select_workspace(conn)
+        obs = await observe.observe(conn)
+        symbol = obs.get("symbol") or ""
+        pane_tf = obs.get("timeframe") or ""
+        if not symbol:
+            print("pane blind: analyze needs a readable pane (see the obs: line)")
+            return
+        tfs = [t for t in config.TFS]
+        if pane_tf and pane_tf not in tfs:
+            tfs.append(pane_tf)
+        lad = await observe.ladder(conn, symbol, tfs, min(config.BARS, 300))
+        packets: dict = {}
+        for tf, (b, raw) in lad.items():
+            nb = len(b or [])
+            lastc = b[-1]["c"] if nb else None
+            print(
+                f"tf {tf}: bars={nb}"
+                + (f" last={lastc}" if lastc is not None
+                   else f" blind ({(raw or '')[:80]})")
+            )
+            packets[tf] = observe.packet_lines(b)
+        entry_tf = pane_tf or tfs[-1]
+        prop = await brain.propose_mtf(
+            {"symbol": symbol, "timeframe": pane_tf, "entry_tf": entry_tf},
+            packets, pack,
+        )
+        prop.setdefault("zone_tf", entry_tf)
+        entry_bars = (lad.get(entry_tf) or (None, ""))[0] or obs.get("bars")
+        verdict = gate.check(prop, entry_bars)
+        acted: list[str] = []
+        if verdict["verdict"] == "pass" and not act.already_acted(prop):
+            acted += await act.draw_marks(conn, prop)
+            acted += await act.tap_alert(conn, obs, prop)
+            acted += await act.trade(conn, obs, prop, confirm)
+            act.remember(prop)
+        journal.write(obs, prop, verdict, acted)
+        print(f"bias: {prop.get('bias', '?')} · entry tf: {entry_tf}")
+        if prop.get("narrative"):
+            print("narrative:", prop["narrative"])
+        print(f"verdict: {verdict['verdict'].upper()}")
+        for r in verdict["reasons"]:
+            print("  -", r)
+        for a in acted:
+            print("  *", a)
+        print("journal:", journal.PATH)
+
+
 async def watch(confirm: bool) -> None:
     while True:
         try:
@@ -75,6 +126,8 @@ def main() -> None:
         asyncio.run(intro())
     elif cmd == "once":
         asyncio.run(cycle(confirm))
+    elif cmd == "analyze":
+        asyncio.run(analyze(confirm))
     elif cmd == "watch":
         asyncio.run(watch(confirm))
     else:

@@ -62,6 +62,14 @@ async def candles(conn: Conn, symbol: str, timeframe: str, count: int):
     return None, raw
 
 
+async def ladder(conn: Conn, symbol: str, tfs: list[str], bars: int) -> dict:
+    """Candles per timeframe via `points` (off-tab). {tf: (bars, raw)}."""
+    out: dict = {}
+    for tf in tfs:
+        out[tf] = await candles(conn, symbol, tf, bars)
+    return out
+
+
 def parse_candles(raw: str):
     """Accept a JSON blob or a list of {t,o,h,l,c} objects embedded in text."""
     try:

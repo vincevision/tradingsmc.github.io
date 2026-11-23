@@ -44,6 +44,19 @@ git sparse-checkout set agent tools         # the agent + the pack exporter
 Already have the full repo somewhere? Skip the clone and `cd` straight into
 its `agent/` folder.
 
+### analyze — the whole chart, top-down
+
+`once` reads the live pane only. `analyze` pulls a candle ladder via `points`
+(off-tab, any timeframe of the pane's symbol) — default
+`AGENT_TFS=4h,1h,15m,5m`, plus the live pane as the entry timeframe — sends
+every packet to the brain top-down, and gets back bias + HTF zone + one entry
+setup + a narrative. The gate still verifies the entry against entry-tf
+candles only; the LLM proposes, the gate disposes. On PASS it draws the HTF
+zone, the entry zone and the entry/stop/target lines on your live chart
+(price levels are timeframe-agnostic, so HTF zones belong on the LTF chart),
+and the journal keeps the narrative. Each timeframe prints its own bars count
+or its own blindness, so a blind ladder can never hide.
+
 ### Updating later (shallow clones do NOT pull)
 
 A `--depth 1` clone cannot prove ancestry, so `git pull` on it always reads as

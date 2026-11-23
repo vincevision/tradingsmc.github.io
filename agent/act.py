@@ -78,8 +78,13 @@ async def draw_marks(conn: Conn, prop: dict) -> list[str]:
         return ["no drawing tool on this token; marks stay in the journal"]
     schema = conn.schema(add)
     acted: list[str] = []
+    marks: list[tuple] = []
+    hz = prop.get("htf_zone") or []
+    if isinstance(hz, list) and len(hz) == 2:
+        marks.append(("htf zone", hz[0], hz[1]))
     zone = prop.get("zone") or []
-    marks = [("zone", zone[0], zone[1])] if len(zone) == 2 else []
+    if len(zone) == 2:
+        marks.append(("zone", zone[0], zone[1]))
     marks += [(k, prop[k], None) for k in ("entry", "stop", "target")
               if prop.get(k) is not None]
     for kind, p1, p2 in marks:

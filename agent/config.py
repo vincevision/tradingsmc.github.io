@@ -34,6 +34,7 @@ MCP_URL = get("OM_MCP_URL", "https://mcp.openmarket.xyz/")
 WORKSPACE = get("OM_WORKSPACE", "RV0MBetJ")
 CADENCE_MIN = int(get("AGENT_CADENCE_MIN", "15"))
 BARS = int(get("AGENT_BARS", "200"))
+TFS = [t.strip() for t in get("AGENT_TFS", "4h,1h,15m,5m").split(",") if t.strip()]
 TRADE = get("AGENT_TRADE", "false").lower() in ("1", "true", "yes")
 
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
