@@ -57,10 +57,18 @@ cp .env.example .env                        # then edit .env
 ### The two keys (both stay on your machine)
 
 - `OM_MCP_TOKEN` — create an agent token at
-  <https://openmarket.xyz/chart/console/agents>. Scopes: **read** +
-  **chart** for v1 (drawings and indicators need `chart`); tick the alerts
-  box if you want tap-alerts; add **trade** only after reading the trade
-  section below. Never paste a token into a chat or commit it.
+  <https://openmarket.xyz/chart/console/agents>: the token creator is on
+  that page **below the "Try a prompt" cards** (if your console hides it,
+  use **API Keys** in the sidebar). Do **not** use the "paste one
+  sentence" box at the top — that flow is for command-running agents
+  (Claude Code, Codex, Cursor) that sign in through your browser; a
+  headless service like this one authenticates with the token instead.
+  Scopes: **read** + **chart** for v1 (drawings and indicators need
+  `chart`); tick the alerts box if you want tap-alerts; add **trade** only
+  after reading the trade section below. The token is shown once — paste
+  it straight into `.env`. Never paste it into a chat or commit it.
+  After the agent's first successful `intro`, your token appears under
+  **Connected agents** on that same page: that list is your audit trail.
 - `GROQ_API_KEY` — your Groq key, same provider the site chat uses. Any
   chat model on the key works; `GROQ_MODEL` picks it.
 
