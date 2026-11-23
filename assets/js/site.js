@@ -615,7 +615,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "80" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "81" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
@@ -921,7 +921,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "80" };
   })();
 
   // ----- Lightbox for screenshots -----
-  const shots = document.querySelectorAll(".shot");
+  const shots = document.querySelectorAll(".shot, figure > img");
   if (shots.length) {
     const box = document.createElement("div");
     box.className = "lightbox";
@@ -932,7 +932,7 @@ window.SMC_CHAT = window.SMC_CHAT || { v: "80" };
     const close = () => box.classList.remove("open");
     shots.forEach((s) =>
       s.addEventListener("click", () => {
-        const img = s.querySelector("img");
+        const img = s.tagName === "IMG" ? s : s.querySelector("img");
         box.firstChild.src = img.src;
         box.firstChild.alt = img.alt;
         box.classList.add("open");
