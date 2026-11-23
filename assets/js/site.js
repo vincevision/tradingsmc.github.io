@@ -247,6 +247,18 @@ const CASES = [
       "A supply zone built on the 2-minute chart is carried up to the 5-minute and labelled 2MIN SUPPLY. The 5m rallies into it, sweeps its high at 1.09777, shifts down, and a sell limit at the zone's bottom edge rides the break of the $$$ pool at 1.09597 to about 1.09540. The replay ends with the short still open."
   },
   {
+    pair: "EUR/USD",
+    title: "The Same Tap, Nine R (2h → 15m)",
+    href: "cases/eurusd-tap-after-shift.html",
+    own: true,
+    thumb: "assets/img/eurusd-tap-after-shift/04-15m-ticket.png",
+    direction: "Short",
+    model: "2h supply → 15m sweep and MSS → sell the tap",
+    result: "Target paid · ≈ 9.1 R, printed through",
+    summary:
+      "Your own euro replay, 13 into 23 Nov. Two swept highs (1.1028, 1.1020) into a 2h supply 1.1008-1.1024, MSS at 1.0969; the $$$ pool booked at 1.09538 with 1.09376 marked below. On the 15m the 19th's rally sweeps into the floor and shifts below 1.0989, and the sell limit waits at the red block's near edge 1.10055, stop 1.10112. The 23rd's tap fills to the pip and prints through the target to 1.09365 - about 9.1 R."
+  },
+  {
     pair: "Volatility 75 (1s)",
     title: "1H Supply Short",
     href: "cases/v75-1h-supply-short.html",
@@ -583,6 +595,12 @@ const STUDY_PATH = [
   "q": "Which two marks had to print before the tap earned an order?"
  },
  {
+  "href": "cases/eurusd-tap-after-shift.html",
+  "title": "EUR/USD: The Same Tap, Nine R",
+  "part": "Part 3 · Case studies",
+  "q": "Which two sweeps had to print on the 2h before the box was drawn?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -597,7 +615,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "77" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "78" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
