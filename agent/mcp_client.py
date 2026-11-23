@@ -80,8 +80,11 @@ async def connect():
     async with httpx.AsyncClient(
         headers=headers, timeout=httpx.Timeout(30.0, read=120.0)
     ) as http:
-        async with streamable_http_client(config.MCP_URL, http_client=http) as (r, w, _):
-            async with ClientSession(r, w) as session:
+        async with streamable_http_client(config.MCP_URL, http_client=http) as streams:
+            # SDK arity changed across versions: older yields
+            # (read, write, get_session_id), current yields (read, write).
+            read_stream, write_stream = streams[0], streams[1]
+            async with ClientSession(read_stream, write_stream) as session:
                 await session.initialize()
                 listed = await session.list_tools()
                 conn = Conn(session, listed.tools)
