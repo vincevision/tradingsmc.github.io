@@ -44,7 +44,12 @@ async def propose(obs: dict, pack: str) -> dict:
             headers={"Authorization": f"Bearer {config.GROQ_KEY}"},
             json=body,
         )
-        r.raise_for_status()
+        if r.status_code != 200:
+            raise SystemExit(
+                f"Groq HTTP {r.status_code}: {r.text[:400]}\n"
+                "model_not_found / decommissioned? Set GROQ_MODEL in agent/.env to a "
+                "model your key serves (console.groq.com/docs/models)."
+            )
         txt = r.json()["choices"][0]["message"]["content"]
     return parse(txt)
 

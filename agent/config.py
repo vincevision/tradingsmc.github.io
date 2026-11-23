@@ -29,7 +29,7 @@ def get(key: str, default: str = "") -> str:
 
 TOKEN = get("OM_MCP_TOKEN")
 GROQ_KEY = get("GROQ_API_KEY")
-GROQ_MODEL = get("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = get("GROQ_MODEL", "openai/gpt-oss-120b")  # versatile was decommissioned 2026-08-16
 MCP_URL = get("OM_MCP_URL", "https://mcp.openmarket.xyz/")
 WORKSPACE = get("OM_WORKSPACE", "RV0MBetJ")
 CADENCE_MIN = int(get("AGENT_CADENCE_MIN", "15"))

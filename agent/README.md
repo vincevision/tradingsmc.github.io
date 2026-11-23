@@ -85,7 +85,11 @@ cp .env.example .env                        # then edit .env
   After the agent's first successful `intro`, your token appears under
   **Connected agents** on that same page: that list is your audit trail.
 - `GROQ_API_KEY` — your Groq key, same provider the site chat uses. Any
-  chat model on the key works; `GROQ_MODEL` picks it.
+  chat model on the key works; `GROQ_MODEL` picks it. Default is
+  `openai/gpt-oss-120b`: Groq decommissioned `llama-3.3-70b-versatile` on
+  2026-08-16, and keys on free/dev tiers now get `404 model_not_found` for it.
+  To list exactly what your key serves:
+  `curl -s https://api.groq.com/openai/v1/models -H "Authorization: Bearer $GROQ_API_KEY"`
 
 `OM_WORKSPACE` is already set to your chart `RV0MBetJ`.
 
