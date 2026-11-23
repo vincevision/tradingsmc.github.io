@@ -42,7 +42,13 @@ async def candles(conn: Conn, symbol: str, timeframe: str, count: int):
     name = conn.find("points")
     if not name:
         return None, "no points tool"
-    props = (conn.schema(name) or {}).get("properties", {}) or {}
+    schema = conn.schema(name) or {}
+    props = schema.get("properties", {}) or {}
+    required_fill: dict = {}
+    for rk in schema.get("required", []) or []:
+        e = (props.get(rk) or {}).get("enum")
+        if e:
+            required_fill[rk] = e[0]
     skeys = [k for k in ("symbol", "ticker", "market", "pair") if k in props] or ["symbol"]
     tkeys = [k for k in ("interval", "timeframe", "resolution", "tf") if k in props] or ["interval"]
     nkeys = [k for k in ("limit", "count", "bars", "n") if k in props] or ["limit"]
@@ -50,7 +56,7 @@ async def candles(conn: Conn, symbol: str, timeframe: str, count: int):
     for sk in skeys[:1]:
         for tk in tkeys[:2]:
             for nk in nkeys[:2]:
-                args = {sk: symbol, tk: timeframe, nk: count}
+                args = {**required_fill, sk: symbol, tk: timeframe, nk: count}
                 try:
                     raw = await conn.text(name, args)
                 except Exception as e:
@@ -167,7 +173,7 @@ async def observe(conn: Conn) -> dict:
         src = "points" if bars else "points-empty"
     if not bars and not src:
         src = "no-symbol"
-    diag = "" if bars else (raw_points or read_txt or "")[:200].replace("\n", " ")
+    diag = "" if bars else (raw_points or read_txt or "")[:400].replace("\n", " ")
     return {
         "status": await status(conn),
         "refresh": await refresh(conn),
