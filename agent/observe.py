@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 
 from . import config
 from .mcp_client import Conn
@@ -117,22 +118,35 @@ def packet_lines(bars) -> list[str]:
 async def observe(conn: Conn) -> dict:
     """One observation: status, read (with bars), candles fallback."""
     read_txt = await read(conn, bars=min(config.BARS, 300))
-    bars = None
-    symbol = timeframe = ""
-    try:
-        head = json.loads(read_txt.splitlines()[0]) if read_txt else {}
-    except Exception:
-        head = {}
-    # chart_read nests the pane under "chart" and calls the timeframe "interval"
+    head: dict = {}
+    for candidate in (read_txt or "", (read_txt or "").splitlines()[0]):
+        try:
+            parsed = json.loads(candidate)
+        except Exception:
+            continue
+        if isinstance(parsed, dict):
+            head = parsed
+            break
     chart = head.get("chart") if isinstance(head.get("chart"), dict) else {}
     symbol = str(chart.get("symbol") or head.get("symbol") or "")
     timeframe = str(
         chart.get("interval") or chart.get("timeframe")
-        or head.get("timeframe") or head.get("interval") or ""
+        or head.get("interval") or head.get("timeframe") or ""
     )
-    bars = parse_candles(read_txt)  # chart_read may embed bars directly
+    if not symbol:
+        m = re.search(r'"symbol"\s*:\s*"([^"]+)"', read_txt or "")
+        symbol = m.group(1) if m else ""
+    if not timeframe:
+        m = re.search(r'"interval"\s*:\s*"([^"]+)"', read_txt or "")
+        timeframe = m.group(1) if m else ""
+    bars = parse_candles(read_txt)
+    src = "chart_read" if bars else ""
     if not bars and symbol and timeframe:
         bars = await candles(conn, symbol, timeframe, config.BARS)
+        src = "points" if bars else "points-empty"
+    if not bars and not src:
+        src = "no-symbol"
+    diag = "" if bars else (read_txt or "")[:200].replace("\n", " ")
     return {
         "status": await status(conn),
         "refresh": await refresh(conn),
@@ -140,4 +154,6 @@ async def observe(conn: Conn) -> dict:
         "bars": bars,
         "symbol": symbol,
         "timeframe": timeframe,
+        "src": src,
+        "diag": diag,
     }

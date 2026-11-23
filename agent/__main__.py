@@ -32,6 +32,8 @@ async def cycle(confirm: bool) -> None:
         print(
             f"obs: {obs.get('symbol') or '?'} {obs.get('timeframe') or '?'} bars={nb}"
             + (f" last={lastc}" if lastc is not None else "")
+            + f" via {obs.get('src') or '?'}"
+            + (f" | read: {obs['diag']}" if obs.get("diag") else "")
         )
         prop = await brain.propose(obs, pack)
         verdict = gate.check(prop, obs.get("bars"))
