@@ -161,6 +161,8 @@ figcaption { font-size: .82rem; color: var(--ink-3); margin-top: 10px; }
 .callout.info { border-color: var(--target); background: var(--target-bg); }
 .callout.memo { border-color: var(--ink-2); background: var(--paper-2); }
 .callout.memo h4 { color: var(--ink); text-transform: uppercase; letter-spacing: .05em; }
+figure.pinned { max-width: 640px; }
+figure.pinned img { border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 10px 24px rgb(31 29 27 / .22); transform: rotate(-.6deg); }
 .callout h4 { color: var(--ink-2); }
 
 /* ---------- Order ticket (entry / SL / TP) ---------- */
