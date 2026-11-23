@@ -28,12 +28,28 @@ and skips alike, lands in `journal.md`.
    for the session, and a `y` at the prompt. Miss any lock and the order
    path stays shut.
 
+## Get the folder on Kali
+
+The agent lives in this public repo. Pull only the two folders you need
+(sparse clone — skips every chart image in the repo):
+
+```bash
+cd ~                                        # or any dir; quote paths with spaces
+git clone --depth 1 --filter=blob:none --sparse \
+  https://github.com/vincevision/tradingsmc.github.io.git
+cd tradingsmc.github.io
+git sparse-checkout set agent tools         # the agent + the pack exporter
+```
+
+Already have the full repo somewhere? Skip the clone and `cd` straight into
+its `agent/` folder.
+
 ## Install on Kali
 
 ```bash
 sudo apt install -y python3-venv            # Kali is PEP 668: never pip to system
 cd tradingsmc.github.io/agent
-python3 -m venv .venv
+python3 -m venv .venv || python3.13 -m venv .venv   # if the default 3.14 is too new for the mcp SDK
 .venv/bin/pip install -r requirements.txt
 cp .env.example .env                        # then edit .env
 ```
