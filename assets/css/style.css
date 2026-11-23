@@ -159,6 +159,8 @@ figcaption { font-size: .82rem; color: var(--ink-3); margin-top: 10px; }
 .callout.rule { border-color: var(--demand); background: var(--demand-bg); }
 .callout.warn { border-color: var(--supply); background: var(--supply-bg); }
 .callout.info { border-color: var(--target); background: var(--target-bg); }
+.callout.memo { border-color: var(--ink-2); background: var(--paper-2); }
+.callout.memo h4 { color: var(--ink); text-transform: uppercase; letter-spacing: .05em; }
 .callout h4 { color: var(--ink-2); }
 
 /* ---------- Order ticket (entry / SL / TP) ---------- */

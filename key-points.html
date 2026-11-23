@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=78">
+  <link rel="stylesheet" href="assets/css/style.css?v=79">
 </head>
 <body>
 <div class="preloader" aria-hidden="true"><div class="pl-chart"><i></i><i></i><i class="dn"></i><i class="dn"></i><i></i><i></i><i class="dn"></i><i></i><i></i></div><p>VinceVision SMC</p><span>Loading the charts…</span></div>
@@ -26,7 +26,7 @@
         <li class="chip target">No signals, only rules</li>
       </ul>
       <ul class="toc" aria-label="On this page">
-        <li><a href="#sequence">The only sequence</a></li><li><a href="#origin">Origin decides the target</a></li><li><a href="#routine">The routine in four steps</a></li><li><a href="#replay">Exhibit: a replay, drawn</a></li><li><a href="#trend">Exhibit: a trend, in full</a></li><li><a href="#live">Exhibit: your own chart</a></li><li><a href="#skips">The skips are the strategy</a></li><li><a href="#pairs">Timeframe pairs</a></li><li><a href="#doors">Two doors: 50 and 75</a></li><li><a href="#risk">Risk</a></li><li><a href="#mind">If not, I’ll wait</a></li><li><a href="#nobot">Why no indicator</a></li>
+        <li><a href="#sequence">The only sequence</a></li><li><a href="#origin">Origin decides the target</a></li><li><a href="#routine">The routine in four steps</a></li><li><a href="#replay">Exhibit: a replay, drawn</a></li><li><a href="#trend">Exhibit: a trend, in full</a></li><li><a href="#live">Exhibit: your own chart</a></li><li><a href="#mirror">Exhibit D: one gate, three charts</a></li><li><a href="#skips">The skips are the strategy</a></li><li><a href="#pairs">Timeframe pairs</a></li><li><a href="#doors">Two doors: 50 and 75</a></li><li><a href="#risk">Risk</a></li><li><a href="#mind">If not, I’ll wait</a></li><li><a href="#nobot">Why no indicator</a></li>
       </ul>
     </div>
   </div>
@@ -69,6 +69,7 @@
       </div>
       <p class="small muted" style="margin-top:14px">Exhibit A, drawn from a replay: <a href="#replay">BTCUSD 5m — sweep, MSS, and a target that stops at the first pool</a>.</p>
       <p class="small muted" style="margin-top:6px">Exhibit C, drawn on your own terminal: <a href="#live">EURUSD 30m — two sweeps into one supply, one target drawn once</a>.</p>
+      <p class="small muted" style="margin-top:6px">Exhibit D, three of your own charts: <a href="#mirror">one gate run twice as shorts and once in the mirror for longs — and the probability rule to memorise</a>.</p>
     </div>
   </section>
 
@@ -180,6 +181,51 @@
     </div>
   </section>
 
+  <section id="mirror">
+    <div class="wrap narrow">
+      <h2>Exhibit D: one gate, three charts — and the mirror</h2>
+      <p class="lead">The entry model this site teaches, shown on three of your own charts instead of a diagram: a liquidity sweep followed by a shift is enough to act — but when the sweep itself comes <em>from</em> a demand or supply zone, the shift that follows carries more probability. Two shorts on the euro's 30m and 15m, and the same gate flipped in the mirror for longs on your 1h paper chart.</p>
+      <aside class="callout memo">
+        <h4>Memorise</h4>
+        <p>A liquidity sweep followed by a shift can be enough — but if that liquidity sweep came from a demand or supply zone, the shift that follows adds more probability.</p>
+      </aside>
+      <div class="diagram" style="margin:18px 0 6px">
+      <svg viewBox="0 0 870 300" role="img" aria-labelledby="md-t md-d"><title id="md-t">Sweep plus shift, and sweep from a zone plus shift</title><desc id="md-d">Two panels. Left: a high swept in no-man's-land, then an MSS down, then a short - enough. Right: the same sweep taken at a supply zone's floor, then an MSS down, then a short at the tap of the zone - more probability.</desc>
+      <text x="30" y="26" font-size="14" font-weight="700" fill="#1f1d1b">Enough: sweep + shift</text>
+      <rect x="150" y="52" width="230" height="26" fill="#8a5a4f" opacity=".32"/><text x="160" y="47" font-size="12" font-weight="600" font-style="italic" fill="#1f1d1b">supply</text>
+      <line x1="70" y1="140" x2="255" y2="140" stroke="#8a5a4f" stroke-width="1" stroke-dasharray="5 4"/><text x="238" y="155" font-size="13" font-weight="700" fill="#8a5a4f">X</text>
+      <line x1="250" y1="190" x2="330" y2="190" stroke="#1f1d1b" stroke-width="1.2"/><text x="272" y="184" font-size="12" font-weight="600" font-style="italic" fill="#1f1d1b">MSS</text>
+      <line x1="300" y1="252" x2="420" y2="252" stroke="#4f7186" stroke-width="1.2" stroke-dasharray="5 4"/><text x="330" y="247" font-size="12" font-weight="600" font-style="italic" fill="#4f7186">target</text>
+      <polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="40,175 120,150 250,140 300,205 340,168 420,245"/>
+      <text x="60" y="120" font-size="12" font-style="italic" fill="#6f6961">swept high, no zone behind it</text>
+      <text x="450" y="26" font-size="14" font-weight="700" fill="#1f1d1b">More probability: sweep from the zone + shift</text>
+      <rect x="580" y="52" width="250" height="34" fill="#8a5a4f" opacity=".32"/><text x="590" y="47" font-size="12" font-weight="600" font-style="italic" fill="#1f1d1b">supply</text>
+      <line x1="560" y1="86" x2="705" y2="86" stroke="#8a5a4f" stroke-width="1" stroke-dasharray="5 4"/><text x="688" y="101" font-size="13" font-weight="700" fill="#8a5a4f">X</text>
+      <line x1="700" y1="150" x2="770" y2="150" stroke="#1f1d1b" stroke-width="1.2"/><text x="718" y="144" font-size="12" font-weight="600" font-style="italic" fill="#1f1d1b">MSS</text>
+      <line x1="760" y1="252" x2="855" y2="252" stroke="#4f7186" stroke-width="1.2" stroke-dasharray="5 4"/><text x="780" y="247" font-size="12" font-weight="600" font-style="italic" fill="#4f7186">target</text>
+      <polyline fill="none" stroke="#1f1d1b" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="470,190 560,120 700,86 730,165 780,92 845,245"/>
+      <circle cx="780" cy="92" r="5" fill="#1f1d1b"/><text x="760" y="76" font-size="12" font-weight="600" font-style="italic" fill="#1f1d1b">entry at the tap</text>
+      <text x="480" y="120" font-size="12" font-style="italic" fill="#6f6961">the same sweep, taken at the zone's floor</text>
+      </svg>
+      </div>
+      <p class="small muted" style="margin:6px 0 0">Left: the X sits in no-man's-land — the sweep clears liquidity and the MSS that follows is the only evidence, which is enough to act. Right: the X sits at the supply's floor — the sweep triggers the zone's own defenders, so the MSS that follows carries their weight too. Same gate, different weight behind it.</p>
+      <h3 style="margin-top:28px">The three reference charts, untouched</h3>
+      <figure style="margin:14px 0 26px">
+        <img src="assets/img/exhibit-d/01-long-1h.png" alt="EURUSD 1h paper-trading chart with the scale inverted so the gate reads as a long: a staircase of grey demand boxes climbing left to right, X marks on swept lows into each box, bos and two MSS labels on the way up, a $$$ line on the buy-side pool above the middle swing, and at the right a zigzag pullback into the last demand box with an arrow pointing up beyond it. Axis tags: live 1.09411 at the top, a plus-handle line at 1.10317 near the bottom; the position tool shows 0.3 open.">
+        <figcaption>Chart 1 — the mirror, for longs. Your 1h euro paper chart with the scale inverted on purpose, so the same gate reads the way a long reads it: a staircase of demand boxes, X on the swept lows into each box, bos and two MSS on the way up, $$$ on the buy-side pool above the middle swing, and the arrow — the pullback's zigzag taps the last demand box and the long the model asks for points up from there. The ⊕ line at 1.10317 marks where the staircase began; the tool carries 0.3 open at the live 1.09411. On the raw, un-inverted feed this same session is the decline every other frame shows — the mirror is the point: the gate is symmetric.</figcaption>
+      </figure>
+      <figure style="margin:14px 0 26px">
+        <img src="assets/img/exhibit-d/02-shorts-30m.png" alt="EURUSD 30m replay with three descending grey supplies, X marks on the swept highs into each, bos and three MSS labels between the legs, a $$$ line on the 18th's pool, and two red-tinted entry boxes with blue position columns running to two blue target tags. Axis tags: red 1.10247 and 1.10107, white 1.10078 and 1.10055, blue 1.09538 and 1.09533, grey live 1.09448; the tool shows 0.1 open.">
+        <figcaption>Chart 2 — the gate as shorts, EURUSD 30m. Three descending supplies, and not one of them traded before its own sweep: X into the box above, MSS below, then the tap. Two red entry boxes produced two shorts — entries 1.10078 and 1.10055, stops 1.10247 and 1.10107, targets 1.09538 and 1.09533 — both blue tags paid, live 1.09448 with 0.1 still open. Every X on this chart sits at a zone's floor: the extra probability, three times over.</figcaption>
+      </figure>
+      <figure style="margin:14px 0 26px">
+        <img src="assets/img/exhibit-d/03-delivery-15m.png" alt="EURUSD 15m replay, the same session one rung down: the same boxes and X marks, a $$$ line, bos and MSS labels, the last X into the third box on 22-23 Nov, a final MSS label at Mon 23 Nov 05:45, then a drop cutting the blue tags and wicking near 1.0925. Axis tags: blue live 1.09429 and a plus-handle line at 1.09389; the tool shows 0.2 open.">
+        <figcaption>Chart 3 — the delivery, 15m. The same session one rung down: the last X into the third box, the final MSS at Mon 23 Nov 05:45, then the drop that cuts both blue tags and wicks near 1.0925, live 1.09429 with the deeper pool marked at 1.09389. The 15m exists to prove the 30m's marks were not luck: same zones, same sweeps, same shift, one timeframe finer.</figcaption>
+      </figure>
+      <p style="margin-top:18px">Read the three charts against <a href="#sequence">the only sequence</a> and <a href="#origin">origin decides the target</a>: the sweep names the fuel, the zone it came from names the weight, the shift names the timing, and the pool beyond names the target. The mirrored long is not a second model — it is the same four marks with the scale turned around, which is why the note above is worth memorising once and applying everywhere. It is pinned as <a href="notes.html#n13">note 13</a> and repeated beside every chart on this site that teaches the gate.</p>
+    </div>
+  </section>
+
   <section id="skips">
     <div class="wrap narrow">
       <h2>The skips are the strategy</h2>
@@ -283,6 +329,6 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=78"></script>
+<script src="assets/js/site.js?v=79"></script>
 </body>
 </html>
