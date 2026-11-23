@@ -44,6 +44,21 @@ git sparse-checkout set agent tools         # the agent + the pack exporter
 Already have the full repo somewhere? Skip the clone and `cd` straight into
 its `agent/` folder.
 
+### Updating later (shallow clones do NOT pull)
+
+A `--depth 1` clone cannot prove ancestry, so `git pull` on it always reads as
+"divergent branches" / "forced update" and the rebase dies on parent commits it
+never downloaded. Never pull here — point the checkout at the tip instead:
+
+```bash
+git rebase --abort                     # only if a dead pull left one open
+git fetch --depth 1 origin main
+git reset --hard origin/main           # ignored files (.env, .venv, .tools.json) survive
+```
+
+`reset --hard` moves only tracked files; your `.env`, the venv and the journal
+are git-ignored and stay exactly where they are.
+
 ## Install on Kali
 
 ```bash
