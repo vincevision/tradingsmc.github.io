@@ -1,0 +1,8 @@
+# runtime state — never publish secrets or your trade journal
+.env
+.venv/
+__pycache__/
+*.pyc
+journal.md
+.tools.json
+last-setup.json

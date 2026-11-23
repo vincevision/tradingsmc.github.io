@@ -1,1 +1,3 @@
 archive/trendforge/downloads/
+__pycache__/
+*.pyc
