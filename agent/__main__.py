@@ -27,6 +27,12 @@ async def cycle(confirm: bool) -> None:
         await observe.select_workspace(conn)
         obs = await observe.observe(conn)
         obs["bar_lines"] = observe.packet_lines(obs.get("bars"))
+        nb = len(obs.get("bars") or [])
+        lastc = obs["bars"][-1]["c"] if nb else None
+        print(
+            f"obs: {obs.get('symbol') or '?'} {obs.get('timeframe') or '?'} bars={nb}"
+            + (f" last={lastc}" if lastc is not None else "")
+        )
         prop = await brain.propose(obs, pack)
         verdict = gate.check(prop, obs.get("bars"))
         acted: list[str] = []

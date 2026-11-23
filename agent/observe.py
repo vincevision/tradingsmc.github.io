@@ -77,6 +77,13 @@ def parse_candles(raw: str):
             if isinstance(data.get(key), list):
                 data = data[key]
                 break
+        else:
+            inner = data.get("chart")
+            if isinstance(inner, dict):
+                for key in ("bars", "candles", "points", "data"):
+                    if isinstance(inner.get(key), list):
+                        data = inner[key]
+                        break
     if not isinstance(data, list):
         return None
     out = []
@@ -116,9 +123,15 @@ async def observe(conn: Conn) -> dict:
         head = json.loads(read_txt.splitlines()[0]) if read_txt else {}
     except Exception:
         head = {}
-    symbol = str(head.get("symbol", ""))
-    timeframe = str(head.get("timeframe", ""))
-    if symbol and timeframe:
+    # chart_read nests the pane under "chart" and calls the timeframe "interval"
+    chart = head.get("chart") if isinstance(head.get("chart"), dict) else {}
+    symbol = str(chart.get("symbol") or head.get("symbol") or "")
+    timeframe = str(
+        chart.get("interval") or chart.get("timeframe")
+        or head.get("timeframe") or head.get("interval") or ""
+    )
+    bars = parse_candles(read_txt)  # chart_read may embed bars directly
+    if not bars and symbol and timeframe:
         bars = await candles(conn, symbol, timeframe, config.BARS)
     return {
         "status": await status(conn),
