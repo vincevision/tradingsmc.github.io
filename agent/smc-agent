@@ -1,4 +1,0 @@
-#!/bin/sh
-# Run the agent from ANY directory: ./smc-agent intro|once|watch [--confirm]
-here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-exec env PYTHONPATH="$here/.." "$here/.venv/bin/python" -m agent "$@"
