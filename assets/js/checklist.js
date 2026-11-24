@@ -88,7 +88,8 @@
         zone ? d("Lows", "Highs") + " at or inside the zone have been taken." : "It closed back " + above + " the line within a candle or two, or left a long wick.",
         zone ? "This is an internal sweep: no " + S.htf + " candle has closed beyond the protected " + lowhigh + "." : "I know which " + lowhigh + " this is: an internal one, or the external " + lowhigh + " of the " + S.htf + " range.",
         "I have marked the extreme of the sweep. My stop will go beyond it.",
-        "I have not entered yet."
+        "I have not entered yet.",
+        "I have graded the sweep: taken at or inside a " + (zone ? z + " zone" : "demand or supply zone") + " it adds probability; in no-man's-land a shift that follows is enough, but that shift is then my only evidence."
       ],
       stop: ["Candles keep closing " + below + " the " + (zone ? "zone" : "level") + ". That is a break, not a sweep.", zone ? "Price bounced from " + above + " the zone without taking any " + lowhigh + "." : "Price returns to the line from the other side and is rejected."]
     });
@@ -99,28 +100,42 @@
       checks: [
         "A " + S.ltf + " candle has closed " + above + " the last " + d("lower high", "higher low") + " (MSS / CHoCH). A wick does not count.",
         "The move left an imbalance: strong candles whose wicks do not overlap.",
-        "The breaking candle has finished closing."
+        "The breaking candle has finished closing.",
+        "The shift answers this sweep: the close beyond the last " + d("lower high", "higher low") + " came after the sweep, not before it."
       ],
       stop: ["Only a wick went through the level.", "The break is slow with overlapping candles.", "Price made a new " + lowhigh + " beyond the sweep instead."]
     });
 
     list.push({
-      id: "zone", tf: S.ltf, title: "Entry zone", chart: true,
-      want: zone ? "The small " + z + " zone at the base of the shift, inside the higher-timeframe zone." : "The zone made by the sweep: the base of the move that shifted structure.",
+      id: "zone", tf: S.ltf, title: "Order block left by the shift", chart: true,
+      want: zone ? "The order block the shift created: the last " + d("down", "up") + " candle before the displacement, inside the higher-timeframe zone. This is where I wait." : "The order block the shift created: the last " + d("down", "up") + " candle before the move that shifted structure, its far edge the sweep " + lowhigh + ". This is where I wait.",
       checks: [
         "I have drawn the small zone at the last " + d("down", "up") + " candle before the move that made the shift.",
         zone ? "It sits inside or on the " + S.htf + " zone." : "Its far edge is the sweep " + lowhigh + ".",
         "Price has not come back and tapped it yet.",
-        "I have noted any small " + lowhigh + " between price and the zone. It may be taken before the fill."
+        "I have noted any small " + lowhigh + " between price and the zone. It may be taken before the fill.",
+        "This block is the one the shift created — not an older zone from elsewhere on the chart."
       ],
       stop: [zone ? "The small zone is " + above + " the " + S.htf + " zone with untouched " + lows + " beyond it (inducement)." : "The zone is so tall that the stop is too wide for the target.", "Price has already tapped the zone."]
+    });
+
+    list.push({
+      id: "return", tf: S.ltf, title: "Wait for the return", chart: true,
+      want: "Price comes back to the order block on its own. The tap is the trigger; chasing is not.",
+      checks: [
+        "Price has returned into the order block, or my limit sits at its edge and I am waiting.",
+        "No " + S.ltf + " candle has closed beyond the far edge of the block since the shift.",
+        "I have not entered before the tap.",
+        "The sweep " + lowhigh + " beyond the block is still intact: my stop place is untouched."
+      ],
+      stop: ["A candle closes beyond the far edge of the block: the shift has failed. Stand aside.", "Price runs without returning. No trade is also a position."]
     });
 
     list.push({
       id: "order", tf: S.ltf, title: "Order", chart: true, kind: "order",
       want: "Entry, stop and target set together, paying at least 1:2.",
       checks: [
-        "Entry: a " + d("buy", "sell") + " limit at the " + d("top", "bottom") + " edge of the entry zone.",
+        "Entry: a " + d("buy", "sell") + " limit at the " + d("top", "bottom") + " edge of the order block.",
         "Stop: " + below + " the sweep " + lowhigh + ", with a buffer of 5–10 pips plus the spread.",
         "Target: just before the level marked in step 2.",
         "No zone or liquidity level sits between entry and target at less than 2R."
@@ -176,7 +191,7 @@
   function sizeMath() {
     const o = orderMath();
     const bal = num(S.size.balance), pct = num(S.size.risk);
-    if (!o.risk) return { ok: false, msg: "Fill in the order prices in step 6 first." };
+    if (!o.risk) return { ok: false, msg: "Fill in the order prices in step 7 first." };
     if (bal == null || pct == null || bal <= 0 || pct <= 0) return { ok: false, msg: "Enter the account balance and the risk per trade." };
     const money = (bal * pct) / 100;
     let perLot; // loss per 1.00 lot if the stop is hit, in account currency (USD assumed)
