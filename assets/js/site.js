@@ -281,7 +281,18 @@ const CASES = [
     result: "Targets reached · ≈ 1:3.8 and 1:3.2",
     summary:
       "A 15m low breaks and the protected swing and supply are marked. Price returns and a first short is placed at the zone edge. A high is then swept, structure shifts down and a second short is added. Both reach the low. A replay on a synthetic index."
+  },  {
+    pair: "XAU/USD",
+    title: "The Sequence in Three Frames",
+    href: "cases/xauusd-30m-supply-replay.html",
+    thumb: "assets/img/xauusd-30m-supply-replay/02-ticket.png",
+    direction: "Short",
+    model: "30m sweep → 30m shift → 30m supply tap",
+    result: "TP hit · ≈ 3 R",
+    summary:
+      "One gold replay in three frames: the 3,690 spike sweeps the equal highs at 3,675, the bos down at 3,617 shifts structure, the supply the shift left (3,645.12–3,661.87) is tapped once at 3,648 — and the short runs to the demand top 3,595.31, printing through to 3,562."
   },
+
 ];
 
 /*
@@ -601,6 +612,12 @@ const STUDY_PATH = [
   "q": "Which two sweeps had to print on the 2h before the box was drawn?"
  },
  {
+  "href": "cases/xauusd-30m-supply-replay.html",
+  "title": "XAU/USD: The Sequence in Three Frames",
+  "part": "Part 3 · Case studies",
+  "q": "Which sweep fuelled the move, and which sweep triggered the entry?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -615,7 +632,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "82" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "83" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
