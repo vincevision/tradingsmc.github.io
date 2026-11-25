@@ -336,6 +336,17 @@ const CASES = [
     summary:
       "A supply box drawn on the 20th at leg two's displacement (0.66625-0.66725) survives a two-pip near miss on the 23rd, gets tapped on the 24th at 18:00, shifts within the hour and pays 0.66626 to 0.65982 - the sss pool line. 10.4 pips risked against 64.4."
   },
+  {
+    pair: "XAU/USD",
+    title: "One Wick In, Forty Handles Out",
+    href: "cases/xauusd-5m-pool-paid.html",
+    thumb: "assets/img/xauusd-5m-pool-paid/03-delivery.png",
+    direction: "Short",
+    model: "5m fall leaves box + sss pool → bounce taps → fill at floor → shift",
+    result: "Pool crossed · ≈ 7.2 R",
+    summary:
+      "A lower high and an X sweep fuel an MSS-and-BoS fall that leaves a supply at 3,525.5-3,530.5 and an sss pool at 3,485. The bounce taps the box at 07:30, the limit fills at 3,525.54 on the second push, the shift closes below 3,521.5, and the fall pays 40.5 handles against 5.6 of risk."
+  },
 
 ];
 
@@ -686,6 +697,12 @@ const STUDY_PATH = [
   "q": "What stopped the 23rd's spike wick two pips short of being a tap, and where was the target booked?"
  },
  {
+  "href": "cases/xauusd-5m-pool-paid.html",
+  "title": "XAU/USD: One Wick In, Forty Handles Out",
+  "part": "Part 3 · Case studies",
+  "q": "Where was the target drawn, how long before the tap, and what sealed the fill?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -700,7 +717,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "89" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "90" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
