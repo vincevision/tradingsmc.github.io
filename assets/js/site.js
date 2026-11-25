@@ -292,6 +292,17 @@ const CASES = [
     summary:
       "One gold replay in three frames: the 3,690 spike sweeps the equal highs at 3,675, the bos down at 3,617 shifts structure, the supply the shift left (3,645.12–3,661.87) is tapped once at 3,648 — and the short runs to the demand top 3,595.31, printing through to 3,562."
   },
+  {
+    pair: "TrendForge deck",
+    title: "One Short, Four Rungs",
+    href: "cases/tf-top-down-deck.html",
+    thumb: "assets/img/tf-top-down-deck/03-m10-mss-fvg.png",
+    direction: "Short",
+    model: "H4 structure → M30 liquidity → M10 MSS+FVG",
+    result: "Target hit at the equal lows",
+    summary:
+      "A TrendForge carousel read rung by rung: H4 sweep, MSS and BoS set the bias; M30 names the swept high, the equal-low pool and the shift line; M10 waits for the tap of the OB and stamps it with MSS and FVG; the delivery runs the column into the equal lows."
+  },
 
 ];
 
@@ -618,6 +629,12 @@ const STUDY_PATH = [
   "q": "Which sweep fuelled the move, and which sweep triggered the entry?"
  },
  {
+  "href": "cases/tf-top-down-deck.html",
+  "title": "One Short, Four Rungs",
+  "part": "Part 3 · Case studies",
+  "q": "Which sweep was the fuel and which was the trigger - and where does the stop go that the deck forgot?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -632,7 +649,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "83" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "84" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
