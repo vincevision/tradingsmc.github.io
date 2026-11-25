@@ -303,6 +303,17 @@ const CASES = [
     summary:
       "A TrendForge carousel read rung by rung: H4 sweep, MSS and BoS set the bias; M30 names the swept high, the equal-low pool and the shift line; M10 waits for the tap of the OB and stamps it with MSS and FVG; the delivery runs the column into the equal lows."
   },
+  {
+    pair: "XAU/USD",
+    title: "The Tap That Paid the External Low",
+    href: "cases/xauusd-10m-external-low.html",
+    thumb: "assets/img/xauusd-10m-external-low/04-ticket.png",
+    direction: "Short",
+    model: "10m sweep → 10m shift → supply tap → pool book",
+    result: "External low paid · printed to 3,500.55",
+    summary:
+      "Equal highs at 3,566.5 swept by the 3,575 spike, MSS at 3,545.5, supply refined to 3,556.12-3,562.02, one tap fills a paper short at 3,560.10 - and the column runs through the teal demand to the external low 3,503.00938, printing to 3,500.55. Two targets, one decision, priced honestly."
+  },
 
 ];
 
@@ -635,6 +646,12 @@ const STUDY_PATH = [
   "q": "Which sweep was the fuel and which was the trigger - and where does the stop go that the deck forgot?"
  },
  {
+  "href": "cases/xauusd-10m-external-low.html",
+  "title": "XAU/USD: The Tap That Paid the External Low",
+  "part": "Part 3 · Case studies",
+  "q": "Two targets sat below the supply - which one does the checklist default to, and what did the pool book need to be true?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -649,7 +666,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "84" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "85" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
