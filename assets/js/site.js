@@ -325,6 +325,17 @@ const CASES = [
     summary:
       "Equal highs at 1.10160, leg two's supply drawn on the 23rd, and a fourteen-hour grind bounce that sweeps the second X at the box's floor, shifts at 1.09850 and pays 1.09953 to 1.09596 - the teal's top edge. One zone, two paid sweeps."
   },
+  {
+    pair: "AUD/USD",
+    title: "The Box That Waited Four Days",
+    href: "cases/audusd-5m-four-day-wait.html",
+    thumb: "assets/img/audusd-5m-four-day-wait/02-tap-ticket.png",
+    direction: "Short",
+    model: "5m supply drawn on the 20th → 4-day wait → tap at the floor → shift",
+    result: "TP tagged · ≈ 6.2 R",
+    summary:
+      "A supply box drawn on the 20th at leg two's displacement (0.66625-0.66725) survives a two-pip near miss on the 23rd, gets tapped on the 24th at 18:00, shifts within the hour and pays 0.66626 to 0.65982 - the sss pool line. 10.4 pips risked against 64.4."
+  },
 
 ];
 
@@ -669,6 +680,12 @@ const STUDY_PATH = [
   "q": "How long did the box wait for its tap, and which two sweeps did the same supply pay?"
  },
  {
+  "href": "cases/audusd-5m-four-day-wait.html",
+  "title": "AUD/USD: The Box That Waited Four Days",
+  "part": "Part 3 · Case studies",
+  "q": "What stopped the 23rd's spike wick two pips short of being a tap, and where was the target booked?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -683,7 +700,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "86" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "87" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
