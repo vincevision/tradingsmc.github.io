@@ -347,6 +347,17 @@ const CASES = [
     summary:
       "A lower high and an X sweep fuel an MSS-and-BoS fall that leaves a supply at 3,525.5-3,530.5 and an sss pool at 3,485. The bounce taps the box at 07:30, the limit fills at 3,525.54 on the second push, the shift closes below 3,521.5, and the fall pays 40.5 handles against 5.6 of risk."
   },
+  {
+    pair: "USD/JPY",
+    title: "Four Rungs, One Supply, One Ticket",
+    href: "cases/usdjpy-four-rung-cascade.html",
+    thumb: "assets/img/usdjpy-four-rung-cascade/05-delivery.png",
+    direction: "Short",
+    model: "2h supply cascaded 4 rungs → three taps → shift on the third → ticket",
+    result: "Area swept · ≈ 3.0 R",
+    summary:
+      "One 2h supply (approx 159.50-159.90) cascades down 45m, 15m and 5m. Three taps arrive at the 15m stack; the first two bring no shift and no trade. The third sweeps the internal X at 159.42, the shift closes below 159.28, and the ticket 159.350/159.466/158.997 pays about 1:3.0 before sweeping the demand area to 158.733."
+  },
 
 ];
 
@@ -703,6 +714,12 @@ const STUDY_PATH = [
   "q": "Where was the target drawn, how long before the tap, and what sealed the fill?"
  },
  {
+  "href": "cases/usdjpy-four-rung-cascade.html",
+  "title": "USD/JPY: Four Rungs, One Supply, One Ticket",
+  "part": "Part 3 · Case studies",
+  "q": "Why did the first two taps produce no trade, and where was the target booked?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -717,7 +734,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "90" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "91" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
