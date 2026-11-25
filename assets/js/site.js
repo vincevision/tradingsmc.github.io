@@ -314,6 +314,17 @@ const CASES = [
     summary:
       "Equal highs at 3,566.5 swept by the 3,575 spike, MSS at 3,545.5, supply refined to 3,556.12-3,562.02, one tap fills a paper short at 3,560.10 - and the column runs through the teal demand to the external low 3,503.00938, printing to 3,500.55. Two targets, one decision, priced honestly."
   },
+  {
+    pair: "GBP/CHF",
+    title: "The Tap That Paid the Teal",
+    href: "cases/gbpchf-15m-teal-tap.html",
+    thumb: "assets/img/gbpchf-15m-teal-tap/03-ticket.png",
+    direction: "Short",
+    model: "15m supply drawn once → 14h wait → sweep B at the floor → BoS",
+    result: "TP tagged · ≈ 2.3 R",
+    summary:
+      "Equal highs at 1.10160, leg two's supply drawn on the 23rd, and a fourteen-hour grind bounce that sweeps the second X at the box's floor, shifts at 1.09850 and pays 1.09953 to 1.09596 - the teal's top edge. One zone, two paid sweeps."
+  },
 
 ];
 
@@ -652,6 +663,12 @@ const STUDY_PATH = [
   "q": "Two targets sat below the supply - which one does the checklist default to, and what did the pool book need to be true?"
  },
  {
+  "href": "cases/gbpchf-15m-teal-tap.html",
+  "title": "GBP/CHF: The Tap That Paid the Teal",
+  "part": "Part 3 · Case studies",
+  "q": "How long did the box wait for its tap, and which two sweeps did the same supply pay?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -666,7 +683,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "85" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "86" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
