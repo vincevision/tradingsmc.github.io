@@ -358,6 +358,17 @@ const CASES = [
     summary:
       "One 2h supply (approx 159.50-159.90) cascades down 45m, 15m and 5m. Three taps arrive at the 15m stack; the first two bring no shift and no trade. The third sweeps the internal X at 159.42, the shift closes below 159.28, and the ticket 159.350/159.466/158.997 pays about 1:3.0 before sweeping the demand area to 158.733."
   },
+  {
+    pair: "TrendForge.FX",
+    title: "The Mirror Deck: Long Off the Tapped Demand",
+    href: "cases/tf-mirror-long-deck.html",
+    thumb: "assets/img/tf-mirror-long-deck/03-m15-entry.png",
+    direction: "Long",
+    model: "H4 sweep at the low → M15 demand tap → MSS+BoS → OB entry to supply",
+    result: "Deck read · mirror of case 26",
+    summary:
+      "Three TrendForge slides as the long twin of case 26: H4 BoS high, lower high, X sweep at the wick low; M15 supply tapped on the way down, demand tapped at 19:30 and answered by MSS and BoS; then SSS of the pullback low, the OB and blue zone the final push leaves, and a pullback entry aimed at the supply above."
+  },
 
 ];
 
@@ -720,6 +731,12 @@ const STUDY_PATH = [
   "q": "Why did the first two taps produce no trade, and where was the target booked?"
  },
  {
+  "href": "cases/tf-mirror-long-deck.html",
+  "title": "TrendForge's Mirror Deck: Long Off the Tapped Demand",
+  "part": "Part 3 · Case studies",
+  "q": "Which two taps appear on the M15 context slide, and why did only one of them become a trade?"
+ },
+ {
   "href": "checklist.html",
   "title": "Live checklist",
   "part": "Part 4 · Practice",
@@ -734,7 +751,7 @@ const STUDY_PATH = [
 ];
 
 window.SMC_SITE = { k: "VERiQm1vQ2Uzbm16S1Q=" };
-window.SMC_CHAT = window.SMC_CHAT || { v: "91" };
+window.SMC_CHAT = window.SMC_CHAT || { v: "92" };
 
 (function () {
   const root = document.documentElement.dataset.root || "";
